@@ -1,4 +1,4 @@
-# Bridges Before You Played Them
+![Bridges Before You Played Them — Old phone games. Another chance.](assets/bridges-banner-v1.png)
 
 The failed builds. The strange fixes. The moment an old phone game starts doing what it used to do.
 
