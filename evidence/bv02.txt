@@ -1,0 +1,28 @@
+BV02 / The phone black viewport and omitted shader resources
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 92–114
+Source SHA-256: 469fd7ce44bdad7aa62c68f6a92ebdcebddba112e39ec78ec8213492e57a73b0
+
+PHONE v0.1.0 FAILURE / v0.1.1 REPAIR
+The returned Samsung SM-S938U / Android 17 API 37 video shows a black viewport.
+Its genuine manual report confirms native initialization, original launch
+request, one native surface connection, surface 1028x771 and 156 dispatched
+input transitions. These counters are not FPS or gameplay-success evidence.
+The report lists original-game settings created in the guest, suggesting the
+original process executed beyond registration. Its native log tail is flooded
+with glUseProgram error 1281 and glUniform error 1282. Initial log diagnostics
+were displaced from the old tail-only report.
+
+The v0.1.0 packaged seed has no resources/ directory. The actual native core
+references eight external resources//*.vert/*.frag shader files. Upstream
+Android packaging explicitly copies the GLES shaders into resources/.
+The working supplied Ashen seed contains them, along with audio banks and
+upscale resources; all 31 are now restored byte-identically in a separate ZIP.
+All eight base shaders match the preserved GLES upstream source.
+
+RendererAssets installs/repairs and SHA-256 verifies only resources/ before
+JNI, even with ready-v1 already present. Guest seed, original files, config,
+native core and shared UI kit are unchanged. Same package/signing certificate,
+version code 2; intended as an in-place update. Native reports now include the
+first 64 KiB and last 128 KiB rather than losing startup errors in a flood.
+Phone evidence and exact restored-file hashes are retained in evidence/.

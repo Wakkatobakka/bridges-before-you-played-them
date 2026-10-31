@@ -1,0 +1,12 @@
+KT05 / Original control schemes and triple-tap charge
+Source: 18-Katamari_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.0_PRIVATE/evidence/native-analysis/NATIVE_FINDINGS.txt
+Selected lines: 17–23
+Source SHA-256: 5ecfc32f2515c7058255598ce7378b8da95f543be2af23dffa261da90c0dccc3
+
+CONTROL HIERARCHY (original BAR controls.txt + native tutorial):
+Scheme1: Up/2 starts rolling;Down/8 stops, then reverses;Left/4 turns left;
+Right/6 turns right;OK/5 jumps180 degrees;1 shuffles left;3 shuffles right.
+Triple Up taps charge roll. Scheme2: cardinal movement;any move tapped3x
+charges;OK/5 and1/3 retain the same functions. No bespoke diagonal buttons
+are supported by these help texts.0 toggles vibration;9 cycles audio.
+Native executable overrides one obsolete tutorial[#] vibration hint to[0].

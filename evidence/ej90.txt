@@ -1,0 +1,10 @@
+EJ90 / Historical image / Earthworm Jim in New Junk City
+Source: Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/final_acceptance/06_new_junk_city.png
+Source SHA-256: f2b2963c120f6070ac9ffce9b52261e06d6c8ab8fc0a20b471b1617c76ff7e0b
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/final_acceptance/06_new_junk_city.png
+Image SHA-256: f2b2963c120f6070ac9ffce9b52261e06d6c8ab8fc0a20b471b1617c76ff7e0b
+
+The original 240×320 New Junk City scene, retained from desktop original-engine acceptance. The tutorial and game world are original output; this is a host capture.

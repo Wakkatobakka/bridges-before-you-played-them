@@ -1,0 +1,23 @@
+A13 — An independent recount of the before/after traces
+Evidence type: Trace reanalysis
+Source: Ashen-20261019-175740-203-manual.txt + Ashen-20261019-182247-480-manual.txt
+
+Recomputed from retained F/K trace rows, using the finding’s stated release criteria. This is a derived comparison, not a verbatim log. Units are diagnostic milliseconds and original fixed-point state, not measured distance on original hardware.
+
+Independent recount of the retained completed-frame (F) rows:
+
+Before: 934 frames; 438 zero-tick samples (46.9%); median callback gap 16.647 ms.
+After: 2,816 frames; only the initial stationary sample has zero ticks; median callback gap 16.678 ms.
+
+Seven qualifying grounded releases, time from guest release to the first zero horizontal velocity:
+1. 326.537 ms — release line 457, stop line 477 in the after report.
+2. 342.649 ms — release line 780, stop line 801 in the after report.
+3. 324.345 ms — release line 2014, stop line 2035 in the after report.
+4. 323.657 ms — release line 2363, stop line 2383 in the after report.
+5. 340.473 ms — release line 2574, stop line 2596 in the after report.
+6. 336.734 ms — release line 2849, stop line 2871 in the after report.
+7. 321.710 ms — release line 3150, stop line 3172 in the after report.
+
+All seven have monotonically decreasing horizontal speed and fixed positions after stopping. Turning-only keys do not truncate a neutral translation interval.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

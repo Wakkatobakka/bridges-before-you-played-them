@@ -1,0 +1,24 @@
+B09 — Measure movement instead of guessing key names
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.9_CONTROL_MAPPING.md
+Selected source lines: 3-17
+
+
+
+The previous mapping inferred semantics from guessed BREW constant names and from hexadecimal suffixes. Both approaches were wrong.
+
+A deterministic desktop A/B probe boots the original `mmassault.mod` to the same active gameplay state for every candidate, holds one guest key for 35 original timer ticks, then compares the player sprite position to a no-input control run.
+
+Measured result:
+
+- E031: dx=0, dy=-11 -> UP
+- E032: dx=0, dy=+12 -> DOWN
+- E033: dx=-13, dy=0 -> LEFT
+- E034: dx=+12, dy=0 -> RIGHT
+- E035 produces a fired projectile -> SELECT/FIRE
+- E021 toggles continuous firing -> handset 0 / AUTO-FIRE
+- E030 opens the original pause menu -> BACK/CLEAR
+
+Original numeric aliases were also behaviorally confirmed: E022 up-left, E024 up-right, E028 down-left, E02A down-right. Disassembly around the held-key helper confirms 2/4/6/8 aliases E023/E025/E027/E029 for the four cardinals.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

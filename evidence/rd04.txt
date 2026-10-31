@@ -1,0 +1,13 @@
+RD04 / Unchanged Omni preparation rebuilds the seed and keeps saves
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 34–41
+Source SHA-256: 9219f8d377e6f1c22b6dcc9eb35a01e71c5e7f14a6b4bec9265b4d5895565e25
+
+OMNI 0.5.11 — ACTUAL PREPARATION CLASSES
+Unchanged Ngage2Package, Ngage2Support, NgagePreparation and PreparedDeviceSeed
+rebuilt all 9,380 seed entries and 31 renderer entries byte-identically.
+Verified support was adopted from the private APK and pinned service input.
+Repeated preparation preserved a live-save sentinel; a changed original was
+rejected. Hash/copy/context and classic-only boundaries use labeled host
+adapters. The complete Android Add bridges/Create public update/hosted native
+flow was not executed. No application or original was publicly published.

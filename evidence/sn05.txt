@@ -1,0 +1,11 @@
+SN05 / Native core, original game and platform data remain distinct
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 1–6
+Source SHA-256: ff6bf176e767e42a9368ecb6183f17d39fc8cdb5526913ac94f003cc38b1af11
+
+EKA2L1 native compatibility core is by the EKA2L1 contributors, GPL-3.0-or-later.
+Recovered source and license accompany the private checkpoint. See upstream/.
+Nokia N-Gage firmware/device data are recovered original platform components.
+Sonic N code, artwork, audio and data are the original supplied game; ownership
+and trademarks remain with their respective rights holders (SEGA/Nokia).
+The app's launcher/header icon is decoded from the supplied SONICN.AIF.

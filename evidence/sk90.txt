@@ -1,0 +1,12 @@
+SK90 / Historical image / The Elder Scrolls Travels: Shadowkey
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE/evidence/host-first-gameplay.png
+Source SHA-256: cc744b914dcc5e07f2efb98b167c1b471d21c64262359339833130d1f393abab
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Shadowkey_Bridge_v0.1.2_PRIVATE/evidence/host-first-gameplay.png
+SHA-256: cc744b914dcc5e07f2efb98b167c1b471d21c64262359339833130d1f393abab
+
+Shadowkey’s original starting room and HUD in the retained Linux EKA2L1 host window. The source also documents saving and reloading the room after a process restart.
+
+Scope: Historical v0.1.0 Linux host original-game emulator window retained in .1.2; not new phone execution, not a synthetic renderer fixture.

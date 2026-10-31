@@ -1,0 +1,23 @@
+BJ02 / The upstream core and original runtime inputs
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/native/README.md
+Selected lines: 3–7, 58–67
+Source SHA-256: 29a38d4839150c0b171dac3614a32be3d519e11fe9666bea894dcad6d6e4c02e
+
+This directory contains the portable ExEn 2 VM, its platform-native API handlers, a small C host interface, and an Android JNI interface. It executes the supplied original `.exn` game bytecode. The Android build targets ARM64 and Android API 29 or later; ELF TLS is used by the allocator.
+
+## Source and license
+
+The VM and native handlers originate from [Handyplay's ExEn core](https://github.com/mohamedahmed166e/my-mre-emulator/tree/main/exen-core), commit `460b149302e9a52523bc314a37efabbee9f3d666`. The repository is distributed under AGPL-3.0; see `LICENSE-AGPL-3.0.txt`. The bridge and project modifications are supplied under the same license. Game content and original runtime firmware retain their original ownership.
+
+[... selected excerpt ...]
+
+The private runtime uses original ExEn runtime classes and its embedded bitmap font extracted from the stock simulator. The full executable is not included.
+
+Source archive: [EXEN-V2 Emulator.zip](https://archive.org/download/spyro-exen/EXEN-V2%20Emulator.zip), MD5 `24275cdff33263bd4da977ae518c9a47`. Original `EXEN-V2.exe`: 405,504 bytes, MD5 `f102c98717b4d680f9a38199fb3c0421`, PE image base `0x400000`.
+
+| Extracted asset | PE virtual address | File offset | Bytes | MD5 |
+| --- | --- | --- | ---: | --- |
+| Runtime classes, app `exen_builtins.bin`, copied to `assets/unk_4494F0.bin` | `0x4494F0` | `0x494F0` | 44,940 | `870bef21d6f269e3e3d91943c66de8e8` |
+| `core/assets/font_5x8.bin` | `0x454DD0` | `0x54DD0` | 1,280 | `b2898698a79885529d4e9bd10455e775` |
+
+The runtime blob begins with `4CVP` class records and matches the hash required by the upstream core. The font is the original 256-glyph 5 × 8 bitmap atlas.

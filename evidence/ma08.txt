@@ -1,0 +1,13 @@
+MA08 / Original help differs from observed EXN execution
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/AGENTS.md
+Selected lines: 5–12
+Source SHA-256: bbbdf1cfa36a08ccc103dc183fab8ff021a7f146f8949c43738b0c5695d6e420
+
+Original numeric controls: forward 2, backward 8, turn right 6, turn left 4,
+strafe right 1, strafe left 7, fire/action 5, grenade *, map/search #.
+Softkeys -8 left command, -7 right command stay separately accessible.
+Normal D-pad UP/DOWN/LEFT/RIGHT sends 2/8/4/6 based on live game evidence.
+Menu navigation uses UP (2) and DOWN (8).
+Original help numeric directions differ from actual EXN/framework execution;
+use captured live evidence and preserve unmodified original bytecode.
+Original keypad preserves all digits and both softkeys inline.

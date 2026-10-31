@@ -1,0 +1,32 @@
+SJ08 / Controls and the preserved local game
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 6–12, 21–37
+Source SHA-256: af548dd000764cee29629154c9d16e7623252045d304109f0512f64b1c7697c2
+
+CONTROLS
+Sonic jumps automatically. Hold LEFT or RIGHT to steer. HIGH JUMP uses the game's original SELECT / 5 input.
+Menu arrows appear only in the original menu and zone selection screens.
+Soft buttons follow the original game's current labels (Pause, Resume, Back, Select, and others).
+HOLD freezes the bridge. RESUME continues. The guest game's Pause menu remains available separately.
+Gamepad: D-pad, A for OK/high jump, Start for left soft key, B for right soft key.
+Tools > Save / share report includes battery temperature, Android thermal status, process CPU use, and game/runtime counters at capture time.
+
+[... selected excerpt ...]
+
+WHAT IS PRESERVED
+The original upload, JAR, JAM, complete logical scratchpad, English story files, original image/sound bytes, bridge sources, minimal build tools, and validation evidence.
+The DoJa .sp upload contains a 64-byte emulator header; the runtime uses its unchanged 266240-byte logical body. The download-complete sentinel is retained.
+Game data written by the original application persists to Android app-private storage.
+
+IMPLEMENTATION
+This is a DoJa Java game. Its original classes execute through small Android implementations of the specific DoJa APIs it calls.
+Original 240 × 240 graphics are presented proportionally in the Resident Evil Genesis family shell.
+Verified key use, rather than a generic gamepad layout, determines the custom controls.
+The original busy wait is paced at its intended 100 ms update interval. Lifecycle suspension excludes time spent paused from game clocks.
+Original MLD sound bytes select their converted MIDI assets by SHA-256. Android supplies MIDI instruments; exact historical phone timbre is not claimed.
+Original online ranking submission is unavailable; local play remains offline.
+
+VALIDATION
+See evidence/FINAL_VERIFICATION.txt and the tests/ directory for the final recorded checks.
+JVM validation executes the original guest using Android API shims and AWT graphics. It is not a handset test.
+Battery temperature and thermal status are captured on demand; no continuous diagnostic logging or heat-monitoring task runs during play.

@@ -1,0 +1,20 @@
+DV11 / The preceding phone run had no runtime failure
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/evidence/device_v013/Driv3r-Bridge-v0.1.3-report-20261025-192527-866.txt
+Selected lines: 7–15, 27–29
+Source SHA-256: 57e528b4ed95536146086970309253abccda11d3cbfdbaf4e4eabad14f0fb692
+
+Host failure: none
+Save error: none
+Module loaded: true; applet created: true; start accepted: true
+Original ARM steps: 59191004; timer callbacks: 1719; key events: 236
+Display updates: 774; blits: 64691; framebuffer: 120x160
+Images: 71; images decoded: 11; decode failures: 0; unknown interfaces: 0
+CPU error: null; live error: null
+Original audio play/stop requests: 1/1
+Android audio starts/stops/errors: 1/1/0; Stopped; muted=false
+
+[... selected excerpt ...]
+
+Accepted input operations (count; queue wait wall ms mean/max; processing wall ms mean/max):
+press: 118; 0.525/11; 0.059/1
+release: 118; 1.915/97; 0.085/1

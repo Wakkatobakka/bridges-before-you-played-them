@@ -1,0 +1,29 @@
+SIM04 / Original bytecode and later host gameplay survive the UI change
+Source: Sims_2_Pets_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sims_2_Pets_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 30–53
+Source SHA-256: df21d3b6994ad18ddf8c701cf53174ae79cd9df40fe9218e93db3fb0b43c9480
+
+WHAT WAS KEPT
+  - The ORIGINAL EA JAR, SHA-256:
+    2a493c4b198ba47b70f895e6daff51d262e16ac4e6e3f099bb6f1e4b56fc6af9
+  - MIDP runtime, 240x320 renderer, original game behavior, save stores,
+    sound assets, the v0.1.1 corrected short AMR voice behavior and MIDI loop.
+  - Original known mappings (see UI_INTEGRATION_v0.1.2.txt).
+  - Same Android application ID com.wakka.sims2pets and signing identity.
+
+VERIFICATION COMPLETED ON BUILD HOST
+  Android API 35 javac, D8 min API 26, signed APK with verified v2/v3
+  signatures and zip alignment; identical signing certificate to v0.1.1;
+  original game's SHA matches inside APK; actual v1.1.1 library detected
+  inside classes.dex. Focused original AMR/MIDI loop tests passed.
+  Original guest JVM execution still reaches pet-adoption gameplay room;
+  pre-existing nonfatal JVM PNG metadata warning remains.
+  Geometry checks pass in tested 360/384/412dp portrait and
+  600/720/800/915/1000/1280dp landscape configurations.
+
+REMAINING DEVICE VALIDATION
+  No Android device is attached in this build environment. The following
+  have NOT been verified on the v0.1.2 APK: physical thumb comfort, actual
+  hot switching, long touch holds, live reports, Android Back/return to Omni,
+  resumed save/game behavior, audio and graphics on Samsung hardware. Do not
+  interpret compilation, host geometry or earlier v0.1.0 video as that proof.

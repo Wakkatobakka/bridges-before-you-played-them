@@ -1,0 +1,14 @@
+R08 — The stage has 3,241 vertices and 2,497 triangles
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.3.2-decision-from-v0.3.1.txt
+Selected source lines: 3-7
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+1. The Area 5 D4D structure is valid: 57/57 objects, section checksums match.
+2. Object 52 is a 3241-entry signed-short XYZ array. Descriptor object 55 stores position ref 53 (serialized object id 52), bias [-12,16.25,7], and float scale 0.00311288796. This yields world bounds approximately X[-96,72], Y[-0.5,33], Z[-95,109], strongly indicating dequantized stage coordinates rather than arbitrary raw shorts.
+3. The eight type-0x0B records have declaredCount values all divisible by three. For 0x82 records, dataBytes == declaredCount*2 + (declaredCount/3)*4 + 4. For 0x81 records, dataBytes == declaredCount + (declaredCount/3)*4 + 4. Therefore the first declaredCount values are the actual vertex-index stream and the remainder is per-face metadata plus a four-byte trailer.
+4. Total topology is 7491 indices = 2497 triangles. v0.3.1 showed all u16 index-stream values in the 0x82 records fit the 3241-vertex array, including an observed maximum of 3240.
+5. Render those dequantized positions and only the declared index prefix as an untextured world mesh through Rockman's existing GLES/full-frame-composite path. Do not change Figure rendering or force Snowboard's software +Z convention onto Rockman's device-proven GLES camera path.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

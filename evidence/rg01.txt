@@ -1,0 +1,24 @@
+RG01 / The intake had valid raw ARM code, not a playable app
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/baseline/REGenesis_Bridge_v0.5.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.5.0_PRIVATE/history/Resident_Evil_Genesis_Bridge_Intake_v0.1.0_PRIVATE.zip ! README_FIRST.txt
+Selected lines: 11–18, 28–35
+Source SHA-256: aea99f693a375c5191433d0d0b2cf54fcece282a7b43adaa9f155136f8364890
+
+PROVEN:
+- Complete expected trio for a BREW title (module, manifest, applet resources).
+- Raw ARM little-endian code (non-ELF); preserved byte-for-byte.
+- PNG images: 107 of 107 parsed and image-decoded; no corruption found.
+- BMP icons from MIF: 3 of 3 image-decoded.
+- MIDI: 5 valid file structures extracted directly from BAR.
+- Onboard strings identify Resident Evil Genesis, 2007 Capcom copyright, original controls, save/load routines, gameplay dialogue.
+- 32-bit BREW code still needs a BREW runtime compatible with modern Android 64-bit hardware.
+
+[... selected excerpt ...]
+
+SAVING: binary contains GAME SAVED/GAME LOADED text and save/load code paths. That does NOT establish Android persistence until real runtime tests.
+AUDIO: five MIDI sequences recovered. MIDI playback plumbing is a separate bridge task.
+GRAPHICS: PNGs commonly contain solid magenta chroma-key pixels; raw art not damaged and remains UNMODIFIED.
+
+BRIDGE ROUTE:
+1. Reuse Rush Marine's proven game-archive import, verification, Android shell, touch/controller mapping, and diagnostics only after the runtime source is inspected.
+2. Determine whether the shared runtime can execute this exact raw 32-bit BREW .mod on ARM64. Do not assume 32-bit native code simply loads into Android ARM64 process.
+3. Implement or adapt AEE interfaces needed by REGenesis using logs/profiling, not guessed stubs.

@@ -1,0 +1,24 @@
+BA08 / Current handoff repeats original execution on reconstructed inputs
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/VERIFICATION.txt
+Selected lines: 10–21, 24–27
+Source SHA-256: b20f5aa98942d0cd9715673fc9eb756c1f500af8f59644e5f2d91578ee169ae4
+
+- All 50 prepared sounds reconstructed by the unchanged Omni preparation engine;
+  all three MIDI files and all 47 PCM sample streams match the existing cache.
+- 178 checks through unchanged Omni 0.5.7 production classes and their named host
+  service adapters. Tested strict inventory, no BIA-specific fallback rule, private
+  APK intake, v0.1.2-to-v0.1.3 save identity, fresh public import of BIA240.rar,
+  original/derived stripping, reconstruction, remove/restart/reimport, preserved
+  real data.sav and carry-forward through a later unrelated export.
+- Original BIA first-mission/gameplay/save/reload acceptance uses the newly
+  reconstructed public-import assets. Current result is in original-reconstructed.log.
+- The complete shared UI source, BiaControls and MainActivity are byte-identical
+  to v0.1.2. The original interpreter and 11 native runtime payloads are unchanged.
+  All 50 desktop audio sample streams are unchanged; one cache filename is aliased.
+
+[... selected excerpt ...]
+
+Historical shared-kit geometry/framework evidence remains labeled by its version.
+No handset/ART-hosted Omni acceptance occurred here. Host service adapters are
+explicit, and host preparation/native execution do not establish phone controls,
+media playback, Downloads export, thermal performance or full campaign completion.

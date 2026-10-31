@@ -1,0 +1,13 @@
+DI06 / Native indexed saves and their recorded boundary
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 34–41
+Source SHA-256: 7c1efb6022a282f6d1a9b16b5ff40aa723f948b2ee488a7bcfdc6bda3eaed6ea
+
+REPORTS / SAVES
+SAVE REPORT independently exports a .txt to Downloads/Dragon Island Bridge/.
+Reports read cached real execution state and do not wait for the guest worker.
+Android 8/9 may request legacy storage permission. Failed exports stay failures;
+private fault evidence is retained. Phone Downloads export remains untested.
+Original indexed databases set/high/save/tut are persisted atomically under the
+bridge's own files directory. The original settings UI save/read cycle is tested;
+complete level-end progress save/load has not yet been reached and verified.

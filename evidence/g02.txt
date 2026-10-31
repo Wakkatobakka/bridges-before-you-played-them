@@ -1,0 +1,24 @@
+G02 — Why a desktop compile missed an Android API failure
+Evidence type: Regression investigation
+Source: God of War: Betrayal v0.1.3 / VERIFICATION.txt
+Selected source lines: 4-18
+
+
+
+The attached SM-S938U Android 17 reports show frames=0 and NoSuchMethodError:
+getClassLoadingLock(String), in OriginalGameLoader.loadClass at line 41.
+The Android SDK ClassLoader API omits that desktop-JDK method. javac with only
+-classpath android.jar had resolved java.lang.ClassLoader from the desktop JDK.
+The prior Engine framework replay uses host classfiles and skips device DEX
+installation, so its passing result never verified this failing path.
+
+The loader now synchronizes its own monitor while looking up/defining the six
+original game classes. Class selection, resolution, resource delegation and
+read-only content-addressed DEX cache behavior are preserved.
+BUILD_LINUX.sh requires tools/check_loader_android_api.py, compiling the loader
+with Android's actual boot-class API. The unchanged v0.1.2 source fails this
+check at the exact reported method; the v0.1.3 source passes. The signed APK's
+bridge DEX contains no getClassLoadingLock method reference.
+This is compile/API evidence, not actual Android DEX execution.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

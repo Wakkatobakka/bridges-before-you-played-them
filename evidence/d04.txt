@@ -1,0 +1,10 @@
+D04 — The horizontal camera rocker
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.4-report.txt
+Selected source lines: 26-26
+
+
+
+0.000  CONTROL MODE    Movement + horizontal camera rocker; walking assist=true; repeat=true; reverse=false
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,29 @@
+DO02 / The original clock spins while the logo waits
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/TECHNICAL_HANDOFF.txt
+Selected lines: 7–30
+Source SHA-256: d4c8909c3bcc93a5bd45a7b62b9e874efed919a56917a638cceceff66dc8e424
+
+EXECUTION
+All original game methods run as Java/Dex against a targeted MIDP layer.
+Original assets remain byte-identical. No gameplay is reimplemented.
+D8 keeps bridge/MIDP/UI code in the main DEX. Original classes are separate
+prepared assets: guest.dex from the unchanged JAR, and clock.dex from d.class.
+GuestLoader loads clock.dex before guest.dex in one guest class namespace;
+all original reflection uses Platform.guestClass. Android/MIDP stays in the
+parent loader. Content-addressed code-cache copies are read-only before loading.
+Resources are packaged at the APK classpath root, preserving resource lookup.
+The supplied original JAR is retained unchanged under original/game.jar.
+
+One explicit platform API redirect is applied to d.class in a generated JAR:
+System.currentTimeMillis() becomes bridge.GameClock.currentTimeMillis(),
+which delegates to the unchanged blocking Platform clock. The constant
+pool method owner changes; every original instruction, method body and all
+other constant-pool entries remain intact. tools/prepare_game.py owns this.
+The original d.run() repeatedly polls time without sleeping, including during
+3-second logos. The host clock blocks for 1 ms per poll and gates on foreground
+state. It returns real wall time and keeps the original per-scene q deadlines
+(75 ms rooftops, 115 ms subway, 68 ms first boss in the tested states).
+The separate original gameplay clock calls outside d.class remain unchanged.
+A host comparison of the actual logo timer found 99.97% of one CPU core for
+original busy waiting and 1.60% with the blocking host clock; first-logo pixels
+were identical. This is timer-thread host evidence, not phone thermal evidence.

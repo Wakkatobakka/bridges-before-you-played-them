@@ -1,0 +1,34 @@
+G05 — The final handoff still leaves phone acceptance open
+Evidence type: Checkpoint summary
+Source: God of War: Betrayal v0.1.3 / VERIFICATION.txt
+Selected source lines: 20-38, 50-52
+
+
+
+CURRENT VALIDATION
+12 Robolectric/API34 UI tests pass: cold UI construction, native-sized viewport,
+input ownership, inline control switching, softkey labels, Back/report wiring,
+restoration utility and saved preference. No shared UI kit source was changed.
+2 real Engine/resource framework tests pass: original rendered frames, native
+shutdown, background/resume, responsive report and saved sentinel/re-entry;
+parent stream delegation for Omni's imported original-root resources.
+MediaPlayer uses a framework shadow. No audible output is claimed.
+
+The real original host replay passes its first-level movement, jump, block,
+Down grab and finisher, weapon and upgrades actions. It also checks optional
+restoration and original Sound off/on, background/resume and original worker
+shutdown/static re-entry, with zero runtime faults. It sends ordinary input
+without writing health, position, progress, RNG or original timing state.
+
+The actual Omni 0.5.7 generic Python preparer and GuestCompiler reproduce all
+six prepared guest DEX files exactly. The stripped capsule leaves original and
+derived bytes empty/absent and includes no original class definitions in the
+bridge DEX. Production phone import/two cumulative exports remain pending.
+
+[... selected excerpt ...]
+
+Physical-phone v0.1.3 install/cold DEX startup, audible restored combat effects,
+touch comfort/Downloads/save-load and production Omni acceptance. Full game
+completion and the native rage-specific audio path have not been played.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

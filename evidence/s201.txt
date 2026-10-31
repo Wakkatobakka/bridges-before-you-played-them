@@ -1,0 +1,8 @@
+S201 / Katamari foundation loads the game’s own Micro3D module
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/IMPLEMENTATION.md
+Selected lines: 3–5
+Source SHA-256: 98aac0fdbe161e175bfeb9bc8fd7f2b50aec259818cf317ec924f84f8bc98517
+
+Base: Katamari v0.1.0 CPU/BREW interpreter and Genesis-style Android presentation. No unrelated game is packaged.
+
+The original game module maps at 0x00100000. Its CreateInstance comparison establishes class ID 0x010279D7. When it requests Micro3D class 0x0101F0AA, the host maps the supplied `imicro3d.mod` at 0x00300000 with its own system-table prefix and invokes its original AEEMod_Load and module factory. Nested guest invocations preserve outer registers, flags, instruction mode and use a lower stack. No module instructions or game state are patched.

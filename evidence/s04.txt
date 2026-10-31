@@ -1,0 +1,29 @@
+S04 — Two version lines describe two layers
+Evidence type: Checkpoint summary
+Source: DeadShot Omni v0.1.1 / README_FIRST.txt
+Selected source lines: 8-14, 41-50
+
+
+
+PLAY DEADSHOT starts the preserved 0.0.12 runtime. The shared launcher, Tools,
+Menu/Pause/Keypad/Report toolbar, game/status slots and full native keypad remain
+the same shared source accepted in the Snowboarding pilot. The custom control
+deck is DeadShot-specific. Controls retain DeadShot's original native map and
+four-way/eight-way game-selected movement modes.
+The native-keypad fallback uses the shared keypad with DeadShot's key numbers.
+The original four MIDI resources remain; no audio decoder was replaced.
+
+[... selected excerpt ...]
+
+host build-tools. Set ANDROID_JAR to API 35 android.jar and ANDROID_BUILD_TOOLS
+to the host build-tools/35.0.0 directory. Run python3 tools/build.py, then
+python3 tools/check.py. Requires Python 3 and Java 17+. No Gradle or network
+resolution is required. Linux was tested; Windows build support is untested.
+The script generates com.wakka.deadshot.R for the original MIDI resource calls,
+while the installed package remains com.wakka.omnibridge.deadshot.
+
+STATE
+0.1.1 is a bounded custom-control candidate built from the owner-preferred 0.1.0.
+Only profiles/deadshot/.../GameView.java control geometry/presentation is intentionally
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

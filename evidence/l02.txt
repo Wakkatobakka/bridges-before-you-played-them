@@ -1,0 +1,5 @@
+L02 / The ExEn push and the ongoing Nokia runtime quest
+Source: Archive-building conversation / owner explanation
+Context: Current owner explanation of motivation and ongoing work. It does not establish a completed independent Nokia runtime or a precise release chronology. The source wording is retained.
+
+the big Exen push was in response to me pushing our all of the BREW and J2ME games lol. also Ashen and finding out about nokia games runtimes being interwined witht the game software put me on a quest to make my own nokia runtime lol im still in the process of doing it. bu tin the mean time im a stop gag like with exen.

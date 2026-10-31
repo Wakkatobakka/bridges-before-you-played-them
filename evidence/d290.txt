@@ -1,0 +1,12 @@
+D290 / Historical image / DOOM II RPG
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE/evidence/original-native-acceptance/move-turn-fire.png
+Source SHA-256: 6b808dea94e4383167a40e0d3db4535f382f0289b0a7fe35a913554a3e40302e
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Doom_II_RPG_Bridge_v0.1.1_PRIVATE/evidence/original-native-acceptance/move-turn-fire.png
+SHA-256: 6b808dea94e4383167a40e0d3db4535f382f0289b0a7fe35a913554a3e40302e
+
+The original 240×400 corridor and HUD after movement, turning and firing. Historical 0.1.0 engine output retained in the later checkpoint, not a phone screenshot.
+
+Scope: Unchanged historical desktop original-runtime framebuffer. Visually inspected: game-only pixels, no personal interface and no EXIF. Not a physical-phone screenshot.

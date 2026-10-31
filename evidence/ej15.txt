@@ -1,0 +1,21 @@
+EJ15 / The shared shell keeps Jim’s original actions
+Source: Earthworm_Jim_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 3–18
+Source SHA-256: 8aea64745ec1cc2b82105338c050becdcba0b7cd762f58784e4d3d725563d99b
+
+Normalized to Wakka Bridge Gameplay UI Kit v1.1.2. Real shared source is
+compiled into the APK. Install over v0.1.0; package, signing and game-save
+location are preserved. The original runtime, all payloads, audio assets,
+codec acceleration and timing fixes match the original checkpoint.
+
+D-pad: left/right moves; up jumps; down squats. Continuous sliding and
+simultaneous cardinal contacts are preserved. WHIP / OK taps whip/hook;
+hold for Fire. 1/2/3 retain left/vertical/right jump inputs. L SOFT, R SOFT
+and CLR / BACK remain original keys. Controller mappings are preserved.
+
+The shared ORIGINAL KEYPAD / D-PAD RETURN switch changes the inline panel
+without pausing, restarting or replacing the renderer. Keypad mode retains
+the distinct square D-pad, primary action, CLR and the complete original
+numeric/softkey cluster. Owned touch inputs release safely while physical
+holds survive switching. Minimum control width 312dp; panel height 204dp
+normal and 272dp keypad. Every key >=48dp; pad 144dp square.

@@ -1,0 +1,25 @@
+M02 — Original table parser checks; rendering remains a phone test
+Evidence type: Host verification
+Source: Monster Hunter i v0.1.4 / PHONE_TEXT_FIX_v0.1.2.md
+Selected source lines: 27-43
+
+
+
+## Independent verification
+
+`LegacyTextChecks.java` loads the **unchanged original `a.class` from both EN/JP game JARs** and feeds it original and adapted tables. It checks every row:
+
+- Numeric field bytes and values stay identical.
+- Original row counts and column types stay identical.
+- The original game's String-returning table method reads the intended CP932 text as correct Unicode from the adapted bytes.
+- The production JarInflater announces and delivers the actual adapted size/content.
+- Plain dialogue/manual/UI resource text, CR/LF and commands stay equivalent.
+- Unsupported names and binary payloads remain untouched.
+
+Recorded samples now decode as `≪On≫`, `≪Medium≫`, `≪Leather Set≫`, and `Basics: Raw Meat`. Japanese samples decode as `今日は何のようじゃ？`, `≪あり≫`, `≪ 中 ≫`, and the original Japanese quest title. See `verification/LEGACY_TEXT_CHECKS_v0.1.2.txt`.
+
+All title/engine Java sources compile against Android API35. These host tests establish charset/schema/resource behavior; the updated phone render remains a separate owner test.
+
+## Presentation/control observations
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

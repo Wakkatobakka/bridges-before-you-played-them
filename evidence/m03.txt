@@ -1,0 +1,32 @@
+M03 — More forgiving targets without longer key holds
+Evidence type: Control design notes
+Source: Monster Hunter i v0.1.4 / CONTROL_FEEDBACK_v0.1.4.md
+Selected source lines: 3-13, 17-21, 33-33
+
+
+
+The owner's0.1.3 phone feedback accepts the two-thumb layout and asks for larger, more forgiving buttons with a press that can be felt. Recording1000098236 shows ordinary hunt attacks, camera turns and native Menu/Items use with the portrait grid. This revision is focused on the standalone title.
+
+## Space and touch ownership
+
+The deck remains248dp tall and preserves the accepted rows: Camera left/right, Guard/Special, Sprint/Attack, OK/Center. Movement stays on the left; Menu and Items remain below it. The complete240x320 stage, keypad, native actions, directions, camera, saves and Sprint release rules are retained.
+
+Right buttons use the available half-width instead of narrow squares. At411dp width each face is about93×56dp, compared with about54×54dp before. At320dp they are70×56dp;600dp uses140×56dp. The visible column gap is8dp and row gap4dp. Every face stays inside the deck and separate from the other faces. Menu/Items also use wider cells. Normal labels increase to16sp and Attack18sp where available width permits.
+
+A new touch may land up to12dp outside a pad/button boundary. The closest boundary owns the touch. Exact distance ties use a fixed order, so a gap has one deterministic owner. Buttons near a neighbor do not claim the neighbor's face. Remote unused space and starts outside the View remain inactive.
+
+Ownership is decided on touch-down and retained until lift or cancellation. Dragging over another button or changing a saved native binding while held cannot switch the captured key. A missed touch cannot acquire a button by sliding onto it. Duplicate down events for an existing contact do not repeat input or feedback. Movement continues to update the original non-inverted eight-way mask and neutral deadzone.
+
+[... selected excerpt ...]
+
+A pressed action has a bright mint face, light border and dark text. The movement pad highlights its border and active directions, and its thumb marker follows the captured touch. A latched Sprint retains its green **ON** state; a momentary Attack remains clearly separate.
+
+Fast taps keep a visual highlight for100ms from touch-down so a tap can be seen even if its lift arrives before the next screen draw. Native key-up still occurs immediately on lift. This feedback does not hold keys, repeat events or publish extra game frames. The control View schedules its own short animation redraws and stops them when the flash expires. Cancellation, pause/background and view/keypad changes clear contacts, pad feedback and pending flashes through the existing release-input path.
+
+Each accepted new contact requests Android's standard `View.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)` once. Movement, held buttons, duplicate events and lift do not generate repeated vibration. The one-argument call uses no ignore-setting flags and needs no additional permission. Android handles device support and the user's touch-feedback/View settings, as described in the [official Android haptic feedback documentation](https://developer.android.com/develop/ui/views/haptics/haptic-feedback). Rejected targets and paused/failed input do not request haptics or show a press flash.
+
+[... selected excerpt ...]
+
+The preview and framework stand-ins establish geometry, input timing and requested feedback behavior. They are not phone screenshots or physical vibration proof. The owner's next ordinary phone play establishes actual comfort and device haptic feel.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

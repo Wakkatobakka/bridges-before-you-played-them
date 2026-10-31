@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="We had a Japanese game running in complete silence. Getting the rest back meant building on an English patch, protecting checkpoints, trying different ways to aim, and finding several ways for audio to fail."><meta property="og:title" content="Dirge of Cerberus: Lost Episode"><meta property="og:description" content="We had a Japanese game running in complete silence. Getting the rest back meant building on an English patch, protecting checkpoints, trying different ways to aim, and finding several ways for audio to fail."><meta property="og:type" content="website"><title>Dirge of Cerberus: Lost Episode · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / Dirge of Cerberus: Lost Episode</div><div class="eyebrow">DoJa / Development history</div><h1>First came the silence.</h1><p class="dek">We had a Japanese game running in complete silence. Getting the rest back meant building on an English patch, protecting checkpoints, trying different ways to aim, and finding several ways for audio to fail.</p><div class="article-meta"><span>Coverage: 0.1.0 → 0.3.1</span><span>4 min read</span><span>16 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#first-footing">First footing</a></li><li><a href="#the-wrong-kind-of-success">The wrong kind of success</a></li><li><a href="#the-other-thumb">Meanwhile, the other thumb had opinions</a></li><li><a href="#getting-out-of-the-way">Getting the bridge out of the way</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">The first report has 3,425 submitted frames, 54,599 draw calls, and no sound. We had Dirge running. Playing it comfortably on my phone would take more work than getting those first frames onto the screen.</p><section id="first-footing"><h2>First footing</h2><p>At 0.1.0, we could reach <code>VincentApplication.start</code> and submit thousands of frames. The text was Japanese, the report said “silent diagnostic mode,” and progression saving was still an open question. Those were the next things waiting for us.<a class="cite" href="#source-D01" data-source="D01" aria-label="Open evidence D01">D01</a></p><p>In 0.1.1, we integrated the verified English 1.0 package, with the patch credited to <strong>TurquoiseHammer / Yuvi</strong>. Their work gave us an English version to build on.<a class="cite" href="#source-D02" data-source="D02" aria-label="Open evidence D02">D02</a></p><p>Then we needed to protect progress. The 0.1.2 notes keep the original game’s checkpoint system and record local fresh-process Continue testing. A room reached in one session needed to remain reachable after closing the bridge. The exact phone close/reopen sequence still needed testing, but we were following the game’s checkpoints rather than inventing save states.<a class="cite" href="#source-D03" data-source="D03" aria-label="Open evidence D03">D03</a></p></section><section id="the-wrong-kind-of-success"><h2>The wrong kind of success</h2><p>The internal 0.1.6 build finally decodes an MLD. It turns 166,032 bytes into 663,160 PCM samples at 8 kHz. That sounds like the audio breakthrough—until the very next line.<a class="cite" href="#source-D06" data-source="D06" aria-label="Open evidence D06">D06</a></p><div class="report-sample"><div class="eyebrow">Two consecutive lines / internal 0.1.6 <a class="cite" href="#source-D06" data-source="D06" aria-label="Open evidence D06">D06</a></div><pre>AUDIO DECODE  Decoded 166032 byte MLD to 663160 PCM samples @ 8000 Hz
+AUDIO ERROR   play failed: IOException: AudioTrack initialization failed</pre></div><p>The decoder had done its job. Android’s output track had refused to initialize. “Audio enabled” would have been an impressively unhelpful way to describe that result.</p><p>The next recorded output path uses a 48 kHz mono streaming AudioTrack. The decoded samples are resampled, queued and started. In 0.1.7, the log finally carries both the start and the completion of the stream. The useful difference is down in the events: the sound has made it through the backend instead of stopping at a successful decode.<a class="cite" href="#source-D07" data-source="D07" aria-label="Open evidence D07">D07</a></p><p>Then the short sounds find a different way to be awkward. A stream that works for a long track does not automatically finish a tiny effect. In 0.2.0, a 3,048-frame sound is padded with silence to a stream length of 11,520 frames; that selected effect now starts and completes. The original audible portion stays intact.<a class="cite" href="#source-D10" data-source="D10" aria-label="Open evidence D10">D10</a></p><p>By 0.2.1, the log follows active audio into pause and back out again. Host pause, audio pause, host resume, audio resume: another small chain that needed to work before the recovered sound could simply belong to the game.<a class="cite" href="#source-D11" data-source="D11" aria-label="Open evidence D11">D11</a></p></section><section id="the-other-thumb"><h2>Meanwhile, the other thumb had opinions</h2><p>We changed our minds about the controls more than once. Version 0.1.4 has a horizontal camera rocker. Version 0.1.5 tries a contextual camera/aim pad. By 0.1.8, we were back to compact four-way movement with horizontal aim. Each layout was a different attempt at making the game work under my thumbs.<a class="cite" href="#source-D04" data-source="D04" aria-label="Open evidence D04">D04</a><a class="cite" href="#source-D05" data-source="D05" aria-label="Open evidence D05">D05</a><a class="cite" href="#source-D08" data-source="D08" aria-label="Open evidence D08">D08</a></p><p>In 0.1.9, the right-thumb trace takes a particularly useful turn: it forwards the original RIGHT and LEFT D-pad aim inputs. The game gets to do its own aiming through a more comfortable touch surface.<a class="cite" href="#source-D09" data-source="D09" aria-label="Open evidence D09">D09</a></p><p>There is still a wonderfully irritating bug left for the later preservation notes to explain. Compile-only camera stubs carried stale pad constants, and the compiler baked those numbers into the touch-input code. The running camera used different numbers. A right-side touch could wind up meaning left—or vanish into the mismatch.<a class="cite" href="#source-D14" data-source="D14" aria-label="Open evidence D14">D14</a></p><p>The 0.2.4 repair changes those constants into runtime field reads and drops the failed Action-to-Aim pointer handoff. Action and aim become separate controls again. A problem that looked like a bad touch idea had a very specific extra cause hiding in the compiled interface.<a class="cite" href="#source-D14" data-source="D14" aria-label="Open evidence D14">D14</a></p></section><section id="getting-out-of-the-way"><h2>Getting the bridge out of the way</h2><p>The 0.3.0 pass brings in the shared gameplay UI: the original 240×320 view, a square sliding D-pad, separate horizontal aim, a prominent Action button and an inline original keypad. The workbench can change around the recovered game without rebuilding its working runtime; the handoff checks 662 retained methods after packaging.<a class="cite" href="#source-D12" data-source="D12" aria-label="Open evidence D12">D12</a></p><p>The later handoff records my confirmation that 0.3.0 worked. I then asked to get the entrance dashboard out of the way and open straight into gameplay when the data was present. Imports and the checkpoint vault moved into utilities. The 0.3.1 record keeps 414 selected gameplay/UI methods from the build I tested while narrowing the change to that routing.<a class="cite" href="#source-D13" data-source="D13" aria-label="Open evidence D13">D13</a></p><p>We’d started by trying to get Dirge to execute. By this point, I was asking the bridge to get out of the way so I could play it. The saved handoff ends with that new direct-launch flow still waiting for its phone check.<a class="cite" href="#source-D13" data-source="D13" aria-label="Open evidence D13">D13</a></p><details class="records-note"><summary>About these records</summary><p>This chapter follows 14 report exports and the later preservation handoffs through 0.3.1. Two exports extend one shared session; they are retained without counting two independent runs. Backend audio events do not replace listening evidence. One separately retrieved Dirge-labeled report invokes Rockman code, so it stays outside this failure timeline. Exact export dates are not consistently established. The receipts preserve those distinctions without interrupting each turn of the story.<a class="cite" href="#source-D15" data-source="D15" aria-label="Open evidence D15">D15</a><a class="cite" href="#source-D16" data-source="D16" aria-label="Open evidence D16">D16</a></p></details></section><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected report lines, investigation notes and recorded feedback behind the story. Each receipt keeps its source and context.</p><details class="source-item" id="source-D01"><summary><span class="source-title">D01 / The first report: execution, silence, Japanese text</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.0-report.txt · selected lines 9–11, 13–17, 4540</p><pre>Audio: MLD/MFi synthesis NOT implemented (silent diagnostic mode)
+English patch: NOT applied; original Japanese game
+Save warning: original config has savingEnabled=false; progression saving NOT verified
+
+[... selected excerpt ...]
+
+Frames submitted: 3425
+Draw calls: 54599
+Textures generated: 236
+Resource opens: 201
+GL errors: 0
+
+[... selected excerpt ...]
+
+   0.033  GAME CODE       VincentApplication.start</pre><div class="source-tools"><a href="../../evidence/d01.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D01" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D02"><summary><span class="source-title">D02 / English 1.0 enters the running game</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.1-report.txt · selected lines 9–10, 33–36</p><p>Translation credited in the report to TurquoiseHammer / Yuvi.</p><pre>Audio: MLD/MFi synthesis NOT implemented (silent diagnostic mode)
+English patch: English 1.0 (TurquoiseHammer / Yuvi) applied; resource retains japanese.dat filename
+
+[... selected excerpt ...]
+
+   0.027  DEX             Loaded verified English 1.0 game DEX in memory; English-patched JAR retained for resources
+   0.028  GAME CODE       VincentApplication.start
+   0.028  RESOURCE        class_list.txt
+   0.038  BOOT            Game start returned; game-owned render thread is running</pre><div class="source-tools"><a href="../../evidence/d02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D03"><summary><span class="source-title">D03 / The save claim keeps its limits</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.2-report.txt · selected lines 11</p><p>This line describes local verification; it does not document a physical close/reopen sequence.</p><pre>Saves: original checkpoint system unchanged; fresh-process Continue verified locally; Android close/reopen validation still required. Not a save-state system.</pre><div class="source-tools"><a href="../../evidence/d03.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D03" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D04"><summary><span class="source-title">D04 / The horizontal camera rocker</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.4-report.txt · selected lines 26</p><pre>0.000  CONTROL MODE    Movement + horizontal camera rocker; walking assist=true; repeat=true; reverse=false</pre><div class="source-tools"><a href="../../evidence/d04.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D04" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D05"><summary><span class="source-title">D05 / The contextual camera/aim experiment</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.5-report.txt · selected lines 26</p><pre>0.000  CONTROL MODE    Movement + context camera/aim pad; walking assist=true; repeat=true; reverse=false</pre><div class="source-tools"><a href="../../evidence/d05.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D05" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D06"><summary><span class="source-title">D06 / PCM is decoded; Android output still fails</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.6-report.txt · selected lines 694–695</p><pre>3.887  AUDIO DECODE    Decoded 166032 byte MLD to 663160 PCM samples @ 8000 Hz
+   3.905  AUDIO ERROR     play failed: IOException: AudioTrack initialization failed</pre><div class="source-tools"><a href="../../evidence/d06.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D06" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D07"><summary><span class="source-title">D07 / Streaming output starts and reaches its end</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.7-report.txt · selected lines 593–596, 612</p><p>Backend progress is observed. Audible fidelity needs listening evidence.</p><pre>3.899  AUDIO TRACK     48 kHz mono streaming AudioTrack initialized; minBuffer=11520 bytes; buffer=23040 bytes
+   4.031  AUDIO DECODE    Decoded 166032 byte MLD to 663160 PCM samples @ 8000 Hz
+   4.058  AUDIO QUEUE     Resampled MLD 8000 -&gt; 48000 Hz; output frames=3978960
+   4.089  AUDIO PLAY      48 kHz streamed MLD playback started; frames=3978960 volume=100
+
+[... selected excerpt ...]
+
+  87.068  AUDIO COMPLETE  48 kHz streamed MLD playback reached end</pre><div class="source-tools"><a href="../../evidence/d07.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D07" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D08"><summary><span class="source-title">D08 / Four-way movement and horizontal aim</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.8-report.txt · selected lines 26</p><pre>0.000  CONTROL MODE    Compact 4-way baseline + horizontal camera/aim; walking assist=true; repeat=true; camera reverse=false; aim reverseX=false</pre><div class="source-tools"><a href="../../evidence/d08.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D08" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D09"><summary><span class="source-title">D09 / Right-thumb aim forwards original direction keys</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.1.9-report.txt · selected lines 880–881</p><pre>25.043  AIM NATIVE      Right thumb -&gt; original RIGHT D-pad aim; changes=1
+  25.771  AIM NATIVE      Right thumb -&gt; original LEFT D-pad aim; changes=2</pre><div class="source-tools"><a href="../../evidence/d09.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D09" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D10"><summary><span class="source-title">D10 / A short effect gets a complete output stream</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.2.0-report.txt · selected lines 699–702</p><pre>6.731  AUDIO PAD       Short MLD padded with silence for Android stream completion; audibleFrames=3048 streamFrames=11520
+   6.731  AUDIO QUEUE     Resampled MLD 8000 -&gt; 48000 Hz; audibleFrames=3048 streamFrames=11520
+   6.734  AUDIO PLAY      48 kHz streamed MLD playback started; audibleFrames=3048 streamFrames=11520 volume=100
+   6.960  AUDIO COMPLETE  48 kHz streamed MLD playback reached end; audibleFrames=3048 streamFrames=11520</pre><div class="source-tools"><a href="../../evidence/d10.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D10" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D11"><summary><span class="source-title">D11 / Host pause and audio pause move together</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Dirge-Bridge-0.2.1-report.txt · selected lines 1079–1083</p><pre>92.958  SESSION PAUSE   Paused (background, menu, surface, or user)
+  92.974  AUDIO SESSION PAUSE Host paused; playbackHead=192000 audibleFrames=3716904 streamFrames=3716904
+  93.872  SESSION PAUSE   Resumed
+  93.873  CONTROL CONTEXT Right pad context unavailable / game-owned
+  93.892  AUDIO SESSION RESUME Host resumed; playbackHead=192960</pre><div class="source-tools"><a href="../../evidence/d11.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D11" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D12"><summary><span class="source-title">D12 / Shared gameplay UI; retained runtime</span><span class="source-kind">Checkpoint verification notes</span></summary><div class="source-content"><p>Source: Dirge_Bridge_v0.3.0_PRIVATE_CHECKPOINT.zip :: Dirge_Bridge_v0.3.0_PRIVATE/README_FIRST.txt · selected lines 11–20, 29–40, 48–59</p><pre>WHAT CHANGED
+- Real Wakka Gameplay UI Kit v1.1.1 embedded, including its cold-start repair.
+- Actual launcher icon, title, DoJa label, SAVE REPORT and utilities header.
+- Same original 240x320 renderer, fitted without distortion or game overlays.
+- Square continuous four-way D-pad, separate horizontal camera/weapon aim,
+  prominent Action, three weapon buttons, original Select/Back and Center.
+- One visible tap to the inline original keypad and back. The original D-pad
+  and Action remain available alongside digits, * and #. Same live viewport.
+- Owned touch input, duplicate bindings, controller holds across switches,
+  release events in utilities, cancellation, pause and teardown.
+
+[... selected excerpt ...]
+
+PRESERVED RUNTIME
+The original host APK is in baseline/Dirge_Bridge_v0.2.4.apk. Its old
+GameActivity family is exposed as BaseActivity and inherited by the new UI
+Activity. Existing runtime method bodies are not recompiled or rewritten.
+All 662 retained methods match after final D8 packaging, including original
+boot, surface, graphics, audio, input sampling, aim repair, saves and teardown.
+
+Only the existing MainActivity family (version/routing) and TwinLayout family
+(touch geometry) are replaced. TwinInput and CameraAssist are preserved from
+v0.2.4, including the runtime PAD_LEFT/PAD_RIGHT field reads that repaired aim.
+Old runtime report sections still identify their frozen v0.2.4 baseline; the
+new report header identifies app 0.3.0 / UI Kit 1.1.1 explicitly.
+
+[... selected excerpt ...]
+
+VERIFICATION
+- Final APK compiles, D8 merges, signs with the prior certificate and aligns.
+- All original assets and the exact 19-file payload allowlist are unchanged.
+- All 662 retained runtime methods: identical resolved DEX instructions,
+  register counts and exception tables after packaging.
+- Ten final-APK Android API 34 framework checks pass under Robolectric with
+  native graphics. Actual packaged DEX is translated to JVM for these checks;
+  the original-game boot boundary is deferred, not simulated. Checks cover
+  real Activity startup, attachment, measurement, both control modes, held
+  inputs, three-pointer action/movement/aim, action-to-aim separation, physical
+  key-up in utilities, safe insets, portrait/landscape, drawing, Back, cleanup,
+  pause/resume and successful/failed report writing through a test provider.</pre><div class="source-tools"><a href="../../evidence/d12.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D12" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D13"><summary><span class="source-title">D13 / Direct launch, preserved gameplay, explicit phone-test boundary</span><span class="source-kind">Checkpoint verification notes</span></summary><div class="source-content"><p>Source: Dirge_Bridge_v0.3.1_PRIVATE_CHECKPOINT.zip :: Dirge_Bridge_v0.3.1_PRIVATE/README_FIRST.txt · selected lines 9–13, 27–32, 43–60, 62–66</p><p>This later handoff records owner confirmation of 0.3.0. It does not establish phone acceptance of 0.3.1.</p><pre>WHAT CHANGED
+- With game data installed, opening Dirge goes directly to gameplay. The
+  Gothic launcher/dashboard and ENTER LOST EPISODE step are removed.
+- Without game data, a minimal setup page imports the same English data ZIP.
+  Successful import enters gameplay automatically.
+
+[... selected excerpt ...]
+
+WORKING GAMEPLAY PRESERVED
+The owner reported v0.3.0 working well before this narrow routing change.
+The v1.1.1 UI Kit, custom controls, original-keypad switch, viewport, physical
+input handling, touch ownership, camera/aim behavior, audio, saves and report
+export are retained. The supplied newer v1.1.2 kit was deliberately not
+introduced during this launcher-only pass.
+
+[... selected excerpt ...]
+
+VERIFICATION FOR THIS BUILD
+- Final APK compiled, D8 merged, aligned and verified with the same signer.
+- Original assets and exact 19-file payload allowlist unchanged.
+- 662 retained original runtime methods identical after final packaging:
+  resolved DEX instructions, register counts and exception tables.
+- 414 selected gameplay/UI methods identical to owner-tested v0.3.0.
+  DirgeControls.java and TwinLayout.java are byte-for-byte unchanged.
+- 18 Android API 34 framework tests pass with Robolectric native graphics,
+  using the final packaged APK classes. Existing input/lifecycle/report
+  checks plus direct launch, missing-data setup, utility routing and cleanup,
+  rejected replacement preserving existing files, session lock coordination,
+  checkpoint export/restore and return-to-game routing are covered.
+- The actual original-game boot boundary is deferred in framework tests.
+  Presence-only game-data fixtures and checkpoint fixtures are synthetic;
+  they do not represent playable original data or real progress. Checkpoint
+  ZIP export/restore does execute the retained original SaveVault code.
+- Earlier v0.3.0 kit/input/audio evidence is retained with its original labels
+  and is not presented as a fresh v0.3.1 run.
+
+[... selected excerpt ...]
+
+DEVICE STATUS
+The owner confirmed v0.3.0 works. This v0.3.1 APK has not been run on a
+physical phone in this work session. Its direct-launch flow, first real data
+import, storage picker/Continue behavior and caller/Omni return path still
+need device confirmation. No device gameplay or progress is fabricated.</pre><div class="source-tools"><a href="../../evidence/d13.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D13" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D14"><summary><span class="source-title">D14 / The 0.2.4 aim repair: a mismatch in compiled constants</span><span class="source-kind">Checkpoint verification notes</span></summary><div class="source-content"><p>Source: Dirge v0.2.4 / VERIFICATION-SUMMARY-v0.2.4.txt · selected lines 3–21, 32–40</p><p>The note states that physical-device execution of 0.2.4 had not yet been performed.</p><pre>Scope
+- Bounded Weapon Aim repair only.
+- Removed the failed v0.2.3 Action -&gt; Weapon Aim pointer handoff.
+- Weapon Aim / Field Camera is again an independent touch control.
+- Baseline APK: exact v0.2.3 device-tested build.
+- Only TwinInput and TwinInput$Contact are replaced in classes.dex.
+
+Root cause found
+- The compile-only CameraAssist stub used stale synthetic pad IDs:
+  PAD_LEFT=23, PAD_RIGHT=24 (and the rest shifted similarly).
+- The actual runtime CameraAssist uses PAD_LEFT=24, PAD_RIGHT=26, PAD_UP=25, PAD_DOWN=27.
+- Because the old stub exposed those IDs as static-final constants, javac inlined the stale numbers into TwinInput. The right side of Weapon Aim could therefore be interpreted by the runtime as LEFT, while another direction could be ignored.
+- v0.2.4 makes the compile-only PAD_* fields non-final runtime reads and aligns their documented values with the runtime.
+- javap verification confirms TwinInput bytecode uses getstatic CameraAssist.PAD_LEFT and getstatic CameraAssist.PAD_RIGHT rather than inlined integer constants.
+
+Control behavior
+- Action remains independent.
+- Weapon Aim / Field Camera remains horizontal-only.
+- In first-person, the Weapon Aim strip feeds the same native left/right aim bridge already proven by the game.
+
+[... selected excerpt ...]
+
+- APK zip alignment verified.
+- Android permissions declared: 0.
+- Game-data allowlist unchanged.
+
+APK
+- Version: 0.2.4 (versionCode 15)
+- SHA-256: 7f307dcec4eabf765953aac9001e0891c4d7178609e397727d316387d5be21a3
+- Device execution: not yet performed for v0.2.4.</pre><div class="source-tools"><a href="../../evidence/d14.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D14" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D15"><summary><span class="source-title">D15 / Two exports, one growing session</span><span class="source-kind">Archive comparison</span></summary><div class="source-content"><p>Source: Comparison of Dirge-Bridge-0.1.5-report (different).txt and Dirge-Bridge-0.1.6-report.txt</p><p>Derived by comparing the original text files. Session identifiers and backup paths are intentionally omitted from this published comparison.</p><pre>Both files identify Android app 0.1.5 and internal runtime 0.1.6.
+Their session identifiers and checkpoint-backup timestamps match.
+The first FULL LOG contains 1,289 lines.
+Those 1,289 lines are an exact prefix of the second FULL LOG.
+The files have different SHA-256 hashes.
+Conclusion: retain both exports, count this as one observed session.</pre><div class="source-tools"><a href="../../evidence/d15.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D15" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-D16"><summary><span class="source-title">D16 / A Dirge-labeled report invokes Rockman code</span><span class="source-kind">Ambiguous record</span></summary><div class="source-content"><p>Source: Separately retrieved Dirge-Bridge-0.2.4-report.txt</p><p>This is a reviewed description of the identity conflict, not a diagnosis of how it happened. App installation paths and session identifiers are omitted.</p><pre>Report heading: DIRGE BRIDGE 0.2.4 — runtime report
+Frames submitted: 0
+Exception: missing com.nttdocomo.ui.util3d.Vector3D
+The stack names RockmanDash_F.start.
+Editorial decision: hold this record outside the Dirge failure timeline.</pre><div class="source-tools"><a href="../../evidence/d16.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="D16" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../monster-hunter-i/index.html">Monster Hunter i →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

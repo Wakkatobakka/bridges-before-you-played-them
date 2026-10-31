@@ -1,0 +1,12 @@
+MT04 / Background parking leaves a report path alive
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/evidence/final_acceptance.log
+Selected lines: 8–9, 25–26
+Source SHA-256: abc2bf998c214b71955798cadfd3ad07a5719a2746bc79c85900e4048da9f992
+
+SNAP final_08_background frames=122 bY=14 a=4 B=3 bH=176 a5=208 bE=-1 bq=8 aM=8 aK=8 bP=1 bN=0 ad=0 aH=1 aO=0 if=6 c1=true ak=176 aj=101 
+SNAP final_09_parked frames=122 bY=14 a=4 B=3 bH=176 a5=208 bE=-1 bq=8 aM=8 aK=8 bP=1 bN=0 ad=0 aH=1 aO=0 if=6 c1=true ak=176 aj=101 
+
+[... selected excerpt ...]
+
+Report generated in 8 ms
+SNAP final_10_resumed frames=131 bY=9 a=4 B=3 bH=176 a5=208 bE=1 bq=8 aM=8 aK=8 bP=1 bN=0 ad=0 aH=1 aO=0 if=6 c1=true ak=176 aj=101 

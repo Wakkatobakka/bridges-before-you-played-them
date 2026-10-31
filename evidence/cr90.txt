@@ -1,0 +1,12 @@
+CR90 / Historical image / Contra aiming diagonally in the original opening stage
+Source: Contra_4_Bridge_v0.1.1_PRIVATE/evidence/acceptance/09_diagonal_aim.png
+Source SHA-256: 1fb94de1f2aeb111b75f0f1f578b8bda15b2cb2c662f09f69e27a4853a2a900b
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Contra_4_Bridge_v0.1.1_PRIVATE/evidence/acceptance/09_diagonal_aim.png
+SHA-256: 1fb94de1f2aeb111b75f0f1f578b8bda15b2cb2c662f09f69e27a4853a2a900b
+
+Original Contra4Redux right+up diagonal aiming on the opening stage.240×320 historical desktop original-engine acceptance frame, not a phone recording.
+
+Scope: Historical desktop original-runtime framebuffer; not phone output. Visually inspected, game only, no personal UI.

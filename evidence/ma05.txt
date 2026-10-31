@@ -1,0 +1,15 @@
+MA05 / What the original host gameplay actually exercised
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 45–54
+Source SHA-256: b215593753dcd3e72a34bfb7f18ecc61d760aafccb5abf00b2517ac70a2eec6e
+
+HOST EXECUTION — PASS WITH STATED LIMITS
+tools/verify_mutant.py executes the unchanged EXN through release C ABI.
+Title/menu/help, briefing, offer, live 3D rendering, forward movement, both
+turns, strafe left, simultaneous original key delivery, map, quit/cancel and
+exact snapshot restore pass. 3,255 ticks; zero VM faults/input FIFO overflows.
+One pre-existing non-fatal parseLayout BadOffsetTable warning remains;
+direct classfile parsing executes successfully.
+Three native melody requests are observed separately from output API proof.
+Backward/strafe-right had no visible effect at the spawn wall. Fire/grenade
+had no visible effect from unequipped spawn; later combat is unverified.

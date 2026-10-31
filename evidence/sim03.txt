@@ -1,0 +1,38 @@
+SIM03 / The original game renders and asks for the tiny AMR asset
+Source: Sims_2_Pets_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sims_2_Pets_Bridge_v0.1.2_PRIVATE/tests/on_device_v010/Sims2Pets-Bridge-v0.1.0-report-20261016-144216-392.txt
+Selected lines: 1–7, 10–18, 89–91, 160–164
+Source SHA-256: 2d4dcedaa07cf52ea4a769e82536c2c9aba03e2c479d3d07252aa40a02463fb3
+
+THE SIMS 2: PETS — ANDROID J2ME BRIDGE
+Bridge: 0.1.0 PRIVATE TEST
+Original guest: The Sims 2 - Pets / EA / MIDP 2.0 / CLDC 1.1
+Original JAR SHA-256: 2a493c4b198ba47b70f895e6daff51d262e16ac4e6e3f099bb6f1e4b56fc6af9
+Runtime type: original MIDlet bytecode converted to Android DEX, MIDP API compatibility adapter
+Not recreated gameplay; native guest size: 240 x 320
+Timestamp: Fri Oct 16 14:42:16 CDT 2026
+
+[... selected excerpt ...]
+
+Elapsed ms: 83459
+State: game-rendering
+MIDlet: PetsApp
+Guest boot thread alive: false
+Current screen: n
+Presented frames: 7591
+Key down: 120 key up: 120
+Java heap free/total: 18902496/27883008
+Fatal error: none captured
+
+[... selected excerpt ...]
+
+14:41:32.463 | key | down -5
+14:41:32.466 | audio-create | audio/AMR bytes=438
+14:41:32.520 | key | up -5
+
+[... selected excerpt ...]
+
+14:41:56.458 | key | down 52
+14:41:56.540 | key | up 52
+14:41:56.742 | key | down 53
+14:41:56.757 | audio-create | audio/AMR bytes=438
+14:41:56.823 | key | up 53

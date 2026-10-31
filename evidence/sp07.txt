@@ -1,0 +1,10 @@
+SP07 / Phone feedback is not a new phone verdict
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 43–47
+Source SHA-256: 6f87efa677d2b0d04adc5b53fe8f6c837df112843f1e63dbba263e813ddaf31c
+
+NOT VERIFIED HERE: audible phone playback, phone touch comfort or performance,
+real Downloads export, full 13-minigame completion, production Omni hosted
+startup/import, public reconstruction or two cumulative public exports.
+User's prior phone feedback and silent-audio report informed this update; they
+are not represented as phone verification of v0.1.2.

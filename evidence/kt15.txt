@@ -1,0 +1,28 @@
+KT15 / Rolling and turning together, with the original rolling latch
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/evidence/native-combined-input.log
+Selected lines: 1–23
+Source SHA-256: f852f669702f6a0426d54f9a5aad29859c5f2616444d36ee303eaa94b5cb85b1
+
+PASS original timed level starts stopped with no control mask
+PASS UP + e033 retains both original cardinal bits
+Original native position 503040,104704 -> 495951,102162; mask=5
+PASS simultaneous roll/turn changes both native position axes
+PASS native directional vector changes while rolling
+PASS left/right combination steers to its original side
+PASS UP release preserves native Scheme1 rolling latch and held turn
+PASS both release orders reach native handlers; rolling latch is game-owned
+PASS original combined-input path stays live without missing interfaces
+PASS original timed level starts stopped with no control mask
+PASS UP + e034 retains both original cardinal bits
+Original native position 503040,104704 -> 509864,101782; mask=9
+PASS simultaneous roll/turn changes both native position axes
+PASS native directional vector changes while rolling
+PASS left/right combination steers to its original side
+PASS turn release retains original rolling state
+PASS both release orders reach native handlers; rolling latch is game-owned
+PASS original combined-input path stays live without missing interfaces
+PASS original timed level starts stopped with no control mask
+PASS roll + turn + shuffle are three independent original inputs
+PASS releasing shuffle leaves roll and turn intact
+PASS three-key release leaves original rolling latch, no held turn/shuffle
+PASS 20 original combined-input checks. No guest code, memory or physics patched; archived profile is host fixture only.

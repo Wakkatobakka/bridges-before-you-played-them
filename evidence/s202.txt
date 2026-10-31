@@ -1,0 +1,21 @@
+S202 / Original file-seek and key-event contracts
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/IMPLEMENTATION.md
+Selected lines: 7–22
+Source SHA-256: 98aac0fdbe161e175bfeb9bc8fd7f2b50aec259818cf317ec924f84f8bc98517
+
+Compatibility added from observed calls:
+
+- BREW memory availability for this ABI: GetDeviceInfo memory field +24 and RAM allocation availability +0x18.
+- SYS_B +0xE4 ASCII-to-wide conversion, bounded by source length and destination byte capacity.
+- This title's IFile seek origins: 0=start, 1=end, 2=current; successful Seek returns the position. This is required for its original ZIP parser and original in-module decompressor. The original parser reads `res.dat`; no host replacement of game archive parsing is used.
+- Original 176x220 device surface matches the fixed 176x190 scene resources plus contextual footer. Display does not crop/stretch the framebuffer.
+- Host font raster and IDisplay.DrawText for original strings; palette/text/background colors retained.
+- Observed zero graphics translation and graphics hint calls.
+- IShell MIME-header detection for MIDI and MIDI media-handler class selection, letting original game code create IMedia and submit the unchanged original stream.
+- Separate original Micro3D instruction counter for reports/evidence.
+
+The original event handler at 0x1185E0 maps EVT_KEY 0x100 to its key latches and EVT_KEY_RELEASE 0x102 to the release function. EVT_KEY_PRESS 0x101 does not take that latch route. Numeric keys, 5, OK, all arrows, both softkeys, CLR, star and pound retain distinct native identities.
+
+Production key releases shorter than one guest callback are deferred until that callback has run at its actual registered deadline. Input does not pump or shorten timers. Background focus loss immediately releases all physical and deferred keys and cancels host callbacks.
+
+One game worker owns guest execution, native timers, audio callbacks and save persistence. A separate report executor copies already published evidence to Downloads via MediaStore on Android 10+; reports never acquire the runtime lock. Routine tracing stays OFF. Changed pixel revisions drive UI redraw. Battery/thermal samples are sparse (>=15 seconds); they are not CPU/GPU/skin measurements.

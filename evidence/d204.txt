@@ -1,0 +1,14 @@
+D204 / The original LG canvas and controls
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 7–15
+Source SHA-256: 3aff747274ce5ce08c13399c161fe1fef041a15142c4c251c5b3eb8fd575de10
+
+The supplied d2rp.zip is DOOM II RPG, English BREW build 7.1.73 en.lgax830.
+Install the separate Doom_II_RPG_Bridge_v0.1.1_PRIVATE.apk. Its launcher name is DOOM II RPG. Android 8.0+; no network connection, firmware installation or external runtime app is required.
+
+Choose Yes at the original sound prompt. The original introduction, difficulty and character selection are preserved. The untouched original ARM/Thumb executable draws its own graphics and runs its own game logic on a 240x400 LG canvas.
+
+CONTROLS
+D-pad: forward/back and turn; center OK selects. FIRE / OK (5): use, talk or fire.
+1 / 3: strafe. 7 / *: change weapons. 9: wait. 0: original menu. #: original map / contextual More. Both original softkeys and CLEAR remain separate. CLEAR may close this edition; Android Back performs cleanup and returns to Omni when launched there.
+ORIGINAL KEYPAD and D-PAD RETURN switch in one tap within the control panel. The separate original D-pad stays present. Both modes keep the same live viewport. Touch holds are released safely; correctly registered physical holds survive switching.

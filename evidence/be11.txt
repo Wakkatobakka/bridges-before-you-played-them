@@ -1,0 +1,33 @@
+BE11 / The physical phone reaches room 21 with the old camera angle
+Source: Biohazard_Episodes_Bridge_v010_report.txt
+Selected lines: 1–3, 5–9, 11–16, 28–32
+Source SHA-256: a1ff471506fc8dcae0abf59918eeb3385834c3e997353054955dd9fac8dd5065
+
+BIOHAZARD: THE EPISODES BRIDGE v0.1.0
+Device: samsung SM-S938U
+Android: 16 API 36
+
+[... selected excerpt ...]
+
+State: Original DoJa game · 1935 frames
+Surface: 240x320; aspect-fit, safe system insets
+Original offline BioMain game; game JAR unchanged
+Scratchpad: header removed, slot0=2048, slot1=115000 bytes; persistent phone saves
+Input: polling mask 0x0
+
+[... selected excerpt ...]
+
+Resources: opens=146 misses=0
+Latest resource: KabePos21.out
+Latest miss: 
+Terminate requests: 0
+DoJa float camera -> MCv3 fixed model coordinates; translation/clip scale 64
+J3D flushes: 1235 queued triangles=1138325 drawn triangles=1138325 drawFailures=0
+
+[... selected excerpt ...]
+
+Last J3D: verts=2162 patterns=1/1 queued=448 pendingFlush=true z=2111..2947 near=6 far=32768 fov=1245 reject[idx=0,near=0,far=0,backface=478] crossing[near=0,far=0] missingTex=0
+Latest fatal: 
+
+Audio: MFi to Android MIDI/PCM; original handset timbres approximated by Android GM
+Audio play requests=22 decodes=22 starts=22 failures=0 partial sampled assets=0 hostPaused=false

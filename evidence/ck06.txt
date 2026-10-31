@@ -1,0 +1,11 @@
+CK06 / The magenta snow seams
+Source: 04-Chokkan_Crash_Bridge_v0.0.6_Preservation.zip / Chokkan_Crash_Bridge_v0.0.6_Preservation/docs/SNOW_TEXTURE_SAMPLING_FIX.md
+Selected lines: 3–8
+Source SHA-256: f58a9151da373f5a329b81c7741327a7832bb23ab9a00abb4edaca447e8ffeb0
+
+The snow atlas contains magenta outside its authored snow region. The old affine shader path sampled outside covered triangle edges, leaking unused atlas pixels as horizontal magenta seams. Exact triangle pixel coverage and authored UV sampling remove the leakage without deleting any colors. Black opaque texels remain visible for the silhouette quiz.
+
+Before: 346–984 magenta pixels per inspected snow frame.
+After: 15 active sledding gameplay captures each contained zero magenta pixels; 302,302 triangles drawn; zero renderer errors.
+
+Guest steering, pause/resume, and clean shutdown also passed in the final run.

@@ -1,0 +1,10 @@
+D05 — The contextual camera/aim experiment
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.5-report.txt
+Selected source lines: 26-26
+
+
+
+0.000  CONTROL MODE    Movement + context camera/aim pad; walking assist=true; repeat=true; reverse=false
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

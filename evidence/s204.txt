@@ -1,0 +1,17 @@
+S204 / First-minigame acceptance and its save boundary
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/README_FIRST.md
+Selected lines: 37–48
+Source SHA-256: bb844a2c61caa33c672ccd8eab2a6952b85a987168051f70495ba38e95c2d4fb
+
+## Verification and limits
+
+- 74 original-game host checks passed, including unchanged game/Micro3D startup, all 20 native input latches/releases, menus/Help, Web Climber, motion/jump, native MIDI, 1224 callbacks and save serialization/reload.
+- 18 actual production-controller checks passed: scheduled deadlines, no input-driven timers, short taps, separate 5/OK, background release/suspension and resume.
+- 5,375 Spider-Man mapping/contact/geometry assertions passed across 28 device/density/orientation cases.
+- All twelve shared Android framework tests passed against the locally rebuilt v1.1.2 JAR; its compiled classes exactly match the shared classes compiled into this APK.
+- Seven integrated Android API 34 framework tests passed against the production Activity and APK resources, using actual Window/View/graphics/MotionEvent callbacks. Covered cold startup, safe areas, complete controls, stable renderer/modes, two-pointer sliding/action input, both release orders and the center guard in both modes, hardware ownership, duplicate 5 ownership, independent report callback, Back/cleanup, dialog key-up and startup fault recording. The real report writer also completed while the guest worker was blocked, correctly reported an intentionally unavailable Downloads destination, and retained its fallback/fault files.
+- APK original payload hashes, unchanged runtime source, signing continuity, DEX/icon packaging, signature and alignment passed.
+
+The Activity tests isolate/defer the guest boundary; they do not simulate game progress. Host UI previews replay a framebuffer produced by actual original-game host execution, not a phone capture. Gameplay evidence is separate in evidence/acceptance/.
+
+Not observed: physical phone launch/touch comfort/fit, audible phone playback, live successful Downloads export on a phone, phone heat, a full playthrough or later minigames. The save serializer was directly invoked on existing native score fields to test its genuine original file path; this does not establish a naturally earned completed-level save.

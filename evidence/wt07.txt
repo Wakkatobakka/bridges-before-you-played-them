@@ -1,0 +1,19 @@
+WT07 / Original opening, first level and RMS checks in historical docs
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/evidence/original_v0.1.0_docs/VERIFICATION.txt
+Selected lines: 1–14
+Source SHA-256: 593cca27bcc07972614d70bd091af6fed7b3ee68ead6a17e4e1ae96412447858
+
+PASS Android compile, D8, APK alignment and signature verification.
+PASS native original opening/menu, quest load and first-level raster rendering.
+PASS original player position changes under native joystick direction input.
+PASS native jump/attack/special inputs delivered during original tutorial.
+PASS native pause menu and return; background suspension and foreground return.
+PASS read-only report capture while original frame count continues to increase.
+PASS zero unexpected runtime faults in final replay.
+PASS original resource identity: 69 entries preserved byte for byte in APK.
+PASS all five original MIDI streams parse, with original bytes preserved.
+PASS native RMS tombstone/monotonic ID behavior and fresh-store persistence.
+
+NOT VERIFIED: physical Android layout/insets/touch, on-device sound/vibration,
+Downloads export on a handset, actual phone heat, complete game completion.
+LANGUAGE: original Russian Witcher text despite original filename claiming EN.

@@ -1,0 +1,6 @@
+D201 / The newer DOOM edition has its own key event
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/AGENTS.md
+Selected lines: 4–4
+Source SHA-256: 8aea3378c42c5a6725ecb767c917fa3019da324ef51e1745f2e3c0216188ca33
+
+Execute the unchanged original DOOM II RPG BREW ARM/Thumb MOD/BAR/MIF/config from d2rp.zip. Do not substitute reconstructed scenes or game logic. The MIF identifies 7.1.73 en.lgax830, native class 0x0109010f. This module handles EVT_KEY_PRESS 0x101 and release 0x102. Do not restore the older Doom/Wolf press 0x100.

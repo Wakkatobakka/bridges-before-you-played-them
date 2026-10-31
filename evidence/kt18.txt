@@ -1,0 +1,10 @@
+KT18 / The later text fit audit records zero clipped layouts
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/evidence/v0.1.4-activity-launch-test.txt
+Selected lines: 3–7
+Source SHA-256: e3e9113d0559392bfeb6a7d654715c2bef51a5bdcbabc8cd5f4fbd8c756d7e72
+
+......TEXT/FIT AUDIT cases=72 clipped=0
+
+Time: 12.137
+
+OK (6 tests)

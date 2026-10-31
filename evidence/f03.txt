@@ -1,0 +1,28 @@
+F03 — One real fix that still leaves a giant Cloud
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.16_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 6-24
+
+
+
+## Evidence behind this pass
+- `cloud.mbac` contains 3 appearance-pattern groups.
+- Pattern 0 contains the shared/base Cloud geometry.
+- Pattern 1 and pattern 2 each contain an additional 14 textured quads.
+- `cloud.mtra` v5 dynamic appearance data supplies masks `0x2` for actions 0-23 and `0x4` for actions 24-26.
+- v0.0.15 parsed that MBAC pattern table but discarded it, so both alternate 14-quad groups were rendered simultaneously.
+- DoJa `Figure.setTime()` is defined to update both pose and appearance state from the active ActionTable.
+
+## Changes
+- Preserve MBAC v5 per-pattern polygon counts.
+- Expand those polygon groups to a per-render-triangle pattern mask.
+- Base pattern-0 polygons remain always visible.
+- Alternate polygon groups use the documented 32-bit appearance mask (`1 << patternIndex`).
+- `Figure.setTime()` now applies MTRA dynamic appearance state using the existing `ActionTable.patternFor()` parser.
+- `Figure.setAction()` continues to reset time to zero and therefore now also selects the action's initial appearance state.
+- Added `Figure.getNumPatterns()` and `Figure.setPattern(int)` compatibility methods.
+- Renderer filters inactive Figure triangles instead of drawing every appearance state at once.
+- Figure telemetry now reports `patterns`, current `pat=0x...`, and `patHide` triangle count.
+- Corrected MBAC triangle/quad winding to the reference order while preserving matching UVs.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

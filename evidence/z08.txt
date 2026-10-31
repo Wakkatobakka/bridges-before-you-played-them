@@ -1,0 +1,19 @@
+Z08 — The Z-Pad reaches the game and a texture call becomes the next fault
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v016_physical_live_guest_session_report.txt
+Selected source lines: 24-33
+
+
+
+GPU RGB pixels latest: 0
+GPU RGB pixels maximum: 23046
+Original Zeebo IHIDDevice active: false
+Original Z-Pad button press events: 4
+Original Z-Pad button release events: 4
+Original Z-Pad signal callbacks: 8
+Last native button UID: 0x106c406
+Analog sticks: not yet implemented
+Original gameplay/input outcome: not yet verified on phone
+Guest fault: timer -> RuntimeException: Unsupported BREW interface cls=0103D8DD off=0xC0 r0=011E8E00 r1=00000001 r2=0121C2A4 r3=F0023BC0 lr=0x0012DA08
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

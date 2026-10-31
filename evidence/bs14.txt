@@ -1,0 +1,35 @@
+BS14 / Owner reports immediate heat
+Source: BioShock_3D_Bridge_v0.1.5_Heat_Findings.md
+Selected lines: 1–8, 18–23, 41–49
+Source SHA-256: 8f81588082fa813cfbfad66ef1c47bf404117a10f1f43190588f7f2f8c8fa2b6
+Context: Historical initial heat analysis. BS15 identifies the timer-deadline defect; BS18 supplies the later measured phone trend.
+
+# BioShock 3D Bridge v0.1.5: Heat Findings
+
+**Passport:** wakkan.bioshock3d.bridge.private
+**Package:** com.wakka.omnibridge.bioshock3d (versionCode 6)
+**Device in evidence:** Samsung SM-S938U (S25 Ultra), Android 16 / API 36
+**Owner request (verbatim):** We've got heat issues pretty much immediately into gameplay. Help me figure out why. Current hardware absolutely shouldn't have any issues
+
+**Scope:** Source read (BridgeController.java, BrewRuntime.java) plus the two v0.1.4 phone reports. No build, no device test, no code changes. No heat measurement exists yet.
+
+[... selected excerpt ...]
+
+1. The original game asks for a **2 ms timer** between frames (`SetTimer`, stored in `lastTimerDelay`). It was written for slow feature phones and runs flat out.
+2. The bridge runs the game by **emulating its ARM/Thumb code in Java**, one instruction at a time (`Cpu.step()` in BrewRuntime.java).
+3. Each tick runs one guest timer callback (`session.pumpTimers(1)`), then schedules the next with:
+   `delay = max(1, requested - elapsed)` (BridgeController.tick)
+4. A frame takes about 34 ms on average (about 76 ms recently), far longer than the 2 ms requested. The posted delay is therefore always 1 ms. The report shows 1 ms posted delay in all 912 samples.
+5. The next frame is queued immediately after the previous one. There is no frame cap and no idle time, so the "BioShock original ARM" worker thread stays busy continuously.
+
+[... selected excerpt ...]
+
+### What it is not
+
+- Not diagnostics, saves or report writing. Those cost about 0.2 to 3 ms each.
+- Not demonstrated by the existing thermal data. The v0.1.4 reports carry only severity snapshots (LIGHT, then NONE) with no degrees, power or trend. The heat observation is valid but unquantified.
+- The two reports were captured with the host paused, so they do not capture sustained gameplay.
+
+### Side effect: input lag
+
+Long guest frames hold the single worker thread. Key presses and releases wait behind the running frame (about 48 ms average, about 127 ms p95). This contributes to sluggish control response and shares the same root cause.

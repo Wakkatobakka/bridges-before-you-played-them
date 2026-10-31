@@ -1,0 +1,23 @@
+OE06 / Combined buttons are still individual native events
+Source: Orcs_Elves_II_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Orcs_Elves_II_Bridge_v0.1.1_PRIVATE/INTEGRATION_NOTES_PRIVATE.txt
+Selected lines: 1–18
+Source SHA-256: 7e1f06581723a43d921f7839a44a44aae00f5eb56261c0e08442992279348b96
+
+CONTROL AUTHORITY AND BOUNDED CHANGE
+Use the v0.1.0 README original-help audit, v0.1.0 MainActivity mappings, retained
+BREW constants and the native event probe. Some inherited explanatory comments
+in the unchanged generic runtime refer to earlier titles (jump/grapple/drop).
+Those comments do not describe Orcs & Elves II and were not used for mappings.
+No executable behavior or original asset was changed in this pass.
+
+Normal mode is a standard shared control spec. The alternate mode uses the
+shared makeKeypad planner with a different shared-action spec, avoiding nine
+redundant aliases alongside numeric keys. Its explicit keepPad=true preserves
+the separate original direction codes and both native SELECT/5 actions.
+Both factories return actual shared controls implementing BridgeControlSizing.
+
+withDiagonals(true) preserves v0.1.0's independent arrow buttons/held-set input
+capability. It forwards two actual native cardinal codes, including separate
+fingers. The actual ARM handler accepted these events and both release orders.
+This does not establish 45-degree movement in the original turn-based game.
+Physical controller axes retain the existing dominant-cardinal policy.

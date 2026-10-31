@@ -1,0 +1,10 @@
+DS08 / The earlier BREW family supplies the foundation
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/app/assets/THIRD_PARTY_NOTICES.txt
+Selected lines: 1–5
+Source SHA-256: b846b855e7e6a83f9d4179165161930b3d75b0137072aa03dec189933def1c0b
+
+Dragon Sword: original English BREW release, Minor Axis / SK Telecom and SkyZone Entertainment. Original game code, graphics and sound belong to their respective owners. The launcher icon is a new AI-generated illustration based on the original blond hero and red scarf; it is not official developer artwork.
+
+Compatibility layer: Wakka ARM/Thumb BREW runtime, based on the private Earthworm Jim / Contra 4 / Doom RPG lineage. Dragon Sword adds its original IHeap ABI, posted startup events, character-name TextCtl services and string conversion/filter services. It executes the original unchanged ARM module.
+
+Gameplay UI: Wakka Bridge Gameplay UI Kit v1.1.2.

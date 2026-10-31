@@ -1,0 +1,13 @@
+B06 — The scrolling game is visible, and still silent
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.6_CONTROL_AUDIO_FINDINGS.md
+Selected source lines: 3-6
+
+
+
+## Physical v0.0.5 result
+The returned S25 Ultra report remained live through 228,983,452 guest instructions, 5,296 display updates, 611,227 BitBlts, 19 successful BAR PNG decodes / 0 failures, and 228 live key events. This confirms the BAR pixel fix and persistent held-key event path on Android.
+
+The returned screen recording visibly shows the game in live scrolling gameplay with character, enemies, clouds, water, terrain, HUD and sprite assets present. Its AAC audio track is digital silence (0.0 sample amplitude across the captured track), so there is still no audible output in this build.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

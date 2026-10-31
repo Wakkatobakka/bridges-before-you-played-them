@@ -1,0 +1,20 @@
+BJ08 / Native replay fails on the later host
+Source: Banjo_Kazooie_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 37–51
+Source SHA-256: 6032ea96d35609dd17000416b5141ae5ad0e86ea16604da31556d90bc2830dbd
+
+HOST GAMEPLAY REPLAY LIMIT
+The included unchanged v0.1.0 host library loads but the attempted fresh original
+execution replay terminates with SIGILL (illegal instruction) in this host.
+No successful new gameplay run is claimed. Native code and the Android ARM64
+binary were not changed to work around a host-only failure. Historical v0.1.0
+execution evidence (Egg Scramble, first Jiggy, Sheep Dip, saves, snapshots and
+JNI smoke) is retained under its original evidence folders; the original
+verification text is in evidence/historical-v010/. It is not v0.1.1 evidence.
+
+PHONE ACCEPTANCE STILL REQUIRED
+Cold startup, live original gameplay, direction/diagonal comfort, action
+hold/release, physical controller behavior, both mode layouts at phone font/
+display scale, system bars/cutouts, audio, saves, background/resume, return to
+Omni and actual one-tap Downloads report export are not certified by host or
+Robolectric checks. Later missions/audio remain outside historical coverage.

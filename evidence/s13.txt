@@ -1,0 +1,44 @@
+S13 — The preservation practices came before formal Passport packaging
+Evidence type: Retrospective investigation
+Source: DeadShot_Passport_Stress_Test_Query.txt / prepared October 5, 2026
+Selected source lines: 13-23, 184-204
+
+A retrospective hypothesis/evidence packet, not a raw phone log or an official platform incident finding. Selected local-project analysis only; its external web claims and links are not reproduced or adopted.
+
+The narrower and more defensible hypothesis is:
+"When the AI working on DeadShot began repeatedly losing or violating established project constraints, the project remained recoverable because important state had already been externalized into known-good APKs, source/preservation ZIPs, signing artifacts, validation reports, and explicit rollback baselines. This functioned like a live fault-injection test against reliance on conversational memory alone."
+
+IMPORTANT DISTINCTION
+
+Do not claim that a fully formal Passport artifact had already been deployed throughout the October 2-3 DeadShot session.
+
+The evidence supports this more precise wording:
+- DeadShot already used preservation-oriented packaging and artifact handoffs during the session.
+- Formal Passport/Omni/public-release packaging was normalized afterward, especially on October 4.
+- Therefore the DeadShot episode stress-tested the UNDERLYING PRESERVATION ARCHITECTURE / PRACTICES that Passport later formalized, rather than serving as a clean certification test of a finished Passport implementation.
+
+[... selected excerpt ...]
+
+The project remained recoverable because state existed outside the model's active conversational reasoning:
+
+- known-good APKs;
+- source ZIPs;
+- preservation ZIPs;
+- explicit version lineage;
+- signing keys / signer identity where preserved;
+- reports and validation records;
+- immutable or byte-identical original game payloads;
+- known-good sibling bridge architecture;
+- explicit rollback statements such as "v0.0.5 is the last good baseline";
+- later canonical packaging/public-release audits.
+
+This allowed a human + AI + artifact recovery loop:
+
+AI loses or misapplies context
+-> user notices contradiction
+-> artifact / known-good baseline provides objective state
+-> assistant is re-anchored
+-> regression is bounded or rolled back
+-> project continues instead of being reconstructed from scratch
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="Crash inherited South Park’s repairs. Its melody data was ready, but our empty Android audio buffer was waiting for samples we never let it receive."><meta property="og:title" content="The sound was waiting for its own samples."><meta property="og:description" content="Crash inherited South Park’s repairs. Its melody data was ready, but our empty Android audio buffer was waiting for samples we never let it receive."><meta property="og:type" content="website"><title>Crash Bandicoot · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / Crash Bandicoot</div><div class="eyebrow">ExEn / Development history</div><h1>The sound was waiting for its own samples.</h1><p class="dek">Crash inherited South Park’s repairs. Its melody data was ready, but our empty Android audio buffer was waiting for samples we never let it receive.</p><div class="article-meta"><span>Coverage: 0.1.0 → 0.1.1</span><span>3 min read</span><span>9 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#an-inherited-core">An inherited core, another contract.</a></li><li><a href="#ready-after-writing">Ready after writing.</a></li><li><a href="#where-music-belongs">Where the original asks for music.</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">Our Crash runtime still had internal functions named banjo_*. Those were host interfaces left over from the first bridge in this family. They were now executing Crash’s own original game, with another set of gaps to fill.<a class="cite" href="#source-XC01" data-source="XC01" aria-label="Open evidence XC01">XC01</a></p><section id="an-inherited-core"><h2>An inherited core, another contract.</h2><p>South Park’s full-width arrays, font input separation and service repairs were already present. Crash added wide-character String and drawing support, pen-color handling and dialog layout from the original runtime contracts. The original EXN bytecode and assets remained the game being run.<a class="cite" href="#source-XC01" data-source="XC01" aria-label="Open evidence XC01">XC01</a></p><figure class="historical-figure"><a href="../../assets/history/legion-crash-first-stage.png" target="_blank" rel="noopener"><img src="../../assets/history/legion-crash-first-stage.png" alt="Crash Bandicoot original first stage" loading="lazy"></a><figcaption><span class="eyebrow">Historical host capture</span><p>Original Crash Bandicoot first stage in a132×176 host framebuffer, retained from the original0.1.0 acceptance. Not a new0.1.1phone capture.</p><p>Open the image for the full original view.</p><a class="cite" href="#source-XC90" data-source="XC90" aria-label="Open evidence XC90">XC90</a></figcaption></figure><p>Its original moves also stayed distinct: run, jump, spin and crouch, with separate flip and slide keys. Menu Select and the original pause/back command were not interchangeable with all those gameplay actions.<a class="cite" href="#source-XC05" data-source="XC05" aria-label="Open evidence XC05">XC05</a><a class="cite" href="#source-XC06" data-source="XC06" aria-label="Open evidence XC06">XC06</a></p></section><section id="ready-after-writing"><h2>Ready after writing.</h2><p>The audio failure was circular. MODE_STATIC AudioTrack correctly reported STATE_NO_STATIC_DATA before its first write. The old player demanded STATE_INITIALIZED first, rejected the healthy empty track and never submitted the samples that would change its state.<a class="cite" href="#source-XC02" data-source="XC02" aria-label="Open evidence XC02">XC02</a><a class="cite" href="#source-XC08" data-source="XC08" aria-label="Open evidence XC08">XC08</a></p><p>We accepted the waiting-for-data state, wrote the complete original PCM buffer, checked the accepted byte count and readiness, then played it. The synthesis stayed as it was. We also let paused melodies retain their loaded data and ignored stale work after close.<a class="cite" href="#source-XC02" data-source="XC02" aria-label="Open evidence XC02">XC02</a></p><p>The integrated framework route drove the original EXN through its real native VM and JNI into that repaired player. The startup melody submitted 936,684 bytes and started with zero reported audio errors. That is a much stronger boundary than merely finding a melody in the archive, while still stopping short of a phone listening verdict.<a class="cite" href="#source-XC04" data-source="XC04" aria-label="Open evidence XC04">XC04</a><a class="cite" href="#source-XC09" data-source="XC09" aria-label="Open evidence XC09">XC09</a></p></section><section id="where-music-belongs"><h2>Where the original asks for music.</h2><p>The captured game requested startup and new-game melodies and issued its own stops. The repair followed those events; it did not add a continuous soundtrack to stages the original left silent.<a class="cite" href="#source-XC04" data-source="XC04" aria-label="Open evidence XC04">XC04</a></p><p>We also had to correct the account of import support. My installed Omni had shown Ready. A local dependency simulation had been described too strongly; it wasn’t an actual public import rejection. The later notes kept that correction alongside the audio work.<a class="cite" href="#source-XC07" data-source="XC07" aria-label="Open evidence XC07">XC07</a><a class="cite" href="#source-XC04" data-source="XC04" aria-label="Open evidence XC04">XC04</a></p></section><details class="records-note"><summary>About these records</summary><p>The banjo_ symbol names describe retained ABI compatibility, not substituted gameplay. Original native execution, Android framework output and physical speaker playback retain separate scopes. The static-track defect is reproduced with real framework player lifecycle and a host output sink. Current public import behavior is not inferred from a local dependency simulation. The stage image is historical host output.</p></details><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected report lines, investigation notes and recorded feedback. Each receipt keeps its original source and scope.</p><details class="source-item" id="source-XC01"><summary><span class="source-title">XC01 / South Park repairs and the surviving banjo ABI names</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/native/README.md · selected lines 1–19</p><pre># Crash ExEn runtime
+Portable ExEn VM adapted from Handyplay / mohamedahmed166e, pinned upstream
+460b149302e9a52523bc314a37efabbee9f3d666, AGPL-3.0. See LICENSE-AGPL-3.0.txt.
+Current source includes the reused South Park full-width array repair, original
+font input separation, native diagnostic snapshots and SMS price handler.
+Crash adds String construction from wide character arrays, wide drawChars input,
+canonical zero/black pen handling, and DialogBox line layout/render services from
+the original runtime class contracts. Manufacturer-specific dialog decoration has
+no physical-reference comparison. Original EXN bytecode/assets are unchanged.
+
+Use ../tools/build-native.sh with Zig 0.15.2. Host ABI symbols retain the original
+banjo_* names for compatibility; they are internal and execute the game provided
+as game.exn, with no Banjo game logic. JNI identity is com.wakka.crashexen.
+Android ARM64 library has 16 KiB segments and no external dynamic dependencies.
+The original 5x8 atlas is loaded from assets/font_5x8.bin at runtime, never embedded
+in the compatibility ELF. Both firmware classes and font are original inputs.
+
+The game-requested timer is 75 ms on the first stage. FIFO input does not add
+extra ticks. Detailed tracing is disabled. Native game saves are isolated per app.</pre><div class="source-tools"><a href="../../evidence/xc01.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC01" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC90"><summary><span class="source-title">XC90 / Historical image / Crash Bandicoot original first stage</span><span class="source-kind">Historical host capture</span></summary><div class="source-content"><p>Source: Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/acceptance/07_live_stage.png</p><p>Original game pixels retained from the stated historical host check. No physical-phone capture is implied.</p><pre>Unchanged historical image.
+Source member: Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/acceptance/07_live_stage.png
+SHA-256: 229552a048298f9cf6df1cf88a1f630ef898d24e22ca67dea876be02d1643956
+
+Original Crash Bandicoot first stage in a132×176 host framebuffer, retained from the original0.1.0 acceptance. Not a new0.1.1phone capture.
+
+Scope: Historical desktop original-runtime framebuffer; not a physical-phone screenshot.</pre><div class="source-tools"><a href="../../evidence/xc90.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC90" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC05"><summary><span class="source-title">XC05 / The original flip and slide keys stay distinct</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 36–41</p><pre>CONTROLS
+D-pad left/right runs, up jumps, down crouches. JUMP repeats original 2 beside
+SPIN (5). FLIP 1/3 and SLIDE 7/9 remain separate original moves.
+SELECT advances menus. BACK / PAUSE (-7) opens the original Quit?/No menu;
+choose No with SELECT to resume. Literal # and * remain accessible.
+ORIGINAL KEYPAD / D-PAD RETURN switches inline. Android Back cleans up and exits.</pre><div class="source-tools"><a href="../../evidence/xc05.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC05" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC06"><summary><span class="source-title">XC06 / Original controls, state replay and host scope</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/host-acceptance.txt · selected lines 20–55</p><pre>{
+  "scope": "Original game executed on host; Android phone play is separate",
+  "actions_against_no_input": {
+    "run_left": true,
+    "run_right": true,
+    "jump": true,
+    "spin": true,
+    "crouch": true,
+    "somersault_1": true,
+    "somersault_3": true,
+    "slide_7": true,
+    "slide_9": true
+  },
+  "original_help_scroll": true,
+  "original_right_softkey_pause": true,
+  "state_replay": true,
+  "metrics": {
+    "ticks": 425,
+    "faults": 0,
+    "warnings": 1,
+    "error": "parseLayout failed: BadOffsetTable (non-fatal \u2014 VM uses classfile parser directly)",
+    "width": 132,
+    "height": 176,
+    "period_ms": 75,
+    "heap_objects": 94,
+    "audio_plays": 2,
+    "audio_stops": 2,
+    "input_overflows": 0
+  },
+  "original_game_sha256": "07ea57e1775ffe0b2ab563204a42b389e2360101db1ebb53d145524f56ccd4b2",
+  "limitations": [
+    "No campaign completion",
+    "No physical phone audio/heat/touch testing",
+    "Dialog native layout uses recovered original contract; manufacturer decoration unverified",
+    "Public Omni export requires original ExEn runtime/font inputs beyond the EXN"
+  ]</pre><div class="source-tools"><a href="../../evidence/xc06.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC06" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC02"><summary><span class="source-title">XC02 / A healthy empty AudioTrack was rejected</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 3–20</p><pre>REPRODUCED ROOT CAUSE
+Android MODE_STATIC AudioTrack begins in STATE_NO_STATIC_DATA (2) until its
+first successful write. The previous code required STATE_INITIALIZED (1)
+before writing; it rejected a valid track and never submitted any PCM.
+The actual Android API34 framework reproduces the failure in
+  evidence/audio-baseline-failure.txt
+using the v0.1.0 source and Crash's original melody data, without mocking the
+player, AudioTrack constructor, getState or write/play lifecycle.
+Reference: https://developer.android.com/reference/android/media/AudioTrack
+The platform audio output sink is supplied by Robolectric's stock native shadow;
+this is not a physical speaker or Android-device listening test.
+
+AUDIO REPAIR
+Accept a healthy waiting-for-data track. Submit the entire PCM16 buffer through
+the supported ByteBuffer write API. Validate accepted byte count and readiness
+before play. Preserve the original synthesis function exactly. Stop cancels
+queued work; paused tunes retain their loaded buffer; late callbacks after close
+are ignored. Keep the actual failure message in independent report snapshots.</pre><div class="source-tools"><a href="../../evidence/xc02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC08"><summary><span class="source-title">XC08 / The original player fails before filling its buffer</span><span class="source-kind">Historical framework regression output</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/audio-baseline-failure.txt · selected lines 2–3</p><pre>EMPTY_STATIC_TRACK_STATE=2
+java.lang.AssertionError: Original melody was rejected before its static PCM buffer could be filled expected:&lt;0&gt; but was:&lt;1&gt;</pre><div class="source-tools"><a href="../../evidence/xc08.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC08" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC04"><summary><span class="source-title">XC04 / Original VM through JNI into repaired Android audio</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 41–48, 59–66</p><pre>END-TO-END ACTIVITY / NATIVE CHECKS
+Three full integrated Android framework scenarios pass. Cold startup drives the
+original EXN through its real native VM/JNI/controller into the repaired audio
+player. The genuine startup melody receives 936,684 bytes, starts playback and
+reports zero audio errors. Existing original renderer, inline modes, independent
+pad/action ownership, physical-owner preservation, Back/cleanup and independent
+SAVE REPORT capture with a blocked game worker continue to pass.
+See evidence/android-integration.txt.
+
+[... selected excerpt ...]
+
+SCOPE / LIMITS
+No phone/speaker listening acceptance is implied. Original handset timbre,
+full campaign audio coverage and live Downloads export remain unverified here.
+The captured original run requests startup/new-game melodies and sends original
+stop events; this patch adds no continuous soundtrack to otherwise silent stages.
+The user's installed Omni showed the prior bridge as Ready. The earlier local
+EXN-only dependency simulation was not an actual Omni rejection. No new claim
+about current public Omni preparation is made by this audio-only bridge update.</pre><div class="source-tools"><a href="../../evidence/xc04.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC04" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC09"><summary><span class="source-title">XC09 / Both original melody buffers pass the release-class tests</span><span class="source-kind">Historical framework test output</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/audio-release-class-tests.txt · selected lines 1–6</p><pre>Android API34 AudioTrack framework check; host output sink, no physical speaker claim.
+[Robolectric] WARN: Android SDK 36 requires Java 21 (have Java 17). Tests won't be run on SDK 36 unless explicitly requested.
+EMPTY_STATIC_TRACK_STATE=2
+ORIGINAL_MELODY_1 accepted_bytes=936684 peak=4915 state=1 play_state=3
+ORIGINAL_MELODY_2 accepted_bytes=936684 peak=4915 state=1 play_state=3
+CRASH ANDROID AUDIO: tests=6 failures=0</pre><div class="source-tools"><a href="../../evidence/xc09.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC09" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-XC07"><summary><span class="source-title">XC07 / The installed Omni said Ready</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 44–49</p><pre>OMNI
+Original recognition, import rules, UI resources and stable save identity are
+unchanged. The user's installed Omni marked the previous bridge Ready.
+The old checkpoint's EXN-only audit did not test Omni's real export/import
+handling and must not be read as a confirmed Omni export blocker.
+This audio update introduces no new preparation operation or original asset.</pre><div class="source-tools"><a href="../../evidence/xc07.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="XC07" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../mutant-alert/index.html">Mutant Alert →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

@@ -1,0 +1,43 @@
+SJ02 / What the keys actually mean
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/INPUT_FINDINGS.txt
+Selected lines: 16–20, 22–39, 47–55
+Source SHA-256: 4d07c4c327533af664c3281d372e6e5a6c02c51fef20438ca000c46cd8a43a21
+
+KEY SAMPLING
+- Canvas.getKeypadState() polled once per game update (run offset503).
+- KeyI=current held mask. KeyE=(~KeyO)&KeyI captures newly pressed edges; KeyO is then updated to KeyI.
+- Directions should stay held until finger lifts. Menu/soft buttons must release between presses. Multi-touch left/right + action is appropriate.
+- Canonical DoJa directions are bit16 LEFT,17 UP,18 RIGHT,19 DOWN; bit20 SELECT; bit21 SOFT1; bit22 SOFT2. Numeric bitN is keyN.
+
+[... selected excerpt ...]
+
+VERIFIED USED MASKS
+Mask(decimal)    Meaning                         Evidence
+65552           LEFT or number4                 mainmode2 offsets918..988, decreases nXPower, sets boSonicDire=false
+262208          RIGHT or number6                mainmode2 offsets839..909, increases nXPower, sets boSonicDire=true
+1048608         SELECT or number5               mainmode2 offsets294..696, high-jump boHiJump latch; nJumpF=-32 or -44 depending floor
+131076          UP or number2                   mainmode1 offsets388/509; nKey decreases (menu/zone list only)
+524544          DOWN or number8                 mainmode1 offsets448/572; nKey increases (menu/zone list only)
+65536           LEFT                            rankingmenu offsets202..240; changes selected ranking column
+262144          RIGHT                           rankingmenu offsets244..282; changes selected ranking column
+2097152         SOFT1                           sound toggle on title; Select in menus; Pause during gameplay; Resume paused; Next/Skip story
+4194304         SOFT2                           Quit title; Back menus; Title paused/game-over; Quit loading errors
+3145760         SELECT or5 or SOFT1              menu selection, retry, results next, staff-roll advance
+
+CONTROLS CONSEQUENCE
+- Actual gameplay needs only LEFT, RIGHT, and one Jump/high-jump action plus the guest Pause soft button. There is no gameplay UP/DOWN movement, attack, camera, roll, or four-button face cluster.
+- Jump is a real used action: boHiJump prevents continuous held retriggering until release, and floor type controls impulse. Labeling it Jump (or High jump) is supported. Do not infer extra buttons.
+- Menu/zone lists genuinely need UP/DOWN; ranking genuinely uses LEFT/RIGHT. Context-specific directional pads can hide unused directions during gameplay.
+- Guest-supplied soft labels are the best current meaning source: setSoftLabel(index0,index1) has separate labels per state, including Pause/Resume/Title/Next/Skip/Retry/Back/Select/Quit and sound symbols.
+
+[... selected excerpt ...]
+
+Mode2 gameMode2: gameplay; LEFT/RIGHT steer, SELECT/5 high jump, SOFT1 pauses.
+Mode2 gameMode3: game over; SELECT/5/SOFT1 Retry, SOFT2 Title.
+Mode2 gameMode4: result; SELECT/5/SOFT1 continues.
+Mode2 gameMode5: next-stage story; same storymode handler.
+Mode2 gameMode6: staff roll; SELECT/5/SOFT1 advances.
+Mode2 gameMode7: ending story; same storymode handler.
+Mode2 gameMode8: final return state; any new key returns to title.
+Mode2 gameMode9: paused; SOFT1 Resume, SOFT2 Title. SELECT does not resume here.
+Mode3: ranking; LEFT/RIGHT selected column; guest soft labels Submit/Back. The historical online endpoint no longer needs to be available for local play.

@@ -1,0 +1,14 @@
+BS15 / The timer requested after the work was billed for work already done
+Source: BioShock_3D_Bridge_v0.1.6_PERFORMANCE_READOUT.txt
+Selected lines: 3–11
+Source SHA-256: d6ea1a9b740668b95dd0e88fe4df852561ba3b0bd72b6843f0e6d5911029c8b1
+
+A real host timer defect is corrected. The original game requests2ms near the
+end of its callback; the old host subtracted all earlier callback work from that
+new request. Current scheduling uses the actual SetTimer deadline. Canceled
+timers do not poll, and key/audio/lifecycle events synchronize the single tick.
+No arbitrary FPS cap, production instruction profiler or extra worker was added.
+
+Frequent guest byte/halfword/word operations use exact cheaper bounds checks and
+one/two-page change tracking. Original instructions, physics, content, controls,
+audio and save format remain. No experimental dispatch or arithmetic path ships.

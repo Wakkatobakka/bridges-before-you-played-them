@@ -1,0 +1,14 @@
+A10 — The original game files survived intact
+Evidence type: Archive comparison
+Source: Ashen.rar compared with the attached Ashen v0.1.3 checkpoint inventory
+
+Fresh archive inspection for this chapter. This comparison publishes file identity only; original game contents are excluded.
+
+13 regular game files were read from the RAR.
+All 13 filename/size/SHA-256 entries match the checkpoint inventory.
+Original game executable: 6R21.app
+Size: 999,536 bytes
+SHA-256: 4025b0711644c1dfc591d0eb7fac2e3e0fca41a61d7fa9f69d3d1768a706a055
+The movement finding records that same executable hash in both timing builds.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

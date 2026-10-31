@@ -1,0 +1,19 @@
+SN03 / The real Activity reproduces the launch crash
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 1–14
+Source SHA-256: 81826723092955b062dadb1611d54c2076b56e3fca27a19ba540802c5c8bd59f
+
+LAUNCH CRASH FIX — v0.1.2
+
+Device evidence: supplied Samsung screenshot says Sonic N closed because of
+an app bug. The recovered 6.47-second recording shows repeated icon taps and
+immediate returns to the launcher before the gameplay screen appears.
+
+REPRODUCED ROOT CAUSE
+Production MainActivity.onCreate builds BridgeGameplayUi before setContentView.
+In the supplied v1.1.0 kit, setupWindowInsets calls Window.getInsetsController
+before PhoneWindow decor is created, causing a NullPointerException in
+PhoneWindow.getInsetsController. This exact exception is reproduced with the
+actual MainActivity and real compiled resources under Android API34 framework
+callbacks/Robolectric 4.16.1. The generic already-created-Activity shell test and
+pure geometry/input checks did not exercise this lifecycle ordering.

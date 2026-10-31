@@ -1,0 +1,33 @@
+KH07 / Latest original-runtime continuity and controls-only checks
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 32–59
+Source SHA-256: 2122456d45d6a77b0e09d733610114ea2446ee9bb0df833f33e885b3acae86fd
+
+VERIFICATION
+11 integrated Android API 34/Robolectric tests pass. They cover actual Activity
+startup, both layouts at five screen sizes, native graphics, original-generated
+save restoration, report capture during a blocked worker, Android Back cleanup,
+real multi-pointer MotionEvents through the production control tree, independent
+movement/Action/Magic holds, two separate steering contacts, neutral-center
+behavior, direction-boundary tolerance, cancellation and exit/re-entry, exact
+keypad/utility codes, and mode changes with a held physical-controller input.
+Fractional display density is checked with no overlapping/clipped targets or
+buttons below 48dp; the pad is square and at least 180dp.
+
+The real Android layout previews use a captured original tutorial frame for
+visual inspection. They are not physical-phone screenshots. The supplied
+v0.1.0 gameplay recording informed this pass; v0.1.1 thumb comfort and combat
+feel still need a phone test. No combat or full-level acceptance is claimed.
+
+The original ARM/Swerve runtime, worker execution logic, original game assets,
+audio wrapper/playback logic, save handling, native turn speed, original inputs,
+UI kit JAR and Omni import/preparation rules are unchanged from v0.1.0. The only
+controller-file change is the report's version text. Runtime/asset continuity
+hashes and the independent strict handoff audit are under evidence/.
+
+KNOWN BASELINE LIMITS
+The original optional font extension uses a system-sans fallback. Wonderland
+gameplay is absent from the supplied dump. QCELP effects still depend on the
+phone's QCP decoder. Full production Omni import/export carry-forward and later
+campaign coverage remain separate acceptance checks. This is a private test
+update, not an accepted public release.

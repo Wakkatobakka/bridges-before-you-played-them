@@ -1,0 +1,32 @@
+UP03 / A nonstandard left key and an original touch strip
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 75–101
+Source SHA-256: b65ac7143ca9da7fcdf5ca87ddd0d4b4e71e2e013128af605a0296ba88404aac
+
+EXECUTION
+The unchanged original JAR is converted with D8 together with a targeted
+MIDP compatibility layer. ResidentEvilMIDlet, t and all other original
+classes execute directly. No game logic is decompiled/recreated and no
+original class bytes are patched. All 123 non-class original resources are
+packaged byte-for-byte at the APK classpath root, with the original manifest
+also retained as game-manifest.mf for MIDlet properties.
+
+The compatibility layer implements the actual API set referenced by this
+JAR: Canvas, Display, Displayable, Image, Graphics, MIDlet, Manager,
+Player/PlayerListener and RecordStore. Graphics includes all eight MIDP
+region transforms, original PNG alpha, clipping, primitive drawing and
+pixel-preserving scaling. The game uses its own sprite font for most text.
+The virtual original device is 240x320. Its game field is 240x280 plus the
+native 40-pixel touch strip. The original touch strip is intentionally
+preserved as part of original execution. Native pointer input is supported.
+
+INPUT
+The JAR's t.a(int) maps raw -3 to an alternate '*' input before consulting
+getGameAction. Do not change the external left button to conventional -3.
+Verified native mappings are Up=-1, Down=-2, Left=2, Right=-4, OK=-5.
+Glu-Left-Key-Code=-6, Glu-Right-Key-Code=-7, Glu-Back-Key-Code=-8,
+Glu-Center-Key-Code=-5. Thus external Back=-7 reaches the game's own back
+handler. Number keys send their actual ASCII values. Numeric 5 is distinct
+from the separate OK input. Input events are queued and consumed at most
+one per original render, preserving quick press/release ordering. Cancel,
+panel swaps and app backgrounding release/clear pending touch state.

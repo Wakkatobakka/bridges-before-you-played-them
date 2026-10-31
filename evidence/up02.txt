@@ -1,0 +1,29 @@
+UP02 / Historical pacing check and original guest execution
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/evidence/baseline-v0.1.0/VERIFICATION.txt
+Selected lines: 13–22, 36–46
+Source SHA-256: 54fffe37e4dded361f01af79b46d9f81da43a266981571e6c3df079fa325c140
+
+PASSED — ORIGINAL EXECUTION ON HOST
+Runs the actual supplied ResidentEvilMIDlet and game classes with the common
+MIDP compatibility layer, using an AWT backend for headless rendering.
+Original English selection, sound prompt, Capcom/Glu startup and title menu.
+Original opening text, Claire's station map and introduction to Leon.
+Original map movement with all four bridge directional inputs.
+Original pause menu, inventory, search/knife entries and item exchange.
+Native MIDlet pause stops frame output; native resume restores it.
+The main acceptance session reached 17,594 original frames without a
+recorded compatibility error. This is host evidence, not Android evidence.
+
+[... selected excerpt ...]
+
+PASSED — GRAPHICS / SCHEDULING
+All eight MIDP drawRegion transforms passed pixel comparisons.
+Clipping and surface pixel semantics passed.
+The approximately 30 Hz scheduler passed its timing check (30 intervals
+in 1.024 seconds) without busy waiting.
+
+PASSED — ORIGINAL MIDI PARSING / REQUESTS
+Original title (11056 bytes), intro (13301 bytes) and gameplay (3477 bytes)
+MIDI streams parsed successfully and exercised player completion callbacks.
+Android MediaPlayer output is implemented; host MIDI parsing does not prove
+audible playback on Samsung.

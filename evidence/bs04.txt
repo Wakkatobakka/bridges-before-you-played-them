@@ -1,0 +1,18 @@
+BS04 / A quick tap could disappear before the game saw it
+Source: 17-BioShock_3D_Bridge_v0.2.0_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.0_PRIVATE/evidence/original-analysis/original_findings.txt
+Selected lines: 35–47
+Source SHA-256: f5531ff18bcbe27c54519372ff4741d6d415da6be3af0c9148cca7291af5f6e4
+
+Native key lifecycle independently verified
+- Keymanager vtable 0x102508: +4 query pressed 0x12C898; +0x14 press 0x147A04;
+  +0x1C release 0x147A40; +0x20 last key 0x12C8BC; +0x24 cleanup 0x212E88.
+- Press sets pressed[index]=1, released[index]=0 and last key = index.
+- Release sets released[index]=1 and last key = 98 (sentinel); the pressed bit stays
+  set until original cleanup clears pressed/released following native input.
+- Independent fresh runtime probe read these exact fields before/after DOWN,
+  release before callback and one callback. See native_key_fields.txt and source.
+- Consequently press+release before a native callback can erase menu last key
+  before a menu sees it. Serializing release after at least one naturally due
+  native callback preserves an ordinary phone key press without host timer pumping.
+- World pressed array queries can observe one post release sample, as native code
+  explicitly defers cleanup. Do not override that lifecycle in guest memory.

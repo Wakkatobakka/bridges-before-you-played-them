@@ -1,0 +1,14 @@
+R14 — Textured gameplay and MISSION COMPLETE on the phone
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / docs/DEVICE_v0.3.6_FINDINGS.md
+Selected source lines: 3-7
+
+
+
+The owner supplied two recordings and the report captured on 2026-10-08 at 22:24:32 America/Chicago. The original files are retained under `evidence/v0.3.6-phone/`. This is physical evidence for v0.3.6, not acceptance of the later v0.3.7 changes.
+
+## Confirmed progress
+
+Both recordings show textured stage walls/floors and textured player/enemy models. Player poses change with movement/actions. The first recording reaches the original dialog and MISSION COMPLETE display; the native HUD and dialog remain visible above the 3D scene. Both-thumb direction controls remain available. These observations confirm that the texture/pose and native overlay work from v0.3.6 appears on the owner's phone, while preserving the earlier movement and script progression.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

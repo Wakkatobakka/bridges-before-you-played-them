@@ -1,0 +1,30 @@
+OE01 / A30-minute budget stops after191milliseconds
+Source: Orcs_Elves_2_Omni_findings_aa675bdc.md
+Selected lines: 7–15, 21–25, 46–49
+Source SHA-256: 7ccb4dc6040ee0438bf47387d27daffebb6453b8c8c0e2ed917d556055247f02
+Context: Original automated-investigation export. Its zero runtime tests are distinct from the separately documented early 284-instruction execution frontier.
+
+Status: blocked
+
+Reason: Local experiments finished. Findings identify the missing content or execution capability.
+
+Runtime adapter: No matching runtime adapter
+
+Time spent: 191 ms across 3 saved sessions. Latest chosen overall investigation budget: 1800 seconds. Omni stops early when its supported experiments are finished.
+
+This report records source/package checks and measured runtime experiments. Original input bytes are preserved. Selected portable runtime source may be compiled on desktop; supplied build scripts are not invoked. Imported runtime code executes in a separate host worker. Runtime results retain their exact tested input and tool identities.
+
+[... selected excerpt ...]
+
+## Observed successes
+
+- Stage a bounded experimental copy: Staged 4 files and 2426033 bytes; 0 nested archive(s) left packed at the stated depth/count/size limit. No guest scripts or native binaries were executed. Staged files remain in the private job workspace. Confirmed raw console inputs are read from preserved input.bin without a second whole-disc copy.
+- Consult existing bridge discoveries: ## Related prior work  No supported catalog match for this input. The catalog is a recovered subset, not a complete inventory of available bridge work.
+- Inspect available source behavior: Static source observations only. No issue is confirmed by a text pattern. Read 0 source files / 0 bytes; 0 candidate signals.
+
+[... selected excerpt ...]
+
+## Remaining limits and next steps
+
+- A checkpoint can supply its own runtime. Runtime/source and original assets must stay within the same project lineage.
+- Recognition is separate from runtime compatibility; a filename cannot establish that a game can run.

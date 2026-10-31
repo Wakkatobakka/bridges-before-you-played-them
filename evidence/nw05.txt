@@ -1,0 +1,13 @@
+NW05 / The original MIDlet reopens with its own state
+Source: Nowhere_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Nowhere_Bridge_v0.1.1_PRIVATE/evidence/restart-check.txt
+Selected lines: 1–8
+Source SHA-256: 2d9463a7bc0cf61bd6c176e10d8b00191b0b73bf5c4c89f9f23d7fdf746dbea3
+
+Original MIDlet restarted in same process
+SNAP original_restarted_menu frames=104
+Nowhere Bridge v0.1.0
+Original JAR SHA256: dd3278fb4276f6e3218d06b3b5149b680737c80874007c87817291da6f631000
+MIDP 2.0 / original 240x320 English Sony Ericsson K790 game
+frames=56 lastFrameAgeMs=20
+active=true ended=false keys=10 pending=0
+resourceReads=18 rmsWrites=0 faults=0 audioStarts=1

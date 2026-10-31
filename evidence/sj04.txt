@@ -1,0 +1,14 @@
+SJ04 / Exact clock patch
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/GAME_PATCH.json
+Selected lines: 13–21
+Source SHA-256: 6a9be688d60649376536b7afe4ded910e0d6a87ea5d0eadec49d298688c9c59d
+
+  "patch": {
+    "method": "jump.screen.run()V",
+    "bytecode_offset": 51,
+    "before": "java.lang.System.currentTimeMillis()J",
+    "after": "com.wakka.sonic.runtime.Host.frameClock()J",
+    "other_currentTimeMillis_calls": "shared method reference rebound to com.wakka.sonic.runtime.Host.gameClock()J",
+    "background_time_excluded": true,
+    "intended_frame_interval_ms": 100,
+    "gameplay_and_branch_bytes_preserved": true

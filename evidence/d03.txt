@@ -1,0 +1,10 @@
+D03 — The save claim keeps its limits
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.2-report.txt
+Selected source lines: 11-11
+
+This line describes local verification; it does not document a physical close/reopen sequence.
+
+Saves: original checkpoint system unchanged; fresh-process Continue verified locally; Android close/reopen validation still required. Not a save-state system.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

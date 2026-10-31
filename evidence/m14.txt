@@ -1,0 +1,45 @@
+M14 — Sky holes, black fans, and the next three repairs
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V009_FLUSH_CLIP_UV_NOTES.txt
+Selected source lines: 3-16, 18-36
+
+
+
+Physical v0.0.8 evidence
+------------------------
+The SM-S938U run is now deep into real hunt rendering with recognizable hunter and Aptonoth models,
+HUD, grass/path terrain pieces and animated combat. The persistent report recorded:
+- Figure: 640 calls, 140621 queued triangles, 138358 drawn.
+- PrimitiveArray: 2620 calls, 146854 queued triangles, 137772 drawn.
+- Primitive near crossings: 3046.
+- Primitive textured calls: 2470.
+- No fatal exception and no missing texture objects.
+
+The video still showed three characteristic renderer faults:
+1. disconnected world chunks / large sky-blue holes despite large numbers of terrain triangles;
+2. one-frame/angle giant black polygon fans near the camera;
+3. textured terrain changing abruptly when animated/wrapped UVs crossed the 0/255 seam.
+
+[... selected excerpt ...]
+
+Root-cause audit
+----------------
+1. v0.0.8 rendered every Figure/PrimitiveArray Java call immediately and sorted only within that one
+   call. MascotCapsule v3 accepts render commands but generates the pixels at flush(); the pending
+   polygons can therefore be depth-sorted together. Monster Hunter itself uses several deliberate
+   flush boundaries in the hunt renderer. v0.0.9 now preserves those boundaries and globally sorts
+   all pending Figure + PrimitiveArray triangles inside each flush batch.
+
+2. v0.0.8 only *pretended* to near-clip. A vertex behind the near plane was projected as if it sat on
+   the near plane while the other vertices remained unchanged. Crossing triangles therefore became
+   enormous fans/slabs. v0.0.9 performs Sutherland-Hodgman clipping against near/far Z planes,
+   interpolates texture coordinates at clip intersections, triangulates the clipped polygon, and
+   only then projects/culls it.
+
+3. v0.0.8 byte-masked PrimitiveArray UVs with &255 before interpolation. Monster Hunter deliberately
+   writes negative and >255 texture coordinates when scrolling/animating terrain. The reference
+   MascotCapsule path keeps those integer coordinates continuous and converts them to fixed-point for
+   rasterization; wrapping occurs while sampling. v0.0.9 keeps the raw signed integer UVs and lets
+   the repeating texture shader wrap them after interpolation.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

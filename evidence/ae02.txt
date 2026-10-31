@@ -1,0 +1,12 @@
+AE02 / Nine thousand magenta pixels disappear without changing the others
+Source: Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 32–38
+Source SHA-256: 071618f768b8d212a3c2100d28b75fb632999dd5e51af260f1ff81bfe096b6a6
+
+PASS — Minimap regression on same original VM snapshot: 9,444 exposed magenta
+pixels before, zero after; every non-key pixel unchanged. Fix only applies to
+palette-alpha on composited render targets without source index buffers. Indexed
+source image transparency still compares source indices. Original game unchanged.
+Host loader's existing nonfatal BadOffsetTable advisory remains visible because
+its complete classfile parser handles this title; it is not counted as success
+or hidden as a cleared error. No detailed instruction tracing in release builds.

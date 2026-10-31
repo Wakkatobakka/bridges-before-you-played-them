@@ -1,0 +1,12 @@
+AE91 / Historical image / Age of Empires II Mobile
+Source: Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE/evidence/acceptance/minimap-after.png
+Source SHA-256: 0280d33a4198bac9c3596fd6180de91c9bd17483f85c070dbc9fb174d52506ea
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE/evidence/acceptance/minimap-after.png
+SHA-256: 0280d33a4198bac9c3596fd6180de91c9bd17483f85c070dbc9fb174d52506ea
+
+The matching minimap after the composited palette-alpha repair, with zero leaked magenta and all non-key pixels unchanged.
+
+Scope: Historical same-VM-snapshot comparison; no original game bytes changed; not phone output.

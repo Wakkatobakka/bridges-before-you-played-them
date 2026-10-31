@@ -1,0 +1,16 @@
+RD07 / The framework intentionally does not run native gameplay
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 18–28
+Source SHA-256: 9219f8d377e6f1c22b6dcc9eb35a01e71c5e7f14a6b4bec9265b4d5895565e25
+
+ANDROID FRAMEWORK — FIVE TESTS PASS
+Actual Activity/Window cold startup before setContentView, insets/layout,
+normal and inline keypad modes, live renderer identity and stable geometry.
+Independent move/turn/action contacts and releases in both modes, controller
+hold preservation through switching, actual button mapping and cleanup.
+Startup fault capture precedes view construction; failed export is retained.
+Renderer resources are repaired before JNI without replacing guest saves.
+One report-button tap returns promptly and writes actual text through a
+file-backed provider fixture, with no native startup or share sheet.
+The native boundary is disabled in these tests. They are not ART gameplay,
+physical-touch comfort, real hardware Downloads or on-device audio evidence.

@@ -1,0 +1,27 @@
+T12 — The first useful OK key was not the final Action mapping
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.17.md
+Selected source lines: 42-59
+
+
+
+| Control | Actual guest key | Other context |
+| --- | --- | --- |
+| Action / physical center OK | SELECT78; numeric5=18 | Title/menu confirmation; contextual use/fire/punch/grab/crawl/climb |
+| Movement / look / aim | Left9 Up10 Right11 Down12 | Original numeric4/2/6/8 aliases17/15/19/21 |
+| View | Numeric1=14 | First/third-person view |
+| Codec / left soft |209 | Title sound toggle and camera Continue |
+| Equip / right soft |210 or CLR79 | Back / Codec Skip |
+| Camera mode toggle |Star77 | Gray/unavailable under original camera fallback |
+
+The old bridge center OK209 represented left soft, despite the original help
+calling the physical center action OK. New raw center OK sends78. The legacy
+209 observation constant/convenience helper remains documented for historical
+probe compatibility; the new UI sends explicit keys. Hash has no measured role
+and is omitted. The raw deck retains all measured keys including star77.
+The original default diagonal setting is off; simultaneous directions still
+reach the original game, which resolves them to one cardinal direction. No
+eight-way movement or separate fire/crouch key is promised. A dedicated original
+Game Menu key is unproven; host Pause is kept distinct from guest keys.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

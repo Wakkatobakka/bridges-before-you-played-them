@@ -1,0 +1,49 @@
+D12 — Shared gameplay UI; retained runtime
+Evidence type: Checkpoint verification notes
+Source: Dirge_Bridge_v0.3.0_PRIVATE_CHECKPOINT.zip :: Dirge_Bridge_v0.3.0_PRIVATE/README_FIRST.txt
+Selected source lines: 11-20, 29-40, 48-59
+
+
+
+WHAT CHANGED
+- Real Wakka Gameplay UI Kit v1.1.1 embedded, including its cold-start repair.
+- Actual launcher icon, title, DoJa label, SAVE REPORT and utilities header.
+- Same original 240x320 renderer, fitted without distortion or game overlays.
+- Square continuous four-way D-pad, separate horizontal camera/weapon aim,
+  prominent Action, three weapon buttons, original Select/Back and Center.
+- One visible tap to the inline original keypad and back. The original D-pad
+  and Action remain available alongside digits, * and #. Same live viewport.
+- Owned touch input, duplicate bindings, controller holds across switches,
+  release events in utilities, cancellation, pause and teardown.
+
+[... selected excerpt ...]
+
+PRESERVED RUNTIME
+The original host APK is in baseline/Dirge_Bridge_v0.2.4.apk. Its old
+GameActivity family is exposed as BaseActivity and inherited by the new UI
+Activity. Existing runtime method bodies are not recompiled or rewritten.
+All 662 retained methods match after final D8 packaging, including original
+boot, surface, graphics, audio, input sampling, aim repair, saves and teardown.
+
+Only the existing MainActivity family (version/routing) and TwinLayout family
+(touch geometry) are replaced. TwinInput and CameraAssist are preserved from
+v0.2.4, including the runtime PAD_LEFT/PAD_RIGHT field reads that repaired aim.
+Old runtime report sections still identify their frozen v0.2.4 baseline; the
+new report header identifies app 0.3.0 / UI Kit 1.1.1 explicitly.
+
+[... selected excerpt ...]
+
+VERIFICATION
+- Final APK compiles, D8 merges, signs with the prior certificate and aligns.
+- All original assets and the exact 19-file payload allowlist are unchanged.
+- All 662 retained runtime methods: identical resolved DEX instructions,
+  register counts and exception tables after packaging.
+- Ten final-APK Android API 34 framework checks pass under Robolectric with
+  native graphics. Actual packaged DEX is translated to JVM for these checks;
+  the original-game boot boundary is deferred, not simulated. Checks cover
+  real Activity startup, attachment, measurement, both control modes, held
+  inputs, three-pointer action/movement/aim, action-to-aim separation, physical
+  key-up in utilities, safe insets, portrait/landscape, drawing, Back, cleanup,
+  pause/resume and successful/failed report writing through a test provider.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

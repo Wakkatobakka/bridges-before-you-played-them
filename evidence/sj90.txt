@@ -1,0 +1,10 @@
+SJ90 / Historical image / Sonic airborne among platforms and rings
+Source: Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/jvm/06-movement-and-jump.png
+Source SHA-256: fb99d78d278f307ceecb92411e26dec4f833091b4775727b1f45bdb551fadc8a
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/jvm/06-movement-and-jump.png
+Image SHA-256: fb99d78d278f307ceecb92411e26dec4f833091b4775727b1f45bdb551fadc8a
+
+An unchanged 240×240 game frame from the retained JVM guest probe. It records original-game rendering on the host, not a phone screenshot.

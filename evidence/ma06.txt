@@ -1,0 +1,22 @@
+MA06 / Actual touch paths and report limits in the framework
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 56–72
+Source SHA-256: b215593753dcd3e72a34bfb7f18ecc61d760aafccb5abf00b2517ac70a2eec6e
+
+ANDROID FRAMEWORK — FIVE TESTS PASS
+Robolectric 4.16.1 / API34 / native graphics / actual host JNI build:
+1. Original intro PCM write/playback start as described above.
+2. Cold startup, aspect132:176, START in both modes, same renderer size through
+   mode switch, portrait/landscape, physical ownership, pause/resume and Back.
+3. Real touch route through SMS/retry/NO/PLAY/tip into the level; phase-specific
+   actions, no combat deck on menus, quit/NO returns to gameplay.
+4. Independent simultaneous D-pad/fire contacts, release ordering, mode-change
+   cleanup, duplicate touch/physical ownership and context-change cleanup.
+5. SAVE REPORT responds while game worker is blocked. Pending text includes
+   original context, visible commands and audio output details.
+
+Visible buttons meet 48 dp in checked portrait/landscape layouts; gameplay pad
+is square and at least 144 dp. Screenshots retained.
+Real MediaStore export is NOT VERIFIED: framework host lacks a Downloads
+provider. Pending export is checked; provider failure remains failure.
+All 14 Java files match the actual supplied UI kit v1.1.2 byte for byte.

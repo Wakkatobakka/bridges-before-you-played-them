@@ -1,0 +1,17 @@
+DV08 / Current native and framework checks remain separate
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/evidence/FINAL_VERIFICATION.txt
+Selected lines: 5–16
+Source SHA-256: 8440b8e15786576338264edb8515dac07be72cbb193eceffcf2b88c40c51c8f5
+
+PASS one-time native Options Real Steering setup; only original prefs.dat byte 11 changes; later user preference respected
+PASS 96 original ARM driving/setup checks, including speed/heading/pixels, simultaneous gas/steering, both release orders, reverse, pause/resume
+PASS existing 72 ARM execution, 47 native text-scroll and 51 native statistics/formatter checks
+PASS 18 controller and 36 exact hardware-mapping checks
+PASS four production contexts / 1120 geometry cases / 39760 assertions
+PASS shared kit 35022 input, 107 independent contacts, 420 geometry cases / 59221 assertions, 13 configuration checks and 12 Android tests
+PASS actual Driv3r Activity/resources: 8 Android API34 native-graphics tests, including real root multitouch, rocker sliding, mode/context ownership, icon rendering, insets/fonts and cleanup
+PASS new launcher artwork decoded pixels preserved; single resource used for launcher and header
+PASS 43 signed package, actual-kit, original-source and local handoff inventory checks
+LIMIT framework Activity uses recording worker boundary; native execution is tested separately
+LIMIT local handoff stripping/reconstruction inventory is not Omni production export acceptance
+LIMIT no v0.1.4 physical phone, actual Downloads/audio, full campaign or Omni hosted/cumulative export acceptance

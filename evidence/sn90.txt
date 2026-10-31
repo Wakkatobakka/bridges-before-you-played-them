@@ -1,0 +1,12 @@
+SN90 / Historical image / Sonic N
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE/evidence/host-jump.png
+Source SHA-256: 5d1fe073fbb57ecf6175d65001675d42f6f180ed436fd2d84fdf61c980c1f39e
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Sonic_N_Bridge_v0.1.2_PRIVATE/evidence/host-jump.png
+SHA-256: 5d1fe073fbb57ecf6175d65001675d42f6f180ed436fd2d84fdf61c980c1f39e
+
+Sonic airborne in the original first-level host run. This is the unchanged v0.1.0 Linux EKA2L1 window, including its neutral emulator menu/status bars.
+
+Scope: Historical Linux host emulator capture retained in v0.1.2; not a phone screenshot or v0.1.2 guest replay. Any FPS counter is emulator UI, not an Android benchmark.

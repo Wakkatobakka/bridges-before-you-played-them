@@ -1,0 +1,12 @@
+SH90 / Historical image / Silent Hill: Orphan
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/evidence/v011_room_now.png
+Source SHA-256: 4d3ded7da86e181360aecb3d8ec28a9cdbba49fb45ced8c6de714201e7be8384
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/evidence/v011_room_now.png
+SHA-256: 4d3ded7da86e181360aecb3d8ec28a9cdbba49fb45ced8c6de714201e7be8384
+
+The original orphanage room with its cursor and Map/Pause footer. Retained from the 0.1.1 caption replay on the desktop host.
+
+Scope: Historical original-MIDlet host execution with read-only presentation adapter; visually inspected, game only, zeroEXIF.

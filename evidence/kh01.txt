@@ -1,0 +1,29 @@
+KH01 / The initial investigation lacks the separate Swerve engine
+Source: Kingdom_Hearts_VCAST_Findings.txt
+Selected lines: 4–27
+Source SHA-256: b2f837d60d2b09cc12f88bcd5610bfd151d450eff460fe44dae802fecbb088cf
+
+RESULT
+Not yet playable. No standalone APK or finished Omni bridge was produced.
+
+VERIFIED ORIGINAL EXECUTION
+The unmodified kh.mod executes AEEMod_Load and returns a real module object.
+Its original CreateInstance succeeds for class 0x01026191, creating an applet
+with event handler 0x0010E060. Startup requests extension class 0x0102BBFC,
+which the inherited BREW host cannot provide. The game takes its own error
+path. The host then fails at unimplemented IDisplay+0x10 while the original
+error screen is being drawn. No accepted APP_START, title or gameplay is proven.
+
+THE MISSING DEPENDENCY
+Kingdom Hearts uses Superscape Swerve 3D as a separate BREW extension. Its
+known preserved binary is swv21brew.mod. This executable and its original
+descriptor are absent from the supplied Chapter 1 ZIP. swerve.m3g is a scene
+asset, not the engine. The supplied checkpoints contain no matching Swerve
+implementation or module. The checked Agrabah archive and BREW SDK extension
+archive did not contain that engine either.
+
+Recovering the engine is the next dependency, not proof of immediate success:
+extension loading and remaining BREW calls must then be implemented and tested.
+Startup also requests custom-font class 0x0100A004. The game continues after
+that font request fails, then checks the engine result. Implementing error-text
+rendering alone would not recover the missing engine.

@@ -1,0 +1,37 @@
+Z05 — 599 draws, two textures, and a readback reporting zero RGB
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v014_physical_phone_report.txt
+Selected source lines: 16-26, 39-52
+
+
+
+Guest EGL initialization failed: false
+Android hardware EGL context current: true
+Original guest EGL swap requests completed: 4
+GPU pixels with non-black RGB: 0
+Original Zeebo GLES interface calls forwarded to Android: 15082
+Original Zeebo GLES geometry draw calls: 599
+Original Zeebo GLES texture uploads: 2
+Maximum non-black RGB GPU pixels: 0
+Gameplay/rendering not yet proven
+Native Zeebo HID inputs: unimplemented
+Fault: none
+
+[... selected excerpt ...]
+
+Original glGenTextures n=1 GPU name=1
+ORIGINAL texture upload #1 Zeebo format=0x8b95 64x64 compressed bytes=4864 expanded exactly to RGBA8888
+ORIGINAL glDrawArrays mode=0x5 first=0 count=4 vertex=0x175a42 vertexType=0x1402
+Original glGenTextures n=1 GPU name=2
+Original glGenTextures n=1 GPU name=3
+ORIGINAL texture upload #2 Zeebo format=0x8c93 512x512 compressed bytes=262144 expanded exactly to RGBA8888
+eglSwapBuffers #1 ok=true nonblack=0 EGL error=0x3000
+glReadPixels error=0x504
+eglSwapBuffers #2 ok=true nonblack=0 EGL error=0x3000
+glReadPixels error=0x504
+eglSwapBuffers #3 ok=true nonblack=0 EGL error=0x3000
+glReadPixels error=0x504
+eglSwapBuffers #4 ok=true nonblack=0 EGL error=0x3000
+Zeebo GLES actual Android calls=15082 guest geometry submits=599 texture uploads=2 Java errors=0 first draw=mode=0x5 first=0 count=4 vertex=0x175a42 vertexType=0x1402 first/last failure=none
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

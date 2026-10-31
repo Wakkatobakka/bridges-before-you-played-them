@@ -1,0 +1,12 @@
+NC90 / Historical image / Need for Speed: Carbon — Domine a Cidade
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE/evidence/guest-state-4001.png
+Source SHA-256: fff83c18132c84552944d0c1e3602d136ff015e2524a6ebe50e4e7bd1617f9d8
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: NFS_Carbon_Bridge_v0.1.1_PRIVATE/evidence/guest-state-4001.png
+SHA-256: fff83c18132c84552944d0c1e3602d136ff015e2524a6ebe50e4e7bd1617f9d8
+
+The original Carbon race at126km/h, retained from a desktop Mesa run; original Portuguese HUD and car scene.
+
+Scope: Historical desktop original-ARM/GPU output, not phone output or the later framework control preview. No personal interface or EXIF.

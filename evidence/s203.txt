@@ -1,0 +1,18 @@
+S203 / Five original minigames keep their own controls
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/README_FIRST.md
+Selected lines: 17–29
+Source SHA-256: bb844a2c61caa33c672ccd8eab2a6952b85a987168051f70495ba38e95c2d4fb
+
+## Original controls
+
+OK passes the title, selects Web Climber and starts the highlighted START option. Select the game's HELP option with an arrow and OK. Read the original contextual footer for L SOFT / R SOFT actions.
+
+- Web Climber: UP starts climbing; LEFT/RIGHT dodge; 5 jumps.
+- Rooftop Battle: match the displayed number; OK launches a special attack.
+- Swing Down: OK readies the attack; LEFT/DOWN/RIGHT attack in that direction.
+- Spider Chase: OK emits the web while swinging.
+- Vs. Doc Ock: LEFT/UP/RIGHT dodge; 5 attacks a red target.
+
+Mappings come from original howto_1.txt through howto_5.txt in res.dat and the original ARM input handler. Later games retain their original score unlocks. The native music symbol on L SOFT toggles sound where shown; the preserved initial profile starts with sound off.
+
+Original save.bin writes remain atomic on this phone; existing phone-local files take priority over the preserved initial profile. Scores, unlocks and when to save remain controlled by the original game.

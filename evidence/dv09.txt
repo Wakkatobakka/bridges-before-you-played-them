@@ -1,0 +1,18 @@
+DV09 / Older applet and typed-resource semantics
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 6–18
+Source SHA-256: 4f88c6a22ab6e92a38b47a5b0f86f2a51b017fb2e7cc762525728e87c9070a8e
+
+Original input is upload Driv3r.rar, now retained at original_inputs/Driv3r.rar. Its BREW module is 73,776 bytes; resource BAR is 180,029 bytes; launcher MIF is 3,554 bytes. MIF and original string resource 3 agree on class ID 0x0101F0A9. Original metadata names LG VX4400; selected handset canvas is 120x160.
+
+No game logic was recreated or patched. The actual supplied ARM instructions execute from address 0x00100000. This older AEEApplet layout stores its event handler at applet+0x1C; +0x18 is a display object. The original main handler at 0x00101CA9 uses EVT_KEY (0x100) in menus and EVT_KEY_PRESS / RELEASE in gameplay mode 0x12, read from applet+0x25. The input routine at 0x0010D490 retains pressed, held and released edges at applet+0x970/+0x974/+0x978. Short press/release pairs do not need extra guest timer pumping.
+
+BAR lookup must include both ID and type: type 1 strings and type 6 binary/image/audio groups reuse IDs. Strings are raw Latin-1 with their full recorded length, widened by the shell service. Images include resource headers and BMP or image/z zlib-compressed BMP. The platform decodes those images while the original module's own bitmap paths continue executing. Native source-copy (2) and transparent (7) raster modes are supported on the observed path. Host text uses an embedded 6x10 system-font fallback with original requested strings, colors, clipping and alignment; handset font metrics are approximated.
+
+Added title-exercised services include byte-order conversion (system +0x12C/+0x130), bounded wide-string copy (+0x80), old applet offset, typed resources, BMP IImage decoding, display text/color/alignment and the original filled text-frame service. Startup constructs older network-related helper objects. The observed startup URL helper request to http://rs.sorrent.com:80/rs/fe returns an explicit failure in this offline build; the original game handles that failure and reaches gameplay. No remote success, server response, entitlement or authentication state is fabricated. This is not a complete BREW implementation.
+
+MIDI is delivered from the original SoundPlayer memory buffers, not recreated. Android MediaPlayer receives original bytes. Native audio started/completed notifications execute the guest callback. Audible Android output remains untested.
+
+Guest events, audio notifications, native timers and saves share one game worker. Only due native SetTimer callbacks run; input, reports and audio callbacks never pump the timer. Routine tracing is off, and unchanged display revisions do not create new presentation pixel arrays. Sparse performance and battery-temperature measurements are retained in reports.
+
+Direct report saving uses an immutable report cache refreshed at most once per second during ordinary play, plus a separate HandlerThread and MediaStore Downloads writer. A blocked-guest-lock regression proves capture and report writer dispatch do not depend on the guest worker. This fixture does not test physical MediaStore. Reports include snapshot age so a stalled worker's retained context is identifiable. Faults request an independent automatic report, also retained privately.

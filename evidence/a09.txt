@@ -1,0 +1,13 @@
+A09 — Where the buttered socks came from
+Evidence type: Conversation excerpts
+Source: Wakka / saved Ashen conversations / October 19, 2026
+
+Retrieved user-message excerpts, retaining the original wording and spelling. Times are converted from the recorded UTC timestamps to the October 19 Iowa local date/time. The complete conversations are not bundled.
+
+15:10 CDT — “I legit thought I had ported the controls wrong for this. So I looked it up and nope. You just fuckig slide all around lol”
+
+16:12 CDT — “It feels like we have buttered socks on when we're moving”
+
+18:35 CDT — “Yup, it worked. I'm having it pull out the fix and what not so I can publish it. Imma call it bsp - buttered sock patch”
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

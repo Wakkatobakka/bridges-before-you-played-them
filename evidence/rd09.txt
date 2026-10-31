@@ -1,0 +1,12 @@
+RD09 / Original key evidence and observed fire/reload values
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/evidence/original-input-evidence.txt
+Selected lines: 1–7
+Source SHA-256: a0c6743517d4a4bb4afa5f3e28997d1bb9458fcbbb12010a42c97d1554a84f73
+
+Original game Controls screenshots: Action/Aim/Attack = B; Reload = A.
+5320 service profile, orientation_270:
+/hardware/input/devices/0/orientation_270
+0x0001, 0x00004000, 0x000e, 0x00080000, 0x000f, 0x00100000, 0x0010, 0x00020000, 0x0011, 0x00040000,  0x002a, 0x00000400, 0x0030, 0x00000200, 0x0031, 0x00000001, 0x0032, 0x00000002, 0x0033, 0x00000004, 0x0034, 0x00000008, 0x0035, 0x00000010, 0x0036, 0x00000020, 0x0037, 0x00000040, 0x0038, 0x00000080, 0x0039, 0x00000100, 0x007f, 0x00000800,  0x00a2, 0x00400000, 0x00a3, 0x00800000,0x00a4, 0x00001000, 0x00a5, 0x00002000, 0x00a7, 0x00010000, 0x00c4, 0x00200000, 0x00e4, 0x01000000, 0x00e5, 0x02000000
+Runtime profile maps directions 0x10/0x11/0x0e/0x0f; center 0xa7; softkeys 0xa4/0xa5; Clear 1; digits 0x30-0x39; star 0x2a; hash 0x7f.
+Host observation: B enters aim, another B press fires (15 to 14), A reloads to 15.
+The original numeric center/run and status/menu alternate bindings are retained.

@@ -1,0 +1,41 @@
+XC06 / Original controls, state replay and host scope
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/host-acceptance.txt
+Selected lines: 20–55
+Source SHA-256: 02123b8ed9360256266036f28d0c87b88f8f400f9f1a098612e796b7000294bf
+
+{
+  "scope": "Original game executed on host; Android phone play is separate",
+  "actions_against_no_input": {
+    "run_left": true,
+    "run_right": true,
+    "jump": true,
+    "spin": true,
+    "crouch": true,
+    "somersault_1": true,
+    "somersault_3": true,
+    "slide_7": true,
+    "slide_9": true
+  },
+  "original_help_scroll": true,
+  "original_right_softkey_pause": true,
+  "state_replay": true,
+  "metrics": {
+    "ticks": 425,
+    "faults": 0,
+    "warnings": 1,
+    "error": "parseLayout failed: BadOffsetTable (non-fatal \u2014 VM uses classfile parser directly)",
+    "width": 132,
+    "height": 176,
+    "period_ms": 75,
+    "heap_objects": 94,
+    "audio_plays": 2,
+    "audio_stops": 2,
+    "input_overflows": 0
+  },
+  "original_game_sha256": "07ea57e1775ffe0b2ab563204a42b389e2360101db1ebb53d145524f56ccd4b2",
+  "limitations": [
+    "No campaign completion",
+    "No physical phone audio/heat/touch testing",
+    "Dialog native layout uses recovered original contract; manufacturer decoration unverified",
+    "Public Omni export requires original ExEn runtime/font inputs beyond the EXN"
+  ]

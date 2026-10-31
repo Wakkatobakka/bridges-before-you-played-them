@@ -1,0 +1,17 @@
+BA02 / Original startup needed native arithmetic and decompression budget
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 39–45, 47–48
+Source SHA-256: 69b0cc2b4483f7ed6bc9aab9c289714abdc1762ed820cca93a47a64545de0d74
+
+Earlier original-execution implementation notes (v0.1.0):
+Original BIA240 class 0x0104251E. Module entry at 0x00100000; constructor supplies
+handler 0x00120A80. Source module remains unchanged. Added double arithmetic
+selectors (add/sub/mul/div), unary sqrt, strchr, title-exercised sound-info and
+volume callbacks, original file services, audio MIME detection/handler resolution.
+Creation/start/loading callbacks require larger instruction budgets for original
+native resource decompression; no extra timers or scene synthesis were added.
+
+[... selected excerpt ...]
+
+Runtime lineage: supplied Katamari v0.1.0 from clean BioShock v0.2.0; Genesis v0.6.1
+MainActivity was inspected directly for presentation. New app com.wakka.bia,

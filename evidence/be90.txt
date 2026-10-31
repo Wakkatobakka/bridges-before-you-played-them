@@ -1,0 +1,12 @@
+BE90 / Historical image / Biohazard room 21 with corrected projection
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/verification-v012/room21.png
+Source SHA-256: 90724318db1008c4f0a19321e62c4ddfc3f5ceda2e756208c7ec0bb9d4a51819
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/verification-v012/room21.png
+SHA-256: 90724318db1008c4f0a19321e62c4ddfc3f5ceda2e756208c7ec0bb9d4a51819
+
+A controlled original-room host draw retained from 0.1.2, using a specified test position. Jill appears in the staircase corridor. This is not a replay or screenshot of the phone session.
+
+Scope: Historical controlled original-room draw retained from0.1.2, not phone capture.

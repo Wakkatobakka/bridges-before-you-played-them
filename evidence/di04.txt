@@ -1,0 +1,16 @@
+DI04 / An older loader and applet contract
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 45–55
+Source SHA-256: 295efdc27b1e2248e8e4a54ee1254e5c88195c41405f2469a84ce73bbe98ce0c
+
+COMPATIBILITY WORK
+- BREW 1.x startup prefix supplies version 0x10000 and helper table.
+- This original AEEApplet stores its handler at +0x1c, unlike the donor title.
+- Original event behavior uses EVT_KEY 0x101 plus press/release lifecycle events.
+- Native BMP support includes the original 1-bit and indexed artwork.
+- Native display text alignment is implemented. Handset system fonts use DejaVu
+  Sans compatibility glyphs; those are not claimed to be the original handset's
+  exact font. The game's own bitmap artwork is unchanged.
+- Original indexed DB calls persist set/high/save/tut records. Original MIDI
+  buffers flow to Android MediaPlayer with completion notifications returned to
+  the guest worker. Live acoustic output is not established by host tests.

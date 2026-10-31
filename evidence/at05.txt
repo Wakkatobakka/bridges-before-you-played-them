@@ -1,0 +1,16 @@
+AT05 / The later edition only updates icon resources
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 1–6, 12–13
+Source SHA-256: 058d424c0fc234b18a44512d1dd7c30d6ac3ccd15caa25ebcf8a5e3ff642873d
+
+ICON UPDATE ONLY
+Base: newest signed v0.1.0 OMNI_READY_PRIVATE APK.
+New antique-gold Roman III, crimson shield and Maltese cross launcher art.
+The same resource also supplies the gameplay header icon.
+Android versionCode 2, versionName 0.1.1; package and signing identity retained.
+All code DEX, original game payloads, controls and Omni import/preparation metadata preserved byte for byte. Only the retained icon hash changes in Omni export metadata.
+
+[... selected excerpt ...]
+
+VERIFICATION
+Signature/update identity, exact ZIP-entry comparison, original/prepared payload equality, all strict resource inventory hashes, manifest version and icon dimensions. No new on-device gameplay test is claimed for this resource-only update.

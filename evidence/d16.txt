@@ -1,0 +1,13 @@
+D16 — A Dirge-labeled report invokes Rockman code
+Evidence type: Ambiguous record
+Source: Separately retrieved Dirge-Bridge-0.2.4-report.txt
+
+This is a reviewed description of the identity conflict, not a diagnosis of how it happened. App installation paths and session identifiers are omitted.
+
+Report heading: DIRGE BRIDGE 0.2.4 — runtime report
+Frames submitted: 0
+Exception: missing com.nttdocomo.ui.util3d.Vector3D
+The stack names RockmanDash_F.start.
+Editorial decision: hold this record outside the Dirge failure timeline.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

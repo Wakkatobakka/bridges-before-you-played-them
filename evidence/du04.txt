@@ -1,0 +1,32 @@
+DU04 / A four-way bridge pad was mistaken for an original limit
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 8–34
+Source SHA-256: c7907402e00f82c10d097747d70ddc22666dd01c109a27c6d93ead55181561aa
+
+Scope: replace shared contact implementation and correct this game's verified
+simultaneous-direction configuration. Runtime source, original modules, assets,
+renderer, timer scheduling, original save.dat semantics, audio and report-writer
+behavior remain unchanged. Report version strings advance to v0.1.2.
+
+The v0.1.1 Duke integration selected a four-way pad based on the old touch
+implementation. That was insufficient evidence of an original-game limitation.
+DukeCombinedInputAcceptance now delivers actual original key press/releases and
+reads original native input/player fields without writing guest memory.
+Six scenarios (forward/back + left/right, reverse key order, forward/turn/fire)
+changed position and heading simultaneously in 36/36 scheduled native callbacks.
+Both release orders retained the other original inputs. See evidence and CSV.
+
+DukeControls.directions() now explicitly uses withDiagonals(true) WITHOUT
+separate diagonal codes. This represents two concurrent original cardinals,
+not replacement diagonal keys or analog control. The exact BREW direction
+codes remain E031..E034; center OK remains E035; numeric FIRE remains E026.
+Original numeric, softkey, hardware-button and axis mappings remain unchanged.
+
+Both the standard normal panel and game-owned DukeKeypadView obtain the SAME
+verified directions() spec and instantiate the shared BridgeDigitalPad.
+The custom original mode retains a complete D-pad beside the numeric cluster.
+The v1.1.2 pad keeps every contact by stable pointer ID and sends their union.
+Duplicate native keys remain held until the last contact/source releases.
+Touch switches/cancel clear touch ownership and retain registered hardware.
+The original mode-switch UI, geometry, safe areas, stable renderer slot,
+Android Back cleanup, startup fault capture and reporting are preserved.

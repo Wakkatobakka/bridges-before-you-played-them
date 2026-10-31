@@ -1,0 +1,7 @@
+SW06 / Final clean seed reaches the original sound confirmation
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 22–23
+Source SHA-256: 415788c48a924f7d99c219f73c0bd381be4be9c6cc2cd010a316f8d7116d398d
+
+Final clean APK seed cold boot: PASS, original sound confirmation rendered.
+See final-seed-host-verification.json and final-seed screenshots/log.

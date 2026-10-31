@@ -1,0 +1,12 @@
+MT90 / Historical image / Digital Devil Story: Megami Tensei
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE/evidence/final_02_dungeon.png
+Source SHA-256: 1a964a52927cb67dbc1678c1913cb47749b02e6f743d2777c11ed84adcac9593
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Megami_Tensei_Bridge_v0.1.1_PRIVATE/evidence/final_02_dungeon.png
+SHA-256: 1a964a52927cb67dbc1678c1913cb47749b02e6f743d2777c11ed84adcac9593
+
+The original 176×208 dungeon with Nakajima, Yumiko and the game HUD. Retained desktop guest output, not a phone screenshot.
+
+Scope: Historical original Java guest with host graphics backend, retained in v0.1.1.

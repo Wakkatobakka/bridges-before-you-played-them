@@ -1,0 +1,23 @@
+WR13 / A compact Doom-style layout keeps the fixed Wolf runtime
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/README_FIRST.txt
+Selected lines: 5–16, 18–20
+Source SHA-256: 54b16667b0a9f3ca3581b7266dce92e8f53f21b1565232732ab7a621893fb62f
+
+This is the requested compact Doom-style gameplay layout using Wolfenstein's original inputs. The exact fixed v0.1.3 runtime, original game assets, audio, independent report exporter, native exit handling and physical-controller mappings are preserved.
+
+LEFT ACTION COLUMN: SIDE LEFT=1, SIDE RIGHT=3, MAP=#, MENU/BACK=0.
+CENTER: a continuous digital movement pad sends 2 forward, 8 back, 4/6 turn. Its WAIT center sends original 9. When sniping, 2/8 aim vertically and 4/6 aim horizontally.
+RIGHT ACTION COLUMN: prominent FIRE/OK=5; NEXT WEAPON=7; PREVIOUS WEAPON=* (the latter two also retain native sniper zoom behavior).
+NATIVE KEY ROW: L SOFT, PHONE OK (true original SELECT), R SOFT (SKIP/MORE), CLEAR (original CLR).
+
+ORIGINAL KEYPAD replaces only the central movement pad with the readable original 1–9,*,0,# cluster. Both side columns and the native key row stay in the same positions, including the separate Fire/OK action. D-PAD RETURN switches back in one tap. The same live aspect-correct game viewport remains attached, visible and unchanged when switching.
+
+The compact panel uses about 82dp less height than v0.1.3 at normal phone settings. Keys retain 48dp minimum hit regions and the movement pad remains square. Portrait/landscape use actual measured safe areas and group sizing.
+
+The opening before the title must be watched once; after that, 5 or SELECT can skip it. The separate prison cinematic after New Game uses R SOFT, # or 9 when Skip is offered. 5/SELECT remains action/confirm. WAIT uses exactly the native 9 input; no synthetic skip or conditional Fire remap exists.
+
+[... selected excerpt ...]
+
+Android Back exits through the preserved original STOP/Release cleanup and returns to Omni/caller. CLEAR retains the original game's Clear/CloseApplet behavior. SAVE REPORT still exports genuine .txt directly to Downloads/Wolfenstein RPG Bridge/ independently of the game worker, with honest snapshot age and export status.
+
+Fresh checks passed: signed APK/package/version/certificate, unchanged runtime/payloads/reporting, 5 Android framework UI scenarios, 4,212 layout cases, native ITransform/exit and first-guard combat. Physical-phone installation, control comfort, live Downloads export and audio output have not been tested here for v0.1.4. See VERIFICATION.txt for scope.

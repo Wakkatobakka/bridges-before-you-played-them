@@ -1,0 +1,22 @@
+B07 — The original HELP text describes the handset controls
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.6_CONTROL_AUDIO_FINDINGS.md
+Selected source lines: 8-20
+
+
+
+## Recovered original controls
+The preserved BAR string/help resource states verbatim gameplay semantics:
+- Move Up: Dpad-Up, 2
+- Move Left: Dpad-Left, 4
+- Move Down: Dpad-Down, 8
+- Move Right: Dpad-Right, 6
+- Move diagonally with 1, 3, 7, 9
+- Fire: OK/5
+- Toggle Auto-Fire: 0
+- Pause: BACK
+- Left softkey = OK; right softkey = BACK
+
+v0.0.6 therefore stops asking the player to mentally translate a raw handset keypad during gameplay. The game-specific screen defaults to a labeled 8-way movement pad plus FIRE / OK, AUTO-FIRE, and GAME PAUSE / BACK. The complete raw keypad remains one tap away under the top Keypad toggle and stays the canonical BREW reference surface.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

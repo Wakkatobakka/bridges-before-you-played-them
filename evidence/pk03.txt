@@ -1,0 +1,21 @@
+PK03 / An update must not reseed the saved kingdom
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 33–48
+Source SHA-256: 102615c05d41ec76aea926ad3403d4640285af4097800265542433cbb94e7cc8
+
+PRESERVED
+Package com.wakka.pocketkingdom, UID 0x101FD3DD and the original signing key.
+The entire runtime seed, original game assets, native EKA2L1 library and save
+paths are byte-identical to v0.1.0. The existing ready-v1 install marker remains;
+updating the APK does not reseed or overwrite the installed guest.
+No new game implementation, title reconstruction or simulated gameplay.
+
+VALIDATION
+See VERIFICATION.txt and evidence/ for this version's actual test results.
+Robolectric Activity tests use the real Android framework, compiled application
+resources and production Activity. Native guest execution is explicitly disabled
+in those UI tests; their input recorder checks JNI dispatch, not original gameplay.
+The original v0.1.0 campaign/save/reload evidence remains under
+evidence/baseline-v0.1.0/ and is not presented as a new on-device test.
+Physical S25 gameplay, thumb comfort, Android audio, Downloads export and
+background/resume remain device checks. No new phone run is claimed here.

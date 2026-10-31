@@ -1,0 +1,12 @@
+SN06 / The recorded borrowed runtime infrastructure
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/upstream/PROVENANCE.json
+Selected lines: 13–19
+Source SHA-256: f0c9cb7c0cbc736cb4298fc518e8733dbb09049f08586615303aed63529eacfb
+
+  "publicly_published": false,
+  "reused_checkpoint": "Private Ashen v0.1.1 / Shadowkey v0.1.1 runtime infrastructure and native scan-code pad, unchanged EKA2L1 ARM64 core and N-Gage firmware.",
+  "host_runtime_build": "master-6ac519122 (Linux continuous AppImage; host evidence only)",
+  "android_runtime_build": "Unmodified native ARM64 binary recovered from Pocket Kingdom checkpoint; native_sha256 is authoritative.",
+  "original_uid": "0x101FB882",
+  "ui_only_update": "v0.1.2 startup fix; original seed/native/icons/signing unchanged; inherited original execution evidence.",
+  "startup_repair": "v0.1.2: initialize decor before insets controller; move fault capture before UI construction. Actual MainActivity Android API34 host regression reproduces old failure and passes repair, with native guest boundary disabled only for that test."

@@ -1,0 +1,14 @@
+NC01 / Quake’s runtime meets Carbon’s legacy graphics ABI
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/evidence/baseline-v010/TECHNICAL_HANDOFF_v0.1.0.md
+Selected lines: 7–15
+Source SHA-256: bce0387077290945e871ed3d44043dbe4b65823175698f3ba881f7d54fc19966
+
+This fork adapts the owner's preserved Quake II Zeebo Java ARM/Thumb runtime to the original Carbon applet class 0x0108C0BC and module `mod/276121/nfs.mod`. The 128 MiB mapped memory and 64 MiB heap allocation region avoid the original service tables/stacks and accommodate the 15,518,924-byte original allocation. The broader memory/free-RAM model still needs auditing.
+
+`LegacyGraphicsAbi` translates Carbon's legacy IGL/IEGL method tables. Unlike the newer interface, these calls use r0 as the first C argument, have no interface-this argument, and return directly. Legacy GL slots translate to the preserved internal GLES method vocabulary, including ninth stack arguments. Android owns a real EGL14 ES1 context and 640x480 pbuffer on the guest worker. Its readback becomes the original-aspect Canvas image. There is no simulated racing engine or fabricated scene.
+
+The former red stippled car artifact came from GL_BYTE texture coordinates. Desktop GL rejected the original OES byte-coordinate type. The verified fix expands each signed byte component to its exact non-normalized floating-point value, respecting interleaved stride. `ClientArrays` applies the same conversion in Android for vertices/texture coordinates. Normal and RGBA color arrays retain their original type/normalization. Android also implements Carbon's normal arrays, fixed-point lighting/material and other observed fixed-function operations. Unsupported calls remain visible failures. Only base GLES1 extensions are exposed to the guest; Android-only extension strings must not change original asset selection into an unimplemented path.
+
+`ZeeboTextureCodec` retains original ATC formats and the OES 4/8-bit palette formats. Four-bit palettes use high nibble first and 16-bit colors little endian. Negative bundled-mipmap uploads are still unsupported and not advertised. Native paths observed in accepted runs use the original base fallback.
+
+Two independent clean-render runs each completed 44,906 draws / 1,294 swaps with zero GL errors. The pause/resume run completed 70,583 draws / 1,488 swaps, 2,663,535,902 guest instructions and zero GL errors, with an actual race capture at 175 km/h. This is desktop Mesa evidence; it is not phone FPS or Android GPU proof.

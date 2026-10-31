@@ -1,0 +1,14 @@
+DR01 / The optional texture patch turned out to be unnecessary
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/runtime-verification.txt
+Selected lines: 1–9
+Source SHA-256: 0795c4b535157dfe5db29d10f4d632baab77e8fb91b187c28df91cab67347e3f
+
+Doom RPG Bridge v0.1.0 runtime acceptance — 2026-10-10
+
+The original ARM module is executed, not recreated. Native class0x01035893;
+176x220 guest framebuffer; original shell timer requests15ms. Native game
+assets and module come from the uploaded archive. No eight-site texture patch
+is needed: original module loaded textures and produced the same gameplay
+pixels as the device-patched candidate, while removing about9.96million cold
+loader instructions from the scripted route. Source documentation retains the
+bundled optional patch separately.

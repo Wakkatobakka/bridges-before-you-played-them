@@ -1,0 +1,13 @@
+S05 — Gameplay first; a new chat needs the last good baseline
+Evidence type: Conversation excerpts
+Source: Wakka / DeadShot development conversations / October 2–3, 2026
+
+Retrieved owner-message excerpts, retaining wording. Times converted from recorded UTC to Iowa local time. The final excerpt belongs to a message opening a new DeadShot chat, not to a later build acceptance.
+
+October 2, 15:31:15 CDT — “dude, pretty fucking far. only complaints are no audio and some cropping. otherwise. holy fuck dude”
+
+October 3, 02:18:49 CDT — “its honestly playing pretty sweet”
+
+October 3, 08:28:10 CDT — “0.05 was the last good baseline of when the controls worked but was still the wrong UI layout.”
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

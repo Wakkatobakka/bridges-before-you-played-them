@@ -1,0 +1,25 @@
+WT04 / The missing RMS source survives as original DEX
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/ORIGINAL_RMS_PROVENANCE.txt
+Selected lines: 1–20
+Source SHA-256: 7eeb8c4f2a493aaac1cc7b553c63fe06ccd1cb2e069778b57569010091d5cecc
+
+Original RecordStore binary provenance, private build
+
+Source: Witcher_Crimson_Trail_Bridge_v0.1.0_PRIVATE.apk (original signed APK).
+The original v0.1.0 checkpoint contained the adapted JavaME runtime but not
+source for the following six javax.microedition.rms classes:
+  RecordStore, RecordStoreException, RecordStoreNotFoundException,
+  RecordStoreNotOpenException, RecordStoreFullException, InvalidRecordIDException.
+
+The script tools/restore_original_rms_classes.py selects the six class_def
+entries from the original APK classes.dex and retains their ORIGINAL DEX bytecode,
+method code, strings and constant pools. It does not decompile/rewrite those
+classes or implement substitute saves. The selected class definitions were then
+passed to Android's D8 compiler to emit the minimum-api-26 prebuilt DEX at:
+  runtime/prebuilt/witcher-original-rms.dex
+SHA-256: 22d606e12fc4f7df87125c3b0f0cbe857d89e92accd2059c8eb757bc92f05d33
+
+BUILD_LINUX.sh merges that DEX into the signed application alongside the
+same original game JAR, engine and source compatibility code.
+These classes were included in the rebuilt DEX and passed tooling validation,
+but save behavior must still be verified on an actual Android device.

@@ -1,0 +1,27 @@
+DI08 / Host checks are separate from physical acceptance
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 22–43
+Source SHA-256: 295efdc27b1e2248e8e4a54ee1254e5c88195c41405f2469a84ce73bbe98ce0c
+
+- Shared UI Kit 1.1.2 release JAR: all 12 Android API 34 framework checks pass,
+  including cold startup, independent contacts, dialogs, switching and cleanup.
+- Two production Activity API 34 integration scenarios pass with the real Java
+  Activity, controls, guest worker and original APK assets under Robolectric.
+  Both modes fit 360x740, 412x820, 800x1200, 915x370 and 1280x720 measured bounds.
+  Renderer bounds remain aspect-correct and unchanged during mode switching.
+- Direction + jump reaches the native dedicated jump key. Mode switching releases
+  touch ownership while retaining a physical direction. A report snapshot returns
+  promptly while the real game executor is deliberately blocked.
+- APK compiles against API 35, D8 min API 26, aligns and verifies v2/v3 signatures.
+- Strict Omni inventory and exact-original import/export metadata are embedded.
+  A local contract test strips originals, checks zero-byte placeholders, rebuilds
+  them from the actual supplied RAR, compares every byte and retained entry, and
+  rejects a changed original even when its filename is unchanged.
+
+NOT YET VERIFIED
+- Physical phone/tablet gameplay, touch comfort, font/display scale, real insets,
+  heard MIDI, background audio behavior, Downloads export and extended play.
+- Full-game completion and actual level-end progress save/load.
+- Actual current Private Omni hosted startup, save isolation, update selection,
+  and the cumulative two-public-export workflow including a later unrelated game.
+  The local metadata test does not substitute for those production host checks.

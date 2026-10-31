@@ -1,0 +1,22 @@
+DS05 / The supplied phone report remains live
+Source: DragonSword-v0.1.0-20261024-203217-996-manual.txt
+Selected lines: 8–24
+Source SHA-256: 5f6e47826e06e6f11d0eef8b0415d62391be2c3209bee4391c7fd0670220df9b
+
+DRAGON SWORD BRIDGE v0.1.0 PRIVATE
+Original BREW ARM/Thumb module; UI Kit v1.1.2
+Snapshot uptime ms: 498726820
+Status: Original game • v0.1.0 • sound on
+Host failure: 
+Save error: 
+Original loaded/created/started/live: true/true/true/true
+ARM steps: 205899376
+Timers executed: 872
+Key presses/releases: 94/94
+Viewport: 240x320
+Display updates: 633
+Unknown interfaces: 0
+CPU failure: null
+Live failure: null
+Native audio requests: 6/10
+Android audio starts/stops/errors: 4/6/0; Stopped

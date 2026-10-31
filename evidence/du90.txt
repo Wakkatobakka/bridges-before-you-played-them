@@ -1,0 +1,10 @@
+DU90 / Historical image / Duke Nukem’s original first street, weapon and HUD
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/verified/03_original_3d_gameplay.png
+Source SHA-256: 9e7f20bf7e0e48b07d45b47078ee22b3824f76a562b28433d8480d5e5412951a
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/verified/03_original_3d_gameplay.png
+Image SHA-256: 9e7f20bf7e0e48b07d45b47078ee22b3824f76a562b28433d8480d5e5412951a
+
+The supplied Duke and Micro3D modules produced this retained 176×220 desktop frame. It is original-runtime host output, not a phone image.

@@ -1,0 +1,14 @@
+D15 — Two exports, one growing session
+Evidence type: Archive comparison
+Source: Comparison of Dirge-Bridge-0.1.5-report (different).txt and Dirge-Bridge-0.1.6-report.txt
+
+Derived by comparing the original text files. Session identifiers and backup paths are intentionally omitted from this published comparison.
+
+Both files identify Android app 0.1.5 and internal runtime 0.1.6.
+Their session identifiers and checkpoint-backup timestamps match.
+The first FULL LOG contains 1,289 lines.
+Those 1,289 lines are an exact prefix of the second FULL LOG.
+The files have different SHA-256 hashes.
+Conclusion: retain both exports, count this as one observed session.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

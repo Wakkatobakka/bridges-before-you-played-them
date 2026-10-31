@@ -1,0 +1,39 @@
+A02 — The clock advances in pairs
+Evidence type: Runtime investigation
+Source: Ashen_Movement_Timing_Finding_2026-10-19.txt
+Selected source lines: 26-55
+
+
+
+The function computes a 64 Hz tick counter, then applies this mask for EKA1:
+
+    static constexpr std::uint32_t TICK_MASK = ~0b1;
+    ...
+    if (kern->is_eka1()) {
+        res &= TICK_MASK;
+    }
+
+The nearby upstream comment describes this as an unverified Worms World Party
+compatibility workaround. This file was fetched from the pinned revision and
+master on 2026-10-19; the two fetched files were byte-identical and both still
+contained the mask. File SHA256:
+c238fb67cf1bf60f2cb3d76859ef7cb5b461f9259ed7449339cf33c4174e364f
+
+WHY THE MASK MATTERS
+The mask clears the counter's least significant bit. For example:
+
+    Raw counter:    0, 1, 2, 3, 4, 5
+    Masked result:  0, 0, 2, 2, 4, 4
+
+The underlying 64 Hz tick period is 15.625 ms. The masked counter changes only
+every 31.25 ms, in increments of two. It still represents approximately 64
+tick units per second: this is reduced resolution, not a clock running at
+half speed. With game callbacks near 60 per second, many successive reads
+produce a zero elapsed-tick delta, followed by a two-tick delta.
+
+The original Ashen timestep calculation accepts zero elapsed time. The
+pre-change phone trace showed its movement command clearing after release
+while the player's position continued changing. Input release delivery was
+not the cause demonstrated by that trace.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,13 @@
+CR03 / The game played well; the phone felt hot
+Source: 11-Contra_4_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.1_PRIVATE/evidence/physical-v0.1.0/OBSERVATION.txt
+Selected lines: 1–8
+Source SHA-256: c1434918da49ebd5dbb39d5cf957365094fb165b0126aef1f820fe0740d8ea82
+
+User-supplied physical-device observation, 2026-10-10:
+Contra 4 v0.1.0 plays well but the Samsung S25 Ultra feels hot.
+
+The supplied 28.72-second recording shows original first-stage gameplay, movement, jumping and effects. The recording is retained with the original user upload; it is not duplicated in this source checkpoint.
+
+The report records no host, guest, save or Android audio failure; no unknown interfaces or unsupported calls. Battery temperature is 37.8 C across three sparse samples. This is not a CPU, GPU or skin reading and does not rule out physical heat. No device timing or power measurement is present in that report.
+
+The v0.1.1 changes are verified on the host and in the APK. A physical-device heat difference has not been measured here.

@@ -1,0 +1,20 @@
+MA01 / Earlier ExEn repairs fill the foundation; the minimap adds alpha
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/native/README.md
+Selected lines: 1–15
+Source SHA-256: 1cfc150e39fa9cc6b190df6bc57fd0ab702f6d583b77659e22dc8f4dae391f05
+
+# Mutant Alert ExEn runtime
+Portable ExEn VM adapted from Handyplay / mohamedahmed166e, pinned upstream
+460b149302e9a52523bc314a37efabbee9f3d666, AGPL-3.0. See LICENSE-AGPL-3.0.txt.
+Reuses the private Crash/South Park full-width arrays, String conversion,
+original-font separation, canonical pen color, dialog and FIFO/timing repairs.
+Graphics.drawImage now honors original palette-alpha on composited render
+targets without source index buffers. This corrects the original game's generated
+240x120 minimap; decoded images retain index-based transparency unchanged.
+No original bytecode/assets/logic or progression is patched.
+
+Zig 0.15.2. C ABI keeps internal banjo_* symbols for compatibility, with no
+Banjo gameplay logic. JNI identity is com.wakka.mutantalertexen. The Android ARM64
+library uses 16 KiB segments and no external dynamic dependencies.
+Host JNI build for Android framework checks: zig build -Doptimize=ReleaseFast -Djni=true
+Original platform classes and 5x8 font are runtime inputs, never embedded in ELF.

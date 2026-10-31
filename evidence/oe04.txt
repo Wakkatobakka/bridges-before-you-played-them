@@ -1,0 +1,14 @@
+OE04 / Controls came from this game’s own help
+Source: Orcs_Elves_II_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Orcs_Elves_II_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 9–17
+Source SHA-256: a604d701e69dc0ebb30c30fff2bf92b3f718e30b7ac006f95537aea7c4d75a0c
+
+CONTROLS — GROUNDED IN THE ORIGINAL GAME'S HELP TEXT
+Original D-pad: Up/Down move forward/back, Left/Right turn.
+5 / OK: attack, talk, interact.
+1 / 3: strafe left / right.
+7 / *: next / previous weapon.
+9: pass turn. #: map. 0: game menu / back. CLR: previous screen.
+The KEY PAD button reveals all 12 original numeric keys; nothing is remapped
+inside the actual game. The Android presentation follows the REGenesis phone-style
+layout while preserving Orcs & Elves II's different native controls.

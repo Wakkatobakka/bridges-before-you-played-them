@@ -1,0 +1,22 @@
+G04 — GRAB/CYCLE was a bridge-label mistake
+Evidence type: Original-control investigation
+Source: God of War: Betrayal v0.1.3 / CONTROL_MAPPING_CORRECTION.txt
+Selected source lines: 1-13
+
+
+
+Native text181 says press glyph } to grab; text114 identifies } as Down/8.
+Native text219 uses the same Down glyph for opening chests/pulling levers.
+Native text213 assigns * or Left Soft Key to weapons/magic. Original e.g(boolean)
+handles internal10 (*) and27 (LSK) identically for weapon cycling. Internal6
+(Down/8) calls e.M(), the native grab/use routine. Original a.G maps Down to -2
+and numeric8 to56. The old GRAB/CYCLE wording was a bridge-label error.
+
+Original softkey draw helper e.a(Graphics,int,int) writes kU/kV, then draws the
+chosen native labels from a.m/a.n UTF8 text. Observer reads those exact fields
+on the worker after paint. It does not guess a label from a screenshot/state map.
+Original e.M's weak soldier conditions are observed read-only, including ground,
+idle/lock gates, companion exclusion, recovery timer, health, overlap and walls.
+The actual replay proves contextual GRAB -> original Down -> native pose12.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

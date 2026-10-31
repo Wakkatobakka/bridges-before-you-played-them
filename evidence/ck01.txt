@@ -1,0 +1,17 @@
+CK01 / Waiting for a handset state change
+Source: 04-Chokkan_Crash_Bridge_v0.0.6_Preservation.zip / Chokkan_Crash_Bridge_v0.0.6_Preservation/docs/V004_RUNTIME_STALL_FINDING.md
+Selected lines: 3–14
+Source SHA-256: ed6dd8e177b8b9638c85eec1f8a200208cdd86d01828b0e85a72eff4bd49536c
+
+The v0.0.3 physical-device report showed startup reaching `c.Main.start()`, current frame `c.f`, resource `0` image decode, and resource `1` open, with no following exception.
+
+Static bytecode inspection of the preserved game JAR then identified a main-loop state gate in `c.f`:
+
+- the loop reads `PhoneSystem.getAttribute(2)`;
+- a zero value marks the frame as requiring handset-state handling;
+- that handling path repeatedly sleeps for 50 ms while attribute 2 remains zero;
+- the previous Android bridge initialized every PhoneSystem attribute to zero and had no physical fold/open event capable of changing attribute 2.
+
+Therefore the Android bridge could render the first frame and then wait indefinitely for a legacy handset state transition.
+
+v0.0.4 initializes PhoneSystem attribute 2 to nonzero (`1`), representing the permanently active/open state of a modern slab phone. This is a compatibility-host correction, not a patch to the game JAR.

@@ -1,0 +1,9 @@
+KT04 / Three queued taps keep three separate releases
+Source: 18-Katamari_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.0_PRIVATE/evidence/controller/input-regression.log
+Selected lines: 1–4
+Source SHA-256: c71c43dfca0af5f1b6173be2c6c65fb5e6b155c3a16e970c2e772a63c661815d
+
+PASS: 43 actual production Katamari controller checks.
+Original native evidence: triple queued taps = 3 separate key presses + 3 immediate key releases; all handlers execute original ARM instructions; input pumps 0 native timers; one due worker runs exactly 1 original registered timer.
+Covered: original startup pause/resume; distinct queued taps and immediate physical release; duplicate/held key behavior; one due worker; no early timer or input-driven timer; pause hold-release and tick cancellation; paused input suppression.
+Scope: host queue/clocks are deterministic fixtures; Android media consumption and filesystem writes are not tested; this does not prove physical phone heat, sound, or touch feel. No guest module, guest memory, callback code, or game state is patched.

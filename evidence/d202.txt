@@ -1,0 +1,10 @@
+D202 / Three pixels in a hidden keypad stop the first layout
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/CHANGES_v0.1.1.txt
+Selected lines: 3–7
+Source SHA-256: 36106bdabd1234c79c05c4b9e1d9c9535ce55cbd0de2573b62596aff545b3fb6
+
+Repairs a reproduced first-layout crash in v0.1.0. The shared UI measures both control modes before drawing; the game-owned hidden keypad was a few pixels taller than its declared minimum at fractional densities. At 2.625, its 264dp declaration rounded to 693px while its five 48dp rows plus padding/gaps needed 696px. DoomControls threw Original key target too small during Android measure, after Activity.onCreate had returned.
+
+The custom minimum now sums the same independently rounded components as the actual layout. This keeps complete 48dp targets and a square 144dp pad, preserves the live viewport and avoids switching/restarting the guest. The shared UI Kit itself remains the identical v1.1.2 JAR.
+
+A scoped uncaught-fault recorder retains later measure/layout/Java failures with display density and font scale before the normal Android handler runs. Existing independent SAVE REPORT now includes the retained fault. Inactive scoped handler nodes are skipped during lifecycle cleanup.

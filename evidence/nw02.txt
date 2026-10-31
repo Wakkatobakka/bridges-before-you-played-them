@@ -1,0 +1,15 @@
+NW02 / The game can wait without repainting
+Source: Nowhere_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Nowhere_Bridge_v0.1.1_PRIVATE/IMPLEMENTATION.txt
+Selected lines: 19–28
+Source SHA-256: 44b8351e0249558602ed221910469db3b929cb21ea145d4429313df8994be682
+
+Native update timing uses Thread.sleep toward 62 ms per update (~16 Hz). The
+bridge preserves it. Its UI refreshes at 33 ms only to display new frames;
+repaint's 17 ms ceiling does not accelerate or retime the native update loop.
+
+Independent MIDP input event worker drains queued down/up and show/hide events
+at 8 ms. Delivery cannot depend on repaint: the guest can stop repainting while
+waiting for events. Preserve original input semantics and lifecycle callbacks.
+Background gameplay blocks and native hideNotify/showNotify are dispatched.
+Original game may show a resume prompt. MIDI players pause/resume with visibility.
+Report generation never acquires a game-state or game-worker monitor.

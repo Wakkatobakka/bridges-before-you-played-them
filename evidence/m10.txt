@@ -1,0 +1,43 @@
+M10 — A camera target had been treated as a direction
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V007_CAMERA_SEMANTICS_NOTES.txt
+Selected source lines: 3-14, 24-33, 35-40
+
+
+
+Evidence from the v0.0.6 physical-device report:
+- Figure renderer current-session geometry was entirely near-culled in the hunt.
+- Last Figure: 589 vertices, 474 candidate polygons rejected at the near plane,
+  transformed Z -818..-493 with near=128.
+- Primitive path also near-culled 9935 of 11274 submitted primitives.
+- No fatal exception occurred.
+
+Root-cause audit:
+Monster Hunter i's class b camera routine constructs two rotated offsets, then applies the SAME
+world translation to both. It then calls AffineTrans.lookAt(j, k, up). That makes j a camera
+world-space point and k a target world-space point. Treating k as a raw forward vector (the
+v0.0.1-v0.0.6 implementation) is incompatible with the game's call pattern.
+
+[... selected excerpt ...]
+
+v0.0.7 changes:
+1. com.nttdocomo.opt.ui.j3d.AffineTrans.lookAt now computes forward = target - position before
+   building the view matrix. Degenerate target/up inputs throw, allowing the game's existing
+   retry/catch path to behave meaningfully.
+2. Graphics3D.setViewTrans snapshots the supplied matrix instead of retaining the caller's mutable
+   object reference.
+3. Persistent report adds view-call count, lookAt count, last view matrix, last lookAt
+   position/target/forward, and a limited early stream of J3D VIEW / J3D LOOKAT records.
+4. Figure/ActionTable parsing, EN/JP game payloads, saves, 2D image fix, and v0.0.6 PrimitiveArray
+   renderer are otherwise unchanged.
+
+[... selected excerpt ...]
+
+External implementation note:
+MascotME is valuable for MBAC/MTRA parsing and rendering behavior, but its generic
+com.mascotcapsule.micro3d.v3 AffineTrans.lookAt accepts a look direction. Monster Hunter i is using
+the older DoJa com.nttdocomo.opt.ui.j3d API in a target-point form, so directly transplanting that
+single semantic would reproduce the v0.0.6 camera failure. The game's own bytecode is the stronger
+compatibility oracle here.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

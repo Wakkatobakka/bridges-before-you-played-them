@@ -1,0 +1,12 @@
+WR91 / Historical image / The first Wolfenstein guard defeated in the repaired host run
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/evidence/first-combat/after/002_guard_defeated.png
+Source SHA-256: 415d86008ef3717492f2104915bdebfd0a19d82d89caca714e155d0333609cc1
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/evidence/first-combat/after/002_guard_defeated.png
+SHA-256: 415d86008ef3717492f2104915bdebfd0a19d82d89caca714e155d0333609cc1
+
+After the typed transform repair, the original first guard is defeated and the game awards17XP. The retained desktop original-runtime frame precedes the later extra fire input and post-combat movement checks.
+
+Scope: Historical desktop original-runtime framebuffer; not phone output. Visually inspected, game only, no personal UI.

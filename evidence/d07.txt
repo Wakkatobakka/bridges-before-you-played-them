@@ -1,0 +1,17 @@
+D07 — Streaming output starts and reaches its end
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.7-report.txt
+Selected source lines: 593-596, 612-612
+
+Backend progress is observed. Audible fidelity needs listening evidence.
+
+3.899  AUDIO TRACK     48 kHz mono streaming AudioTrack initialized; minBuffer=11520 bytes; buffer=23040 bytes
+   4.031  AUDIO DECODE    Decoded 166032 byte MLD to 663160 PCM samples @ 8000 Hz
+   4.058  AUDIO QUEUE     Resampled MLD 8000 -> 48000 Hz; output frames=3978960
+   4.089  AUDIO PLAY      48 kHz streamed MLD playback started; frames=3978960 volume=100
+
+[... selected excerpt ...]
+
+  87.068  AUDIO COMPLETE  48 kHz streamed MLD playback reached end
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

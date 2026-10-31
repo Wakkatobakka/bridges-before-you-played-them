@@ -1,0 +1,23 @@
+SH02 / The game supplies its own changing button words
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/CHANGELOG_v0.1.1.txt
+Selected lines: 3–20
+Source SHA-256: a084bcd8917566aa0a86840e690259b5d8e33c6908a705639b800c8815bb3480
+
+Button wording now follows the original game. The existing left/right softkey
+buttons mirror actual captions rendered by the game: Select/Back, Next/Skip,
+Change/Continue, Map/Pause when a map is available, and other native captions.
+An unlabeled original softkey keeps a neutral LEFT KEY / RIGHT KEY caption.
+The primary original Fire/5 button reads INTERACT, CONFIRM while a native menu
+is open, or FIRE while the original gun mode is active. DRAW WEAPON becomes
+HOLSTER WEAPON in that native mode. The underlying keycodes never change.
+
+Inventory and First Aid have explicit names. The D-pad has a visible CURSOR /
+MENU caption; the inline numeric keypad has ORIGINAL PHONE KEYS. Essential
+actions remain in both layouts. Redundant softkeys were removed from the small
+numeric cluster because their complete, labeled buttons remain directly beside
+it. Digits, *, #, Clear and both softkey bindings remain accessible.
+
+Labels update on the same Button objects without changing input owners, releasing
+held keys, altering the viewport, recreating the game or changing game logic.
+The original renderer supplies the words directly; no pixel OCR, press-based
+guessing or replacement guest code is used.

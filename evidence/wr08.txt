@@ -1,0 +1,6 @@
+WR08 / The original Clear key had asked to close the game
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/evidence/baseline-v0.1.2/TECHNICAL_HANDOFF.txt
+Selected lines: 11–11
+Source SHA-256: df6a9bd55888947556439da0dadcbe071ebbd95ca97fb88d21ed4279034a5160
+
+The supplied v0.1.0 device report stops at IShell+0x18. Original native callsites identify CloseApplet; the same failure was reproduced with CLR during the opening story. v0.1.1 handles the requested close at a safe native-call boundary, sends original EVT_APP_STOP and applet Release, cancels remaining timers/callbacks and stops Android audio. The result records nativeClosed separately from failure. Android displays Game closed / Tools -> Restart game and persists original files. It does not suppress an original exit or invent a skipped scene.

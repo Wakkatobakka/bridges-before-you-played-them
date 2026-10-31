@@ -1,0 +1,16 @@
+EJ05 / Keep the wait, spare the interpreter
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 20–30
+Source SHA-256: e2ec7fc39c299a7b1b0dcd345c5a935364e70b38656922651404900b25a1fc2c
+
+EXECUTION AND TIMING
+BrewRuntime executes the original module's applet, event handler, ARM/Thumb instructions and game logic. Android supplies compatible interfaces for display/bitmaps, resources, files, input, clock, timers and media. BridgeController serializes guest execution, timers, audio callbacks and save writes on one HandlerThread. Detailed trace and diagnostic counting are off during ordinary play; explicit reports capture the current session.
+
+Only an actually due, already registered native timer callback is pumped. Input and audio events do not pump extra timers. Native registrations retain their independent callback/data identity. The host schedules from the registration deadline, without subtracting preceding guest work a second time.
+
+The original sleep helper at 0x0011D548 parks the worker for the requested elapsed delay instead of interpreting a busy-wait. This hook is gated by the exact original module SHA-256. The host proof preserves a 100ms elapsed wait while reducing thread CPU spent on that wait from approximately 100ms to under 1ms. This is a host measurement, not a phone thermal result. Deterministic host tests use an explicit virtual clock; Android uses real elapsed time.
+
+BYTE-EXACT CODEC ACCELERATION
+The original module and compressed resources remain unchanged. The LZMA helper at 0x00165BBC can use a derived cache only when the compressed body SHA-256, lc/lp/pb properties and requested output length all match. It writes the exact decoded bytes into the allocation made by the original runtime, then returns through the original ABI. A cache miss follows the native decoder. Original game objects and game logic still execute.
+
+app/assets/lzma_cache.bin contains 193 unique original streams, derived from 232 pack occurrences, with 1,627,451 decoded bytes. Fifty captured native outputs matched byte-for-byte. Fourteen matched original frames through startup and the first-game menu/intro sequence validate the accelerated codec and quiet presentation path. The manifest is in evidence/lzma_cache_manifest.json; tools/prepare_codec_cache.py rebuilds the cache from the unchanged data.bar. This avoids about 243 million interpreted startup instructions.

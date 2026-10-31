@@ -1,0 +1,14 @@
+KH05 / The earlier bridge family and unchanged original Swerve
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 8–16
+Source SHA-256: bb815770572429702c27a275838f40b12072d8112127b8716875fd615b602b03
+
+The original kh.mod and swv21brew.mod are interpreted without modification.
+The BREW/ARM compatibility foundation is carried from the owner's BioShock 3D
+v0.2.0 clean runtime and its Resident Evil Genesis, Rush Marine, Doom RPG,
+Contra 4 and Wolfenstein foundations. The supplied Bridge Gameplay UI v1.1.2
+is included unchanged as its actual JAR, with its source and evidence.
+
+CMX WAVE handling wraps unchanged QCELP packets in standard QCP at playback.
+The format was checked against the owner's independent audio_doom.py parser.
+Original MIDI scores remain exact; Android supplies synthesis and decoding.

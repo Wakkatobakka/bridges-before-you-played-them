@@ -1,0 +1,16 @@
+SW03 / The first tutorial pattern, not campaign progress
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 48–58
+Source SHA-256: aeec109a0b95b44a9df2462fdad010696d0b687f2c7751f3f73e628ca5330f4a
+
+The original Linux host run reached startup, menu, calibration, Help/Controls,
+and CellWeaver tutorial practice. The game accepted the first pattern after
+Left, Up and numeric 8, demonstrating original D-pad and numeric input.
+The retained 3D scene screenshot is the game's attract sequence; it is not
+presented as player-controlled story progress. No campaign completion, live
+audio output, save/load round trip or physical Android gameplay is claimed.
+Phone graphics/audio, comfort, rotation behavior, background/resume, report
+export and Back still need device evidence. Online Arena/Rankings are not
+supported by this offline test build; a host ranking request failed. One
+original guest Exit path terminated the Linux host; Android system Back uses
+the dedicated bridge cleanup and still needs physical-device testing.

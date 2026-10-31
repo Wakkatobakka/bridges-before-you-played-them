@@ -1,0 +1,10 @@
+NC08 / Original engine audio remains experimental
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/evidence/baseline-v010/TECHNICAL_HANDOFF_v0.1.0.md
+Selected lines: 29–33
+Source SHA-256: bce0387077290945e871ed3d44043dbe4b65823175698f3ba881f7d54fc19966
+
+## Audio
+
+Media objects retain their class IDs, including MP3 0x01005502 and MIDIOUTMSG 0x01005505. Original MIDI buffers are sampled when the guest actually requests Play. GameAudio routes original file media through MediaPlayer and reports actual starts/completions/errors back on the guest owner. Original MIDI message bytes can go to the Apache-licensed MidiDriver 1.29 Sonivox backend. Its arm64 release includes libc++/Oboe; all three ELF libraries have 16 KiB LOAD alignment. Extraction is enabled in the manifest. Licenses, release AAR and upstream source snapshot are retained privately.
+
+No full engine-audio success is claimed. The observed 30-byte MIDIOUTMSG setup includes original program/control/note messages, but complete dynamic command, sample-bank, effects and notification semantics remain to investigate. Built-in Sonivox timbres are not a verified console bank. The desktop audio contract mode synthesizes only START callback timing and explicitly has no audible sink; it must never be reported as audible playback.

@@ -1,0 +1,11 @@
+F01 — “Holy shit! It’s cloud!”
+Evidence type: Conversation excerpts
+Source: Wakka / Snowboarding development conversation and post draft / September 29–30, 2026
+
+Retrieved owner-message excerpts, retaining the wording. The first time is converted from the recorded UTC timestamp to Iowa local time. The chest/first-render opening is also Wakka’s recollection in the current archive conversation; the preserved report sequence begins at 0.0.15.
+
+September 29, 22:50:40 CDT — “Holy shit! It's cloud! Just upside down I think lol”
+
+September 30 — “At first I was stuck inside his body, then everything was upside down”
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

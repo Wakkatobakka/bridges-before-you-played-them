@@ -1,0 +1,12 @@
+RG90 / Historical image / Jill in the original mansion
+Source: REGenesis_Bridge_v0.6.1_PRIVATE/evidence/acceptance/04_mansion.png
+Source SHA-256: f79ef29da91be258a3cec416e52ef6acd9c222946ca97d625485e91e9c0e1bf7
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: REGenesis_Bridge_v0.6.1_PRIVATE/evidence/acceptance/04_mansion.png
+SHA-256: f79ef29da91be258a3cec416e52ef6acd9c222946ca97d625485e91e9c0e1bf7
+
+The original 176×220 mansion, retained from desktop original-runtime acceptance. The separate phone outcome is documented in RG07.
+
+Scope: Historical desktop original-runtime framebuffer, retained across checkpoint versions

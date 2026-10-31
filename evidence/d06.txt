@@ -1,0 +1,11 @@
+D06 — PCM is decoded; Android output still fails
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.6-report.txt
+Selected source lines: 694-695
+
+
+
+3.887  AUDIO DECODE    Decoded 166032 byte MLD to 663160 PCM samples @ 8000 Hz
+   3.905  AUDIO ERROR     play failed: IOException: AudioTrack initialization failed
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

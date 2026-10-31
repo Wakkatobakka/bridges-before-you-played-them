@@ -1,0 +1,34 @@
+PK04 / The current Activity checks defer native gameplay
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 14–42
+Source SHA-256: b83d736105fa39a1cbf7f0abe86c39a0e50432beec7277253c799b7ba6878365
+
+PASS: Four tests using the actual Pocket Kingdom Activity and compiled APK
+resources under Robolectric Android API34:
+- Cold Activity creation before window decor exists, real View layout/draw,
+  insets and stable renderer dimensions/parent during keypad switching.
+- JNI input recording verifies continuous thumb direction sliding, native
+  direction codes, simultaneous touch/physical ownership, keypad switching,
+  original softkeys/Clear/#/cancel and Android Back exiting without softkeys.
+- Startup View failure reaches the preinstalled fault recorder before boot;
+  a real pending .txt survives a refused Downloads destination, and the
+  previous uncaught handler receives the original exception once.
+- Production normal/keypad controls are rendered through native Android
+  graphics and visually inspected. These are host framework renders with
+  boot deferred, not phone screenshots or original game execution.
+
+PASS: 40 production geometry/density cases, 8,520 assertions for square D-pad,
+48dp minimum key targets, separate native directions in keypad mode, no
+control overlap, usable viewport, and stable shared mode slot.
+PASS: The exact supplied v1.1.1 JAR passes all nine kit Android framework
+regressions with native graphics (startup, multitouch, insets, dialogs,
+mode switching, Back, cleanup and fault propagation).
+
+UI tests defer boot and disable/record the native JNI boundary. No game
+screens or guest success are simulated, and no test code is shipped in the APK.
+Original v0.1.0 host gameplay/save evidence is retained separately, not rerun or
+presented as a new physical-device result.
+
+NOT VERIFIED HERE: physical S25 launch, comfort, live game input, native audio,
+actual Downloads export, game saves and Android background/resume on the phone.
+No complete campaign playthrough or online service restoration is claimed.

@@ -1,0 +1,24 @@
+XC01 / South Park repairs and the surviving banjo ABI names
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/native/README.md
+Selected lines: 1–19
+Source SHA-256: 34b4b98d3636013963d3ceb18d6d73804fc36f153799c5fb0cf43bbd6a9b9428
+
+# Crash ExEn runtime
+Portable ExEn VM adapted from Handyplay / mohamedahmed166e, pinned upstream
+460b149302e9a52523bc314a37efabbee9f3d666, AGPL-3.0. See LICENSE-AGPL-3.0.txt.
+Current source includes the reused South Park full-width array repair, original
+font input separation, native diagnostic snapshots and SMS price handler.
+Crash adds String construction from wide character arrays, wide drawChars input,
+canonical zero/black pen handling, and DialogBox line layout/render services from
+the original runtime class contracts. Manufacturer-specific dialog decoration has
+no physical-reference comparison. Original EXN bytecode/assets are unchanged.
+
+Use ../tools/build-native.sh with Zig 0.15.2. Host ABI symbols retain the original
+banjo_* names for compatibility; they are internal and execute the game provided
+as game.exn, with no Banjo game logic. JNI identity is com.wakka.crashexen.
+Android ARM64 library has 16 KiB segments and no external dynamic dependencies.
+The original 5x8 atlas is loaded from assets/font_5x8.bin at runtime, never embedded
+in the compatibility ELF. Both firmware classes and font are original inputs.
+
+The game-requested timer is 75 ms on the first stage. FIFO input does not add
+extra ticks. Detailed tracing is disabled. Native game saves are isolated per app.

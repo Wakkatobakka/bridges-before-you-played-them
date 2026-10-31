@@ -1,0 +1,42 @@
+Z06 — The next phone report captures the original GPU picture
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v015_physical_original_gpu_render_report.txt
+Selected source lines: 16-31, 44-57
+
+
+
+Guest EGL initialization failed: false
+Android hardware EGL context current: true
+Original guest EGL swap requests completed: 4
+GPU pixels with non-black RGB: 23046
+Original Zeebo GLES interface calls forwarded to Android: 15082
+Original Zeebo GLES geometry draw calls: 599
+Original Zeebo GLES texture uploads: 2
+Actual GPU readbacks successful: 4
+Actual GPU readbacks failed: 0
+Prior original GL errors preserved: 3
+Last GPU readback error: 0x0
+Center pixel ARGB: 0xff000000
+Maximum non-black RGB GPU pixels: 23046
+Gameplay/rendering not yet proven
+Native Zeebo HID inputs: unimplemented
+Fault: none
+
+[... selected excerpt ...]
+
+Original glGenTextures n=1 GPU name=1
+ORIGINAL texture upload #1 Zeebo format=0x8b95 64x64 compressed bytes=4864 expanded exactly to RGBA8888
+ORIGINAL glDrawArrays mode=0x5 first=0 count=4 vertex=0x175a42 vertexType=0x1402
+Original glGenTextures n=1 GPU name=2
+Original glGenTextures n=1 GPU name=3
+ORIGINAL texture upload #2 Zeebo format=0x8c93 512x512 compressed bytes=262144 expanded exactly to RGBA8888
+Readback #1 SUCCESS realGPU_nonblack=0 alphaNonzero=307200 centerARGB=FF000000 deferredGuestErrors=0
+eglSwapBuffers #1 ok=true nonblack=0 captured=1 failed=0 EGL error=0x3000
+Pre-readback original GLES error: GL_STACK_UNDERFLOW (0x504)
+Readback #2 SUCCESS realGPU_nonblack=23046 alphaNonzero=307200 centerARGB=FF000000 deferredGuestErrors=1
+eglSwapBuffers #2 ok=true nonblack=23046 captured=2 failed=0 EGL error=0x3000
+Pre-readback original GLES error: GL_STACK_UNDERFLOW (0x504)
+Readback #3 SUCCESS realGPU_nonblack=23046 alphaNonzero=307200 centerARGB=FF000000 deferredGuestErrors=1
+eglSwapBuffers #3 ok=true nonblack=23046 captured=3 failed=0 EGL error=0x3000
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

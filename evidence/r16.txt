@@ -1,0 +1,26 @@
+R16 — The silhouette, the gray mesh, and the textured game
+Evidence type: Historical images
+Source: Rockman preservation / original screenshot and October 8 phone recordings
+
+Images inspected as pixels. Device status icons remain; private notification text, account identifiers and app-private paths are absent. Video stills are extracted evidence, not recreated screenshots. Original game imagery retains its respective ownership.
+
+Version 0.2.3
+Source: rb033/evidence/v0.2.3-device-screenshot.jpg
+Nested archive: Rockman_Bridge_v0.3.7/baseline/Rockman_Bridge_v0.3.3_ENGLISH_Preservation.zip
+Original preserved phone screenshot, unchanged.
+Source member SHA-256: 40b919b917411f8b488721a4f4f735a3d179eb71c4a6a12c111e19e78da308c6
+Image SHA-256: 40b919b917411f8b488721a4f4f735a3d179eb71c4a6a12c111e19e78da308c6
+
+Version 0.3.5
+Source: Rockman_Bridge_v0.3.7/evidence/v0.3.5-phone/Screen_Recording_20261008_214714.mp4
+Full decoded video frame at 1.0 seconds. No crop, scaling filter, compositing or retouching.
+Source member SHA-256: 61d4d73f57f724c66b9b09dfe59d19a42f511f32868bd1f0a73ca781934bb42e
+Image SHA-256: 91f9fd4b39256aa499670706f41757bbf544807a1a87cb38b5a765269ed82665
+
+Version 0.3.6
+Source: Rockman_Bridge_v0.3.7/evidence/v0.3.6-phone/Screen_Recording_20261008_222203.mp4
+Full decoded video frame at 3.0 seconds. No crop, scaling filter, compositing or retouching.
+Source member SHA-256: f5492d07c75b8921c7a7da665ee99ed7421f556f3412aa09f15f6e418d5dc497
+Image SHA-256: 81d61ce06121cb6f5840d9dfe3b48f2b32a3aa3942ad101cfd2cf0b4630c595f
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

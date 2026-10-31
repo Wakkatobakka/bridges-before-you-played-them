@@ -1,0 +1,22 @@
+KH06 / Neutral steering center and separate Action and Magic
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 3–19
+Source SHA-256: 2122456d45d6a77b0e09d733610114ea2446ee9bb0df833f33e885b3acae86fd
+
+CHANGES
+Left thumb: a larger square eight-way digital steering pad. Up moves forward,
+down moves back, and left/right turn. Slide into a corner to hold forward/back
+and turn together. The center is neutral and can never send Action/OK.
+A six-degree tolerance beyond direction boundaries prevents small thumb
+movements from repeatedly switching sectors. Moving to the center, leaving the
+pad, releasing or cancelling the contact releases that contact's directions.
+
+Right thumb: large ACTION (jump / attack / interact / menu confirm), with MAGIC
+immediately underneath. The bottom utility row has ITEMS, LEFT SOFT, RIGHT SOFT
+and CLEAR. Both softkeys keep their original contextual game functions.
+
+ORIGINAL KEYPAD / D-PAD RETURN switches inline with the same renderer and
+viewport bounds. The original 3x4 numeric keys replace the steering pad; Action,
+Magic and the complete utility row remain available in the same positions.
+Controller buttons retain the existing mappings. Mode changes release touch
+holds while preserving separately owned physical-controller holds.

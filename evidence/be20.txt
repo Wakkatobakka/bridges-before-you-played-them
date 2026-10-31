@@ -1,0 +1,15 @@
+BE20 / The initial font baseline actually clips the platform label
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/verification/font-scale-before-fix.txt
+Selected lines: 1–1, 6–11
+Source SHA-256: 0a5c1a58338daf9319bb233daa714316a64b79e8de6940652794099708cc33ee
+
+Actual Episodes MainActivity source, unchanged except a test-only framework icon resource constant. Guest startup suppressed through the existing started flag; no original gameplay or phone verification claimed.
+
+[... selected excerpt ...]
+
+There was 1 failure:
+1) safeAreasAndLargerText(com.wakka.biohazard.EpisodesUiTest)
+java.lang.AssertionError: Text exceeds height: DOJA
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.wakka.biohazard.EpisodesUiTest.safeAreasAndLargerText(EpisodesUiTest.java:72)

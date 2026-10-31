@@ -1,0 +1,17 @@
+SP01 / The Banjo ExEn foundation
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/native/README.md
+Selected lines: 3–14
+Source SHA-256: b1d20e00b2fadeb2cf998fa12a5b475dcbc0c3ec835acc815b4c9ebde5c6f67d
+
+Runs the supplied unchanged NEXE bytecode and original assets. Derived from the
+private Banjo ExEn checkpoint's Handyplay ExEn core, upstream commit
+460b149302e9a52523bc314a37efabbee9f3d666 (AGPL-3.0). Full native source and license
+are included. Original firmware classes and game content remain private.
+
+Use Zig 0.15.2. Host: `zig build -Doptimize=ReleaseSafe -Djni=true`.
+Android: `zig build -Doptimize=ReleaseFast -Dtarget=aarch64-linux-android -Dstrip=true --prefix zig-out-android`.
+Copy zig-out-android/lib/libsouthpark_exen.so to ../app/lib/arm64-v8a/libsouthpark.so.
+The existing banjo_* C ABI names are retained for the common host harness.
+JNI is scoped to com.wakka.southpark.ExEnController and the Android library
+loads as southpark. Native load segments use 16 KiB alignment, with no external
+DT_NEEDED dependencies. This is a portable VM; no original host simulator is run.

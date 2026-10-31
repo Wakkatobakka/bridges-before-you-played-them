@@ -1,0 +1,10 @@
+SW01 / The dependency-bearing N-Gage 2.0 environment
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 3–7
+Source SHA-256: aeec109a0b95b44a9df2462fdad010696d0b687f2c7751f3f73e628ca5330f4a
+
+Install Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE.apk.
+Android 10+ / ARM64 / OpenGL ES 3.0. Package: com.wakka.starwars.
+The bundled original game runs through EKA2L1 with the Nokia 5320 Symbian
+9.3 FP2 / N-Gage 2.0 environment. First launch prepares the private files.
+No external emulator or launcher screen is required.

@@ -1,0 +1,8 @@
+D206 / An Orcs-named preparation alias contains DOOM bytes
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/OMNI_HANDOFF_NOTES.txt
+Selected lines: 5–7
+Source SHA-256: 9496a6f077187d2334fe36d5b9dbffe8f35266cac790deedcd97f665117c389b
+
+The current Omni capability contract already includes the required gzip-CMID-to-MIDI/PCM converter under legacy-audio-v1, preparation id m-orcs. Its input filename is fixed by that existing generic implementation. Consequently orcsandelves2.bar is a preparation-only alias whose complete SHA256 equals doom2rpg.bar. It contains DOOM II RPG's supplied original BAR, with no Orcs game code or assets. The actual runtime reads doom2rpg.bar only. Using the verified alias avoids asking the owner to change Omni or executing a new checkpoint script on the phone. No new unsupported recipe/action is declared.
+
+Preparation inventories pin all 143 unique output assets. MIDI outputs use exact hashes. WAV outputs use verified-source-pcm-v1 with original encoded-source fingerprint, canonical desktop PCM reference, channels/rate/bits/frame count. Public reconstruction produced byte-identical MIDI and equivalent canonical PCM on the host. Actual phone architecture decoding remains a separate acceptance check.

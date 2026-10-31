@@ -1,0 +1,12 @@
+DI07 / The owner working-build account precedes the icon update
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 3–9
+Source SHA-256: 295efdc27b1e2248e8e4a54ee1254e5c88195c41405f2469a84ce73bbe98ce0c
+
+ICON UPDATE v0.1.1
+- User reports the previous build working well. This update changes the icon,
+  version and associated packaging inventory/documentation. Runtime, game input
+  mappings and UI kit remain byte-identical at source level.
+- Rebuilt and signed with the same owner key; original host checks and strict
+  Omni inventory/reconstruction checks pass again. See evidence/*v011*.txt and
+  evidence/icon-update-verification.txt.

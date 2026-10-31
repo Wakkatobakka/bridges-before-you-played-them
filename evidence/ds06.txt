@@ -1,0 +1,14 @@
+DS06 / The original keypad owns name entry
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 13–21
+Source SHA-256: 17a1753fd1e43e0f3657d311a24355beff759f6a4779f629ef23da185852341f
+
+Naming: switch to ORIGINAL KEYPAD; repeated digits cycle phone-style letters.
+Use ATTACK / TALK / OK to confirm the name and CLR to delete a character.
+The original game validates names and owns its own save and progression.
+Control help is in the three-dot utilities menu and the original game's Help.
+
+Verified on the host: original startup, main menu, help, creating a character,
+opening dialogue, four-way/dedicated diagonal movement, map transitions,
+character details with correct nonzero stats, save/reload, suspend/resume/stop,
+MIDI dispatch and original QCELP packet/container validation.

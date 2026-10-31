@@ -1,0 +1,17 @@
+EJ03 / Why constants.bin became the archive directory
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/startup_abi_findings.json
+Selected lines: 2–13
+Source SHA-256: 091a82f5330c3bbcb0777e6f139eb5d5af73872c8fc969f9a4e4bf27c6f6980b
+
+  "cause": "IFile.Seek END and CURRENT whence values were reversed, so constants.bin archive lookup rejected its relative seek and read the data.bar directory as game data",
+  "fault": "Native GC dereferenced an ARM instruction word because the misread directory created a type-4 array with count 0x00250001",
+  "resolved_abi": {
+    "START": 0,
+    "END": 1,
+    "CURRENT": 2,
+    "success": "resulting file offset",
+    "failure": -1
+  },
+  "native_evidence": "Native archive skip at guest 0x0010820C requested CURRENT(2) +1107020 from position zero",
+  "next_service_fixes": "BREW resource lookup selects the requested native BAR filename; igp.bar is a BREW BAR, data.bar is a custom archive, app.bar is a text manifest",
+  "verification": "tests/EarthwormSeekRegression.java exercises actual runtime vtable traps and original constants.bin read"

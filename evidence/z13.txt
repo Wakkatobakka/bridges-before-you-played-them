@@ -1,0 +1,16 @@
+Z13 — Ghost gun → Status/Armas → visible Leon, in one recording
+Evidence type: Selected video observations
+Source: 1000100708.mp4
+
+Full decoded frames were inspected at the recorded presentation timestamps. This is a labeled visual review, not a transcript or a new gameplay run. No version label establishes a build number. The source clip and frame exports remain private; only selected observations are published. Appearance after a menu transition does not establish the underlying renderer cause or a permanent fix.
+
+Selected observations from one original 13.226458-second recording:
+
+1.103222 s / frame 33 — Village scene with floating handgun and no visible Leon body; HUD and original bridge controls present.
+3.118011 s / frame 99 — Original Portuguese Status menu open, Armas highlighted; Leon model fully visible in menu panel.
+4.065156 s / frame 130 — Returned to village with Leon model fully visible, holding handgun; same recording and bridge UI.
+12.038078 s / frame 354 — Leon fully visible and aiming handgun with red laser in original village gameplay.
+
+Source video SHA-256: f8e4634b2ffc45243683273c06bc47c7b83697fca929af2a61e5b0a2e796405b
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

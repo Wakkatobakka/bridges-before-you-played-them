@@ -1,0 +1,18 @@
+RG04 / A reused runtime still needed this game’s actual contracts
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/baseline/REGenesis_Bridge_v0.5.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.5.0_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 15–27
+Source SHA-256: 792b9fae95d7c1f37b9775ecdaae2d4304cd5d0d2c1396a83ee2c76fe04ffab0
+
+## ABI discoveries that must not regress
+- This older game uses `EVT_APP_START=0`, STOP=1, SUSPEND=2, RESUME=3, key press=0x101, release=0x102. Rush's startup event value was wrong for this title.
+- `IShell+0x4C` loads an image resource; first request is BAR ID 5006.
+- `IShell+0x48` returns a raw resource buffer including its original BAR entry header; +0x50 releases it. Map/script records are not images. `+0xA4` loads media resource bytes and returns their size through a stacked out parameter.
+- BAR: group count u16 at +6, groups base u32 at +8, offset table base at +16, resource count at +20. Group entries are 8 bytes. There are 117 entries: 107 PNGs, five MIDIs and five raw map/script entries.
+- IDIB layout: +8 pixels, +12 palette, +16 native transparency key, +20/+22 width/height u16, +24 byte pitch u16, +26 palette size u16, +28 depth u8, +29 color scheme u8.
+- Original ARM converts decoded RGB565 bitmap pixels into indexed sprite DIBs. Preserve that conversion; it establishes the transparency indices. ROP 7 uses the native key, not 'all black is transparent'.
+- IDisplay BitBlt arguments: x/y/width in r1/r2/r3; height/source/sourceX/sourceY/ROP on stack. SetClip/GetClip offsets are +0x48/+0x4C; clipping is tracked per destination.
+- IFile Read is +0x0C, Write +0x14; file info size lives at +8. Modes used: read=1, write-existing=2, create=4. FileMgr free-space is +0x20. The old mapping caused the false insufficient-memory startup screen.
+- SYS_B+0xA8 fills the guest random-byte pool, not a zero buffer. Desktop seed is fixed for reproduction; Android reseeds before New Game. SYS_B+0x6C frees. The +0x8C platform-version query deliberately returns unspecified/zero; optional ISound class 0x01002001 is unsupported, not a pretend object.
+- Shell device item 24 writes an explicit normal-audio policy. Leaving its out buffer untouched caused the game to disable music.
+- IMedia: SetMediaParm +0x10; data parameter 1; volume parameter 4. GetState +0x34 returns READY=2 or PLAY=3. Play +0x18; seek +0x24. Notify callback is the original function at guest `0x00101264`; tested notification fields: command +8=4, status +16 (1 start, 2 done, 3 abort). Android start/completion calls the guest callback with object+serial guards so stale callbacks cannot target a recycled object.
+- Key codes: 0=E021, numbers 1..9=E022..E02A, CLR=E030, UP/DOWN/LEFT/RIGHT=E031..E034, SELECT=E035. This is tank movement, not a free-moving D-pad or Rush auto-fire.

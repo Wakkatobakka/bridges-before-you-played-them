@@ -1,0 +1,18 @@
+DV04 / Real Steering selected through original options
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 68–80
+Source SHA-256: 4f88c6a22ab6e92a38b47a5b0f86f2a51b017fb2e7cc762525728e87c9070a8e
+
+V0.1.4 — APPROVED REAL STEERING / ICON UPDATE (2026-10-25 America/Chicago)
+Inputs: user-approved control discussion, 1000103777.mp4 (30.174s, 1080x2340), Driv3r-Bridge-v0.1.3-report-20261025-192527-866.txt, supplied Gameplay UI Kit v1.1.2 and Omni finished handoff kit v1.0. The v0.1.3 report has no runtime stop and balanced 118 press/release inputs, but the default Directional preference and confusing control presentation made driving difficult. Original source, package, saves and signer were recovered from the v0.1.3 private checkpoint.
+
+Native evidence and read-only observation
+Original applet+0x25 is global mode. At mode 18, phase applet+0x94A is 4 for active play, 6 map, 8 story/tutorial and 19 pause. Do not infer an actor from phase alone. The physics object begins at applet+0x1200: type byte +1 is 5 on foot and 0..4 for vehicles. Original input function 0x0010A9D8 branches on type 5 for walking. Global preference byte applet+0x8DB is 1 Directional, 0 Real; actual vehicle flag applet+0x1257 selects handler 0x001010E0 when nonzero and 0x001011B4 when zero. Native menu index is applet+0x768, exposed by original getter 0x0010CF48. Result snapshots expose these five fields read-only and copy them with other presentation metadata. No guest-memory writes or interpreter/service changes were added for controls.
+
+Original Quick Guide resource 171 identifies Real Forward UP/2, Reverse DOWN/8, Left LEFT/4, Right RIGHT/6; Directional reverse is SELECT/5. Native 1/3 are burnout turns, 7/9 emergency-brake turns. Original Out of Car help describes four-way movement and 0 to enter/exit, without a gun action. This evidence determines the four contexts rather than imposing a universal layout.
+
+One-time preference setup
+Driv3rSteeringSetup is a bounded state machine using only original key press/release events: Main menu index 3 (Options), Options index 2 (Control), Control index 1 (Real), CLR to main. BridgeController schedules those edges at 80ms intervals on its existing worker; no synthetic timers or direct prefs.dat edits. Manual input is disabled during the visibly labelled setup, and setup suspends while the Activity is backgrounded. Original prefs.dat changes only byte 11 from 1 to 0. Already-Real saves need no menu events. After success, private host preference bridge-controls/real-steering-v014 records completion; subsequent native Options changes are respected. Restart/exit cancel the setup callback. Native save persistence still owns the game preferences.
+
+Controls
+Driv3rControls chooses menu/walk/real/directional using the native phase, actor and actual vehicle steering flag. On context changes MainActivity clears touch owners and custom pointers, retaining registered hardware holds. Real Steering has a two-cell digital Driv3rSteeringPad: one stable pointer can slide LEFT to RIGHT, leave/reenter or cancel. Its BridgeInput source is independent of accelerator/reverse buttons; either release order leaves the other owner's input held. It is digital native-key steering, not analog conversion. Secondary burnout and skid keys are retained with accurate labels. Walking and menus use the original square four-way pad; menus have a separate CONFIRM. Directional fallback labels match the original scheme. Both panels retain the same renderer and stable control slot.

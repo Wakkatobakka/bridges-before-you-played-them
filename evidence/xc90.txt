@@ -1,0 +1,12 @@
+XC90 / Historical image / Crash Bandicoot original first stage
+Source: Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/acceptance/07_live_stage.png
+Source SHA-256: 229552a048298f9cf6df1cf88a1f630ef898d24e22ca67dea876be02d1643956
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/acceptance/07_live_stage.png
+SHA-256: 229552a048298f9cf6df1cf88a1f630ef898d24e22ca67dea876be02d1643956
+
+Original Crash Bandicoot first stage in a132×176 host framebuffer, retained from the original0.1.0 acceptance. Not a new0.1.1phone capture.
+
+Scope: Historical desktop original-runtime framebuffer; not a physical-phone screenshot.

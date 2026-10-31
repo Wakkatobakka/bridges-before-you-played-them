@@ -1,0 +1,27 @@
+B12 — Two long MIDI streams overlap before the first level
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.10_DIAGONAL_AUDIO_FINDINGS.md
+Selected source lines: 20-37
+
+
+
+## Startup audio overlap
+
+The user's physical observation is that audio sounds strange just after the initial load/startup transition but sounds normal later in the level.
+
+The guest-side timeline reproduces a concrete overlap risk:
+
+1. The sound-enabled title/menu path plays BAR resource `0x232A` on one IMedia object.
+2. Selecting START plays BAR resource `0x2335` on a second IMedia object.
+3. Both payloads are Standard MIDI.
+4. No guest Stop occurs between those two Play requests.
+
+The exact preserved MIDI lengths are:
+
+- `0x232A`: 51.1725 seconds
+- `0x2335`: 35.0193 seconds
+- later level music `0x2336`: 66.0 seconds
+
+Android MediaPlayer permits the first two MIDI instances to coexist, which can create the startup overlap the physical run describes. v0.0.10 changes only host arbitration: starting a new Standard MIDI stream preempts any older Standard MIDI player, while QCP/SFX objects remain independent and may still overlap. No guest IMedia ABI, game bytes, rendering path, control cardinal mappings, viewport, Report flow, or launcher behavior is changed.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

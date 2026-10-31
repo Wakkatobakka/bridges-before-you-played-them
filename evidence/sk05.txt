@@ -1,0 +1,26 @@
+SK05 / Original look, strafe, actions and separate directions
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 12–24, 44–48
+Source SHA-256: c0fa306073f267a4ee3b3511c6081239f131f81196e65613c592fb9d9bd52c7f
+
+CONTROLS
+Slide your thumb on the four-way digital D-pad to move forward/back and turn.
+4/6: strafe. 2/8: look up/down. 1: jump. 3: use/pick up/interact.
+5: right action (weapon/spell). 7: left action (consumable).
+*/0: cycle action queues. #: character manager. 9: map.
+MENU L and MENU R: original pause/save menu.
+The original Options > Controls menu can customize game bindings.
+Tap the always-visible ORIGINAL KEYPAD button to change the inline controls;
+D-PAD RETURN restores the normal panel. Both modes retain the full original
+D-pad. Keypad mode has the original 15-key cluster and large 5/7 action aliases.
+Both modes share one measured slot, keeping the same live renderer attached.
+Switching releases touch holds while preserving physical-controller holds.
+Android Back closes gameplay. Save in the original game first.
+
+[... selected excerpt ...]
+
+Original 6R51.APP, UID 0x101FD3F6, runs through the unchanged EKA2L1 ARM64 core.
+All 1,935 original game files, NEM-4 firmware seed, native library and signer
+are preserved byte-for-byte. No recreated game logic or Ashen game assets.
+Existing C/E saves are never overwritten by first-install extraction.
+The APK has no INTERNET permission. This pass changes UI and early fault capture.

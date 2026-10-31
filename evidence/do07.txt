@@ -1,0 +1,12 @@
+DO07 / Early phone rooftop evidence and later direct scene probes
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/README_FIRST.txt
+Selected lines: 34–40
+Source SHA-256: ddd5a75b907de7ec58e240d8e5b4c45a765e5b5503ca1c5acbf8533e68ddcd76
+
+STATUS
+Original execution, rooftop gameplay, native pause/continue, persistent sound
+options and fresh-JVM reload were checked on a host. Subway and boss were also
+checked through explicit original-scene probes. See VERIFICATION.txt.
+The v0.1.0 phone report confirmed rooftop execution, processed inputs, MIDI
+requests, RMS writes and report export. The new v0.1.2 UI still needs phone
+evidence for comfort, bounds, mode switching, audio and background/resume. No full-game playthrough is claimed.

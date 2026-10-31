@@ -1,0 +1,13 @@
+RG14 / Original help overturns the old diagonal-key labels
+Source: REGenesis_Bridge_v0.6.2_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.2_PRIVATE/IMPLEMENTATION.md
+Selected lines: 3–10
+Source SHA-256: 271a5d59d825d25d75a0cc80a0029381a5a911bb6be2a33b02f238d7614a2d3b
+
+GenesisGameplayBindings.java supplies the game's verified controls to the actual
+shared shell. The original executable contains its Game Keys help at file offset
+0x162fe; adjacent Search/Combat/Target/Aim sections document context-sensitive
+behavior. Full extracted text and a live original-key probe are retained under
+evidence/. The original 5 quick-turn is the numeric Down alias; 1/3 are OK aliases,
+not dedicated diagonal aiming inputs. Standard touch uses the original four-way
+policy, and keeps 5 TURN in the center. Numeric mode replaces directions using
+those complete original aliases; all digits and essential shared actions remain.

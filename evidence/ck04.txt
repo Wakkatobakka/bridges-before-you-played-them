@@ -1,0 +1,16 @@
+CK04 / The first array repair
+Source: 04-Chokkan_Crash_Bridge_v0.0.6_Preservation.zip / Chokkan_Crash_Bridge_v0.0.6_Preservation/docs/V005_PRIMITIVE_ARRAY_FINDING.md
+Selected lines: 3–12
+Source SHA-256: 75b13c21e3b535c83e71f7952b62e48ef7c18eb27650f61eeedff14fd15aa692
+Context: Historical intermediate diagnosis, superseded by the constructor correction in CK05.
+
+Physical-device evidence from v0.0.4 reached the Japanese safety warning and Vivendi Games Mobile splash, then terminated in `c.x.b` with:
+
+- backing array length: 49,216 integers
+- attempted index: 98,296
+
+Bytecode inspection of `c.x.b(int,int,int,int)` shows Chokkan calculates texture-coordinate offsets as `(PrimitiveArray.size() - 1) * 8` and writes eight integers per logical entry. For the observed logical count of 12,288, the final entry begins at 98,296 (`12,287 * 8`).
+
+The bridge's earlier `PrimitiveArray` allocated `count * 4 + 64` integers for every backing array. With count=12,288 that is exactly 49,216, matching the physical-device exception.
+
+v0.0.5 corrects the host compatibility layer rather than patching the game: vertex/normal/color storage permits 12 integers per logical entry, and texture/point-sprite storage permits 8. The logical `size()` remains unchanged.

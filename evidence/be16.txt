@@ -1,0 +1,12 @@
+BE16 / The font test had not tested the initial larger font
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/NORMALIZATION_v014.txt
+Selected lines: 32–38
+Source SHA-256: 80bd206df54caaa80ac7f97b18885d24000229eb3d0531ff37c1b940efb0676f
+
+3. The title now wraps naturally rather than forcing a two-line heading.
+This keeps the complete game title and DoJa subtitle visible at the tested
+1.3 font scale. No font or button targets were reduced to hide the issue.
+The earlier font test changed configuration after UI construction and had
+not actually exercised larger initial text. The strengthened test applies
+font scale BEFORE constructing the Activity and checks all visible TextViews
+for vertical clipping and ellipsis. Its pre-fix failure is retained.

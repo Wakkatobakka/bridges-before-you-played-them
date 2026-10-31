@@ -1,0 +1,42 @@
+BS12 / What was actually verified
+Source: 17-BioShock_3D_Bridge_v0.2.0_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.0_PRIVATE/VERIFICATION.txt
+Selected lines: 3–21, 59–73
+Source SHA-256: ca016ff86329a380a1d68b42a12fb9d427f4719d4fedaa3d4b90385d0c064223
+
+PASS — original-engine acceptance (evidence/acceptance/PASS.txt):
+Untouched original ARM/Thumb module boots through native logo/title/menu,
+New Game, original loading/intro and movement-enabled 3D world. Key2/8 move
+original world coordinates; keys6/4 change original camera vectors. Original
+pause/menu arrows and native resume work. Android-style host suspension stops
+scheduled timers, with matched original lifecycle events and the game's own
+resume acknowledgement. Detailed diagnostics remain OFF throughout.
+
+The original pause-menu SAVE writes savedata.dat (105000 bytes). Exact exported
+bytes are imported into a fresh original applet; its native Continue entry loads
+the original checkpoint and world controls work again. Continue follows the
+original checkpoint semantics; this is not an invented exact-position quick-save.
+A separate native LOAD check restores the exact manual-save world coordinates
+[29091752,-4878442,-26885204], with original UI35 and movement permission1.
+Continue and LOAD retain their distinct original checkpoint/manual-slot semantics.
+See evidence/acceptance/manual-load/PASS.txt and tests/run_manual_save_load.sh.
+
+Original audio STARTED/COMPLETE notifications use measured prepared WAV/MIDI
+durations on the host test clock. No guest state is patched to skip progression.
+
+[... selected excerpt ...]
+
+HOST PERFORMANCE EVIDENCE, NOT PHONE HEAT:
+The original active-world desktop JVM sample after warm-up measured120 callbacks:
+mean44.646ms, p9549.497ms, max75.564ms; mean2752106.7 original guest steps per
+callback. This uses virtual minimum100ms deadlines for reproducible original
+media/progression. It does not measure Android playback FPS, S25 process CPU,
+battery temperature, skin temperature or improved phone heat. It is a baseline
+for the tested scene, not a comparison to a different old scene/runtime.
+
+MATERIAL LIMITS:
+No physical S25Ultra/Android16 execution, touchscreen layout/feel or device heat
+measurement is possible in this environment. The host scope covers opening
+world/control/save paths, not a full-game completion. The logical176x220 profile
+is supported by content/footer layout; its height is inferred, while explicit
+original240x320 loading DIB allocations remain honoured. On-device CPU/battery
+history is included so the next phone report contains measured session evidence.

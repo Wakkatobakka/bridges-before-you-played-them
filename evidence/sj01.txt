@@ -1,0 +1,15 @@
+SJ01 / Drawing outside paint()
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/INPUT_FINDINGS.txt
+Selected lines: 5–14
+Source SHA-256: 4d07c4c327533af664c3281d372e6e5a6c02c51fef20438ca000c46cd8a43a21
+
+ENTRY / PACKAGE
+- JAM: AppClass=jump.jump; TargetDevice=P900iV; AppVer=1.000; SPsize=266240.
+- jump.jump.start(): creates jump.screen and Display.setCurrent(GAME).
+- jump.jump.resume(): calls GAME.restart().
+- Guest is a two-class ordinary DoJa 2D Java application. No Mascot Capsule or native BREW API dependencies.
+- Original JAR contains the English patched story text resources story6..story13.txt.
+
+VIEWPORT
+- 240 x 240, directly verified by repaint1() bytecode offsets78/81 filling 240x240 and the title GIF image index25 dimensions240x240.
+- paint(Graphics) is intentionally empty. The guest owns its Graphics, locks, paints, then unlocks(true) from repaint1(). Runtime must submit on Graphics.unlock(true); host Canvas.repaint() alone will not draw.

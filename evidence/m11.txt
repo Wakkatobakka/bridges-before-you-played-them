@@ -1,0 +1,20 @@
+M11 — The hunter returns in the next phone trace
+Evidence type: Phone runtime report
+Source: Monster Hunter i preservation / baseline/original/evidence/v0.0.7_physical/Monster-Hunter-i-Bridge-v0.0.7-report.txt
+Selected source lines: 21-31
+
+
+
+J3D view calls: 3208 lookAt calls=1198
+Last view: [4096,0,0,0; 0,-4096,0,0; 0,0,-4096,1024]
+Last lookAt: pos=(0,0,1024) target=(0,0,0) forward=(0,0,-4096) => [4096,0,0,0; 0,-4096,0,0; 0,0,-4096,1024]
+J3D figures: 946 queued triangles=221413 drawn triangles=218252
+J3D rejects total: index=0 near=300 far=0 backface=247859
+J3D crossings total: near=16 far=0 missingTexture=0 drawFailures=3161
+J3D primitives: calls=3406 submitted=155274 queued triangles=176966 drawn triangles=166397
+J3D primitive culls: near=61026 far=0 crossing=5995 bad=0
+Last primitive: type=3 flags=0x3000 attrs=0x50 submitted=6 queued=6 drawn=6 cull[near=0,far=0] crossing=0 bad=0 textured=true
+Last J3D: verts=271 patterns=1/1 queued=296 drawn=296 z=1360..1769 near=128 far=10240 fov=512 reject[idx=0,near=0,far=0,backface=240] crossing[near=0,far=0] missingTex=0 drawFail=0
+Latest fatal:
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

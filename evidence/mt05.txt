@@ -1,0 +1,17 @@
+MT05 / Fresh-process load returns to the original dungeon
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/evidence/final_reload.log
+Selected lines: 1–8, 15–15
+Source SHA-256: 92f1554738d4729d5c09811c0b1e72304aab3630e52e61397f78452635f794e1
+
+SNAP final_11_fresh_reload frames=78 bY=1 a=4 B=0 bH=176 a5=208 bE=1 bq=8 aM=8 aK=8 bP=1 bN=0 ad=0 aH=1 aO=0 if=0 c1=true ak=176 aj=101 
+Megami Tensei Bridge v0.1.1
+Original JAR SHA256: 2acdfdaec89d5c47b81db7a01002c814524fa07f96486c94bdf97170aa973d98
+MIDP 1.0 / Nokia FullCanvas / original 176x208 game
+frames=78 lastFrameAgeMs=43
+active=true ended=false keys=6 pending=0
+resourceReads=30 rmsWrites=0 faults=0 audioStarts=3
+original.bY=1 original.a=4 original.B=0 original.bH=176 original.a5=208 original.bE=1 original.c1=true original.ad=0 original.bq=8 original.bP=1 original.bN=0 original.aH=1 
+
+[... selected excerpt ...]
+
+Report generated in 4 ms

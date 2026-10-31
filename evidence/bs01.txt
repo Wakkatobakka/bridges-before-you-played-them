@@ -1,0 +1,13 @@
+BS01 / A clean rebuild instead of continuing the discarded fork
+Source: 17-BioShock_3D_Bridge_v0.2.0_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 3–10
+Source SHA-256: 1c7c50a16071d1abf97583db75e11799bd14131cb186b0ec6c0f8c312cca7346
+
+Foundation and retained identity
+The fresh source was staged from Wolfenstein RPG v0.1.0 (the working RE Genesis /
+Doom / Contra v0.1.1 BREW family). No old BioShock native library, JNI layer,
+Omni controller/shell or previous code tree was imported. Old BioShock was
+consulted as evidence for original native ABI/control fields and checked against
+the supplied unmodified game bytes. Only its private signing identity and
+existing icon were retained. Package com.wakka.omnibridge.bioshock3d, code 9,
+version 0.2.0; same owner certificate as previous updates.

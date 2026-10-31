@@ -1,0 +1,28 @@
+R10 — The stage was painting over the instruction to press OK
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / docs/DEVICE_v0.3.4_FINDINGS.md
+Selected source lines: 1-3, 34-46
+
+
+
+# v0.3.4 device regression: stationary first stage
+
+The input path preserves the native key masks, but the inherited final-frame compositor paints the GLES stage over the game's later 2D HUD and mission briefing. That briefing deliberately blocks player updates until the original Center/OK key is pressed. The normalized controls already included an OK button, but the covered briefing supplied no visible cue to press it. Ordinary directions and the four gameplay actions cannot dismiss that native gate.
+
+[... selected excerpt ...]
+
+## Why the prompt disappears
+
+`bp.a(Graphics,i,ad)` uses this native paint order:
+
+1. Android 2D clear/background.
+2. GLES stage and player.
+3. `Graphics3D.flushBuffer()` at bytecode offset 235.
+4. `bh.a/b(Graphics,bn)` native HUD at offsets 240–273.
+5. `k.b(Graphics,bn)` mission briefing at offset 293 when `k.d` is true.
+
+`k.b` draws the briefing rectangle at `(6,83)` with size `228×64`; its text uses y=89,113,129. The old `RockmanCompat.flushBuffer` only captured the GLES frame. `RockmanCompat.unlock` later called `drawPostPresentGlFrame`, after the HUD/briefing had been painted. The merge loop unconditionally replaces every destination pixel whose captured GLES RGB exceeds the black-key threshold. Black-keying preserves only pixels where the GLES frame is black; an opaque gray stage overwrites later HUD and prompt pixels.
+
+The correction merges GLES at the native flush boundary, after `endDrawing()` and before those HUD/script calls. Final unlock presents the already-composed frame. Native gameplay logic, payloads, model scale, camera, audio and saved assignments are retained. The existing normalized OK button continues to send the original Center bit.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

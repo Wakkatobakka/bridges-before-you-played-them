@@ -1,0 +1,9 @@
+DR04 / Original audio pause commands were initially ignored
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/intake/android-integration-review.txt
+Selected lines: 9–12
+Source SHA-256: 6f0649b196af87d18769dc1cfcc3817e5db5d57120a55a9db0c3c09f909b0852
+
+Audio material finding: new native PAUSE/RESUME event kinds were initially ignored by the controller. Root corrected with per-player originalPaused state and start gating. Re-reviewed the corrected flow: separate Android lifecycle and original game pause gates; original PLAY serial retained for notifications; delayed preparation and replaced MediaPlayer callbacks checked by player identity; completion removes the old player before native callback can schedule a replacement.
+Audio source lookup supports exact payload SHA-256 .wav and .mid assets and packaging stores these uncompressed for openFd.
+
+No remaining material controller/MainActivity mismatch identified by this review. Physical Android MediaPlayer, touchscreen, and lifecycle behavior requires device execution; this review does not claim that environment was tested.

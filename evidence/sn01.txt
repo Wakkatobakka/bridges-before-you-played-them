@@ -1,0 +1,20 @@
+SN01 / Original Sonic movement and rings preceded the UI-only update
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 69–83
+Source SHA-256: 81826723092955b062dadb1611d54c2076b56e3fca27a19ba540802c5c8bd59f
+
+INHERITED EXECUTION EVIDENCE
+The evidence/host-*.png and original-execution.log originate from v0.1.0.
+They show original boot/intro and player-controlled first-level movement,
+0 -> 3 rings, airborne jump, pause, # screen toggle and 0 sound indicator.
+The original game created 1080-byte sonic.da0/sonic.da1 files in the host C drive.
+No host saves are in the Android seed. Audio was not listening-tested.
+The desktop EKA2L1 build differs from the Android binary; prior host execution
+is not physical-device verification of this update.
+
+REMAINING DEVICE ACCEPTANCE
+No new Android device evidence supplied. Verify continuous thumb slides,
+move+jump holds, both one-tap mode switches, no stuck touch/physical input,
+portrait/landscape safe areas and labels, original softkeys, Android Back to
+caller/Omni, actual Downloads .txt output, audio and background/resume.
+No full campaign, stage-clear persistence or long-session claim is made.

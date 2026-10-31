@@ -1,0 +1,17 @@
+T03 — The controls are present before the guest can execute
+Evidence type: Phone runtime report
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / evidence/v0.0.2/MGS-Mobile-Bridge-v0.0.2-report.txt
+Selected source lines: 37-44
+
+
+
+ARM32_HOST_EXECUTION = BLOCKED_ON_HOST | No 32-bit ABI advertised by Android
+ARM32_TRANSLATOR = NOT_INTEGRATED | runtime work resumes after bridge-shell normalization
+BREW_RUNTIME_INIT = NOT_ATTEMPTED | Requires usable ARM32 execution path plus complete Melange runtime inputs
+MGS_APPLET_START = NOT_REACHED | Runtime not initialized
+FIRST_FRAME = NOT_REACHED | Runtime not initialized
+AUDIO_INIT = NOT_REACHED | Runtime not initialized
+INPUT_INIT = UI_READY_RUNTIME_NOT_REACHED | Keypad/custom input surfaces exist; no BREW event sink yet
+FAILURE_FRONTIER = ARM32_GUEST_EXECUTION | Next runtime test: ARM32->ARM64 guest execution layer
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

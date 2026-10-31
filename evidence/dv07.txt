@@ -1,0 +1,6 @@
+DV07 / Real ARM driving and setup scope
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/evidence/driving_controls/RESULT.txt
+Selected lines: 1–1
+Source SHA-256: dbacbac53e47a21b92e59abad11fd737d3cab9eaa6f6480bc4319b9aa47e80d7
+
+PASS 96 native driving/setup checks. Real original ARM and resources; native menu preference selection and real vehicle physics. Virtual host clock; no phone comfort or complete campaign claim.

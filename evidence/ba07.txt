@@ -1,0 +1,6 @@
+BA07 / Every prepared sound matches
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/evidence/omni/audio-sample-equality.log
+Selected lines: 1–1
+Source SHA-256: 0b66c73450a50569ef439c5be30267d5107271468cbbd4c5536378f781a33adf
+
+PASS: all 50 outputs match existing original audio; every MIDI byte and all 47 PCM sample streams identical.

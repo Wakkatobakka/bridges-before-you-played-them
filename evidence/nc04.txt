@@ -1,0 +1,10 @@
+NC04 / The preset observer reads, while the native menu transition stays open
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 15–19
+Source SHA-256: c339834610483756f84f132f8ae94ca4ea27dc6ea0a546c64e19b24b16ad990c
+
+## Original preset observation
+
+The original SetControlConfig handler at 0x001DF5D8 calls getter 0x001E6BD8. That getter reads `[global 0x00315208 + 0x844] + 0xF8`; the setter stores the selected index there, after checking the original `<5` limit. `Session.carbonControlPreset()` reads `[0x00315A4C] + 0xF8`, checks a mapped heap pointer/value range, and performs no native writes or calls. Exact edition identity remains enforced by original-file fingerprints.
+
+A native run and the compiled-APK cold input contract both read 0 (A). The existing original guide inventory supplies A/B action meanings. Android framework tests verify transition A/B labels, every binding, cleanup and physical ownership. An actual original-menu A-to-B transition was not reached: leaving the first race exposed a separate runtime fault. Other original preset indices get neutral native button names, with no invented action/analog claim. Preset C analog touch remains unsupported.

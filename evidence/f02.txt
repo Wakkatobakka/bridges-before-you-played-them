@@ -1,0 +1,32 @@
+F02 — The original game is running in a 240×240 display
+Evidence type: Phone runtime report
+Source: Snowboard-Bridge-v0.0.15-report-20260929-215852.txt
+Selected source lines: 6-9, 13-16, 152-152, 144-144, 49-49
+
+The latest-summary triangle/flush fields describe a particular report moment. They are not an FPS reading or a full visual verdict.
+
+Framebuffer: 240x240 ARGB_8888
+Keypad state: 0x0
+Soft labels: Retry / Menu
+Current 3D: 3D +Z flush=2355 tri=863 px=83903 front/back=1380/32 clip=39 n/f=8/500 a=45
+
+[... selected excerpt ...]
+
+  0.004  DEX            Loading actual English Offline Snowboarding classes
+  0.004  GAME CODE      SnowBoard class loaded
+  0.004  GAME CODE      SnowBoard instance created
+  0.004  GAME CODE      enter SnowBoard.start
+
+[... selected excerpt ...]
+
+  3.838  3D FIGURE      cloud.mbac tri=423 queued=239 textured=239/423 tex=SB_basic.bmp uv=2..141,1..95 projected=177 bbox=-1038..10830,-591..25787 viewZ=5..478 raw=-177..147/-50..277/-326..383 bind=-282..282/0..689/-326..383 pose=anim poseBounds=-186..148/-129..581/-253..410 action=cloud.mtra#25 time=0 maxFrame=458752 front/back=177/45 near=1 far=500 fov=45
+
+[... selected excerpt ...]
+
+  3.814  AUDIO          MLD requested (silent v0.0.1), bytes=10987
+
+[... selected excerpt ...]
+
+  0.039  3D OBJECT      ActionTable cloud.mtra actions=27 bones=21
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,19 @@
+MA03 / Original intro PCM is written before playback readiness
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 11–24
+Source SHA-256: b215593753dcd3e72a34bfb7f18ecc61d760aafccb5abf00b2517ac70a2eec6e
+
+AUDIO OUTPUT REPAIR — PASS AT ANDROID API
+The earlier code rejected STATE_NO_STATIC_DATA before filling a MODE_STATIC
+track. The repair allows that valid state, writes all original rendered PCM,
+requires STATE_INITIALIZED after the write, then starts playback.
+Original note rendering is unchanged.
+
+Robolectric API34 runs the real Activity, original VM and MonoMelody.
+A ShadowAudioTrack output listener captures bytes actually passed to the
+Android write API. A separate probe confirms initial static-track state.
+Assertions cover full PCM write, initialized state, playback start, zero
+errors, 22,050 Hz / mono / PCM16 format and non-silent output.
+Captured intro: 275,184 bytes / 137,592 samples / 6.24 seconds; peak 4,915.
+See audio-output.txt, original-intro-output.pcm and WAV.
+This is output API evidence, not physical AudioFlinger/speaker proof.

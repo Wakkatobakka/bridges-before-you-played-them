@@ -1,0 +1,38 @@
+B05 — Twelve prefix bytes hide the sprites on Android
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.5_HLE_FINDINGS.md
+Selected source lines: 3-11, 13-29
+
+
+
+## Device evidence that drove this pass
+
+The returned v0.0.4 S25 Ultra report is a live Android 16/API 36 run. Its early BAR image path knows the original image dimensions but records `IImage.Draw ... pixels=no` for the resource-backed images. The preserved BAR resources are not raw PNG files: each of the four boot resources used in that path (`0x138E`, `0x1391`, `0x1394`, `0x13C0`) carries the same 12-byte resource prefix:
+
+`0c 00 69 6d 61 67 65 2f 70 6e 67 00` = length + `image/png\0`
+
+The real PNG signature begins at resource offset 12. Desktop `ImageIO` tolerated the prefix; Android `BitmapFactory.decodeByteArray` did not. That was the concrete reason the Android run showed rectangle/UI activity but not the real BAR sprite pixels.
+
+The returned v0.0.4 recording separately proves the persistent input session is functional: the on-screen runtime counters reach thousands of display updates and hundreds of BREW key events, while the original menu reacts to keypad input. The saved text report, however, contains a clean 297,426-step/0-key snapshot rather than that later live session. v0.0.6 therefore also makes live-report capture occur before leaving the play surface and renames the destructive diagnostics action to make a fresh runtime reset explicit.
+
+[... selected excerpt ...]
+
+## v0.0.6 changes
+
+1. **Android BAR PNG decode fix**
+   - `BrewRuntime.makeImage` now locates the exact PNG signature inside the BAR resource and passes only the PNG stream to the platform decoder.
+   - Image decode success/failure counters are included in the device report.
+   - The host regression uses a deliberately strict decoder that rejects prefixed bytes, so this Android-specific failure mode cannot silently regress.
+
+2. **Real held-key semantics**
+   - Raw handset buttons now dispatch BREW `EVT_KEY_PRESS` on Android touch-down and `EVT_KEY_RELEASE` on touch-up/cancel.
+   - The persistent 10 ms guest timer continues while a directional/action key is held.
+   - This replaces the earlier atomic press+release click model while keeping `tapKey` as a desktop regression convenience.
+   - Any held key is released when the activity pauses so the guest cannot be left with a stuck key.
+
+3. **Report continuity**
+   - The top-bar Report action snapshots the current persistent guest before opening Diagnostics.
+   - Diagnostics labels a new-runtime action as `REBOOT RUNTIME (FRESH)` instead of an ambiguous generic probe.
+   - Reports now include PNG decode counts and a compact count/last-location for unimplemented interface calls, which should make the next audio/display frontier easier to isolate.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

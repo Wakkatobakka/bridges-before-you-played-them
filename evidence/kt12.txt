@@ -1,0 +1,15 @@
+KT12 / A thousand further timed-level callbacks
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/evidence/timed-level-regression.log
+Selected lines: 1–10
+Source SHA-256: 6ca3dc3d4bf00c96fef8ab6ea7c481508a8ed10c19f2ddb4c5878ede0524900a
+
+PASS timed stage reaches original gameplay beyond previous drawing fault
+Native timed-stage position 503040,104704 -> 503040,67584
+PASS Katamari really moves in Make a Star 1
+PASS original countdown invokes implemented sector operation (494 draws)
+PASS original turn, shuffle and U-turn handlers remain live in timed level
+PASS native timed-level pause/resume returns to game
+PASS 1000 actual timed-level callbacks pass beyond previous fault
+PASS no missing BREW interfaces on tested timed-level path
+PASS countdown keeps rendering through endurance
+PASS 8 timed-level checks

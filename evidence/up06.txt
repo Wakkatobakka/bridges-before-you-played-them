@@ -1,0 +1,20 @@
+UP06 / The current control changes keep their physical-phone scope
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 62–76
+Source SHA-256: 381439c06010d163a536d0b182d28dffbe67656d4ec4cd02381de7c9e6db939b
+
+ORIGINAL GAME SHORTCUT — PASSED ON HOST
+The actual unchanged JAR loaded the existing original save through its own
+Pause > Load flow. After closing Pause, original 0 opened Inventory (aN=130)
+and a second 0 closed it to gameplay (aN=384). Existing save state bo=2 and
+bg=14 remained intact; original guest reported no error. Screens and states
+are retained under evidence/control-regression-v0.1.2.
+7 and 9 were also delivered without error; the selected inventory fixture
+had no long item description, so a visible scroll transition is not claimed.
+Their meanings are documented by original help in the retained control audit.
+
+DEVICE SCOPE
+The user's supplied v0.1.1 phone recording establishes real original gameplay
+and original keypad Inventory input on the phone. The new v0.1.2 buttons and
+their thumb comfort still need a phone run. No new physical-device, speaker,
+full-game or phone Downloads validation is claimed.

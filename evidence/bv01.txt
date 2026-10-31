@@ -1,0 +1,13 @@
+BV01 / Ashen core, newer Nokia environment
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 66–73
+Source SHA-256: 9475458f8520db90cbb54fcc464d087b49ae97c9ea2e417fdfa423b632dc90a3
+
+WHAT WAS REUSED
+Ashen v0.1.3's unmodified Android EKA2L1 core, JNI callbacks, lifecycle,
+first-install save protection and independent reporting. Its Pocket Kingdom/
+Shadowkey runtime lineage is retained in provenance. The original N-Gage
+Symbian 6 firmware was replaced with the required Nokia 5320 Symbian 9.3 FP2
+files and N-Gage 2.0 service dependencies. This is a newer platform generation.
+Actual Wakka Bridge Gameplay UI Kit v1.1.2 source is compiled into the APK.
+Its source/JAR/tests are preserved in app/ui-kit/.

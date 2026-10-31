@@ -1,0 +1,13 @@
+DV01 / Scrolling text exposed the wrong panel service
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 28–35
+Source SHA-256: 4f88c6a22ab6e92a38b47a5b0f86f2a51b017fb2e7cc762525728e87c9070a8e
+
+V0.1.1 DEVICE-REPORTED TEXT FIX
+The user supplied 1000101923.mp4 (32.105 seconds, 1080x2340) and Driv3r-Bridge-v0.1.0-report-20261016-115934-890.txt. On-device evidence shows old glyphs accumulating during text scrolling, plus text consuming the full guest display instead of the original panel. The report identifies Samsung SM-S938U / Android 17 API 37; no runtime fault, unsupported calls, image decode failures or Android audio errors. Framebuffer remains 120x160. The controls and header are visibly within the system bars in this recording.
+
+The defect was in the host implementation of IDisplay vtable +0x30: it was incorrectly implemented as a screen rectangle query, rewriting the caller's 10,10 / 100x130 panel to 0,0 / 120x160 and skipping the requested background draw. Original caller 0x0010D050 copies its retained rectangle, invokes +0x30 with type=5 and background=0, then uses the resulting client bounds for heading/body/footer, wrap width and scrolling. The fixed observed flat filled panel draws the caller's background into the existing destination, respects the active bitmap clip, commits pixels and leaves the original client rectangle unchanged. No speculative frame styles are claimed; type 5 is the observed supported path.
+
+A regression executes the original Quick Guide using only native inputs: DOWN then UP must restore exact initial framebuffer pixels; scrolling to the end and back to the start must do the same. The v0.1.0 runtime fails the first restoration comparison. v0.1.1 passes all 47 text checks, including rapid scroll input without extra native timer pumping. Before/after original-game PNGs and expected baseline failure are retained in evidence/text_fix/. Existing 72 native execution, 12 controller, 35 key mapping and 9 input-ownership checks pass.
+
+The executable, BAR, MIF, key mappings, native save paths, app identity, signing key and report threading remain unchanged. The system font fallback is retained. Host tests establish the text repair; the updated APK has not been run on the user's phone here. The original video remains available as the user's supplied attachment; its identifying hash is recorded below rather than duplicating the recording inside this checkpoint.

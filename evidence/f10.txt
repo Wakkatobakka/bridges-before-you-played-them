@@ -1,0 +1,29 @@
+F10 — Text ascent was added twice; the tiny font was ignored
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.20_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 7-26
+
+
+
+## Evidence from the v0.0.19 device run
+
+- The S25 run is playable, but the Android D-pad, OK and soft keys are materially too small for comfortable touch use.
+- Snowboarding's pause-menu selection cursor is vertically separated from the menu label it selects.
+- HUD strings such as `TIME:` / `BEST:` overlap their numeric values.
+
+The game bytecode explains both in-game UI faults:
+
+- Snowboarding already adds `Font.getAscent()` to the requested top coordinate before calling DoJa `Graphics.drawString()`. The bridge also added ascent inside `drawString()`, moving every string down by one additional ascent.
+- Snowboarding requests DoJa `SIZE_TINY` (`0x70000400`), but the bridge ignored the font flags and always rendered a 14-dot Android font. The HUD deliberately starts the timer value only 29 pixels after `TIME:` and 30 pixels after `BEST:`, so the oversized font forces overlap.
+
+## Changes
+
+- DoJa `Graphics.drawString()` now treats its Y argument as the baseline, matching the DoJa drawing model. Removed the second ascent offset.
+- Implemented DoJa font-size flag decoding with a 10-dot `SIZE_TINY` default and basic tiny/small/medium/large mappings.
+- Font measurement and drawing now use the same selected Android Paint, keeping `stringWidth()`, ascent, height and rendered text internally consistent.
+- Greatly enlarged the Android D-pad and OK control without covering the game viewport.
+- Enlarged the game-driven soft-key pills and label text.
+- Increased invisible touch margins beyond the visible controls.
+- D-pad overlap now resolves to the nearest cardinal button rather than depending on hit-test order.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

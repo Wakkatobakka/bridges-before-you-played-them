@@ -1,0 +1,25 @@
+R09 — Monster Hunter lessons enter Rockman’s mesh pass
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / PATCH_NOTES.md
+Selected source lines: 3-18
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+## Why this build exists
+v0.3.2 proved that Area 5's decoded D4D world mesh is live on-device: 3,241 vertices, 2,497 triangles, eight topology records, no GL errors, and full-frame GPU presentation. Visually, however, the entire stage used one flat color, so correct geometry and incorrect giant polygons were hard to distinguish.
+
+Monster Hunter i v0.0.7 independently reinforced two lessons for the shared DoJa 3D work: surface orientation/backface behavior matters, and near-plane handling needs to be measured rather than guessed. This build borrows those lessons without transplanting Monster Hunter-specific game code.
+
+## Changes
+- Preserves the v0.3.2 D4D decode, world coordinates, camera path, Figure renderer, audio, controls, and GL-to-Android presentation bridge.
+- Keeps all eight D4D topology streams separate through rendering instead of flattening them into one index buffer draw.
+- Draws each topology/material stream with a stable neutral shade so stage segmentation can be seen before texture decoding is implemented.
+- Builds a deduplicated depth-tested wireframe edge buffer from the decoded 2,497 triangles and overlays it on the filled stage.
+- Adds D4D near-plane and winding telemetry: triangles wholly before the near plane, near crossings, far rejects, in-depth triangles, and CCW/CW/degenerate winding counts.
+- Clips diagnostic screen-bound calculations to the active near/far range so near-zero perspective divisions no longer explode telemetry into meaningless million-pixel bounds.
+- Does not enable backface culling yet. v0.3.3 gathers the winding evidence first so the next pass can choose the correct orientation rather than risking a blind scene disappearance.
+
+## Expected visual result
+The stage should no longer read as one featureless flat slab if the topology is coherent. Individual surface groups and triangle edges should become visible. This is still an untextured diagnostic render, but it is intended to distinguish real floor/wall structure from bad topology immediately.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

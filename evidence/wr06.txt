@@ -1,0 +1,16 @@
+WR06 / Original sound callback requires command and status values
+Source: 14-Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/evidence/interface-findings.txt
+Selected lines: 1–11
+Source SHA-256: 77205126f77b5c05f1fd816ef7059e98fcf3734f83224d9500366915500a23bb
+
+Wolfenstein RPG BREW native interface findings
+Evidence: original supplied wolfensteinrpg.mod, disassembled as little-endian ARM using Capstone 5.0.7.
+
+ISound class 0x0100100B (created at module offset0xDF4; stored applet+0x6C)
+- off0x08: register notify(cb,user). Init at0x4E17C supplies cb00102F50 and sound-controller pointer.
+- off0x0C: accept/copy five-byte sound-info; original constructs bytes1,4,0,0,0 at controller+8. Init0x4E19C.
+- off0x14: no-argument query, presumed GetVolume from callback use. Init0x4E1B8.
+  Schedule callback(user,1,1,volumeDataPtr). volumeDataPtr may point uint16(100).
+  Original callback00102F50 does NOT read volumeDataPtr. It requires command1 and status1,
+  reads applet=[user], checks applet+0x94 manner mode, writes user+0x18=100 if0 else0.
+  Callback semantics are native evidence; method name is inferred.

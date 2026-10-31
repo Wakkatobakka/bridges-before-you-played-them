@@ -1,0 +1,10 @@
+F05 — The large projected bounds are in the phone trace
+Evidence type: Phone runtime report
+Source: Snowboard-Bridge-v0.0.16-report-20260929-222612.txt
+Selected source lines: 142-142
+
+
+
+3.626  3D FIGURE      cloud.mbac tri=423 queued=219 textured=219/423 tex=SB_basic.bmp uv=2..141,1..95 projected=177 bbox=-1038..10830,-591..25787 viewZ=5..478 raw=-177..147/-50..277/-326..383 bind=-282..282/0..689/-326..383 pose=anim poseBounds=-186..148/-129..581/-253..410 patterns=3 pat=0x4 patHide=28 action=cloud.mtra#25 time=0 maxFrame=458752 front/back=177/45 near=1 far=500 fov=45
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,26 @@
+SP04 / Thirteen episodes choose their own controls
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 18–38
+Source SHA-256: 06ce1acf0abb5ab71ffb8d12e58434c843cac466165df2b2e06bacc9b1c9762e
+
+EPISODE CONTROLS
+Controls follow the original game's scene and selected episode automatically.
+Menus/instructions use arrows and a large OK / SELECT button. During play,
+OK / SELECT and BACK / PAUSE sit in a separate utility row.
+Kenny Cow Dodge: Up / Down (2 / 8).
+Pee Pool: four-way D-pad + STOP 5.
+Gnomes: four-way D-pad + KICK 5.
+Kiss the Girl, Chef Dance, Audition: Left / Middle / Right (4 / 5 / 6).
+Snow: Left / Right (4 / 6).
+Starvin Marvin: left gauge 4, PUSH 5, right gauge 6.
+Ike's Wee Wee: Up / Down (2 / 8).
+Terrance & Phillip: Up / Middle / Down (1 / 4 / 7).
+Marklar: Up / Down + FIRE 5.
+Catapult: nine numbered buttons corresponding to the original windows.
+Pinkeye: four-way D-pad + STRIKE 5.
+The original shows sideways instructions and then upright instructions. Use the
+upright page. Pinkeye takes an extra original loading/instruction step.
+ORIGINAL KEYPAD opens the full keypad inline; EPISODE CONTROLS returns in one
+tap. The live viewport stays attached and does not resize when layouts change.
+Touch holds release before changing roles; physical input ownership is retained.
+Android Back closes the bridge and returns to its caller/Omni.

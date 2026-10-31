@@ -1,0 +1,8 @@
+EJ08 / Fourteen replay frames match
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/pixel_equivalence.json
+Selected lines: 23–25
+Source SHA-256: 75e6bbd949ed15b84dbf2ebf447b7e8365ddf9cfc28231e7be9128fc543de253
+
+  "virtual_clock_minimum_step_ms": 100,
+  "frame_count": 14,
+  "all_pixels_equal": true,

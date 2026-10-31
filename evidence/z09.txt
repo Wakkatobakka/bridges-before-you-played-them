@@ -1,0 +1,31 @@
+Z09 — The original Chapter 1 trace reaches another GLES boundary
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v018_S25_ONE_TAP_FAULT_reaches_chapter_1.txt
+Selected source lines: 16-33, 3050-3050
+
+
+
+Android real EGL context active: true
+Original guest EGL swaps: 280
+Android GLES1 calls: 610640
+Original geometry draws: 24321
+Original texture uploads: 9
+Readbacks passed: 280
+Readbacks failed: 0
+Original GL errors preserved: 115
+GPU RGB pixels latest: 0
+GPU RGB pixels maximum: 302638
+Original Zeebo IHIDDevice active: false
+Original Z-Pad button press events: 14
+Original Z-Pad button release events: 14
+Original Z-Pad signal callbacks: 28
+Last native button UID: 0x106c40b
+Analog sticks: not yet implemented
+Original gameplay/input outcome: not yet verified on phone
+Guest fault: timer -> RuntimeException: Unsupported BREW interface cls=0103D8DD off=0x140 r0=011E8E00 r1=01251B1C r2=F0023C40 r3=00000000 lr=0x00169BE8
+
+[... selected excerpt ...]
+
+  -> BREW vsprintf 01:Sede de Sangue
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

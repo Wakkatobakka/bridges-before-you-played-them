@@ -1,0 +1,18 @@
+CK14 / The original byte wrapper reproduces and repairs the overflow
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/tests/text/README.md
+Selected lines: 8–20
+Source SHA-256: ebd0f6264a13d8e90223354aa1c4f80ef9d553bac67ee6fe7a7214281c5a9ba3
+
+This test executes the actual guest `c.t` decoder, `c.j` byte wrapper, `c.e`
+bitmap glyph mapper and `c.l` pager. Its text corpus oracle is independently
+decoded from the original resources by Python's strict CP932 decoder.
+
+The untranslated JAR reproduces the phone video's seven-line lobby description
+and three-line dialogs with replacement glyphs. The separate compatibility JAR
+must produce five lobby lines and two dialog lines, preserve all 340 strings in
+six resource tables, leave resource bytes unchanged, and retain ASCII glyph
+indices and `$P` pager behavior.
+
+These are structural checks against real guest methods. The Java graphics
+doubles do not reproduce Android Japanese font rasterization, so the test does
+not certify physical handset text appearance or claim screenshots of that output.

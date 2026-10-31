@@ -1,0 +1,10 @@
+S206 / The kit’s old build label and missing test scenarios
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/IMPLEMENTATION.md
+Selected lines: 34–38
+Source SHA-256: 98aac0fdbe161e175bfeb9bc8fd7f2b50aec259818cf317ec924f84f8bc98517
+
+# v0.1.2 UI Kit v1.1.2 normalization
+
+The production shared source now uses the supplied v1.1.2 per-pointer pad model and View event tracking. The existing opt-in center guard is ported as per-pointer metadata, removed on release/cancel, while upstream defaults and independent contact union remain intact. Spider-Man keeps the existing four-way touch configuration, separate OK/5 and native mappings; this update does not infer new simultaneous-direction gameplay behavior from Ashen. Original runtime, renderer, timing, input delivery, audio, saves, report executor and MainActivity are byte-identical except controller release/report version labels.
+
+The supplied kit includes stale build/verification pieces: BUILD.py targets a v1.1.1 JAR, omits TestPadContacts, and its framework source contains nine tests despite describing twelve. Local integration corrects the JAR target, includes the 107 contact assertions, and adds the three documented framework scenarios using stable pointer IDs and real MotionEvent dispatch. Baseline v1.1.1 fails the added combined-contact test. Supplied metadata is retained separately and current results are recorded under evidence/ and app/ui-kit/verification/LOCAL_RESULTS.json. The locally rebuilt shared JAR is compared class-for-class with production APK compilation. Source deltas are explicit in evidence/ui-kit-source-audit.json.

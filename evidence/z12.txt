@@ -1,0 +1,15 @@
+Z12 — The Portuguese advisory and the floating gun
+Evidence type: Preserved phone images
+Source: RE4 preservation / v015_phone_original_warning_screen.jpg + supplied 1000100707.jpg
+
+Both images inspected as pixels and copied byte-identically. The second image was supplied with its existing framing; this archive made no crop or reconstruction. Private notification text, account identifiers and contact avatars are absent.
+
+0.1.5 original Portuguese advisory: v015_phone_original_warning_screen.jpg
+Image SHA-256: dfdf85593ec657c0ccb2cf8516429b3f36bdeef22e3eeffdf047b7a632931dad
+
+Later village screenshot: 1000100707.jpg
+Floating handgun and red aiming laser, textured village, rooftop enemy and Leon HUD.
+No bridge version is assigned to this later image. The supplied framing is retained unchanged.
+Image SHA-256: ffff0025399ff4ebd0a4cf832a5aa5f279bce66b4b885bd7f2ede76881b4cfcb
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

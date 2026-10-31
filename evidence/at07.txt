@@ -1,0 +1,9 @@
+AT07 / The original missing-brand scan continues to the menu
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/evidence/rts-resource-order/final-report.txt
+Selected lines: 11–14
+Source SHA-256: 3b601bdaea264753afe6b3f8213a21f7cf5151a2d11c50632e2244205bf322d0
+
+Events
+1792672615625 Display e 
+1792672659655 MISSING RESOURCE /brand3.png
+1792672659658 Original branding scan reached absent brand3.png; original catch continues to menu

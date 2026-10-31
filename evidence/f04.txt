@@ -1,0 +1,18 @@
+F04 — The model and the world are speaking different units
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.17_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 3-11
+
+
+
+## Figure model-unit pass
+
+v0.0.16 proved that Cloud is animated, textured, pattern-filtered, and still projected thousands of pixels across a 240x240 framebuffer. The device report also shows the course/Primitive geometry living in a much smaller and sane world-coordinate range.
+
+Snowboarding's own bytecode converts its internal world translations to DoJa Transform floats with `>> 6` (26.6-style units) before `Graphics3D.setTransform`. MBAC Figure geometry, however, was still being submitted by the bridge as raw model integers. v0.0.17 therefore applies a **Figure-only 1/64 model-to-world conversion after MTRA skeletal deformation and before the game-supplied world/view matrix**.
+
+Dynamic Primitive terrain is intentionally unchanged. Camera convention, +Z projection, Z buffer, textures, MTRA animation, appearance-pattern filtering, controls, scratchpad and report output are unchanged.
+
+New Figure telemetry includes `unitScale=1/64`, raw pose bounds, scaled world bounds, projected bbox and view-Z range.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

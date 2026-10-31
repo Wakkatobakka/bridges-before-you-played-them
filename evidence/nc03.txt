@@ -1,0 +1,16 @@
+NC03 / The rejected control screen omitted simultaneous contacts
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 3–13
+Source SHA-256: c339834610483756f84f132f8ae94ca4ea27dc6ea0a546c64e19b24b16ad990c
+
+This update replaces the rejected generic control screen with Carbon-owned left/right thumb groups. `README_FIRST.txt` contains install/control/test scope and known issues. The original CPU, guest logic, assets, graphics/audio compatibility and owner signer are preserved. The only portable runtime addition is a read-only control-preset accessor.
+
+## Input and layout changes
+
+`CarbonControls` is a game-owned ViewGroup using the real shared v1.1.2 `BridgeDigitalPad` with `withDiagonals(true)` and owned `BridgeInput.Source` action buttons. The original v0.1.0 integration omitted simultaneous-cardinal mode, causing the pad to reject a second contact. This bridge now enables it in both panels. Independent contact ownership, slide/re-entry, opposite direction holds, action combinations and release/cancel behavior are tested through actual Android MotionEvent dispatch.
+
+The normal panel places the square pad under the left thumb, labeled accelerator/brake under the right, and nitro/handbrake nearby. 3/4/PAUSE remain available. Preset B relocates the original 1/3 auxiliary keys while preserving native OK and Back access. Native identifiers remain beneath action labels. `CarbonControls.Key` is game-owned, but all touch/hardware ownership stays in the shared input state; dynamic rebinding releases touch owners and preserves physical UID holds. Each button retains every pointer and drops missing/cancelled contacts. Haptic press feedback is retained.
+
+A visible shared inline ORIGINAL Z-PAD / DRIVING CONTROLS switch preserves all original buttons and the same live renderer/viewport. It neither recreates nor restarts the game. Saved state retains mode only. Both panels have the same measured slot and wing geometry.
+
+The private v1.1.2 UI source has bounded opt-in additions: `fitNativeViewport`, `flankingLandscape`, `controlModeNames`, and `BridgeFlankingControls`. Stock defaults and input models are unchanged. Carbon's portrait frame fits the native 4:3 image while controls stay bottom-aligned at a bounded preferred height. Spare portrait room stays outside the frame. Landscape gives game-owned controls two transparent-center wings, with the native-aspect viewport between them and the shared mode button below the picture. No game-obscuring overlay, crop/stretch, forced immersive mode or target/font shrinking is used. This is a local integration addition, not a new generic kit release. Full shared release-gate evidence covers the actual shipped modified JAR.

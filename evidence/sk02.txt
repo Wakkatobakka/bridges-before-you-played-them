@@ -1,0 +1,19 @@
+SK02 / Original character flow, saved room and missing sound references
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/evidence/HOST_TEST_NOTES.txt
+Selected lines: 1–7, 11–14
+Source SHA-256: 19d7ebcb24ba791c85687351cddcaa9e392843ad30eba95b6b564a797ee88388
+
+Original game executed with the supplied data and recovered N-Gage firmware on the official EKA2L1 Linux continuous build master-6ac519122.
+This is separate from the unchanged ARM64 Android library recorded in upstream/PROVENANCE.json.
+
+Observed original execution: startup logos and intro, title/main menu, Create Character, class/race/gender selection, original character-name grid, Start Game, original tutorial, 3D starting room and HUD, forward/back movement and left/right turn, original pause menu, save slots and a game00.sav written by the original Save Game action.
+
+The host has no usable audio output. Audio quality, timing and effects were not verified.
+The supplied game attempts opens of NULL.wav and some walk sound filenames absent from the supplied archive; those references were left unchanged. No extra files or substitute sounds were fabricated.
+
+[... selected excerpt ...]
+
+No host test save or modified host configuration enters the APK runtime seed.
+Screenshots in this folder are host emulator evidence, not Android UI screenshots.
+
+PERSISTENCE: After a complete host emulator process restart, the original Load Game menu found Game 1, and loading it returned to the saved original 3D room/HUD. Screenshots host-load-slots.png and host-reloaded.png document this.

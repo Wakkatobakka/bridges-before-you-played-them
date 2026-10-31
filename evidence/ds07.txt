@@ -1,0 +1,13 @@
+DS07 / The latest update changes only the icon
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 1–8
+Source SHA-256: 22e4a067616ca96ab5fc86815ba24fc96ffa22b56ea889b3024176827f4edfa0
+
+DRAGON SWORD BRIDGE v0.1.1 — ICON UPDATE
+
+New generated hero/scarf/sword launcher artwork. Only icon artwork, artwork provenance, resource fingerprint, release version and signatures changed in the APK.
+Runtime DEX, all Java source, all original assets, package/save identity and signing key are byte-identical to v0.1.0.
+New Android API 34 framework checks pass (3 tests), including decoding/drawing the new icon in portrait and landscape. This is host framework evidence, not a physical-phone observation.
+See evidence/icon-only-scope-check.json and ICON_UPDATE.json.
+
+BASELINE GAMEPLAY VERIFICATION FROM v0.1.0 FOLLOWS

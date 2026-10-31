@@ -1,0 +1,28 @@
+BJ01 / NEXE bytecode and PNG-shaped resources
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/evidence/intake/PACKAGE_FINDINGS.md
+Selected lines: 4–14, 19–27
+Source SHA-256: 1b75d77d9a6c9b1eddfac1983427625e39cf0f874c96bc20ef72710ea86dd2fe
+
+Verified directly from uploaded bytes:
+
+- 128,380 bytes; SHA-256 f363f526fc65f3735eb633a7286c0de95bbb560d66126f43dcf0da601f1ff182.
+- Magic `NEXE`; +4 tag 0x80; gamelet name `Banjo_Kazooie` at +0x14.
+- Main class is CRC32(name), `0x3506effe`; exists at tail start 0x10254.
+- Resource count 196 at +0x34; offsets at +0x38; flags at 0x34c.
+- Resource zero starts 0x410. End-of-resource sentinel 0x10254.
+- Full contiguous tail has 19 valid 4CVP classes and 249 methods.
+- Every title-owned method is bytecode; none has native flag 0x100.
+- Class tail finishes exactly at EOF. No damaged/truncated tail.
+- Resource 195 contains modified-UTF version `T01.00.09`.
+
+[... selected excerpt ...]
+
+- Images are resources 0–32: 33 total.
+- ExEn images are PNG-shaped streams with no chunk CRCs/IEND and IHDR compression=1.
+- IDAT high nibble selects codec: 26 codec5, 5 codec3, 2 codec1.
+- Resource33 is small configuration data (`enHig` etc.).
+- Text resources34–190, with 0xff-separated strings/lines.
+- Resources191–194 are 16-color palette data.
+- `extract_banjo_assets.py` decodes all33 images into standard PNGs.
+- Decoded dimensions exactly match needed raster sizes, including all five codec3 images.
+- `assets_sheet.jpg` contact sheet visually verifies genuine game assets.

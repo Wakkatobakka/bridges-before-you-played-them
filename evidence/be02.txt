@@ -1,0 +1,8 @@
+BE02 / A bridge assembled from earlier discoveries
+Source: Biohazard_Episodes_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.0_PRIVATE/README.md
+Selected lines: 40–42
+Source SHA-256: ffc1d80ccee6f3fbbc8f6bc801047a9a30cf50abcd50790cd9307fe7b319587a
+
+## Prior-work references
+
+The recovered Monster Hunter i v0.1.2 checkpoint supplies the DoJa model parser, software renderer and MFi translation foundation. Its bundled Snowboarding work informed the float utility adapter. DMC DeadShot v0.1.2 informed the per-contact input handling. Resident Evil Genesis v0.6.1 informed the dark teal presentation, controls and report tools. Wolfenstein RPG v0.1.0 and Doom RPG v0.1.1 informed system-bar/cutout handling; Contra 4 v0.1.1 informed completed-frame presentation, idle behavior and logging restraint. This title has its own Android package and signing identity.

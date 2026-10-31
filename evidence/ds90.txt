@@ -1,0 +1,12 @@
+DS90 / Historical image / Dragon Sword
+Source: DragonSword_Bridge_v0.1.1_PRIVATE/evidence/original-execution/reloaded-character-details.png
+Source SHA-256: 2fd2088b0a2352f783d5e22c70244b5e370a37c5c07321f1a656270b3ce0cdde
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: DragonSword_Bridge_v0.1.1_PRIVATE/evidence/original-execution/reloaded-character-details.png
+SHA-256: 2fd2088b0a2352f783d5e22c70244b5e370a37c5c07321f1a656270b3ce0cdde
+
+The original reloaded character details: EXP 0/38, HP 145/145, MP 100, AT 30 and DEF 10. Historical desktop output using the required original CFG and a game-generated save.
+
+Scope: Unchanged historical desktop original-runtime framebuffer. Visually inspected: game-only pixels, no personal interface and no EXIF. Not a physical-phone screenshot.

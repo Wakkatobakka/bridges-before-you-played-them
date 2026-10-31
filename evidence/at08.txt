@@ -1,0 +1,14 @@
+AT08 / Fresh game class state and current phone scope
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 73–76, 82–83
+Source SHA-256: 058d424c0fc234b18a44512d1dd7c30d6ac3ccd15caa25ebcf8a5e3ff642873d
+
+Physical Android gameplay, native OTA sound, thumb comfort, actual Downloads
+visibility, thermal behavior and full-campaign completion remain unverified.
+The host audio backend checks and preserves the original OTA request; it does
+not establish audible Android playback.
+
+[... selected excerpt ...]
+
+The guest DEX is read-only in Android's code cache and loaded afresh per session,
+so re-opening a bridge does not reuse stale original game class statics.

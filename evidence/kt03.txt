@@ -1,0 +1,13 @@
+KT03 / The first UP dismisses the instruction
+Source: 18-Katamari_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.0_PRIVATE/evidence/native-analysis/NATIVE_FINDINGS.txt
+Selected lines: 48–55
+Source SHA-256: 5ecfc32f2515c7058255598ce7378b8da95f543be2af23dffa261da90c0dccc3
+
+NATIVE TUTORIAL MOVEMENT GATE:
+The first Up press consumes the King's "start rolling" instruction. Native
+text advance 0x0010D428 clears held input (game + 0x2E3C) at 0x0010D52C,
+and clears the instruction/pause gates at 0x0010D514/0x0010D518. Release
+Up, then press and hold Up again to roll. Original physics 0x0010CA20
+updates position at game + 0x2CFC (x) and + 0x2D00 (y). Acceptance confirmed
+that the second hold changes both guest position and rendered pixels.
+This is original tutorial behavior and does not require a runtime patch.

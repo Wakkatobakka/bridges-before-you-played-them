@@ -1,0 +1,23 @@
+S16 — Confirming a menu and firing are different native inputs
+Evidence type: Checkpoint control investigation
+Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / docs/CONTROLS_0.1.4.md
+Selected source lines: 14-27
+
+
+
+processEvent(int,int) implements the following, using zero-based key_con:
+
+| Displayed KEY TYPE | Movement | Attack mode | Primary hold/release key |
+| --- | --- | --- | --- |
+| 1 (mode 0) | Direction keys | Manual attack | * (10) or # (11) |
+| 2 (mode 1) | Numeric eight-way | Manual attack | OK (20) |
+| 3 (mode 2) | Direction keys | Automatic attack | * (10) or # (11), locks facing |
+| 4 (mode 3) | Numeric eight-way | Automatic attack | OK (20), locks facing |
+
+For types 1/3 the prominent custom button uses *; the separate original # is
+retained. These equivalent native bindings are not emitted simultaneously.
+For manual types processEvent sets/resets mfire and related charge flags; for
+automatic types it sets/resets kotei. The former large ACTION button always
+sent 20, which was menu Confirm but not manual attack in type 1.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

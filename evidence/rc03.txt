@@ -1,0 +1,11 @@
+RC03 / Gameplay and resume with original handled exceptions
+Source: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/TECHNICAL_FINDINGS.txt
+Selected lines: 35–40
+Source SHA-256: f1d7c51ecc9470a4a16cb810b17074fac343ce7d39abdf5ff18c09d2bb2e969d
+
+Evidence limits
+The final host pass reached original gameplay with movement, jump, wrench and
+weapon selector states, and pause. That pass reported zero caught exceptions.
+A separate lifecycle pass parked frames while backgrounded, produced a report
+while parked, and resumed through the original * prompt. It also recorded two
+original swallowed null-player stop exceptions in c.f; they did not prevent resume.

@@ -1,0 +1,21 @@
+AT02 / A phone keypad supplies real RTS orders
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 20–35
+Source SHA-256: 058d424c0fc234b18a44512d1dd7c30d6ac3ccd15caa25ebcf8a5e3ff642873d
+
+This is the original supplied Nokia J2ME 128x128 edition, version 1.0.2.
+No import, network connection or bridge launcher page is required. The original
+game retains its sound question, branding and native menus.
+
+CONTROLS
+D-pad: move the native cursor. Corner regions send the dedicated original
+1/3/7/9 diagonals. The original Normal/Diagonal cursor setting is preserved.
+SELECT / 5: select units, buildings or resources; select empty land to move
+selected units. Repeated selection expands the native selection group.
+BUILD / LSK: open native construction controls or confirm a menu.
+UNITS / #: cycle military units and Town Centers.
+EVENT / 0: focus a recent event, otherwise cycle idle Settlers.
+COMMAND / *: pause simulation while issuing orders; press again to resume.
+MENU / RSK: the original game's menu/back input.
+ORIGINAL KEYPAD / D-PAD RETURN: one-tap inline switching.
+Android Back: clean up the original MIDlet and return to the caller/Omni.

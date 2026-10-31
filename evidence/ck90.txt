@@ -1,0 +1,10 @@
+CK90 / Historical image / Chokkan Crash sledding on the original 240×320 playfield
+Source: Chokkan_Crash_Bridge_v0.0.6_Preservation/evidence/v006/minigame-2.png
+Source SHA-256: 7e2254e4104815eb07f6bba19df70b84691ecdbb207398c41615405e774fb360
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: Chokkan_Crash_Bridge_v0.0.6_Preservation/evidence/v006/minigame-2.png
+Image SHA-256: 7e2254e4104815eb07f6bba19df70b84691ecdbb207398c41615405e774fb360
+
+A retained 0.0.6 desktop guest frame from the sledding minigame. The original rider, course and HUD are being rendered; this is not a physical-phone capture.

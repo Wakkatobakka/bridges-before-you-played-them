@@ -1,0 +1,12 @@
+S290 / Historical image / Spider-Man 2 3D
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/evidence/acceptance/05_native_3d_gameplay.png
+Source SHA-256: eb15b334aa0cd715626a30ee96eb549e033eb56cb03dce2aa743198e29b29c70
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/evidence/acceptance/05_native_3d_gameplay.png
+SHA-256: eb15b334aa0cd715626a30ee96eb549e033eb56cb03dce2aa743198e29b29c70
+
+The original Web Climber scene with Spider-Man on the building. Retained 176×220 desktop game/Micro3D output.
+
+Scope: Historical original ARM/Micro3D host framebuffer, game only, zero EXIF. Not physical-phone gameplay.

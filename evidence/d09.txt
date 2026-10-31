@@ -1,0 +1,11 @@
+D09 — Right-thumb aim forwards original direction keys
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.9-report.txt
+Selected source lines: 880-881
+
+
+
+25.043  AIM NATIVE      Right thumb -> original RIGHT D-pad aim; changes=1
+  25.771  AIM NATIVE      Right thumb -> original LEFT D-pad aim; changes=2
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

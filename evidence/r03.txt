@@ -1,0 +1,24 @@
+R03 — A recognizable silhouette, produced by the wrong transform
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.2.4-decision-from-v0.2.3.txt
+Selected source lines: 4-18
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+Observed on-device in v0.2.3:
+- The white Figure output became unmistakably Rockman/Mega-Man shaped when the experimental object*view composition was rendered.
+- The shape remained oversized and moved in/out of the viewport as the game camera changed.
+- Runtime remained healthy: 1239 frames, 16542 draw calls, 0 GL errors, 0 caught game exceptions.
+- At one late camera pose, object*view put only selected body parts inside the frustum (72v arm 8/72, 132v leg 83/132, helmet/chest 0), matching the partial silhouette seen on screen.
+
+Reassessment:
+- Official DoJa Graphics3D transform semantics compose the current view transform with the supplied object transform as view*object.
+- The preserved Android host's Transform.lookAt implementation is already OpenGL-style -Z-forward. Therefore the bridge's extra DoJa +Z -> GLES -Z flip double-converts this host camera.
+- The game DEX constructs the gameplay camera from the matrix translation and forward/up basis, so the camera translation is game-world state rather than an arbitrary renderer offset.
+- At the v0.2.3 late pose, inverse(view) puts the camera at approximately [7.0, 4.1, 101.3] and the Rockman object origin at approximately [8.75, 0, 98.41], only about 4.9 world units apart.
+- Decoded bind-pose Rockman body data spans roughly 187 raw model units vertically. A 187-unit character cannot plausibly sit only ~5 world units from a third-person camera and fit the 60-degree view.
+
+Conclusion:
+The v0.2.3 object*view experiment was useful because it accidentally pushed raw model coordinates much farther from the camera and exposed a recognizable silhouette. It is not the final composition rule. The evidence now points to an implicit model-unit conversion missing from the MB/MBA/MBAC bridge path.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

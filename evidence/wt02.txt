@@ -1,0 +1,25 @@
+WT02 / Earlier MIDP work and distinct joystick codes
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/evidence/original_v0.1.0_docs/IMPLEMENTATION.txt
+Selected lines: 5–9, 16–27
+Source SHA-256: 7da6724c104ff10a4b8cc9852ba5a81785445f693279537f46c87887aca95e11
+
+Original BPGameMIDlet and six obfuscated classes run as Android DEX through a
+focused MIDP compatibility layer. Guest class patches redirect classpath resource
+loading and observe caught exceptions; original game logic/assets are preserved.
+Runtime foundation reused from local Nowhere/Ratchet J2ME work. Presentation
+principles reference REGenesis v0.6.1. Report saving follows RE4 Zeebo principles.
+
+[... selected excerpt ...]
+
+Original b.run sleeps toward 100ms each update. This original pacing is intact.
+Independent input delivery does not depend on repaint. The original joystick
+codes -1/-2/-3/-4/-5 are distinct from numeric keys in native text entry modes.
+Left/right softkeys -6/-7 remain original. Original Help (text entry 129) confirms
+run, jump, block, attack, cast, change sign and change sword mappings. Numeric 0
+and left softkey both cast in gameplay; all numeric inputs remain accessible.
+
+Added compatibility: Image.createRGBImage with alpha, sparse RMS IDs and atomic
+persistence with tombstones, MIDP media Controllable/VolumeControl, native text
+rendering for the game's numeric debug overlay, offline HTTP API surface, and
+platformRequest reporting as unavailable rather than success. Online score and
+promotional services remain unavailable. No network feature is fabricated.

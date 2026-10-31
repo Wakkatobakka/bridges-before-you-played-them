@@ -1,0 +1,7 @@
+EJ04 / The original constants.bin read works again
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/seek_regression.txt
+Selected lines: 1–2
+Source SHA-256: 54c97041edeb2b3bf045f509933d9da9ecefbad0aca47b2e4a51fb8ecf3b5990
+
+PASS: actual IFile vtable trap service. START=0, END=1, CURRENT=2; returns resulting file offset. Invalid seeks return -1 and retain the prior position.
+PASS: original startup constants.bin seek uses CURRENT +1107020 from file position 0; reads the first four bytes of the actual constants.bin entry rather than the archive directory.

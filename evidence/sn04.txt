@@ -1,0 +1,22 @@
+SN04 / Decor before insets, fault capture before the UI
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/UI_STARTUP_FIX_v0.1.2.txt
+Selected lines: 1–17
+Source SHA-256: 430f9609fc0034edb95e7bb4612aab7b073158b411ae3764fd859ee2d7dff3d7
+
+Shared v1.1.0 startup defect:
+BridgeGameplayUi.setupWindowInsets calls Window.getInsetsController while the
+Activity is still constructing its gameplay shell, before setContentView.
+PhoneWindow.mDecor can be null. This caused the immediate launch crash.
+
+Embedded fix:
+android.view.WindowInsetsController bars =
+    activity.getWindow().getDecorView().getWindowInsetsController();
+if (bars != null) bars.show(WindowInsets.Type.systemBars());
+
+getDecorView creates PhoneWindow decor before the controller is queried.
+Move the bridge's Java fault-handler installation ahead of UI construction.
+The original supplied kit is retained untouched in app/ui-kit. The integrated
+source changes are recorded in evidence/ui-kit-integration.patch. The actual
+MainActivity baseline reproduces the exception; the repaired startup passes.
+This discovery may matter to other bridges integrating the same kit; no other
+installed bridge or global kit was modified in this Sonic-specific task.

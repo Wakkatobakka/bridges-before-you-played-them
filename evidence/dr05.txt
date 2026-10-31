@@ -1,0 +1,6 @@
+DR05 / Music finishes by asking the original game to loop
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 18–18
+Source SHA-256: 75b6dba817bb0047910dcdd89f675e1d9bbe8459cc32b168dc64c4efeeffe8ef
+
+Audio conversion assets are indexed by SHA256 of the exact CMID bytes emitted by the guest, without the 28-byte BAR MIME header. Store those assets uncompressed in the APK for openFd. MediaPlayer retains independent objects and honors PLAY/STOP/PAUSE/RESUME. Callbacks preserve the original PLAY serial; the native Doom callback requires the media object in both notification fields +0 and +4.

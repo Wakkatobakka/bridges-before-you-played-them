@@ -1,0 +1,316 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="DeadShot was already playing when we started chasing audio, cropping and controls. The harder part became keeping what worked through regressions and lost chat context. Saved baselines let us keep going."><meta property="og:title" content="DeadShot"><meta property="og:description" content="DeadShot was already playing when we started chasing audio, cropping and controls. The harder part became keeping what worked through regressions and lost chat context. Saved baselines let us keep going."><meta property="og:type" content="website"><title>DeadShot · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / DeadShot</div><div class="eyebrow">DoJa / Development history</div><h1>DeadShot worked. Then came the polish.</h1><p class="dek">DeadShot was already playing when we started chasing audio, cropping and controls. The harder part became keeping what worked through regressions and lost chat context. Saved baselines let us keep going.</p><div class="article-meta"><span>Coverage: 0.0.1 → 0.1.4</span><span>5 min read</span><span>20 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#already-playing">Already playing</a></li><li><a href="#polish-that-moved-the-goalposts">The controls worked. The layout did not.</a></li><li><a href="#the-next-chat">What the next chat could actually hold onto</a></li><li><a href="#a-preferred-build">“This is the preferred version”</a></li><li><a href="#confirm-is-not-attack">A button that confirms, but does not fire</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">I don’t remember every turn of DeadShot’s recovery. We had gameplay early, before the sound and the layout were right. What I do remember is how much keeping that working state mattered when the conversation itself started losing track of the project.</p><section id="already-playing"><h2>Already playing</h2><blockquote class="pullquote">“dude, pretty fucking far. only complaints are no audio and some cropping. otherwise. holy fuck dude”<cite>Wakka · October 2, 2026 <a class="cite" href="#source-S05" data-source="S05" aria-label="Open evidence S05">S05</a></cite></blockquote><p>Our first proof ran the original <code>DEADSHOTN505</code>, <code>InitAll</code> and <code>connect</code> classes against their preserved scratchpad data. The notes called the MLD audio silent. By the next package, we had a physical-phone gameplay baseline and could concentrate on the audio and crop issues I’d reported.<a class="cite" href="#source-S06" data-source="S06" aria-label="Open evidence S06">S06</a><a class="cite" href="#source-S07" data-source="S07" aria-label="Open evidence S07">S07</a></p><p>The audio pass translated the event subset used by DeadShot’s four MLD/MFi music resources into MIDI. Completion went back to the original game’s listener, leaving the game in charge of replaying its BGM. The presentation pass kept the 240×240 framebuffer and added some space around it.<a class="cite" href="#source-S07" data-source="S07" aria-label="Open evidence S07">S07</a></p><p>The crop still needed work. In 0.0.3, we corrected the text baseline and DoJa font sizes behind the title/menu clipping. We also suspended the game loop and stopped audio when Android backgrounded the activity. There was a working game underneath those small display problems.<a class="cite" href="#source-S08" data-source="S08" aria-label="Open evidence S08">S08</a></p></section><section id="polish-that-moved-the-goalposts"><h2>The controls worked. The layout did not.</h2><p>By the early hours of October 3, I called it “playing pretty sweet” and asked for more comfortable controls and an appropriate icon. We were improving something I could already play.<a class="cite" href="#source-S05" data-source="S05" aria-label="Open evidence S05">S05</a></p><p>The controls had more going on than a generic movement pad and an Action label suggested. DeadShot’s own setting chooses between four-way direction keys and numeric-keypad movement with diagonals. The 0.0.5 notes preserve those families and expose the actual star, hash and OK inputs. Later UI changes had to carry that behavior with them.<a class="cite" href="#source-S09" data-source="S09" aria-label="Open evidence S09">S09</a></p><blockquote class="pullquote">“0.05 was the last good baseline of when the controls worked but was still the wrong UI layout.”<cite>Wakka · opening a new DeadShot chat, October 3 <a class="cite" href="#source-S05" data-source="S05" aria-label="Open evidence S05">S05</a></cite></blockquote><p>Version 0.0.8 had changed touch behavior as well as the view. A moving finger could be reinterpreted as another control. The 0.0.9 repair borrowed Dirge’s contact model: a button keeps the finger that pressed it, while navigation remains intentionally slideable. Multiple contacts are combined before the game receives press and release transitions. DeadShot keeps its own key numbers.<a class="cite" href="#source-S10" data-source="S10" aria-label="Open evidence S10">S10</a></p><p>Then the system bars needed their space back. The 0.0.10 pass reserved Android’s real inset area. The later shell split the game display from the controller so their coordinates no longer competed on one full-screen canvas. The complete keypad returned too, including the easily omitted 0 and 5.<a class="cite" href="#source-S11" data-source="S11" aria-label="Open evidence S11">S11</a><a class="cite" href="#source-S01" data-source="S01" aria-label="Open evidence S01">S01</a></p></section><section id="the-next-chat"><h2>What the next chat could actually hold onto</h2><p>I remember the later recovery getting caught in a ChatGPT context problem, and Passport helping me keep building. The October 5 stress-test record describes the practical issue: established constraints kept getting lost or violated, even though the working builds, source packages and reports still existed outside the chat.<a class="cite" href="#source-S13" data-source="S13" aria-label="Open evidence S13">S13</a></p><p>The dates matter here. We were already preserving working states during the difficult October 2–3 session; the more formal Passport/Omni packaging came afterward. I could give a new chat an actual last-good build and its history instead of asking it to reconstruct the controls from a summary.<a class="cite" href="#source-S05" data-source="S05" aria-label="Open evidence S05">S05</a><a class="cite" href="#source-S13" data-source="S13" aria-label="Open evidence S13">S13</a></p><p>The later handoff shows what that meant in practice. It names my preferred 0.1.0 build, marks the new custom-control pass as pending, states what must stay intact and points to the saved phone feedback. We had a working state and a specific next task to carry into the next session.<a class="cite" href="#source-S12" data-source="S12" aria-label="Open evidence S12">S12</a></p><p>We could still get things wrong in a new conversation. The saved record gave us somewhere concrete to return to when that happened.</p></section><section id="a-preferred-build"><h2>“This is the preferred version”</h2><blockquote class="pullquote">“button inputs even make more sense.”<cite>Wakka · recorded October 4 feedback <a class="cite" href="#source-S02" data-source="S02" aria-label="Open evidence S02">S02</a></cite></blockquote><p>I chose DeadShot Omni 0.1.0 as the version to keep while we continued tailoring the custom UI. The preserved phone image has gameplay above the original keypad. We could work on the deck without treating the game underneath it as disposable.<a class="cite" href="#source-S02" data-source="S02" aria-label="Open evidence S02">S02</a></p><figure class="historical-figure"><a href="../../assets/history/deadshot-omni-v010-keypad.jpg" target="_blank" rel="noopener"><img src="../../assets/history/deadshot-omni-v010-keypad.jpg" alt="DeadShot Omni 0.1.0: Dante in gameplay above the full original phone keypad." loading="lazy"></a><figcaption><span class="eyebrow">Phone screenshot / Omni 0.1.0</span><p>The original keypad stayed available beside the custom-control work. This is the earlier October 4 phone image, retained unchanged in the later checkpoints.</p><p>Open the image for the full original view.</p><a class="cite" href="#source-S19" data-source="S19" aria-label="Open evidence S19">S19</a></figcaption></figure><p>That custom deck had been designed for the wrong vertical slot. The 0.1.1 candidate rebuilt its layout around the real 244dp space, removed duplication and enlarged the useful targets. The game’s runtime stayed at 0.0.12 while the shell followed its own version line.<a class="cite" href="#source-S03" data-source="S03" aria-label="Open evidence S03">S03</a><a class="cite" href="#source-S04" data-source="S04" aria-label="Open evidence S04">S04</a></p></section><section id="confirm-is-not-attack"><h2>A button that confirms, but does not fire</h2><p>Later, we removed the entrance page so DeadShot opened directly into gameplay. On October 20, I accepted 0.1.3: “Perfect. It works great now, thank you.” Then I sent the custom mappings back for another correction.<a class="cite" href="#source-S14" data-source="S14" aria-label="Open evidence S14">S14</a><a class="cite" href="#source-S15" data-source="S15" aria-label="Open evidence S15">S15</a></p><p>The large ACTION button had always sent OK. That worked for menu confirmation, but default KEY TYPE 1 uses star or hash for manual attack. Other key types use OK; the automatic-attack modes use that same primary hold to lock facing. One label had covered several original meanings.<a class="cite" href="#source-S16" data-source="S16" aria-label="Open evidence S16">S16</a></p><p>In the 0.1.4 candidate, we made the primary action follow the selected key type and kept Confirm separate. The regression check calls the original input handler and catches our old mistake: Confirm doesn’t fire in type 1. We kept the 0.1.3 baseline I’d accepted alongside the new correction and the phone checks it still needed.<a class="cite" href="#source-S17" data-source="S17" aria-label="Open evidence S17">S17</a><a class="cite" href="#source-S18" data-source="S18" aria-label="Open evidence S18">S18</a></p><p>A lot of DeadShot’s work happened after it was already playing. We kept changing the sound, the presentation and the controls around it. Keeping the reports and working builds meant a lost conversation didn’t have to take the game with it.</p><details class="records-note"><summary>About these records</summary><p>The early gameplay reactions and last-good statement are retrieved owner-message excerpts. The passport stress-test packet is retrospective; it distinguishes the practices already in use from the later formal packaging. The chapter documents constraint failures and recoverable artifacts without claiming an officially established platform root cause. Omni 0.1.0 and later Bridge 0.1.3 have their own recorded owner feedback; these are distinct from runtime 0.0.12 and the new 0.1.4 controls. The latest handler/framework checks are not a full phone gameplay or comfort test. The reproduced image belongs to October 4, not the later candidate. No game or app was rebuilt for this archive.</p></details></section><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected report lines, investigation notes and recorded feedback behind the story. Each receipt keeps its source and context.</p><details class="source-item" id="source-S01"><summary><span class="source-title">S01 / A complete keypad returns in 0.0.12</span><span class="source-kind">Build verification</span></summary><div class="source-content"><p>Source: DeadShot v0.0.12 / VALIDATION_v0.0.12.txt · selected lines 13–20, 37–39</p><pre>Requested UI/input delta
+------------------------
+- Toolbar third button is now Keypad while the ergonomic pad is visible.
+- Pressing Keypad swaps the lower controller view to a complete original phone keypad.
+- While the phone keypad is visible, the toolbar button reads D-pad and returns to the ergonomic controller.
+- Full keypad exposes L soft, Up, R soft / Left, OK, Right / Down / 1-9 / *, 0, #.
+- Keypad uses the same captured-contact behavior so a finger remains tied to the key where it started.
+
+[... selected excerpt ...]
+
+Note
+----
+This validation covers source/build/signature/payload integrity in the build environment. Physical-device behavior still requires the normal S25 Ultra test run.</pre><div class="source-tools"><a href="../../evidence/s01.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S01" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S02"><summary><span class="source-title">S02 / The owner accepts a specific baseline</span><span class="source-kind">Recorded owner feedback</span></summary><div class="source-content"><p>Source: DeadShot Omni v0.1.0 / PHONE_FEEDBACK_20261004.txt · selected lines 5, 7–19, 21–24</p><pre>oh fuck yes! this is the preferred version. i still need to fix the custom UI layer for this one obviously. but even normalizing things is just helping in general. button inputs even make more sense. so whats our next step then?
+
+[... selected excerpt ...]
+
+SCOPED ACCEPTANCE
+The owner selects the exact DeadShot Omni 0.1.0 APK as preferred going forward,
+and reports clearer button inputs. Custom control UI tailoring remains open.
+Use this complete source/update identity for normal subsequent chat iterations.
+The original 0.0.12 runtime remains its preservation input/reference.
+
+SCREENSHOTS INSPECTED
+Screenshot_20261004_014929.jpg: title screen with custom deck, shared toolbar,
+complete game stage and status. Native STAR/POUND, OK/Action and soft keys remain.
+Screenshot_20261004_014959.jpg: gameplay with shared full native keypad;
+toolbar reads Controls for returning to the custom deck.
+Both show four-way native mode; these images do not validate eight-way or
+hardware input combinations. Phone gameplay/input preference is owner-reported.
+
+[... selected excerpt ...]
+
+Audio output, lifecycle stress and report chooser/export success were not
+separately reported in this feedback. Do not treat them as confirmed by images.
+The build-time description baked into the unchanged APK says phone validation
+is pending; this receipt supersedes it for the scoped owner acceptance above.</pre><div class="source-tools"><a href="../../evidence/s02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S03"><summary><span class="source-title">S03 / A control-only candidate, with a rollback baseline</span><span class="source-kind">Control verification notes</span></summary><div class="source-content"><p>Source: DeadShot Omni v0.1.1 / CUSTOM_CONTROLS_0.1.1.txt · selected lines 3–17</p><pre>Scope authorized by owner: custom controls page only.
+
+INTENDED EXECUTABLE DELTA
+- DeadShot profile GameView custom deck targets the actual 244dp shell slot.
+- Duplicate custom OK/Confirm surface removed; ACTION remains KEY_SELECT (20).
+- Redundant CONTROL/mode card removed.
+- Soft1/Soft2 and */# top-row targets: 58dp high; */# 58dp wide.
+- Movement surface: 148dp maximum, preserving existing direction math and four/eight-way behavior.
+- ACTION: 110dp, inset 12dp from right edge, label hint "OK / SELECT".
+
+UNCHANGED BY INTENT
+Shared toolbar/status/full keypad, runtime, renderer, game payloads/resources, audio, pause/resume, reports, native key numbers, mode translation, contact capture and hardware mapping.
+
+STATUS
+Host build/signature/checks PASS. Physical phone comfort/geometry not yet validated. Owner-approved rollback baseline remains 0.1.0.</pre><div class="source-tools"><a href="../../evidence/s03.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S03" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S04"><summary><span class="source-title">S04 / Two version lines describe two layers</span><span class="source-kind">Checkpoint summary</span></summary><div class="source-content"><p>Source: DeadShot Omni v0.1.1 / README_FIRST.txt · selected lines 8–14, 41–50</p><pre>PLAY DEADSHOT starts the preserved 0.0.12 runtime. The shared launcher, Tools,
+Menu/Pause/Keypad/Report toolbar, game/status slots and full native keypad remain
+the same shared source accepted in the Snowboarding pilot. The custom control
+deck is DeadShot-specific. Controls retain DeadShot's original native map and
+four-way/eight-way game-selected movement modes.
+The native-keypad fallback uses the shared keypad with DeadShot's key numbers.
+The original four MIDI resources remain; no audio decoder was replaced.
+
+[... selected excerpt ...]
+
+host build-tools. Set ANDROID_JAR to API 35 android.jar and ANDROID_BUILD_TOOLS
+to the host build-tools/35.0.0 directory. Run python3 tools/build.py, then
+python3 tools/check.py. Requires Python 3 and Java 17+. No Gradle or network
+resolution is required. Linux was tested; Windows build support is untested.
+The script generates com.wakka.deadshot.R for the original MIDI resource calls,
+while the installed package remains com.wakka.omnibridge.deadshot.
+
+STATE
+0.1.1 is a bounded custom-control candidate built from the owner-preferred 0.1.0.
+Only profiles/deadshot/.../GameView.java control geometry/presentation is intentionally</pre><div class="source-tools"><a href="../../evidence/s04.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S04" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S05"><summary><span class="source-title">S05 / Gameplay first; a new chat needs the last good baseline</span><span class="source-kind">Conversation excerpts</span></summary><div class="source-content"><p>Source: Wakka / DeadShot development conversations / October 2–3, 2026</p><p>Retrieved owner-message excerpts, retaining wording. Times converted from recorded UTC to Iowa local time. The final excerpt belongs to a message opening a new DeadShot chat, not to a later build acceptance.</p><pre>October 2, 15:31:15 CDT — “dude, pretty fucking far. only complaints are no audio and some cropping. otherwise. holy fuck dude”
+
+October 3, 02:18:49 CDT — “its honestly playing pretty sweet”
+
+October 3, 08:28:10 CDT — “0.05 was the last good baseline of when the controls worked but was still the wrong UI layout.”</pre><div class="source-tools"><a href="../../evidence/s05.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S05" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S06"><summary><span class="source-title">S06 / The first original-bytecode proof is explicitly silent</span><span class="source-kind">Initial checkpoint notes</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.0.1_Source.zip / README.txt · selected lines 3–8, 12–15</p><pre>First Android proof build for the preserved 2004 DoJa title DMC DEADSHOT.
+
+Current goals:
+- run the original DEADSHOTN505 / InitAll / connect bytecode unchanged
+- use the preserved .sp scratchpad as game data
+- implement only the DoJa APIs actually referenced by this title
+
+[... selected excerpt ...]
+
+Known limitations of v0.0.1:
+- MLD audio is stubbed/silent
+- online ranking/network services are stubbed
+- graphics/input behavior is an initial compatibility pass and needs device validation</pre><div class="source-tools"><a href="../../evidence/s06.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S06" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S07"><summary><span class="source-title">S07 / Four music resources and the first crop repair</span><span class="source-kind">Checkpoint audio/presentation notes</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.0.2_Source.zip / README.txt · selected lines 4–15, 17–24</p><pre>Physical-device baseline: v0.0.1 reached real gameplay on a Samsung Galaxy S25 Ultra.
+
+v0.0.2 changes only the two host-side issues observed in that run:
+
+1. Audio pass
+   - DeadShot's four MLD/MFi music resources are read from the preserved game data.
+   - The build-time converter in tools/mld_to_midi.py converts the exact event subset used
+     by DeadShot into Standard MIDI Type 0 resources.
+   - Android MediaPlayer plays those resources.
+   - Media completion is reported back to the original DoJa MediaListener with event 3,
+     leaving DeadShot's own BGM replay/loop behavior in charge.
+   - This is a compatibility translation, not a claim of bit-identical NEC handset FM sound.
+
+[... selected excerpt ...]
+
+2. Safe-fit presentation
+   - The DoJa framebuffer remains exactly 240x240.
+   - Android presentation now leaves a small modern-phone edge margin rather than stretching
+     the virtual handset display fully to the physical screen width.
+   - No game drawing APIs or original DeadShot bytecode were changed for this fix.
+
+Original game bytecode, scratchpad data, input mapping, save path, and dead-service workaround
+remain on the known-working v0.0.1 path.</pre><div class="source-tools"><a href="../../evidence/s07.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S07" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S08"><summary><span class="source-title">S08 / Margins did not settle the title/menu crop</span><span class="source-kind">Checkpoint renderer/lifecycle notes</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.0.3_Source.zip / README.txt · selected lines 5–12</p><pre>v0.0.3 changes from v0.0.2:
+- Correct DoJa drawString baseline semantics. This fixes the title/menu text crop seen on physical S25 testing.
+- Correct DoJa 3.0+ font sizing used by DeadShot: 12-dot default/tiny and 24-dot medium.
+- Suspend the original game loop when the Android activity is backgrounded.
+- Stop audio immediately when backgrounded; DeadShot's existing resume logic restarts the appropriate BGM on return.
+- Preserve the known-good 240x240 renderer, controls, scratchpad, gameplay path and v0.0.2 MIDI resources.
+
+The original DeadShot JAR and game logic are not modified by these fixes.</pre><div class="source-tools"><a href="../../evidence/s08.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S08" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S09"><summary><span class="source-title">S09 / The original game chooses four-way or numeric movement</span><span class="source-kind">Checkpoint control investigation</span></summary><div class="source-content"><p>Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / baseline/original-CONTROL_NOTES.txt · selected lines 21–32</p><pre>DeadShot's own key_con option controls movement family:
+  modes 0 / 2 = four-way DoJa D-pad movement
+  modes 1 / 3 = numeric-keypad movement, including diagonals
+
+v0.0.5 touch behavior:
+- The movement disc reads DeadShot's current key_con value and automatically emits
+  the correct original movement family.
+- Numeric modes expose eight 45-degree movement sectors; D-pad modes remain four-way.
+- The action area exposes the actual *, # and OK/Select keys. No A/B/C aliases.
+- Soft1 and Soft2 are exposed as MENU and BACK-style pill buttons; if DeadShot supplies
+  a short soft-label string, the host displays that original label instead.
+- Multi-touch and oversized invisible hit targets remain enabled.</pre><div class="source-tools"><a href="../../evidence/s09.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S09" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S10"><summary><span class="source-title">S10 / Restore contact behavior while keeping DeadShot’s own keys</span><span class="source-kind">Checkpoint input-restoration notes</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.0.9_InputRestore_Source.zip / README.txt · selected lines 4–26</p><pre>Purpose
+-------
+v0.0.9 keeps the v0.0.8 Dirge-style visual layout, but replaces the v0.0.8
+free-sliding touch router with the known-good contact behavior taken from the
+supplied Dirge Bridge v0.2.4 APK while preserving DeadShot's verified v0.0.5
+native key map.
+
+What changed
+------------
+- DeadShot key codes are unchanged from v0.0.5:
+  keypad 1/2/3/4/6/7/8/9, *=10, #=11,
+  D-pad 16/17/18/19, OK=20, Soft1=21, Soft2=22.
+- A finger captures the control it starts on.
+- Non-navigation buttons stay tied to that original control instead of turning
+  into a neighboring button when the finger drifts.
+- Navigation remains intentionally slideable so held movement can change direction.
+- A small 4dp release/re-entry slop mirrors the supplied Dirge contact behavior.
+- Multi-touch is aggregated before DeadShot receives key transitions, preventing
+  duplicate presses/releases when two contacts resolve to the same native key.
+- ACTION_DOWN requests that parent views do not intercept the control gesture.
+- Releases are dispatched before replacement presses.
+- No A/B/C aliases were introduced.
+- Original DeadShot game JAR is unchanged.</pre><div class="source-tools"><a href="../../evidence/s10.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S10" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S11"><summary><span class="source-title">S11 / Reserve system bars, then separate the game stage</span><span class="source-kind">Checkpoint control investigation</span></summary><div class="source-content"><p>Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / baseline/original-CONTROL_NOTES.txt · selected lines 44–49, 51–58</p><pre>v0.0.10 window cleanup
+----------------------
+- Input code is unchanged from v0.0.9.
+- GameView.java is byte-for-byte identical to the v0.0.9 input-restored source.
+- Only Android window/container behavior changed: the game view now lives inside
+  a Dirge-style inset root that reserves the real system-bar/cutout area.
+
+[... selected excerpt ...]
+
+v0.0.12 shell/layout correction
+-------------------------------
+- The input semantics above are unchanged.
+- Game rendering was split into GameDisplayView; GameView is now the controller
+  view only, mirroring Dirge Bridge's separate game-stage + GamePad structure.
+- The router from hitAreaAt() onward is unchanged from v0.0.9.
+- Visual control coordinates are recalculated inside the controller's own
+  wrap-content region instead of a full-screen canvas.</pre><div class="source-tools"><a href="../../evidence/s11.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S11" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S12"><summary><span class="source-title">S12 / A handoff carries the last good build and the next task</span><span class="source-kind">Structured artifact handoff</span></summary><div class="source-content"><p>Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / artifact-handoff.json · selected lines 16–22, 24–34, 52–60</p><pre>"working_state": {
+    "current_status": "DeadShot Omni 0.1.1 custom-control candidate prepared from owner-preferred 0.1.0; phone validation pending.",
+    "current_known_good": "Owner-preferred DeadShot Omni 0.1.0 APK (preserved runtime 0.0.12), using unchanged accepted shared shell.",
+    "last_material_change": "DeadShot-specific GameView custom control geometry/presentation only: direct 244dp layout, no duplicate OK/mode card, 58dp soft/*/# targets, 148dp movement surface, 110dp inset Action.",
+    "current_objective": "Phone-test only the revised custom controls without changing runtime, keypad, toolbar, renderer, audio, pause, reports or native mappings.",
+    "recommended_next_move": "Install v0.1.1 over 0.1.0 and evaluate thumb comfort, accidental presses, four-way movement and Action/*/# reach. Promote only after owner approval.",
+    "failed_attempts": []
+
+[... selected excerpt ...]
+
+  "context_snapshot": {
+    "do_not_break": [
+      "Original DeadShot app/source/saves.",
+      "Accepted Omni Snowboarding app/source/update identity.",
+      "DeadShot native controls, renderer, game data and MIDI resources.",
+      "Diagnostics and reports; ordinary authorized chat iteration."
+    ],
+    "decision_history": [
+      "Dirge is the preferred common UI standard.",
+      "Omni Snowboarding 0.1.0 visuals/gameplay accepted by owner.",
+      "DeadShot 0.0.12 supplied and explicitly selected for the next migration.",
+
+[... selected excerpt ...]
+
+  "context_routes": {
+    "always_read": [
+      "AGENTS.md",
+      "artifact-passport.json",
+      "artifact-handoff.json",
+      "approved-baselines.json",
+      "docs/ARCHITECTURE.md",
+      "verification/PHONE_FEEDBACK_20261004.txt"
+    ],</pre><div class="source-tools"><a href="../../evidence/s12.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S12" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S13"><summary><span class="source-title">S13 / The preservation practices came before formal Passport packaging</span><span class="source-kind">Retrospective investigation</span></summary><div class="source-content"><p>Source: DeadShot_Passport_Stress_Test_Query.txt / prepared October 5, 2026 · selected lines 13–23, 184–204</p><p>A retrospective hypothesis/evidence packet, not a raw phone log or an official platform incident finding. Selected local-project analysis only; its external web claims and links are not reproduced or adopted.</p><pre>The narrower and more defensible hypothesis is:
+"When the AI working on DeadShot began repeatedly losing or violating established project constraints, the project remained recoverable because important state had already been externalized into known-good APKs, source/preservation ZIPs, signing artifacts, validation reports, and explicit rollback baselines. This functioned like a live fault-injection test against reliance on conversational memory alone."
+
+IMPORTANT DISTINCTION
+
+Do not claim that a fully formal Passport artifact had already been deployed throughout the October 2-3 DeadShot session.
+
+The evidence supports this more precise wording:
+- DeadShot already used preservation-oriented packaging and artifact handoffs during the session.
+- Formal Passport/Omni/public-release packaging was normalized afterward, especially on October 4.
+- Therefore the DeadShot episode stress-tested the UNDERLYING PRESERVATION ARCHITECTURE / PRACTICES that Passport later formalized, rather than serving as a clean certification test of a finished Passport implementation.
+
+[... selected excerpt ...]
+
+The project remained recoverable because state existed outside the model's active conversational reasoning:
+
+- known-good APKs;
+- source ZIPs;
+- preservation ZIPs;
+- explicit version lineage;
+- signing keys / signer identity where preserved;
+- reports and validation records;
+- immutable or byte-identical original game payloads;
+- known-good sibling bridge architecture;
+- explicit rollback statements such as "v0.0.5 is the last good baseline";
+- later canonical packaging/public-release audits.
+
+This allowed a human + AI + artifact recovery loop:
+
+AI loses or misapplies context
+-&gt; user notices contradiction
+-&gt; artifact / known-good baseline provides objective state
+-&gt; assistant is re-anchored
+-&gt; regression is bounded or rolled back
+-&gt; project continues instead of being reconstructed from scratch</pre><div class="source-tools"><a href="../../evidence/s13.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S13" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S14"><summary><span class="source-title">S14 / DeadShot opens straight into the game</span><span class="source-kind">Checkpoint direct-entry notes</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / docs/DIRECT_ENTRY_0.1.3.md · selected lines 3–20</p><pre>Owner authorization: remove DeadShot's launch page for Omni integration, make
+the original bridge follow the current gameplay-only pattern, preserve custom
+controls, and proceed with the implementation after discussion.
+
+## Implementation
+
+GameActivity itself is the exported MAIN/LAUNCHER entry. It uses singleTop,
+matching the repeated-entry policy in the inspected Dirge 0.3.0 manifest.
+There is exactly one launcher filter and one real Activity. The former
+LauncherActivity Java class and obsolete app ToolsActivity are removed.
+
+An exported activity-alias named com.wakka.omnideadshot.LauncherActivity points
+to GameActivity. Existing explicit component references can continue to enter
+gameplay without executing a redirect Activity. The alias has no launcher
+filter, so it does not add a second app icon. New callers can use GameActivity
+or the package launch intent. There is no Android parent Activity or home page
+to return to; system Back retains the existing input/audio/worker cleanup and
+finishes gameplay, revealing its caller. Original Soft2 remains a game key.</pre><div class="source-tools"><a href="../../evidence/s14.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S14" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S15"><summary><span class="source-title">S15 / The owner accepts 0.1.3, then redirects the control work</span><span class="source-kind">Recorded owner feedback</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / verification/OWNER_FEEDBACK_20261020.txt · selected lines 1–3</p><pre>Owner feedback on delivered v0.1.3: "Perfect. It works great now, thank you."
+Owner then reports custom buttons incorrectly mapped and not aligned with the current standard, and approves the discussed correction.
+Scope: v0.1.3 installs/runs. Correct custom primary mapping/panel now. Do not infer that the new v0.1.4 controls have been tested on the phone.</pre><div class="source-tools"><a href="../../evidence/s15.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S15" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S16"><summary><span class="source-title">S16 / Confirming a menu and firing are different native inputs</span><span class="source-kind">Checkpoint control investigation</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / docs/CONTROLS_0.1.4.md · selected lines 14–27</p><pre>processEvent(int,int) implements the following, using zero-based key_con:
+
+| Displayed KEY TYPE | Movement | Attack mode | Primary hold/release key |
+| --- | --- | --- | --- |
+| 1 (mode 0) | Direction keys | Manual attack | * (10) or # (11) |
+| 2 (mode 1) | Numeric eight-way | Manual attack | OK (20) |
+| 3 (mode 2) | Direction keys | Automatic attack | * (10) or # (11), locks facing |
+| 4 (mode 3) | Numeric eight-way | Automatic attack | OK (20), locks facing |
+
+For types 1/3 the prominent custom button uses *; the separate original # is
+retained. These equivalent native bindings are not emitted simultaneously.
+For manual types processEvent sets/resets mfire and related charge flags; for
+automatic types it sets/resets kotei. The former large ACTION button always
+sent 20, which was menu Confirm but not manual attack in type 1.</pre><div class="source-tools"><a href="../../evidence/s16.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S16" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S17"><summary><span class="source-title">S17 / The original handler catches the earlier Action mistake</span><span class="source-kind">Checkpoint host verification</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / verification/VERIFICATION_v0.1.4.txt · selected lines 22–29</p><pre>PASS — original JAR input-handler regression, through actual backend routing:
+       Type 1/2 custom primary sets and releases original mfire manual-attack
+       flag. Type 3/4 sets and releases original kotei facing-lock flag. Native
+       direction/diagonal flags and releases match selected original family.
+       The regression also proves that old Confirm (20) does not fire in type 1.
+PASS — custom panel rendered/reviewed in manual and automatic modes. Internal
+       previews are framework renders, not phone gameplay captures.
+PASS — passport/handoff schema checks; candidate remains draft for new controls.</pre><div class="source-tools"><a href="../../evidence/s17.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S17" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S18"><summary><span class="source-title">S18 / The latest handoff keeps both corrections and open questions</span><span class="source-kind">Structured artifact handoff</span></summary><div class="source-content"><p>Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / artifact-handoff.json · selected lines 17–29, 31–59</p><pre>"working_state": {
+    "current_status": "0.1.4 custom control correction built; original-JAR input handler, 8 Android integration tests, 20 JVM assertions and preservation/package/signature checks pass. New controls await phone feedback.",
+    "current_known_good": "0.1.3 owner confirms installs/runs well; its custom primary/action layout requires the authorized correction.",
+    "last_material_change": "Mode-aware primary attack/facing lock, independent Confirm, captured button key, neutral pad center, current dark/cyan custom panel with declared sizing.",
+    "current_objective": "Owner tests the new custom primary/Confirm/layout in all four original KEY TYPE settings.",
+    "recommended_next_move": "Test all four original KEY TYPE choices with the new custom controls, including hold/release, keypad switching and controller A/Confirm.",
+    "failed_attempts": [
+      {
+        "summary": "Owner-supplied video of the 0.1.2 UPDATE attempt.",
+        "outcome": "Package Installer reports App not installed before startup; exact package-manager error/installed identity unavailable.",
+        "avoid_repeating": true
+      }
+    ]
+
+[... selected excerpt ...]
+
+  "context_snapshot": {
+    "do_not_break": [
+      "Original DeadShot app/source/saves.",
+      "Accepted Omni Snowboarding app/source/update identity.",
+      "DeadShot native controls, renderer, game data and MIDI resources.",
+      "Diagnostics and reports; ordinary authorized chat iteration."
+    ],
+    "decision_history": [
+      "Dirge is the preferred common UI standard.",
+      "Omni Snowboarding 0.1.0 visuals/gameplay accepted by owner.",
+      "DeadShot 0.0.12 supplied and explicitly selected for the next migration.",
+      "Use a separate DeadShot package; do not replace Snowboarding with another title.",
+      "Owner asked to keep normal chat-based iterations and distinctly versioned filenames.",
+      "2026-10-04: owner selects DeadShot Omni 0.1.0 as preferred and reports clearer button inputs; retain custom UI polish as a title task.",
+      "2026-10-20: owner requests gameplay-only entry for Omni and authorizes proceeding after Dirge comparison; custom controls stay unchanged.",
+      "2026-10-20: owner confirms 0.1.3 works, then explicitly agrees to correcting its custom primary mapping and current dark/cyan control hierarchy. This overrides the earlier custom-source freeze."
+    ],
+    "known_uncertainties": [
+      "New 0.1.4 controls require phone comfort, native in-game KEY TYPE switching, hold/release and real controller feedback.",
+      "Original game.resume policy may restart BGM.",
+      "Framework and isolated native input-handler checks do not establish full original-game execution, audio or real device Downloads."
+    ],
+    "recent_delta_from": "Owner-confirmed working DeadShot Bridge 0.1.3",
+    "recent_delta": [
+      "Primary */# for original types 1/3 and OK for 2/4; manual attack versus facing lock follows key_con.",
+      "Independent Confirm and raw softkeys/*/# remain accessible.",
+      "Kit palette and recognizable square pad; neutral center; captured button keys; declared content/font-scale bounds.",
+      "Controller A follows primary; Enter/center remains Confirm; original keypad unchanged.",
+      "Original runtime/assets/renderer/audio/saves/report/direct-entry/update identity preserved."</pre><div class="source-tools"><a href="../../evidence/s18.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S18" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S19"><summary><span class="source-title">S19 / DeadShot gameplay beside the complete original keypad</span><span class="source-kind">Preserved phone screenshot</span></summary><div class="source-content"><p>Source: DeadShot Omni 0.1.0 / Screenshot_20261004_014959.jpg</p><p>Inspected as pixels. This is the earlier owner-preferred 0.1.0 phone image, not evidence of the new 0.1.4 controls. No private notification text, account details or private paths are visible.</p><pre>October 4 phone screenshot: original DeadShot gameplay, HUD and full handset keypad.
+Preserved unchanged in the inspected Omni 0.1.1 and later 0.1.4 checkpoints.
+Image SHA-256: e862909eea6358ee0ce0677c43d1b2cef158d224f5b96a2e954fab9face41580</pre><div class="source-tools"><a href="../../evidence/s19.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S19" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-S20"><summary><span class="source-title">S20 / Rush Marine’s phone report becomes a shared reference</span><span class="source-kind">Checkpoint reporting requirements</span></summary><div class="source-content"><p>Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / docs/REPORT_REQUIREMENTS.md · selected lines 3–5</p><p>These inherited report requirements name Rush Marine 0.0.9 as the reference and describe the Snowboarding pilot. They document a shared reporting convention, not BREW interpreter counters inside DeadShot.</p><pre>Every backend must provide a snapshot without boot/reset, preserve a last-session report and keep its existing diagnostic features accessible through Tools. Shared presentation cannot be a reason to drop backend detail.
+
+The Rush Marine 0.0.9 device report is the reporting reference reviewed here. Its summary leads with live-session status, input press/release counts, interpreter/display counters, resource/audio outcomes and framebuffer results, followed by the retained trace. This pilot follows that structure using Snowboarding's available facts; it does not fabricate BREW counters in a DoJa game.</pre><div class="source-tools"><a href="../../evidence/s20.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="S20" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../re4-zeebo/index.html">Resident Evil 4 · Zeebo →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

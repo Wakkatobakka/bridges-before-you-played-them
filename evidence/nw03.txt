@@ -1,0 +1,17 @@
+NW03 / Original diagonals, ignored softkeys and other used keys
+Source: Nowhere_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Nowhere_Bridge_v0.1.1_PRIVATE/IMPLEMENTATION.txt
+Selected lines: 30–41
+Source SHA-256: 44b8351e0249558602ed221910469db3b929cb21ea145d4429313df8994be682
+
+Original input mapping evidence: i.keyPressed/keyReleased reject -6/-7. d.a
+maps 2/4/6/8/5 using getGameAction, preserving diagonals and 0/*/#. f.a(int,Z)
+encodes 1/3/7/9 as native paired direction bits; 0 uses native bit 128.
+The original Help confirms 5 attack, 0 inventory/save, # music, * back.
+See evidence/original_help_01.png.
+
+Game resources are packed at APK ZIP root for Java classpath loading. JAR
+remains intact in original/. Guest patches only resource lookup and caught
+exception evidence. The MIDlet property adapter supplies its correct original
+name/version/vendor. Native RMS store savNW is atomic and persists in app files.
+MediaPlayer receives unchanged original MIDI bytes. Display.vibrate reports a
+request as accepted, but this bridge does not actuate the phone vibrator.

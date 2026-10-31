@@ -1,0 +1,15 @@
+UP05 / Original inventory opens and closes in the host regression
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/evidence/control-regression-v0.1.2/RESULTS.txt
+Selected lines: 1–10
+Source SHA-256: b118f906efbc49025925db59a7da1cc3530228ac9bbb840ff603cd130d05a475
+
+Original unchanged game.jar executed with the existing shared MIDP layer and AWT host backend.
+Loaded the existing original save through Pause > Load; retained bo=2 and bg=14.
+Closed the original pause menu, sent literal original 0 (48), and observed the real Inventory screen.
+12_direct_inventory.png / .txt: aL=2, aN=130, bo=2, bg=14.
+Sent original 7 (55) and 9 (57) in inventory without error, then 0 (48) again.
+15_inventory_closed.png / .txt: aL=2, aN=384, bo=2, bg=14.
+Assertions bo=2 and bg=14 passed before normal original MIDlet destruction.
+This item list did not display a long description, so a visible scroll transition is not claimed.
+7/9 function meanings are grounded in the original l.class help, not inferred from this fixture.
+This is original game execution on a host, not Android device verification.

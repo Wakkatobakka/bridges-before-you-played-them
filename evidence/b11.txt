@@ -1,0 +1,25 @@
+B11 — Two cardinal holds are not the game’s diagonal input
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.10_DIAGONAL_AUDIO_FINDINGS.md
+Selected source lines: 3-18
+
+
+
+## Physical v0.0.9 result
+
+The returned S25 Ultra run confirms the v0.0.9 cardinal control correction worked physically. The remaining custom-control defect is limited to the four diagonal sectors: the raw keypad's 1/3/7/9 diagonal keys work, while the bespoke pad currently synthesizes two cardinal keys and the game does not treat that combination as its diagonal input.
+
+The v0.0.9 device report also shows a healthy live runtime with 616 key events, 454,759,078 guest instructions, 11,121 display updates, 18/18 PNG decodes, zero unhandled interface calls, and an active guest/Android audio bridge.
+
+## Diagonal correction
+
+A deterministic guest A/B run proves the dedicated raw keypad diagonal codes directly move Rush diagonally:
+
+- `0xE022` / keypad `1` = up-left (`dx=-13`, `dy=-11`)
+- `0xE024` / keypad `3` = up-right (`dx=+12`, `dy=-11`)
+- `0xE028` / keypad `7` = down-left (`dx=-13`, `dy=+12`)
+- `0xE02A` / keypad `9` = down-right (`dx=+12`, `dy=+12`)
+
+v0.0.10 therefore maps each bespoke diagonal sector to that one dedicated guest key. It no longer synthesizes two simultaneous cardinal holds.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

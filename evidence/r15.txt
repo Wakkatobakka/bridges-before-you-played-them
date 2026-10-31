@@ -1,0 +1,22 @@
+R15 — The raised arm still needed its weapon-effect renderer
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / docs/DEVICE_v0.3.6_FINDINGS.md
+Selected source lines: 11-15, 17-21
+
+The recordings carry silent audio tracks. The owner’s listening feedback and the runtime’s partial playback events are recorded separately; this is not a claim of complete sound.
+
+## Remaining effects and opening gaps
+
+During sampled Buster presses the player raises its arm, but there is no identifiable muzzle/projectile visual. A yellow effect is visible near 15 seconds in the second recording, so the evidence does not establish that every effect is absent. The implementation audit found that v0.3.6 recognizes `Primitive` objects but performs no GLES draw for them. The current log first records one at 7.745 seconds. The original game uses mutable textured primitives for weapon effects, making this a concrete missing render path rather than missing game files or an input failure.
+
+Neither supplied recording shows the opening cutscene. The owner reports missing opening objects; runtime/code evidence establishes an opening Primitive call, but the recordings cannot identify which opening objects remain missing. Preserve this distinction in later reports. Later wall/player closeups in the second recording also leave full camera/collision behavior unconfirmed across scenes.
+
+[... selected excerpt ...]
+
+## Audio evidence
+
+The owner hears some sound effects but reports inconsistent audio. Both MP4s contain an AAC track whose decoded samples are digital silence, so the recordings cannot verify audible balance, timing or music. The current runtime log does verify partial successful playback alongside codec rejection: 20 AUDIO PLAY and 17 AUDIO COMPLETE entries, plus 59 AUDIO ERROR entries. Of those errors, 36 reject `Unsupported ADPM layout: 4-bit, channels=1` and 23 reject `MLD has no adat chunk`.
+
+The inherited sound path therefore handles some sampled sounds while rejecting other native resources, including sequence-only music. This explains inconsistent coverage without treating successful sounds as accidental. It does not establish that all music/sounds are implemented or that a later MIDI conversion matches the original handset's FM timbre.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

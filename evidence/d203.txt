@@ -1,0 +1,8 @@
+D203 / The phone symptom and reproduced cause stay distinct
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/CHANGES_v0.1.1.txt
+Selected lines: 9–11
+Source SHA-256: 36106bdabd1234c79c05c4b9e1d9c9535ce55cbd0de2573b62596aff545b3fb6
+
+App versionCode increases to 2. Package com.wakka.doom2rpg, signing key, original edition identity, save paths, untouched original ARM runtime, all originals and all prepared audio match v0.1.0. Omni export/import instructions retain the same supported recipe. Build inputs exclude transient hidden transfer files.
+
+Phone evidence: Android reports the delivered app crashing and the recording shows immediate return to the launcher. No device exception log/density was supplied, so the exact handset exception is not independently proven. The matching startup fault is reproduced in the old build's source and repaired under Android framework checks. Real handset acceptance remains pending.

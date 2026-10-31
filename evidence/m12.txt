@@ -1,0 +1,39 @@
+M12 — The terrain’s materials and coordinates had their own rules
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V008_TEXTURE_MATERIAL_NOTES.txt
+Selected source lines: 10-27, 29-37
+
+
+
+Root-cause audit:
+1. Primitive render attributes and Figure material flags are NOT the same bit layout.
+   v0.0.7 passed the raw PrimitiveArray render-attribute integer into Figure material handling.
+   In the old MascotCapsule primitive API used here:
+     0x10 = color key
+     0x20 = half blend
+     0x40 = additive blend
+     0x60 = subtractive blend
+   Those values collide with unrelated Figure material bits. A hunt primitive using attrs=0x50
+   therefore lost both its color-key and additive-blend intent in the bridge.
+
+2. Primitive texture coordinates are texel-space values, not normalized 0..255 UVs.
+   Monster Hunter i directly writes values such as 0, 32 and 64 into getTextureCoordArray(),
+   including animated offsets. v0.0.7 incorrectly multiplied those coordinates by textureSize/256.
+
+3. MascotCapsule sampling uses power-of-two backing dimensions. Some Monster Hunter textures are
+   non-power-of-two logically (for example 256x240), so the bridge now pads the decoded indexed
+   bitmap to the next power-of-two without rescaling the original image.
+
+[... selected excerpt ...]
+
+v0.0.8 changes:
+- Translate PrimitiveArray PATTR bits into the bridge's internal Figure material representation.
+- Honor primitive COLORKEY, HALF, ADD and SUB modes. SUB is an Android Canvas approximation
+  (DARKEN) for now rather than a bit-exact subtractive software blend.
+- For additive/subtractive indexed textures, palette index 0 is transparent when palette entry 0
+  is black, matching the compatibility behavior used by the reference renderer.
+- Sample primitive/model UVs directly in texel coordinates.
+- Build power-of-two padded indexed texture bitmaps and retain logical dimensions separately.
+- Extend REPORT with primitive material counters: textured, color-key, half/add/sub calls.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

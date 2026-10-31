@@ -1,0 +1,42 @@
+OE02 / The owner asks for inspection before a runtime exists
+Source: Omni_Orcs_Elves_II_Raw_Inspection_Handoff.txt
+Selected lines: 4–5, 7–24, 26–36
+Source SHA-256: 0caa7eaeaa971f7ed5662da247458b4585f99f361a70e1ada71e67b8b16c01f1
+
+USER'S WORDS
+"Tell me what Omni misunderstood about this? Being able to read raw files is kind of a must. Otherwise I'm forced to have initial inspection happen with an AI. Which defeats the purpose. Dont give me a 14 page dissertation. Make it information I can digest"
+
+[... selected excerpt ...]
+
+WHAT WAS TESTED
+- Input: Orcs-Elves-II_BREW_EN_Electronic-Arts-7041.zip
+- Omni job status: NEEDS CONTENT OR A TOOL / blocked
+- Investigation budget selected: 30 minutes
+- Reported work: 191 milliseconds across three saved sessions; zero runtime tests
+- Omni successfully staged four files (2,426,033 bytes) and recognized the BREW package.
+- Identified game contents:
+  - orcsandelves2.mod — BREW game module, 292,116 bytes
+  - orcsandelves2.bar — BREW resources, 2,130,702 bytes
+  - orcsandelves2.mif — BREW manifest, 3,195 bytes
+  - orcsandelves2.cfg — configuration file
+- The report found no matching runtime adapter, usable supplied runtime source, or relevant catalog match. It read zero source files and stopped without a deeper raw-binary/resource investigation.
+
+THE MISUNDERSTANDING
+Omni appears to treat the absence of an executable runtime as the end of useful local investigation. But being unable to EXECUTE an original game is not the same as being unable to INSPECT its original files.
+
+WHY IT MATTERS
+The user wants Omni to investigate unfamiliar games independently, before an AI-led bridge project already exists. If another AI must first examine every new game and explain its internals, Omni is dependent on the very external initial inspection it was intended to reduce.
+
+[... selected excerpt ...]
+
+WHAT THE EXISTING FILES COULD INFORM
+Even without gameplay execution, raw inspection could look for:
+- Module format, CPU architecture, entry points, and import/interface clues in the .mod
+- Resource directory and recognizable graphics/audio/data in the .bar
+- App identity, runtime requirements, or other metadata in the .mif and .cfg
+- Uncertainty, gaps, and findings worth retaining for later execution work
+
+These are investigation opportunities, not claims that any particular decoder or parser is already present or that these bytes are necessarily straightforward to interpret.
+
+CORE DISTINCTION TO CARRY FORWARD
+Intake and identification already worked. The missing capability is meaningful, evidence-producing RAW FILE INVESTIGATION that can continue when there is no matching runtime. Runtime discovery should unlock further experiments, not decide whether investigation itself can begin.

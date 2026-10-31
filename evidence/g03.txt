@@ -1,0 +1,39 @@
+G03 — The dormant sound resources and original filtering
+Evidence type: Audio investigation
+Source: God of War: Betrayal v0.1.3 / history-v012 / AUDIO_AUDIT.txt
+Selected source lines: 3-15, 24-37
+
+
+
+The phone recording1000103755.mp4 contains selected original WAV1062 around
+2.563,5.083,12.286seconds (waveform correlation0.9963). The enabled game audio was
+working; ordinary attack/impact paths were disabled inside the original build.
+The phone report has nativeSound=on,0faults and enabled WAV playback completions.
+
+RP1 has11 audio entries: eight dormant PCM WAV entries1054..1061, plus enabled
+WAV1062, MIDI1063 and WAV1064. Some dormant entries are identical audio bytes.
+Original1.4.58 only loads sound0=1063,1=1064,2=1062 and rejects requested IDs3/4.
+
+Original full-audio mapping reference from the same36-variant archive:
+God of War - Betrayal [1.4.46] [LockedRes] [352x416] [En,Fr,Es,De,It,Pt].jar
+Its loader initializes slot i with resource1054+i for i0..10. Original y(int)
+passes sound IDs to its controller without the selected edition's filtering.
+
+[... selected excerpt ...]
+
+
+The prepared e.class changes a single existing constant-pool owner byte6->2 at
+2804, invoking inherited Canvas.J. The original private e.J body remains exact.
+Off delegates every request to that original routine. On restores disabled3/4
+using the original d controller's unused slots3..10, single-play, priority0.
+Original Sound off and controller priority remain authoritative. Transient
+restored effects are cleared before background and on native menus.
+
+Current native replay records24+ backend starts with zero faults and no unmapped
+requests. Native d.v forwards now include5,6,9,10 for confirmed ordinary impacts
+and attack movement. Off and original mute/unmute scenarios pass via normal keys.
+Rage mappings are original-source audited but unreached in first-level play.
+See restoration-replay-run.log, audio-hook-audit.json, audio-source-checks.json.
+Phone audible output and Android DEX boot remain pending actual-device testing.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

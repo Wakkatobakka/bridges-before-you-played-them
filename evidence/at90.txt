@@ -1,0 +1,12 @@
+AT90 / Historical image / Age of Empires III
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/evidence/rts-resource-order/12_harvest_result.png
+Source SHA-256: 7a02fdba2cc95783c1a35fc0552e38305d474b927baac51cf66ddc5da1b9a1c5
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/evidence/rts-resource-order/12_harvest_result.png
+SHA-256: 7a02fdba2cc95783c1a35fc0552e38305d474b927baac51cf66ddc5da1b9a1c5
+
+The original 128×128 game after the Settler resource order, with the wood counter at 206. Historical desktop output, not phone play.
+
+Scope: Historical original-J2ME host framebuffer; visually inspected, game only, zeroEXIF.

@@ -1,0 +1,21 @@
+F12 — A visual/gameplay success, with sound still missing
+Evidence type: Recorded owner feedback
+Source: FFVII Snowboarding preservation / PHONE_FEEDBACK_20261003.txt
+Selected source lines: 6-17
+
+
+
+Owner statement:
+"still no audio. but visually and gameplay wise i prefer it to what it was.
+so i would say this was 100% a success."
+The owner also describes the screenshots as the old UI and the new UI
+with custom controls and the option for the native keypad.
+
+Recorded outcome:
+- Owner-approved Snowboarding presentation/gameplay baseline: Omni 0.1.0.
+- Owner prefers the new visuals and gameplay feel to the old Snowboard .23 UI.
+- Custom controls and native keypad option are present in the phone screenshots.
+- Missing MLD audio remains confirmed and unresolved.
+- Pause/resume stress, full input combinations and report exports were not
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

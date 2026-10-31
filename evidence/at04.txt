@@ -1,0 +1,15 @@
+AT04 / Original classes, local records and the absent manual-save option
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 49–58
+Source SHA-256: 058d424c0fc234b18a44512d1dd7c30d6ac3ccd15caa25ebcf8a5e3ff642873d
+
+EXECUTION AND SAVES
+All nine original classes execute through compatibility APIs. The only
+bytecode adaptations redirect resources and observe original caught faults.
+All eleven non-class entries from the original JAR are unchanged in the APK.
+Original packed graphics, maps, text and OTA melody are retained.
+The original system font is supplied by a small fixed-pitch compatibility font.
+Native RMS options/progress records are committed atomically. A changed native
+cursor setting was recovered after a fresh JVM launch. The supplied edition's
+mission menu has no manual Save Game entry; this bridge adds no synthetic save.
+Original content limits and trial messaging are unchanged.

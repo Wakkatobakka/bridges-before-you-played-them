@@ -1,0 +1,12 @@
+SW90 / Historical image / Star Wars: The Force Unleashed
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/evidence/starwars-pattern-success.png
+Source SHA-256: 9d1f58bcab178a6aa31048848ab96cb412bf1616d3dee1fc64b84decfa569ed2
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/evidence/starwars-pattern-success.png
+SHA-256: 9d1f58bcab178a6aa31048848ab96cb412bf1616d3dee1fc64b84decfa569ed2
+
+The original CellWeaver tutorial accepts the first woven pattern and displays “Good!” Retained Linux EKA2L1 screenshot; no controlled campaign progress or Android-phone result is implied.
+
+Scope: Historical Linux original-game tutorial; host runtime differs from inherited Android core.

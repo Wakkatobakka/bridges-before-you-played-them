@@ -1,0 +1,23 @@
+MA04 / Fourteen original frames remain identical after contextual labels
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 26–43
+Source SHA-256: b215593753dcd3e72a34bfb7f18ecc61d760aafccb5abf00b2517ac70a2eec6e
+
+CONTEXT CONTROLS / FRAME EQUALITY — PASS
+A read-only native observer follows the original active Displayable and
+raycaster class identity. It distinguishes title, menu, text page and live
+level/map without modifying game heap, code, pixels or timing.
+The command-row observer exposes text only when its rendered row matches the
+visible frame. Java gives actual original commands priority.
+
+Title START; menus SELECT with arrows; briefing/tip CONTINUE; detector offer
+TAKE SMS / PLAY; confirmation YES / NO; live gameplay restores combat controls.
+Both layouts retain original bindings. Context changes clear touch contacts
+while physical ownership is preserved. Shared kit listeners remain intact.
+
+tools/verify_command_labels.py compares v0.1.1 and v0.1.2 frame digests at
+14 checkpoints: title, main menu, play menu, briefing, detector offer, SMS
+question, SMS error, return to offer, tip, gameplay, map, map return, quit
+question and quit cancellation. Every digest matches. Context codes and
+Take/Play and Yes/No labels match expected original screens.
+The v0.1.1 host library is an external baseline input for this comparison.

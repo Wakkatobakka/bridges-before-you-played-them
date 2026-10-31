@@ -1,0 +1,35 @@
+MT06 / The later shell retains controls and records its limits
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 6–22, 30–39
+Source SHA-256: fc96426d182ef55364946a309c207cbeb9d83b29617f0b6756c435ee6bbe634e
+
+GAMEPLAY UI
+Actual Wakka Bridge Gameplay UI Kit v1.1.1 is embedded, including its startup fix.
+Header: original launcher icon, Megami Tensei title, J2ME platform, SAVE REPORT, utilities.
+Normal controls use a thumb-tracked four-way digital D-pad and separate OK/5 action.
+MAP/1, CMD/3, VIEW/*, CANCEL/# and both original softkeys remain immediately accessible.
+ORIGINAL KEYPAD switches the bottom panel inline; D-PAD RETURN restores normal controls.
+The same live native-aspect game viewport remains attached in both modes.
+Only keys used by this original game are shown: 1,2,3,4,5,6,8,*,# and both softkeys.
+Digits 2/4/6/8 replace the equivalent directional inputs; there is no duplicate pad in keypad mode.
+
+ORIGINAL ACTIONS
+▲ / 2: forward. ▼ / 8: turn around. ◀ / 4 and ▶ / 6: turn left/right.
+OK / 5: confirm. MAP / 1: map. VIEW / *: original map display toggle.
+CMD / 3: original command menu. CANCEL / #: return/cancel.
+MENU: original left softkey. BACK: original right softkey.
+Android system Back leaves gameplay after stopping the original worker and audio.
+The on-screen BACK softkey remains an original game input, separate from Android Back.
+
+[... selected excerpt ...]
+
+VERIFIED
+Original title/dungeon, short taps, map/toggle, command/system menus, save/fresh-process load,
+background parking/resume and report generation while the worker is parked pass the host suite.
+Four Android API34 framework integration tests pass: cold production Activity/window startup,
+insets/drawing/stable inline switching, physical input ownership/Back cleanup, startup fault capture,
+and original JAR execution through the production Activity/Engine with real worker shutdown.
+The live-game Android test shadows MediaPlayer audio; it does not establish audible sound.
+50 game-specific device/density/orientation geometry cases pass. Native resources (107) are unchanged.
+Physical-device comfort, live sound, phone safe areas and Downloads export remain unobserved.
+Combat, negotiation, fusion and full campaign completion have not been exercised.

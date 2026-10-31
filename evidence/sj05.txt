@@ -1,0 +1,12 @@
+SJ05 / The scratchpad header and final sentinel
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/INPUT_FINDINGS.txt
+Selected lines: 64–70
+Source SHA-256: 4d07c4c327533af664c3281d372e6e5a6c02c51fef20438ca000c46cd8a43a21
+
+SCRATCHPAD / ASSETS
+- Uploaded .sp has64byte emulator header and total266304bytes. Logical scratchpad is raw[64:] with266240bytes.
+- Final logicalbyte[266239]=90. This completed-download sentinel must be preserved; sp(26) skips dead original network downloads when it is90.
+- Resource directory:308 big-endian int offsets starting logical256960.
+- Imagei uses directory[23+i]:directory[24+i],246 slots (some are intentionally empty).
+- Soundi uses directory[269+i]:directory[270+i],38 slots.37 contain MLD "melo" data; slot7 is empty.
+- Extracted logicalscratchpad: sonic.logical.sp. Original MLDs: sp_sound/00.mld..37.mld. Extracted GIF-derived PNGs:sp_media/*.png. These are analysis outputs, not replacements for original source assets.

@@ -1,0 +1,8 @@
+CR12 / The cache repair supplied the CPU reduction; changed snapshots saved allocations
+Source: 11-Contra_4_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.1_PRIVATE/evidence/equivalence/equivalence_and_profile.txt
+Selected lines: 29–31
+Source SHA-256: 4ac82df8c73c894b13fbaf806a6657c64026ddbd0296fb094e9b74140740150b
+
+
+Timed region: 100 original gameplay callbacks plus identical scheduled movement/release/jump input; quiet runtime, deterministic virtual80ms clock. ThreadCPU and threadallocatedbytes surround only that sequence. Boot, snapshots, equality checks, native memory/palette checks, hashing and report formatting occur outside the timed region. First round excluded; median of five following rounds.
+CPU reduction from precise cache repair (same fullframe API):42.6%. Current presentation mode allocation reduction againstv010:3.8%. This is the implemented exact range cache, distinct from the earlier diagnostic ignore-stamp experiment. The correct Android timer-deadline fix is not included in this forced-timer runtime-cost comparison.

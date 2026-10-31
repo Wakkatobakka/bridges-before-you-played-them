@@ -1,0 +1,15 @@
+BV08 / EKA2L1 and original environment credits
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 3–12
+Source SHA-256: 2ba0f82a177c2436ce3a29b3cc892eb8cc9cbbcdcb792ba510dfdeeffdff595f
+
+EKA2L1 Symbian/N-Gage runtime by the EKA2L1 contributors.
+https://github.com/EKA2L1/EKA2L1
+GPL-3.0-or-later. License and recovered source snapshot are in upstream/.
+Unmodified native binary identity/provenance: upstream/PROVENANCE.json.
+
+Bounce Boing Voyage, the Nokia device environment and N-Gage service retain
+their respective original owners' rights. The supplied .n-gage was preserved
+unchanged. Additional device/service inputs are recorded in provenance.
+The separate bridge frontend and app-registration resource do not confer
+ownership over original game, artwork, firmware or service materials.

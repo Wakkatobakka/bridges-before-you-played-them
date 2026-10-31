@@ -1,0 +1,18 @@
+SW02 / An upright keypad and original CellWeaver input
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 9–21
+Source SHA-256: aeec109a0b95b44a9df2462fdad010696d0b687f2c7751f3f73e628ca5330f4a
+
+FIRST RUN
+The original game asks for sound and keypad orientation. Tap ORIGINAL KEYPAD,
+press 2 for the upright 1–9 grid, then confirm with MENU L / OK.
+Choose PLAY > TUTORIAL to learn the original CellWeaver system. This is a
+pattern-based game: the character is not controlled like a free-roaming FPS.
+
+CONTROLS
+Weave patterns with the original D-pad, including center, or numeric 1–9.
+FORCE B sends original Gaming Key B: unleash offensive powers; hold it while
+weaving corner patterns for defense. MENU R is the original alternate Force
+trigger and also fast-forwards dialogue when indicated. MENU L selects/pauses.
+Follow the native screen's softkey labels. Gaming A and original Clear remain
+available. Android system Back exits gameplay separately from original keys.

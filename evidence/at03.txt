@@ -1,0 +1,17 @@
+AT03 / The workers harvest and command pause holds the simulation
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 60–71
+Source SHA-256: 058d424c0fc234b18a44512d1dd7c30d6ac3ccd15caa25ebcf8a5e3ff642873d
+
+EVIDENCE AND LIMITS
+Original input orders sent a selected Settler group to wood at tile (14,12).
+The workers walked there and the wood counter rose from 100 to 206. Native
+command pause held the resource counter fixed while the renderer stayed live.
+See evidence/android-framework.txt (eight Android API 34 framework checks),
+evidence/verified-host/ and evidence/restart-complete/. Host checks execute
+the original game; framework UI tests defer guest boot. The layout PNGs combine
+that actual host framebuffer with the Android gameplay screen for layout QA.
+They are not on-phone gameplay screenshots.
+All 42 referenced MIDP/Nokia APIs were audited; the original optional branding
+scan reaches missing brand3.png, catches it and continues normally. This expected
+original endpoint is counted separately from execution faults.

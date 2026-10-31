@@ -1,0 +1,11 @@
+RC02 / Original jump shortcuts and developer-only branches
+Source: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/TECHNICAL_FINDINGS.txt
+Selected lines: 21–26
+Source SHA-256: f1d7c51ecc9470a4a16cb810b17074fac343ce7d39abdf5ff18c09d2bb2e969d
+
+Inputs confirmed from txt_en.txt and actual bytecode
+2/up: jump, hover, grapple; 4/left and 6/right: movement; 8/down: platform drop.
+5/fire: contextual attack and confirmation; *: wrench; #: weapon selector.
+1/3: native diagonal jumps. -6/-7: original softkeys, including pause.
+The unused 0/7/9 gameplay branches are gated by the original hardcoded false
+h.p developer flag, not ordinary gameplay. Numeric hardware keys still pass through.

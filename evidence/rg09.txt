@@ -1,0 +1,23 @@
+RG09 / The familiar family presentation arrives around unchanged execution
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/IMPLEMENTATION.md
+Selected lines: 3–10, 13–19
+Source SHA-256: 2d8e68f7854adb7b79ec490b6b067530028300a621b592b14ce4d0333b0674c6
+
+- Preserved `BrewRuntime.java` byte-for-byte. This is still execution of the original BREW `.mod` and `.bar` code and resources, not recreated game code.
+- Android `MainActivity` now provides an Omni-styled family header, dark cyan framed game viewport, minimal status strip and large touch control area.
+- Controls occupy three columns with 1 : 2.1 : 1 weights so the **D-pad centerline sits in the phone's center**, not a left-handed joystick region.
+- D-pad has UP, DOWN, LEFT, RIGHT, and OK only; no analog/trackpad or simulated physics.
+- Both-side high-use actions remain available with center D-pad or full 1–9 keypad.
+- Keypad mode provides all numeric original inputs including diagonal aim/target combinations; 0/CLR/OK are also always represented elsewhere.
+- Touch-down/up use the original guest press/release codes; larger pads, visual pressed state, Android system haptic feedback, held-key reference counts and cancellation-safe cleanup improve usability.
+- Existing external controller and keyboard mappings maintained.
+
+[... selected excerpt ...]
+
+- Existing runtime state, save file format, report/share flow, audio, event dispatch and module execution were not redesigned.
+
+## Original phone key mapping
+`UP AVK_UP; DOWN AVK_DOWN; LEFT AVK_LEFT; RIGHT AVK_RIGHT; OK/ACTION AVK_SELECT; inventory AVK_0; pause AVK_CLR; keypad 1–9 AVK_1..AVK_9.`
+
+## Limitations
+This is a newly compiled Android UI; host tests cover guest execution but do not substitute for phone/UI touch acceptance.

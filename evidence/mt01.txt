@@ -1,0 +1,13 @@
+MT01 / The helper class linkage and original guest identity
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/TECHNICAL_FINDINGS.txt
+Selected lines: 1–8
+Source SHA-256: a8e515a541ad416967def60d47b77ec3870deeb9e6d4b9643027192e669ad82e
+
+Original supplied JAR SHA256: 2acdfdaec89d5c47b81db7a01002c814524fa07f96486c94bdf97170aa973d98
+MIDlet: MyMIDlet. Nokia N7610 target, CLDC 1.0 / MIDP 1.0 plus Nokia FullCanvas/DirectGraphics and MMAPI. Native picture: 176x208. Guest c.run uses a 100 ms update interval; this is preserved.
+
+Concrete defect: a.class actually declares p000/C0000a, with CRC method m1a([BII)I. Guest c calls a.a([BII)I during palette replacement. PatchGuest restores the helper class name a and exported method a while remapping internal self references. The CRC algorithm is unchanged.
+
+Other bytecode adaptation: Class.getResourceAsStream routes through the app resource loader; caught exceptions are recorded. No game rules, dungeon maps, RNG, stats, enemies or dialogue are rewritten. All 107 non-class original resources remain byte-identical in the APK.
+
+Runtime additions for this guest: FullCanvas, Displayable dimensions, serviceRepaints (repaint is synchronous), Font.getFont and software font rendering, Graphics.setFont/drawString, Image.createImage(byte[],int,int), RecordStore.getRecord(int), MediaException. Font metrics and raster glyphs derive from DejaVu Sans small font; fullwidth punctuation selects equivalent Latin glyphs, keeping stored strings intact. The original title logo is an image.

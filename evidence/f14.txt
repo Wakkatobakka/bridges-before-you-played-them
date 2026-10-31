@@ -1,0 +1,23 @@
+F14 — The two-stage stick worked technically, but felt wrong
+Evidence type: Recorded control feedback
+Source: FFVII Snowboarding preservation / PHONE_FEEDBACK_20261004_CUSTOM_CONTROLS.txt
+Selected source lines: 3-16
+
+
+
+Date: 2026-10-04
+Scope: FFVII Snowboarding Bridge v0.1.0 two-stage custom-control trial.
+
+Owner result:
+- The two-stage custom-control build worked technically.
+- Owner did not like how the two-stage stick felt in play.
+- Returning to the unchanged Keypad page showed that the original digital input layout is already simple and effective.
+- Owner authorized a bounded custom-page redesign that keeps the keypad semantics and simply rearranges the useful race inputs for comfortable two-handed touchscreen play.
+
+Boundaries for the next candidate:
+- Do not change the native Keypad page.
+- Do not change audio, game logic, renderer, package identity or signing.
+- Custom race page should expose fixed digital buttons: EDGE LEFT / TURN LEFT, EDGE RIGHT / TURN RIGHT, KICK / JUMP / BRAKE, Retry / Menu.
+- Menu mode should retain direct cardinal/confirm navigation without using race-only numeric 4/6.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,24 @@
+NW06 / Original-game replay stays distinct from UI fixtures
+Source: Nowhere_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Nowhere_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 6–8, 19–31
+Source SHA-256: ec2adc2eb622ab08da51241f9e3b652c0f7a4f96831c8d9439eeaeff264dfa19
+
+PASS: Original JAR, all 27 APK resource payloads and adapted guest classes retained.
+PASS: MIDP compatibility sources unchanged except report version text.
+PASS: Existing report export/fallback/retry and audio implementation unchanged.
+
+[... selected excerpt ...]
+
+PASS: Original MIDlet host replay: opening and movement, background/resume,
+      shutdown/restart with original RMS data; zero final runtime faults.
+PASS: Original raster transforms/clip/zero-size regions, 17 MIDI payload formats,
+      and RMS fresh reopen checks retained and rerun.
+
+Android screenshots are real Views with the execution boundary held for UI-only
+validation, so they show a loading viewport. They are not fabricated game proof.
+Original-game evidence comes from the independent real MIDlet replay.
+
+Not physically observed for this new APK: phone touch comfort, live Android audio,
+Downloads export, native Android teardown, thermal behavior and later chapters.
+The control help and original-game evidence remain the authority for bindings;
+item/progress-save behavior is not newly claimed as fully verified.

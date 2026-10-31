@@ -1,0 +1,35 @@
+R06 — The GPU pixels finally reach the visible bitmap
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.2.8-decision-from-v0.2.7.txt
+Selected source lines: 3-13, 15-26
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+Observed on SM-S938U / Android 16:
+- The v0.2.7 GL readback region around Rockman's predicted body contained 2,992 non-black GLES pixels out of 4,704.
+- The Android bitmap merge copied all 2,992 of those pixels.
+- Device video visibly showed changing GL-derived white/green/magenta content inside the CPU ROCKMAN region while the user interacted.
+- Runtime remained free of GL errors and caught game exceptions.
+
+Conclusion:
+- GLES is genuinely rasterizing live Rockman/Figure pixels.
+- The CPU screen mapping and OpenGL bottom-left -> Android top-left conversion are both working.
+- The missing presentation boundary is bridged successfully by readback -> AndroidPlatform.back.
+- The v0.2.7 Rockman-only readback rectangle can now be widened to a full gameplay 3D layer instead of continuing geometry/presentation probes.
+
+[... selected excerpt ...]
+
+v0.2.8 change:
+- Keep view*object, no second axis flip, 1/64 model scale, projection, decoder, and gameplay data unchanged.
+- Remove green wire, magenta point, orange box, cyan cross, and fixed 2D marker diagnostics from the visible frame.
+- Clear the independent GLES color/depth surface to transparent black at the start of each 3D batch.
+- Read back the entire 240x240 GLES color frame before endDrawing().
+- Treat near-black as transparent and merge all other GPU pixels into the first 240 rows of AndroidPlatform.back immediately before present().
+- Log full-frame non-black count and bounding box in ROCKMAN GL FRAME READBACK / ROCKMAN GL FRAME COMPOSITE.
+- D4D/Group world geometry, textures/materials, MTRA animation, Primitive rendering, and 4-bit ADPM audio remain separate follow-up work.
+
+Expected device result:
+- All currently decoded Figure geometry should become visible across the gameplay viewport, not only in the old Rockman peephole.
+- The background can remain black until D4D/Group decoding is implemented.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

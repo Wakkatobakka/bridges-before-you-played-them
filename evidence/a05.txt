@@ -1,0 +1,48 @@
+A05 — The braking explanation and its boundary
+Evidence type: Original-game analysis
+Source: Ashen_Movement_Timing_Finding_2026-10-19.txt
+Selected source lines: 129-142, 154-175
+
+
+
+floor-contact state. It also found a path that clears that state before
+collision processing, and a zero-timestep collision setup with identical
+start/end positions. Repeated zero-time updates can therefore interfere with
+the ground-contact-dependent braking path. The old position trace's braking
+pattern matched this mechanism; the repaired trace records normal velocity
+decay with floor contact retained.
+
+The old trace did not directly record floor flags or velocity, and the host
+harness stopped before the complete world-collision query. The full internal
+ground-contact explanation is supported by code analysis and the traces;
+the specific counter mask, zero-time deltas and successful repair are the
+directly demonstrated compatibility finding.
+
+Useful original-game analysis addresses for this exact executable:
+
+[... selected excerpt ...]
+
+The four touch movement/input classes were also identical. The after build
+integrated UI Kit 1.1.1's startup/dialog release repairs and extended the
+read-only observer; it was not otherwise a byte-identical APK. Both probes
+observed the original guest through guarded debugger hooks and added some
+overhead. Their similar callback intervals and the direct counter change
+are useful controls; this is not a physical N-Gage timing measurement.
+
+Host checks included 180 executions of the actual native ARM64 clock
+function over tick boundaries, counter wrap/extreme values and EKA1/EKA2
+branches. Original ARM input/braking/setup functions were separately checked.
+The delivered APK's observed movement repair is supported by the real phone
+report and video. Full game completion, multiplayer, other phones/platforms,
+original-hardware timing parity and Worms regressions were not tested.
+
+UPSTREAM IMPLEMENTATION SCOPE
+The tested runtime belongs to a dedicated Ashen bridge. Removing this mask
+there changes its EKA1 counter generally; the binary instruction itself is
+not guarded by Ashen's UID. For a multi-game EKA2L1 release, a title-specific
+compatibility option/profile for Ashen (UID 0x101FD3E9) is the appropriate
+next implementation to evaluate. Preserve the Worms workaround for the game
+that needs it until broader regression tests establish a safe default.
+There is no claim that the same change fixes every slippery game.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

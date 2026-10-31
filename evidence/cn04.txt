@@ -1,0 +1,10 @@
+CN04 / Ashen infrastructure and the unchanged Pocket Kingdom native core
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/upstream/PROVENANCE.json
+Selected lines: 13–18
+Source SHA-256: 5ffd9fd88f290e2676b2f6fe8b0471e8709c040f4d26423c3b19e045e8807c9e
+
+  "publicly_published": false,
+  "reused_checkpoint": "Ashen v0.1.1 (private), native runtime/firmware/JNI/lifecycle/report foundation only",
+  "host_runtime_build": "master-6ac519122 (Linux continuous AppImage; host evidence only)",
+  "android_runtime_build": "Unmodified native ARM64 binary recovered from Pocket Kingdom checkpoint; native_sha256 is authoritative."
+}

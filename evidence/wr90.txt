@@ -1,0 +1,12 @@
+WR90 / Historical image / Wolfenstein RPG corridor and pistol message
+Source: Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/evidence/acceptance/020_tick_20.png
+Source SHA-256: b04179295d28fbd12a58decae53c175672af227ca15342b02bf5976c65b0b5f9
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/evidence/acceptance/020_tick_20.png
+SHA-256: b04179295d28fbd12a58decae53c175672af227ca15342b02bf5976c65b0b5f9
+
+Wolfenstein RPG’s original first-person corridor with You got a pistol dialogue.176×220 historical host capture after the tested suspend/resume sequence; not a phone screenshot.
+
+Scope: Historical desktop original-runtime framebuffer; not phone output. Visually inspected, game only, no personal UI.

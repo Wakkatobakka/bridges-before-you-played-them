@@ -1,0 +1,17 @@
+S08 — Margins did not settle the title/menu crop
+Evidence type: Checkpoint renderer/lifecycle notes
+Source: DeadShot_Bridge_v0.0.3_Source.zip / README.txt
+Selected source lines: 5-12
+
+
+
+v0.0.3 changes from v0.0.2:
+- Correct DoJa drawString baseline semantics. This fixes the title/menu text crop seen on physical S25 testing.
+- Correct DoJa 3.0+ font sizing used by DeadShot: 12-dot default/tiny and 24-dot medium.
+- Suspend the original game loop when the Android activity is backgrounded.
+- Stop audio immediately when backgrounded; DeadShot's existing resume logic restarts the appropriate BGM on return.
+- Preserve the known-good 240x240 renderer, controls, scratchpad, gameplay path and v0.0.2 MIDI resources.
+
+The original DeadShot JAR and game logic are not modified by these fixes.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

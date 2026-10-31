@@ -1,0 +1,6 @@
+BE05 / Sounds in scratchpad, and play means a seek position
+Source: Biohazard_Episodes_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.0_PRIVATE/HANDOFF.md
+Selected lines: 11–11
+Source SHA-256: ebfc8bffd78f09a5bd2a2157865425aebc9f498df4c3d66a666044eaa5e9ecf3
+
+Slot 1 contains 33 `melo` sound assets, not separate JAR `.mld` entries. The MFi parser handles these assets, including their PCM samples. Audio completion is DoJa event 3; event 2 means stopped. `AudioPresenter.play(int)` means a millisecond seek position. The game resumes background music using this overload. Android player operations run on a worker, with independent lanes and generation checks to discard stale requests. Spatial `Audio3D` requests are acknowledged; this version does not implement spatial effects.

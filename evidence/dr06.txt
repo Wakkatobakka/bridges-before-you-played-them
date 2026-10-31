@@ -1,0 +1,9 @@
+DR06 / The native completion callback issues another PLAY
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/quiet-and-audio.txt
+Selected lines: 1–4
+Source SHA-256: 9486d0eca183a8938017c5653f84cf2e8d1715417a8517a8baead8c3374ec12b
+
+PASS: 32 actual-host-clock callbacks at requested15ms (wall=536ms); detailsOFF; no TRAP/timertrace collection; fullreports absent fromroutineframes; nonblackpixels notcounted; presentationrevision monotonic; changed=1, unchanged=31.
+PASS: accessibilitytap(...,0) dispatches press+release without pumping native timer.
+This JVM check is bounded and does not measure S25Ultra heat or prove laterlevels.
+PASS: native title CMID resource=5040, bytes=14206; measured-host completion status2 re-enters original guest notification and emits a new PLAY for looping song.

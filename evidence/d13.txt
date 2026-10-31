@@ -1,0 +1,52 @@
+D13 — Direct launch, preserved gameplay, explicit phone-test boundary
+Evidence type: Checkpoint verification notes
+Source: Dirge_Bridge_v0.3.1_PRIVATE_CHECKPOINT.zip :: Dirge_Bridge_v0.3.1_PRIVATE/README_FIRST.txt
+Selected source lines: 9-13, 27-32, 43-60, 62-66
+
+This later handoff records owner confirmation of 0.3.0. It does not establish phone acceptance of 0.3.1.
+
+WHAT CHANGED
+- With game data installed, opening Dirge goes directly to gameplay. The
+  Gothic launcher/dashboard and ENTER LOST EPISODE step are removed.
+- Without game data, a minimal setup page imports the same English data ZIP.
+  Successful import enters gameplay automatically.
+
+[... selected excerpt ...]
+
+WORKING GAMEPLAY PRESERVED
+The owner reported v0.3.0 working well before this narrow routing change.
+The v1.1.1 UI Kit, custom controls, original-keypad switch, viewport, physical
+input handling, touch ownership, camera/aim behavior, audio, saves and report
+export are retained. The supplied newer v1.1.2 kit was deliberately not
+introduced during this launcher-only pass.
+
+[... selected excerpt ...]
+
+VERIFICATION FOR THIS BUILD
+- Final APK compiled, D8 merged, aligned and verified with the same signer.
+- Original assets and exact 19-file payload allowlist unchanged.
+- 662 retained original runtime methods identical after final packaging:
+  resolved DEX instructions, register counts and exception tables.
+- 414 selected gameplay/UI methods identical to owner-tested v0.3.0.
+  DirgeControls.java and TwinLayout.java are byte-for-byte unchanged.
+- 18 Android API 34 framework tests pass with Robolectric native graphics,
+  using the final packaged APK classes. Existing input/lifecycle/report
+  checks plus direct launch, missing-data setup, utility routing and cleanup,
+  rejected replacement preserving existing files, session lock coordination,
+  checkpoint export/restore and return-to-game routing are covered.
+- The actual original-game boot boundary is deferred in framework tests.
+  Presence-only game-data fixtures and checkpoint fixtures are synthetic;
+  they do not represent playable original data or real progress. Checkpoint
+  ZIP export/restore does execute the retained original SaveVault code.
+- Earlier v0.3.0 kit/input/audio evidence is retained with its original labels
+  and is not presented as a fresh v0.3.1 run.
+
+[... selected excerpt ...]
+
+DEVICE STATUS
+The owner confirmed v0.3.0 works. This v0.3.1 APK has not been run on a
+physical phone in this work session. Its direct-launch flow, first real data
+import, storage picker/Continue behavior and caller/Omni return path still
+need device confirmation. No device gameplay or progress is fabricated.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

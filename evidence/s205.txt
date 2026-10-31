@@ -1,0 +1,10 @@
+S205 / A center contact stays a center contact
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/README_FIRST.md
+Selected lines: 7–11
+Source SHA-256: bb844a2c61caa33c672ccd8eab2a6952b85a987168051f70495ba38e95c2d4fb
+
+This pass applies Wakka Bridge Gameplay UI Kit v1.1.2: actual game icon/title, BREW platform beneath the title, independent SAVE REPORT and three-dot utilities; a square sliding four-way D-pad; distinct center OK and prominent 5; both softkeys and Clear; direct ORIGINAL KEYPAD / D-PAD RETURN switching.
+
+The original keypad is inline and retains the separate complete D-pad, center OK, 5, both softkeys and Clear. Both layouts reserve the same measured slot: switching does not change the live renderer, viewport bounds, worker, original timers or game session. Controls reflow with minimum 48dp keys and a square pad at least 144dp. Status/navigation/cutout insets remain outside the gameplay layout.
+
+Spider-Man opts into one local kit extension preserving v0.1.0's center-contact ownership: a directional contact crossing the center does not press OK; a center contact does not turn into movement. The upstream v1.1.2 behavior remains the default for configurations that do not opt in. Guard ownership is now retained per stable pointer ID, without reverting the new contact union. The existing four-way game configuration is unchanged. See app/ui-kit/LOCAL_PATCH.txt and evidence/ui-kit-source-audit.json.

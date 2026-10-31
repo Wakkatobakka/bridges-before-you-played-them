@@ -1,0 +1,14 @@
+DI05 / Original startup, level and setting persistence
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 13–21
+Source SHA-256: 295efdc27b1e2248e8e4a54ee1254e5c88195c41405f2469a84ce73bbe98ce0c
+
+BASELINE EXECUTION / UI CHECKS (v0.1.0)
+- Original MIF identifies Macrospace Dragon Island v1.0.2, class 0x010139a6.
+- Byte-identical original MOD/BAR/MIF are checked at boot; no original patches.
+- 40 host checks execute the original ARM module, applet, start handler, title,
+  main menu, scrolling story, original tutorial, first level, directional inputs,
+  dedicated diagonal jumps, axe input, original menu, suspend/resume and cleanup.
+- The actual settings UI changes the music setting, writes the original indexed
+  record, and restores it through a fresh guest session. No guest state writes or
+  forced progress are used by the acceptance test.

@@ -1,0 +1,28 @@
+WR11 / The first pistol shot reproduced the phone freeze
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/evidence/first-combat/comparison.txt
+Selected lines: 6–28
+Source SHA-256: c5afa23c36989d692efbd953b56bd4b08290b81162c068e3849d14f3cf26b457
+
+The same original phone-input route reaches the first guard on Tower level 1:
+spawn (1120,1632,angle0); 2,2,4,2; native R-soft dismisses the door tutorial;
+5 opens the door; 2,2; wait 1000 ms for the original guard cinematic's Skip;
+R-soft Skip; 5 attacks; 2 approaches; 5,5,5; 2 continues past the defeated guard.
+The test uses natural PCM-duration START/COMPLETE callbacks and only reads guest
+memory. Original configfilename preferences are reused when available; no world
+or player save is imported and no guest state is altered by the host test.
+
+Before: first pistol shot fails in the native timer callback at
+cls=7E000001 off=0x10 r0=01001CC0 r1=FFFFFFFF r2=00000011 r3=01209118
+LR=00117BC0. This exactly matches the device report's interface/offset/registers.
+Actual matrix at01015840: signed 8.8 [0,-256,256,0], source16x16,
+destination(-1,17), composite0. At failure HP97, ammo9, guardHP24.
+
+After: native playerHP100 ->97 ->94 ->91; ammo10 ->9 ->8 ->7 ->6;
+original guardHP40 ->24 ->9 ->0 and corpseflag0172005A. Three shots defeat
+the guard; another native fire input continues successfully. The original view
+moves from(1248,1376) to(1248,1312), original free-play state3/level1 persists,
+and native timers continue to999. All checks pass. Four compact after screenshots
+show the living guard, counterattack, corpse/XP, and movement past the corpse.
+
+The supplied phone recording begins after the runtime has already stopped; it
+cannot identify the original triggering input. The host reproduction does.

@@ -1,0 +1,12 @@
+EJ13 / The original saves are read on a fresh session
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/final_acceptance/acceptance.txt
+Selected lines: 23–29
+Source SHA-256: f36c3b16908563d8e04f04222eac2b32f9b77c00b03338f794e675613db59d37
+
+Unimplemented call signatures observed: []
+Original Earthworm Jim uses its original bitmap rendering with original MIDI music and CMID effects through IMedia.
+Exact codec helper cache hits: 82; cooperative original sleep calls: 471
+Quiet ABI calls [system frees, DIB setup, media volume, original duplicate closes]: [4, 0, 9, 0]
+System call totals (first 3 of each signature traced): {SYS_B+0x00000000=28169, SYS_B+0x00000004=47306, SYS_B+0x00000010=28, SYS_B+0x00000014=529, SYS_B+0x00000020=380, SYS_B+0x00000068=48, SYS_B+0x0000006C=4, SYS_B+0x0000008C=1, SYS_B+0x0000009C=982, SYS_B+0x000000B0=3378, SYS_B+0x000000C0=813815, SYS_B+0x00000138=1}
+12_native_save_reload: live, steps=94316669, timers=170, nonblack=23165
+Fresh session opens and reads exported original native saves and reaches the original startup flow: PASS (not an in-level quick-save claim)

@@ -1,0 +1,21 @@
+EJ12 / Jim reaches New Junk City and uses his weapons
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/final_acceptance/acceptance.txt
+Selected lines: 6–21
+Source SHA-256: f36c3b16908563d8e04f04222eac2b32f9b77c00b03338f794e675613db59d37
+
+Deferred zero-duration logical tap original intro SKIP: one normal timer, then native release: PASS
+05_how_to_play: live, steps=558800642, timers=381, nonblack=54712
+06_new_junk_city: live, steps=589385098, timers=393, nonblack=56668
+07_movement_right: live, steps=618234828, timers=405, nonblack=56000
+08_jump: live, steps=636377054, timers=411, nonblack=57102
+Deferred zero-duration logical tap shared Whip action: one normal timer, then native release: PASS
+09_tap_whip: live, steps=648008669, timers=415, nonblack=58603
+10_hold_fire: live, steps=743105251, timers=445, nonblack=55753
+10b_original_pause_menu: live, steps=786169636, timers=459, nonblack=61492
+Deferred zero-duration logical tap original pause SELECT / RESUME: one normal timer, then native release: PASS
+10c_original_resume: live, steps=818942207, timers=468, nonblack=55825
+11_lifecycle_resume: live, steps=828947972, timers=471, nonblack=55810
+Original audio PLAY payload and post-PLAY VOLUME=100: PASS
+Original audio START/DONE notifications: PASS
+Original suspend/resume events2/3: PASS
+Original native save files: [earthworm_1.sav, rms_earthworm.sav]

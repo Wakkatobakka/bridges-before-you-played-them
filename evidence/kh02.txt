@@ -1,0 +1,12 @@
+KH02 / The initial probe uses the clean BioShock host foundation
+Source: Kingdom_Hearts_VCAST_Findings.txt
+Selected lines: 69–75
+Source SHA-256: b2f837d60d2b09cc12f88bcd5610bfd151d450eff460fe44dae802fecbb088cf
+
+REUSABLE WORK AND VERIFICATION LIMITS
+The host probe forks the supplied BioShock 3D v0.2.0 ARM/BREW runtime, using
+Kingdom Hearts package/class identification and its own diagnostic heading.
+Its BioShock-specific game-state memory observer was disabled. It executes
+original ARM instructions; the original game bytes are unchanged. The probe
+reproduces the startup boundary and explicitly checks that gameplay did not
+start. It is not a complete Swerve or Kingdom Hearts runtime.

@@ -1,0 +1,15 @@
+BA09 / Four-way movement and distinct center OK
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/AGENTS.md
+Selected lines: 8–17
+Source SHA-256: 047a486b2970ec5f7a1c1a9a2e323e6c2783446532a0547d8aa11bf704a3af73
+
+BiaControls preserves the original four-way D-pad and a separate center OK code. Do not
+invent analog/diagonal mappings. Both normal and original keypad modes retain the D-pad.
+The shared 1.1.2 kit owns inline mode switching, square pad, target sizing, multi-touch,
+duplicate aliases and separate hardware input owners. Shared left/right actions provide
+L SOFT, R SOFT and CLR alongside the numeric cluster without a redundant fifth row.
+Android system Back calls real close/worker cleanup and returns to the launching task;
+CLR is separately accessible as the original pause key. A mode switch is touch-only cleanup.
+
+Do not change original SetTimer deadlines. The existing short-tap queue retains a key down
+through a naturally due callback; no input or report operation advances timers.

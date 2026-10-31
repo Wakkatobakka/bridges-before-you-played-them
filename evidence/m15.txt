@@ -1,0 +1,18 @@
+M15 — The hunter in the blue void; grass and paths with sky holes
+Evidence type: Historical phone images
+Source: Monster Hunter i preservation / 0.0.7 phone video and 0.0.8 contact sheet
+
+Both images inspected as pixels. The 0.0.7 image is a full original-size frame extracted from the preserved owner video; the 0.0.8 image is the existing contact sheet. These are early failed renders, not recreations or new gameplay. No private account or notification text is visible.
+
+Version 0.0.7
+Source: Monster_Hunter_i_Bridge_v0.1.4/baseline/original/evidence/v0.0.7_physical/Screen_Recording_20261003_013824.mp4
+Full decoded frame 264, PTS 4.003644 seconds. No cropping, filters, overlays or reconstruction.
+Source MP4 SHA-256: b7b7bd926d17b90a575f942ea778943a3654afd5dc36276df894a7dc9c700c76
+Frame SHA-256: 678774f776ea4f747bb5866bc588ae67b2ce2d0148f9d2e4fd5eeae3e3196563
+
+Version 0.0.8
+Source: Monster_Hunter_i_Bridge_v0.1.4/baseline/original/evidence/v0.0.8_physical/v0.0.8_contact_sheet.jpg
+Original preserved contact sheet, unchanged. The source video itself is absent from this checkpoint.
+Image SHA-256: fef14e6c34f915e7e533953695173011e53a9d2f457a5a29d13af74b2a447aad
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

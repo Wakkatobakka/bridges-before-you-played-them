@@ -1,0 +1,20 @@
+SN02 / The native Sonic controls and clean save extraction
+Source: Sonic_N_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sonic_N_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 35–49
+Source SHA-256: 4d2a97b839c121dc884da916c243b12c5954dadb708dd3017b1e086f8c558a7a
+
+ORIGINAL CONTROLS
+D-pad: movement, menu choices, look/crouch. Combined original direction codes
+are preserved, including down+movement for original rolling behavior.
+5: jump / confirm; 7: special attack / cancel. Character abilities remain native.
+Down + 5, then release Down: original Spin Dash.
+MENU L: start / pause. MENU R: back / cancel / pause.
+SCREEN # uses original Symbian scan 0x7F, not ASCII #. SOUND 0 controls volume.
+Original Options > BUTTON CONFIG can swap 5/7; bridge labels describe NORMAL.
+Controller: D-pad/left stick movement; A=5, B=7, X=#, Y=0,
+Start=MENU L, Select=MENU R. Keyboard: arrows/numbers, Enter=5, F1/F2=softkeys,
+Backspace=Clear. Android Back exits the Activity and returns to its caller/Omni.
+Touch and physical owners are independent. Mode switches release touches;
+controller buttons/axes remain held until their own release or lifecycle cleanup.
+The original game saves automatically to private guest C/E drives. First-install
+extraction never overwrites existing files. The clean seed includes no host saves.

@@ -1,0 +1,42 @@
+S12 — A handoff carries the last good build and the next task
+Evidence type: Structured artifact handoff
+Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / artifact-handoff.json
+Selected source lines: 16-22, 24-34, 52-60
+
+
+
+"working_state": {
+    "current_status": "DeadShot Omni 0.1.1 custom-control candidate prepared from owner-preferred 0.1.0; phone validation pending.",
+    "current_known_good": "Owner-preferred DeadShot Omni 0.1.0 APK (preserved runtime 0.0.12), using unchanged accepted shared shell.",
+    "last_material_change": "DeadShot-specific GameView custom control geometry/presentation only: direct 244dp layout, no duplicate OK/mode card, 58dp soft/*/# targets, 148dp movement surface, 110dp inset Action.",
+    "current_objective": "Phone-test only the revised custom controls without changing runtime, keypad, toolbar, renderer, audio, pause, reports or native mappings.",
+    "recommended_next_move": "Install v0.1.1 over 0.1.0 and evaluate thumb comfort, accidental presses, four-way movement and Action/*/# reach. Promote only after owner approval.",
+    "failed_attempts": []
+
+[... selected excerpt ...]
+
+  "context_snapshot": {
+    "do_not_break": [
+      "Original DeadShot app/source/saves.",
+      "Accepted Omni Snowboarding app/source/update identity.",
+      "DeadShot native controls, renderer, game data and MIDI resources.",
+      "Diagnostics and reports; ordinary authorized chat iteration."
+    ],
+    "decision_history": [
+      "Dirge is the preferred common UI standard.",
+      "Omni Snowboarding 0.1.0 visuals/gameplay accepted by owner.",
+      "DeadShot 0.0.12 supplied and explicitly selected for the next migration.",
+
+[... selected excerpt ...]
+
+  "context_routes": {
+    "always_read": [
+      "AGENTS.md",
+      "artifact-passport.json",
+      "artifact-handoff.json",
+      "approved-baselines.json",
+      "docs/ARCHITECTURE.md",
+      "verification/PHONE_FEEDBACK_20261004.txt"
+    ],
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,23 @@
+T06 — One measured key crosses the next two screens
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.14_Preservation.zip / ARTIFACT.md
+Selected source lines: 3-16
+
+
+
+## Purpose
+First interactive runtime build. Preserve the proven BREW/S3E boot path through the real Metal Gear Solid Mobile title screen, then attach Android touch input to the first independently measured Marmalade guest key.
+
+## Measured input milestone
+Host input discovery from the exact v0.0.13 state established guest key `209` as a safe action/continue key:
+
+- first tap: `PRESS ANY KEY` -> MGS `Camera Test`
+- second tap: `Continue` -> `Attempting to initialize phone camera... Please wait...`
+
+v0.0.14 maps only:
+- raw keypad `OK`
+- custom `ACTION / OK`
+
+to guest key 209. No other key ID is guessed.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

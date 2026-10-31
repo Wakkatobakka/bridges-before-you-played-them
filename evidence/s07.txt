@@ -1,0 +1,32 @@
+S07 — Four music resources and the first crop repair
+Evidence type: Checkpoint audio/presentation notes
+Source: DeadShot_Bridge_v0.0.2_Source.zip / README.txt
+Selected source lines: 4-15, 17-24
+
+
+
+Physical-device baseline: v0.0.1 reached real gameplay on a Samsung Galaxy S25 Ultra.
+
+v0.0.2 changes only the two host-side issues observed in that run:
+
+1. Audio pass
+   - DeadShot's four MLD/MFi music resources are read from the preserved game data.
+   - The build-time converter in tools/mld_to_midi.py converts the exact event subset used
+     by DeadShot into Standard MIDI Type 0 resources.
+   - Android MediaPlayer plays those resources.
+   - Media completion is reported back to the original DoJa MediaListener with event 3,
+     leaving DeadShot's own BGM replay/loop behavior in charge.
+   - This is a compatibility translation, not a claim of bit-identical NEC handset FM sound.
+
+[... selected excerpt ...]
+
+2. Safe-fit presentation
+   - The DoJa framebuffer remains exactly 240x240.
+   - Android presentation now leaves a small modern-phone edge margin rather than stretching
+     the virtual handset display fully to the physical screen width.
+   - No game drawing APIs or original DeadShot bytecode were changed for this fix.
+
+Original game bytecode, scratchpad data, input mapping, save path, and dead-service workaround
+remain on the known-working v0.0.1 path.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

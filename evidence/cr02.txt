@@ -1,0 +1,12 @@
+CR02 / The timer was charged for work twice
+Source: 11-Contra_4_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 13–19
+Source SHA-256: 7819d125562320ec90937d99468583566bc965e8df99dcfc7414ac869d8a11a8
+
+One HandlerThread owns native execution, timer pumping, saves, reports and all MediaPlayer callbacks. Android focus loss and lifecycle suspension stop scheduled gameplay and release input. Native background/resume events retain ordering even if the Activity changes quickly.
+
+Timer pacing uses the deadline recorded at the actual native IShell.SetTimer call. The original Contra callback already requests max(20, 80 - native frame elapsed) milliseconds. v0.1.0 subtracted the whole Android tick time again; v0.1.1 waits only the time remaining after registration and checks that a timer is due before pumping it. Input and audio can update the queued deadline, but do not pump timers themselves. No queued tick remains when the guest has no timer.
+
+Bitmap cache validity uses exact byte-range watches indexed by memory page, replacing whole-page versions. Writes outside a bitmap's header, backing memory and palette no longer invalidate its decoded pixels. Actual overlapping writes invalidate the cache; pointer or size changes rebind watches and released bitmaps remove them. RGB565 guest writeback remains immediate. The original executable, drawing order and guest memory format remain intact.
+
+Production operations return independent pixel snapshots only when the framebuffer revision changes. Attach and explicit report capture retain full-frame reads. The controller retains a pending snapshot across same-revision audio results so a new image is not lost before Android receives it.

@@ -1,0 +1,28 @@
+SIM02 / Play AMR effects once; preserve the looping music
+Source: Sims_2_Pets_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sims_2_Pets_Bridge_v0.1.2_PRIVATE/FIX_NOTES_v0.1.1.txt
+Selected lines: 21–28, 30–41
+Source SHA-256: 4110dc4a6495b71acaa4b14a453dfa1f228b8436001722616c37106b89c75747
+
+CHANGE APPLIED
+ - Only for audio/AMR variants, infinite (-1) loop requests are normalized to
+   play once. The original audio data and all game bytecode remain unchanged.
+ - The Android player now produces END_OF_MEDIA on effect completion; the guest
+   retains control of cached/closed player cleanup.
+ - The MIDI background track, audio/midi, retains its -1 looping behavior.
+ - Added 'audio-loop-corrected' and 'audio-end' diagnostics.
+ - No other UI, keypad, rendering or save behavior changed.
+
+[... selected excerpt ...]
+
+VERIFICATION
+ - tests/test_audio_loop_policy.sh: PASS
+ - tests/test_android_audio_contract.sh: PASS, with original asset 88 and a fake
+   Android MediaPlayer; confirms one playback, completion event, and MIDI loop.
+ - Signed v0.1.1 APK built and verified; same signing key and package name.
+ - Guest JAR SHA-256 unchanged:
+   2a493c4b198ba47b70f895e6daff51d262e16ac4e6e3f099bb6f1e4b56fc6af9
+
+LIMITATION
+ - v0.1.1 corrected audio has not yet been played on physical Android device.
+ - This targeted J2ME compatibility adjustment intentionally normalizes an
+   original -1 loop request for AMR effects; no game file or guest logic edited.

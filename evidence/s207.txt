@@ -1,0 +1,9 @@
+S207 / Seventy-four original checks with a virtual clock
+Source: SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_2_3D_Bridge_v0.1.2_PRIVATE/evidence/acceptance/acceptance.txt
+Selected lines: 1–4
+Source SHA-256: fc1210f7ed2aad76f91f0921a5990f0f84d9e967d92112b01553fa43018742cb
+
+PASS 74 checks
+Game SHA256=4c983e872a782d088c4df757f249e263ef0599a58441db1d935cda691f264f61
+Micro3D SHA256=faf98ae7b660765d357975f7b611f1210a9a61fe2b3e4a9a47ae50432543a95e
+Host virtual clock; no physical phone heat/audio/layout claim. First minigame tested; later minigames follow original score unlocks and are unobserved. Save serializer invoked directly with existing native fields; this does not prove a naturally earned completed-level save.

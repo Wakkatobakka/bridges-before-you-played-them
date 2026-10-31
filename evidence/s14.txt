@@ -1,0 +1,27 @@
+S14 — DeadShot opens straight into the game
+Evidence type: Checkpoint direct-entry notes
+Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / docs/DIRECT_ENTRY_0.1.3.md
+Selected source lines: 3-20
+
+
+
+Owner authorization: remove DeadShot's launch page for Omni integration, make
+the original bridge follow the current gameplay-only pattern, preserve custom
+controls, and proceed with the implementation after discussion.
+
+## Implementation
+
+GameActivity itself is the exported MAIN/LAUNCHER entry. It uses singleTop,
+matching the repeated-entry policy in the inspected Dirge 0.3.0 manifest.
+There is exactly one launcher filter and one real Activity. The former
+LauncherActivity Java class and obsolete app ToolsActivity are removed.
+
+An exported activity-alias named com.wakka.omnideadshot.LauncherActivity points
+to GameActivity. Existing explicit component references can continue to enter
+gameplay without executing a redirect Activity. The alias has no launcher
+filter, so it does not add a second app icon. New callers can use GameActivity
+or the package launch intent. There is no Android parent Activity or home page
+to return to; system Back retains the existing input/audio/worker cleanup and
+finishes gameplay, revealing its caller. Original Soft2 remains a game key.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

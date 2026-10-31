@@ -1,0 +1,16 @@
+WT06 / Later framework and RMS test boundaries
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 55–65
+Source SHA-256: 77f007247d847939629b27b309cdc4a1b3c1891532c3c6ec75832bb779211640
+
+CHECKS
+12 supplied Android framework checks passed against the exact v1.1.2 JAR.
+4 Witcher Activity wiring checks passed under Android API34/Robolectric; those
+use a connection fixture and platform drawable, not substitute gameplay.
+Original Quit/static restoration checks run the real original class initializers
+and Quit routine with API-only RMS names for host verification; no save method
+runs in that fixture. The APK contains the preserved original RMS DEX instead.
+Android build, D8, signature/alignment and original preservation checks passed.
+Physical phone gameplay, comfort/insets, sound, Downloads export and save/load
+remain untested in this normalization session. Historical gameplay evidence is
+kept separately and is not represented as a new test.

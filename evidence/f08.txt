@@ -1,0 +1,10 @@
+F08 — The following report retains the scale and changes Y bounds
+Evidence type: Phone runtime report
+Source: Snowboard-Bridge-v0.0.18-report-20260929-225955.txt
+Selected source lines: 142-142
+
+
+
+3.748  3D FIGURE      cloud.mbac tri=423 queued=394 textured=394/423 tex=SB_basic.bmp uv=2..141,1..95 projected=222 bbox=109..132,223..283 viewZ=65..75 raw=-177..147/-50..277/-326..383 bind=-282..282/0..689/-326..383 pose=anim poseBounds=-186..148/-129..581/-253..410 worldBounds=-2.91..2.31/-2.02..9.08/-3.95..6.41 unitScale=1/64 patterns=3 pat=0x4 patHide=28 action=cloud.mtra#25 time=0 maxFrame=458752 front/back=222/0 near=1 far=500 fov=45
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

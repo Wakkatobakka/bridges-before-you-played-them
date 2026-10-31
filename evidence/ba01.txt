@@ -1,0 +1,13 @@
+BA01 / The exact supported game and edition
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/README_FIRST.txt
+Selected lines: 1–2, 9–11
+Source SHA-256: e35da56dad0500a4b25d6cfaac51e9986e8c9ec25ce962881b6118f6fff1d6f4
+
+BROTHERS IN ARMS BRIDGE v0.1.3 — PRIVATE NORMALIZED BUILD
+Brothers in Arms: Earned in Blood · BREW · BIA240 English · 240x320
+
+[... selected excerpt ...]
+
+The owner does not run scripts or edit metadata. For Public play, the player supplies
+the exact original BIA240.rar. Both source archives remain in this private checkpoint;
+BIA176 is not the supported edition for this build.

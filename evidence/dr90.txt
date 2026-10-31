@@ -1,0 +1,12 @@
+DR90 / Historical image / The original DOOM RPG opening corridor
+Source: Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/opening-3d.png
+Source SHA-256: 43e27c94f2bf5a8e509489e8ed60e0ed0cf76d7bca14b2e292e32fe22e12085e
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/opening-3d.png
+SHA-256: 43e27c94f2bf5a8e509489e8ed60e0ed0cf76d7bca14b2e292e32fe22e12085e
+
+The original DOOM RPG opening corridor,NPCs and HUD, retained from the historical desktop original-engine acceptance.176×220;not phone output.
+
+Scope: Historical desktop original-runtime framebuffer; not phone output. Visually inspected, game only, no personal UI.

@@ -1,0 +1,26 @@
+A07 — The clock trial announces exactly what changed
+Evidence type: Phone runtime report
+Source: Ashen-20261019-182247-480-manual.txt
+Selected source lines: 190-206
+
+
+
+GUEST MOVEMENT PROBE — DIAGNOSTIC
+Guest hooks observe key-handler arrival and completed frame state.
+CURRENT APK CLOCK TRIAL: native User::TickCount returns all 64 Hz ticks; the Worms even-tick mask is removed.
+Previous-session captures can contain an earlier core/probe; identify trace origin by its probe header.
+Clock: Android CLOCK_BOOTTIME milliseconds; subtract session monotonic start for Java event alignment.
+Positions/commands are original fixed-point integers, not metres or assumed physics units.
+Debug callbacks add overhead; this build does not establish original-device movement timing.
+Up to eight bounded rolling trace parts follow; chronological part numbers determine their order.
+
+ashen-movement-status.txt
+ASHEN MOVEMENT PROBE v2 — CLOCK TRIAL
+Hooks use 6r21.app code-segment UID 101FD3E9 and original code fingerprint 5EF10702.
+EKA1 DLL applications can run inside AppRun; matching is by the exact game image.
+Guest key handler active: true
+Completed gameplay frame hook active: true
+Read-only probe; native clock trial removes only the even-tick mask from User::TickCount.
+Trace callbacks add overhead. Original movement constants and guest files are unchanged.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

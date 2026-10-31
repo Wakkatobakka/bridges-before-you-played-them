@@ -1,0 +1,13 @@
+KT02 / One down edge must not accept the dialog it just opened
+Source: 18-Katamari_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 21–28
+Source SHA-256: fc81e4cd1fe0c49f9143e126f5f4f683c8ef68041b2fe53f193db25f9964fa01
+
+INPUT PROTOCOL
+Original modal dialogs consume EVT_KEY (0x100); ordinary scenes consume
+EVT_KEY_PRESS (0x101), then EVT_KEY_RELEASE (0x102). The runtime snapshots
+the original modal flag before a down edge and sends exactly one appropriate
+event. This prevents one down edge from both opening and accepting a new
+dialog. The original release handler counts triple-tap charges, so releases
+are immediate and never coalesced. All guest actions still run on one worker.
+The host adds no input-triggered timer slices or synthetic diagonal buttons.

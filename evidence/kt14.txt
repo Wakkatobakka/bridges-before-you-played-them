@@ -1,0 +1,15 @@
+KT14 / Reports complete while the original session lock is held
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/evidence/report-independence.log
+Selected lines: 1–10
+Source SHA-256: 4b7584997cab5deed267cce02cc9d7abacb964f08f9715a185daaf9c32144c36
+
+PASS report export finishes while original session lock is held
+PASS report export leaves guest worker queue untouched
+PASS file export uses independent report writer
+PASS export retains cached state and explicit sample age
+PASS manual TXT also retains a private diagnostic copy
+PASS completion reports direct game-named Downloads location
+PASS cached report retrieval also avoids session lock
+PASS manual export does not pause original execution
+PASS report operations execute no guest instructions or callbacks
+PASS 9 report independence checks. Storage fixture verifies dispatch; Android MediaStore itself needs a device run.

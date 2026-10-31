@@ -1,0 +1,24 @@
+DU03 / Original control help
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/original-controls.txt
+Selected lines: 1–19
+Source SHA-256: 3cb10c96935249f245ce28bb604a4dc8790b7e50cd9ea2850a44bc0b5d4b72d9
+
+Duke Nukem Mobile 3D
+Version $VER$
+ 
+ -- Controls --
+ 
+Control pad - Movement
+5 & OK - Fire
+1 & 3 - Previous/next weapon
+4 & 6 - Turn left/right
+2 & 8 - Move forward/back
+7 & 9 - Strafe left/right
+ 
+Feature Information:
+ 
+Enemy Alert causes blinking arrows to appear when enemies are nearby.
+ 
+Quick Look allows you to instantly turn towards an enemy when red arrows are flashing by tapping left or right twice.
+ 
+Note: Quick Look is only functional if Enemy Alert is also enabled.

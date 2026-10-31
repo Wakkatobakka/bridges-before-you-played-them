@@ -1,0 +1,15 @@
+DS01 / The original CFG contains starting characters, not just progress
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/AGENTS.md
+Selected lines: 5–14
+Source SHA-256: 680cf22d5c926ea5ca78719ab898bb67e874285b63fa2c5a673263dcade6c2e7
+
+Execute the original Dragon Sword BREW ARM module. Preserve dragon.mod,
+dragon.bar, dragon2.bar, DragonSword.mif and dragon.cfg exactly. No recreated
+gameplay, patched statistics, fabricated progression or substituted content.
+
+IMPORTANT: supplied dragon.cfg contains THREE UNNAMED STARTING CHARACTER
+RECORDS with their required base statistics. It is necessary original input.
+An absent CFG produces zero character attributes and a native divide-by-zero
+in character details. Do not discard the original CFG or synthesize stats.
+Use the original asset as a starting seed; actual app-private dragon.cfg
+always overrides it. Host test saves under evidence never seed an install.

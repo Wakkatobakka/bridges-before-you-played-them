@@ -1,0 +1,33 @@
+BE17 / A failing baseline and later correction with separate test scopes
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/NORMALIZATION_v014.txt
+Selected lines: 53–80
+Source SHA-256: 80bd206df54caaa80ac7f97b18885d24000229eb3d0531ff37c1b940efb0676f
+
+- Input regression baseline fails on v0.1.3; all four A/B/C/D mappings,
+  dedicated numeric diagonals, release orders, held context transitions and
+  raw/alias duplicate ownership pass on v0.1.4.
+- Existing host checks pass: API linkage, 20 models, 33 MFi assets, scratchpad
+  persistence and bounded reads, original game boot/gameplay/movement,
+  pause/resume, room20/21 projection/clipping, zero resource/draw failures,
+  and cooperative guest-thread exit. Host audio uses the existing fake
+  Android player and does not establish phone sound quality.
+- Stock kit JAR: all 12 Android API 34 framework tests pass under Robolectric.
+- Integrated Episodes Activity: six Android framework tests pass, including
+  cold construction, attachment/layout in both modes over seven phone/tablet
+  portrait/landscape sizes, minimum button bounds, native aspect and stable
+  renderer, simultaneous pad/action contacts and release orders, physical
+  ownership through mode changes, Back cleanup, independent reports while
+  guest locks are held, safe insets and actual initial 1.3 font scale.
+- The new keypad test checks all twelve numeric keys, absence of the old
+  SELECT row, real native SELECT center input with another held direction,
+  independent physical/touch ownership, cancellation and the reduced deck.
+
+TEST LIMITS
+Framework tests compile the actual Activity source with a framework icon
+resource fixture and suppress guest boot through the existing started flag.
+They do not pretend to execute original gameplay. The APK's actual icon and
+assets are verified separately. UI previews have an intentionally empty
+viewport; separate GameRun captures execute the real original game.
+No physical Android device was connected. Thumb comfort, actual-device
+controls/graphics/audio/saves, live Downloads export, and Omni return still
+need device validation. No full-campaign verification is claimed.

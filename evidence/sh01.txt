@@ -1,0 +1,20 @@
+SH01 / Walking uses scene arrows, not direct direction movement
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 11–25
+Source SHA-256: 0f9c67585618c62ff823e93fcc925de0529470da868baf2f8777ea9c9faf9f52
+
+HOW TO PLAY
+D-pad moves the original cursor or crosshair, and chooses menu items.
+INTERACT / CONFIRM / FIRE all send original Fire / 5, with the current purpose
+shown directly on the same button.
+Walk and turn by highlighting the game's scene navigation arrows and pressing
+INTERACT. Holding a direction moves the cursor; it does not directly walk.
+Inventory sends original * to open the inventory when no other menu is open.
+DRAW / HOLSTER WEAPON sends original 1. FIRST AID sends original 3 and uses an
+available kit.
+The left and right softkeys follow their current original captions. Map unlocks
+through original play. An unlabeled key shows LEFT KEY or RIGHT KEY.
+ORIGINAL KEYPAD and D-PAD RETURN switch inline with the same live viewport.
+Android system Back closes the bridge and returns to Omni when launched there.
+The native Pause menu contains Save. After restarting, Play > Saved game loads it.
+SAVE REPORT writes a .txt to Downloads/Silent Hill Orphan Bridge/.

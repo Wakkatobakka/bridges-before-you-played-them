@@ -1,0 +1,26 @@
+DU05 / Position and heading changed together
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/v0.1.2-native-input-evidence.txt
+Selected lines: 10–30
+Source SHA-256: 267eb2a466334277a4dc4889d5214e29a41b7d27f03aa2b33e395e20a884f27a
+
+Original key handler routes separate key-down/up events into an input mask.
+During the first real 3D level, applet+0x420 points to the input object. Its +4
+field retains independent bits: Up=1, Down=2, Left=4, Right=8, Fire=16.
+Observed Up -> Up+Right -> release Right -> release Up produces 1,9,1,0.
+
+Original update at module address 0x11bd18 reads those bits in independent
+branches. Left/right paths at 0x11bda0 / 0x11bdc0 call the yaw update 0x1120d0.
+Up/down paths at 0x11bde0 / 0x11be04 feed movement 0x11233c. The original
+player comes from applet->engine(+0x328)->player(+0xb48). Native yaw is at
+player+0x34; horizontal coordinates are player+0x48 and player+0x50, as read/
+written by the original yaw/movement routines. These fields are observed ONLY.
+
+DukeCombinedInputAcceptance verifies forward-right, forward-left, backward-right,
+backward-left, turn-before-forward and forward-turn-fire on fresh real sessions.
+All 36/36 observed callbacks changed both position and heading with both native
+inputs still held. Releasing either direction first preserved the other native
+input, including fire where configured; final releases cleared the native mask.
+Frame-level native values are retained in v0.1.2-native-combinations/native-player-frames.csv.
+
+This proves original game support for combined cardinals. It does not prove
+physical Android touch comfort, real phone execution or audible playback.

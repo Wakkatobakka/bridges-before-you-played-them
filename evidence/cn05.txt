@@ -1,0 +1,27 @@
+CN05 / One shared pad and the difference between ZIP and ELF alignment
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 3–24
+Source SHA-256: c09f14e007024ac0199adc7e3ab22bb7968a0ed598bace758fcd959258cf7d46
+
+UPDATE
+Actual Wakka Bridge Gameplay UI Kit v1.1.1 replaces v1.0.1 source/classes.
+Continuous recognizable square digital D-pads replace discrete arrow buttons.
+Both modes retain the separate original D-pad and original controller press.
+Touch direction behavior is four-way; native physical axis mappings are retained.
+The permanent ORIGINAL KEYPAD / D-PAD RETURN switch is supplied by the shell.
+The original 15-key numeric/softkey cluster remains grouped in keypad mode;
+large acceleration, brake, hop/drift and item aliases remain immediately usable.
+Production layout planners enforce 48dp standard keys and square pad minimums.
+Both modes reserve the same measured control slot and original renderer.
+The original report fault recorder is installed before UI construction.
+Physical axes now use owned hardware sources, preserving holds on mode changes.
+
+BUILD / PACKAGE
+Android API 35 Java/D8 compilation passed. Min API 29, target API 35, ARM64.
+com.wakka.crashnitrokart, versionName 0.1.1, versionCode 2.
+APK signature and zipalign -P 16 checks pass. Native ELF still has 4 KiB load
+alignment; ZIP alignment does not establish native 16 KiB page support.
+96 package and continuity checks passed. All 11 original files remain exact.
+Seed, core, original launcher artwork and update signer are byte-identical to
+v0.1.0. The independent report writer is unchanged except its displayed version.
+No changes to game logic, game assets, native core, worker timing or saved files.

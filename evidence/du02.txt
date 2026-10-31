@@ -1,0 +1,8 @@
+DU02 / Original audio and keeping reports away from a busy renderer
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/v0.1.0-TECHNICAL_HANDOFF.txt
+Selected lines: 5–7
+Source SHA-256: 72e8c47a89e735f6d3b9d9484d663a0880c789dc70d24864b81b82455c0e12d6
+
+The 31 sound.bar resources comprise 2 exact MIDI payloads and 29 QCELP payloads decoded to original-rate mono 8 kHz signed 16-bit PCM. Asset names hash the exact native-provided bytes. Android MediaPlayer completion/start/error notifications enter the native event worker. Host tests exercise callbacks using actual asset durations, not audio playback.
+
+Detailed diagnostics OFF for gameplay. The original software 3D renderer can execute millions of interpreted ARM instructions per callback; desktop virtual-clock timings are not Android performance. Pixel delivery uses changed revisions. All native CPU/timers/input/audio callbacks and save operations share one worker. Only due scheduled ticks pump timers. Report assembly and public file writing are separate executors, reading the last completed result; report output remains usable while the game worker is occupied.

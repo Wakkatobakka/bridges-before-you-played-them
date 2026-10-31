@@ -1,0 +1,13 @@
+Z07 — A pending guest GL error was mistaken for a failed readback
+Evidence type: Editorial source inspection
+Source: RE4 Zeebo v0.1.10 checkpoint / AndroidEglDriver.java
+
+Derived inspection, not a verbatim code excerpt. Reviewed source lines 47–50, 135–158 and 359–363. No implementation code is distributed. The phone reports remain the independent runtime observations.
+
+Inspection of the retained graphics driver finds separate handling for preexisting guest GL errors and errors caused by the readback itself.
+The previous probe treated a pending earlier error flag as a glReadPixels failure and discarded the capture.
+The repaired path retains those earlier flags for the original guest glGetError while checking the new capture separately.
+The 0.1.4 and 0.1.5 phone reports record the before/after transition.
+Implementation source SHA-256: d5e73f58c8b57a5a3743b4a8cd5ba75c03db39fa50faba14b8a51f6c98fe1209
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

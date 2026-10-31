@@ -1,0 +1,32 @@
+T13 — An armed view is mistaken for the title screen
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / evidence/device-v0.0.17/FINDINGS.md
+Selected source lines: 1-15, 19-23
+
+
+
+# v17 physical slowdown baseline
+
+The27.49s phone recording visibly slows around13.4–13.8s. Initial moving scenes show14–15 guest-image changes/s; after the transition this falls to3–4/s and stays around4–5/s after returning to third-person. The app continues updating and accepts controls; this is a cadence collapse, not a complete stop.
+
+| Video interval | Scene | Guest image changes/s | Recorded video frames/s |
+| --- | --- | --- | --- |
+| 0–3s | moving third-person and unarmed VIEW | 14.67 | 60.67 |
+| 4–6s | third-person before pause | 13.00 | 71.00 |
+| 11–13s | M9 equipped, first BaseHQ message | 12.00 | 57.00 |
+| 14–22s | armed gun/laser first-person view | 3.50 | 41.00 |
+| 22–27s | third-person after leaving VIEW | 4.40 | 52.00 |
+
+At12s consecutive visible changes are about0.071–0.090s apart. Changes at13.415→13.756→14.065s establish the slowdown transition; late typical spacing is about0.308s. These are guest-only cropped image changes, not exact guest presents: v17 hides the previous play-screen FRAMES counter. Nominal recording rate120 is independent of game cadence; the1476 encoded frames span27.454s, averaging53.76fps. Multiple pixel-difference thresholds preserve the same late slowdown. Native crop coordinates/method, all decoded timestamps/differences and per-second counts are retained in display-analysis.
+
+Timeline from full frames: unarmed VIEW around1–3s remains fast; third-person returns around4s; original Pause menu at6–8s; equipment inventory/M9 selection at8–11s; BaseHQ reports 'All stations report in' around11–13s; armed VIEW begins around13s. 'No response—sweep the area' appears around18s. Returning to third-person around22s does not restore the earlier cadence. Thus first-person alone does not explain the difference. Armed rendering, alert/AI state, accumulated guest work or device execution changes need direct profiling before identifying a cause.
+
+[... selected excerpt ...]
+
+The retained report is separately RUNNING at7,058,443,812 steps,2713/2714 presents, with no guest callback fault or audio-host failure. Delivery mean4.156ms and native upload mean0.046ms are far below the~300ms late visible-change interval. Lifetime coalescing replaced559 of2714 received frames; it is not known which video segment contained those replacements. Heap remains3,157,603bytes live and13,619,613bytes free. Recorded audio and these healthy aggregate metrics do not support a complete audio/heap/UI failure; they also do not exclude transient scheduling or guest audio callback CPU cost.
+
+New report/source evidence identifies a concrete host pacing mechanism: the retained log shows ordinary DeviceYield before presents2652/2653, VIEW key14 press before2654, then VISUAL_SIGNATURE MGS_TITLE_SCREEN at2654 (CRC F41A7220), VIEW release before2655, and subsequent yields labelled paced. This is gameplay in armed VIEW, not the title. The recovered code permanently latches titleScreenCaptured on a broad pixel histogram and sleeps2ms at every later interactive DeviceYield. The key/scene sequence closely matches the recorded armed VIEW transition around13.2s and measured cadence collapse13.4–13.8s. A permanent latch explains why slowdown persists after VIEW is closed.
+
+The exact report establishes the false match and changed yield mode. The video cannot be assigned to exact present2654 because it lacks a present counter and is rescaled/H264 compressed. An approximate RGB565 histogram reconstruction did not retain the exact220-luminance predicate match; its CSV/JSON is saved explicitly as a failed exact reconstruction. Do not treat compressed pixels as a CRC or exact guest histogram. This correlation plus the concrete2ms-per-yield branch supports investigating/removing image-dependent pacing; acceptance still needs a deterministic false-signature/yield regression and new phone comparison. Audio timing/render semantics should remain intact.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

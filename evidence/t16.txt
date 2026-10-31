@@ -1,0 +1,23 @@
+T16 — The latest portrait shell keeps the original key distinctions
+Evidence type: Checkpoint summary
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / README_FIRST.txt
+Selected source lines: 7-10, 25-31
+
+
+
+The old entrance page is retired. Opening MGS enters gameplay directly through
+its existing MainActivity component. The entire app is PORTRAIT ONLY, as the
+owner clarified. The original 320x240 game image remains aspect-correct inside
+the portrait screen. There is no landscape mode or orientation utility.
+
+[... selected excerpt ...]
+
+ACTION / OK = original SELECT78. Numeric5 remains its separate original18.
+VIEW / numeric1 =14, CODEC / L SOFT =209, EQUIP / CLEAR =79.
+Original R SOFT210 remains separate in keypad mode. Guest arrow9/10/11/12
+and original digits13..22 are unchanged. *77 is the original camera/key-mode
+input; the existing unavailable-camera fallback is retained. No unmeasured
+# mapping is introduced. Control help and host Pause/resume are in utilities.
+Android system Back cancels/cleans up gameplay and exits to the calling task.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

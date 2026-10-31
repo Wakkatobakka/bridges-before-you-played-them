@@ -1,0 +1,18 @@
+DV06 / The actual walking and driving layout
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/README_FIRST.txt
+Selected lines: 6–18
+Source SHA-256: f8ae6027cc8f02c21479277bfeded684099ff7fe3ebfc8b62044944045c0293b
+
+DRIVING
+The first main menu briefly opens original Options to select Real Steering, then returns to the main menu. This happens once for this update. A visible setup label and completion message explain it. Later changes you make in original Options are respected.
+
+Hold ACCELERATE with your right thumb and steer with the left-thumb LEFT/RIGHT rocker. Slide across the rocker without lifting to change direction. REVERSE is a separate native reverse input. BURNOUT LEFT/RIGHT and SKID LEFT/RIGHT retain original 1/3 and 7/9 turns; these are secondary maneuvers, not ordinary brake pedals. PAUSE, MAP and EXIT CAR remain below them.
+
+ON FOOT AND MENUS
+The layout follows the original native actor and game state. On foot: four-way movement, ENTER CAR, MAP and PAUSE. Menus/story/pause screens: four-way navigation, CONFIRM and BACK. If you select Directional in original Options, the driving layout becomes a direction pad with the original SELECT/5 REVERSE action.
+
+ORIGINAL KEYPAD
+The visible ORIGINAL KEYPAD button switches inline. D-PAD RETURN switches back in one tap. The full original separate D-pad/OK, digits, L/R softkeys and CLR remain available. Both modes use the same live native-aspect viewport. Switching clears held touch inputs while preserving registered physical-controller holds. Android system Back exits; native BACK/PAUSE/CLR stays separately available.
+
+APP ICON AND UI
+New gritty DRIV3R artwork is used for the Android launcher and game header. The actual supplied Gameplay UI Kit v1.1.2 is embedded, including its independent-contact repair. Portrait/landscape and safe-area behavior remain responsive. Original ARM code, game art, text, audio, saves and the earlier text/statistics compatibility fixes are preserved.

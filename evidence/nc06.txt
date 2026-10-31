@@ -1,0 +1,14 @@
+NC06 / Leaving the original race still faults
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 31–39
+Source SHA-256: c339834610483756f84f132f8ae94ca4ea27dc6ea0a546c64e19b24b16ad990c
+
+## Newly observed unresolved runtime path
+
+During native options navigation, original pause-menu SAIR followed by SIM caused `thread -> RuntimeException: MEM OOB F0001024+1` at 2,075,634,748 guest instructions. `evidence/original-menu-investigation/` preserves the input trace, screenshots and GL totals. This update does not repair that path. The passing cold-stop contract is separate and must not be generalized to all in-race exit paths.
+
+## Continuity
+
+The original ZIP, module class 0x0108C0BC, legacy IGL/IEGL ABI, 128MiB mapped RAM/64MiB heap fix, exact OES signed-byte coordinate conversion, palette/ATC codec, independent Downloads writer, native pause UID 0x0106C403, host-clock suspension, isolated state, audio backend and strict Omni metadata are retained. Earlier native race/pause/resume evidence belongs to v0.1.0; it is preserved with that scope. The previous technical handoff is under `evidence/baseline-v010/`.
+
+Full engine/MIDI/effects semantics, console timbre, save/load, campaign, Config C analog, memory/performance audit and production Omni acceptance remain open. Do not enable inherited Quake-specific touch/loading helpers. Keep this entire checkpoint, originals, source, tools and signing material private.

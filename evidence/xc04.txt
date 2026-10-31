@@ -1,0 +1,24 @@
+XC04 / Original VM through JNI into repaired Android audio
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 41–48, 59–66
+Source SHA-256: 872420efa8f1dc02065602bc2599067a484c2d431c7d37935180bea9df97b7b0
+
+END-TO-END ACTIVITY / NATIVE CHECKS
+Three full integrated Android framework scenarios pass. Cold startup drives the
+original EXN through its real native VM/JNI/controller into the repaired audio
+player. The genuine startup melody receives 936,684 bytes, starts playback and
+reports zero audio errors. Existing original renderer, inline modes, independent
+pad/action ownership, physical-owner preservation, Back/cleanup and independent
+SAVE REPORT capture with a blocked game worker continue to pass.
+See evidence/android-integration.txt.
+
+[... selected excerpt ...]
+
+SCOPE / LIMITS
+No phone/speaker listening acceptance is implied. Original handset timbre,
+full campaign audio coverage and live Downloads export remain unverified here.
+The captured original run requests startup/new-game melodies and sends original
+stop events; this patch adds no continuous soundtrack to otherwise silent stages.
+The user's installed Omni showed the prior bridge as Ready. The earlier local
+EXN-only dependency simulation was not an actual Omni rejection. No new claim
+about current public Omni preparation is made by this audio-only bridge update.

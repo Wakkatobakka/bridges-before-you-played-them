@@ -1,0 +1,12 @@
+SP90 / Historical image / Kenny Cow Dodge in the original South Park game
+Source: South_Park_ExEn_Bridge_v0.1.2_PRIVATE/evidence/final-host/04-original-kenny-gameplay.png
+Source SHA-256: 5b3ce0be2077a06bbeeda1b7662dac795f5f74a530350c6fdb6a96cf7d4675f3
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: South_Park_ExEn_Bridge_v0.1.2_PRIVATE/evidence/final-host/04-original-kenny-gameplay.png
+SHA-256: 5b3ce0be2077a06bbeeda1b7662dac795f5f74a530350c6fdb6a96cf7d4675f3
+
+Original Kenny Cow Dodge, 132×176, retained from historical host execution.
+
+Scope: Historical host original-runtime framebuffer; not physical-phone output or a framework UI fixture. Visually inspected game-only, zero EXIF, unchanged bytes.

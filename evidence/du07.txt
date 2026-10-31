@@ -1,0 +1,10 @@
+DU07 / The original opening level and native behaviors on the host
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/v0.1.0-README_FIRST.txt
+Selected lines: 10–14
+Source SHA-256: d4cdecad1f5f10f2bae44f74c3c37ad3d010aa342607ea3588cd1d6adf5f7755
+
+The original game may show its Quit? prompt after a real background suspend/resume. Select Cancel to continue. Bridge MENU dialogs pause only host scheduling; they do not inject native suspend events. Native game progress/settings use original save.dat; this is not an invented mid-mission save-state system.
+
+HOST VERIFIED: original title/menu, difficulty, mission briefing, supplied original Micro3D engine drawing the first 3D scene, movement/turn/strafe, firing with ammo consumption, previous/next weapon, Quit/Cancel, suspend/resume, 200 additional gameplay callbacks including original death behavior, original MIDI/QCELP audio payloads and modeled completion notifications, exact original save bytes imported by a fresh applet. 23 production hardware mappings checked. APK compiled, aligned, signed and original asset bytes compared.
+
+PHONE TEST PENDING: touch/layout within actual Samsung system UI, audible Android playback, device speed and heat, and later campaign levels. No phone was connected to this build environment.

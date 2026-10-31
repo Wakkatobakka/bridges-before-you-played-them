@@ -1,0 +1,43 @@
+BJ09 / The later shell keeps pacing and Power/Throw
+Source: Banjo_Kazooie_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 9–25, 28–45
+Source SHA-256: 2cb06d34041de055c16af3113339681ac17faf422e3b1079146df60f841bc819
+
+NORMALIZATION
+Uses the actual Wakka Bridge Gameplay UI Kit v1.1.2 JAR: launcher icon/title,
+ExEn platform label, SAVE REPORT and three-dot utilities. The original 132x176
+framebuffer stays aspect-correct in measured portrait/landscape safe space.
+No launcher page or forced immersive mode is added.
+
+CONTROLS
+Original numeric directions are 2/8/4/6. The digital D-pad supports continuous
+sliding and the existing simultaneous cardinal combinations. Power/Throw is
+numeric 5: hold to build power, then release to throw in catching missions.
+Select is original ExEn -8; Pause is -7. The original game explains each mission.
+Original Keypad switches inline with one tap. Its numbers replace the numeric
+D-pad; this game does not have a second separate directional input group.
+Select, Pause, Power/Throw and 0 remain directly available in both modes.
+D-PAD RETURN switches back without pausing or recreating the game.
+Owned touch and physical sources protect overlapping holds and release orders.
+Android Back runs real worker cleanup and exits to the caller, including Omni.
+
+[... selected excerpt ...]
+
+REPORTS
+SAVE REPORT writes genuine text to Downloads/Banjo-Kazooie ExEn Bridge/ through
+an independent exporter. This bridge had only copy/share text actions, so the
+kit's fallback file writer is used. Startup/runtime faults also request reports;
+failed exports remain pending privately and are not called successful.
+Reports read volatile diagnostic fields without asking or waiting for the VM.
+
+PRESERVED
+Exact original game, runtime class blob, ARM64 native library, all native source,
+audio implementation, launcher icon and owner signing key match v0.1.0.
+The existing input FIFO, paced worker, original 125ms timer and save location
+are retained. Native cleanup remains asynchronous on its owning worker.
+No shutdown dialog, join, countdown or artificial exit delay is added.
+
+VERIFICATION
+Read VERIFICATION.txt. Compilation, packaging and framework UI checks passed.
+This pass does not establish live phone gameplay, comfort, audio or Downloads
+export. Historical original execution evidence is retained and labeled.

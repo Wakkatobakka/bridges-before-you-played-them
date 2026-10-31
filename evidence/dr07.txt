@@ -1,0 +1,14 @@
+DR07 / The phone felt good but Android bars overlapped
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/layout-v011.txt
+Selected lines: 3–5, 11–13
+Source SHA-256: 30d71b9d45cb93643decf1ae8cf988c01cfa34f732076220da5ad2f49c9e0138
+
+Implemented dynamic system-bar and display-cutout padding, preserving original base padding across repeated dispatches. Typed Android API30+ path and legacy API26-29 path compile against Android35. System bars stay visible; framebuffer remains aspect-fit. No runtime, payload, audio conversion, save logic, input mapping or scheduling changes.
+
+PASS: original-engine host tests rerun, including immediate press/release, quiet immutable frames, opening gameplay, movement, automap and save/Continue.
+
+[... selected excerpt ...]
+
+Phone evidence supplied for v0.1.0: system bars overlap header and bottom controls; report shows no host/CPU/live/save/audio errors. Six battery samples 36.1 C; Android thermal status0. User reports good game feel.
+
+Limit: no physical-phone observation of v0.1.1 layout yet. No phone FPS or sustained thermal claim.

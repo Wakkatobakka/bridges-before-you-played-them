@@ -1,0 +1,20 @@
+UP01 / The original loop timestamp and functional log boundary
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 103–117
+Source SHA-256: b65ac7143ca9da7fcdf5ca87ddd0d4b4e71e2e013128af605a0296ba88404aac
+
+FRAME SCHEDULING / BACKGROUND
+The original t.run() sets a timestamp once before the loop and subtracts
+that same timestamp from its 33 ms sleep budget forever. Consequently its
+sleep reaches the original 5 ms minimum even while idle on a fast host.
+Platform.pace() enforces the original intended ~30 Hz budget without spin
+waiting. Original methods, timers and movement logic remain untouched.
+The original loop emits a unique curLoop: line each iteration. A private
+PrintStream hook uses that existing boundary for pacing and foreground
+scheduling while dropping repetitive loop spam. This is functional code;
+do not remove it as cosmetic logging cleanup. Other original log lines and
+stderr are retained in bounded diagnostics. Android backgrounding calls the
+original MIDlet pause at this boundary and parks the worker on a condition;
+foregrounding resumes the original MIDlet. No thread suspension or polling
+spin is used. The host harness verifies native MIDlet pause/resume; Android
+foreground parking still needs device testing.

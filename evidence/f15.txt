@@ -1,0 +1,13 @@
+F15 — The fixed-button layout reaches the later preservation snapshot
+Evidence type: Checkpoint summary
+Source: FFVII Snowboarding v0.1.2 / README_FIRST.txt
+Selected source lines: 14-17
+
+This later snapshot describes the preserved approved layout and audio baseline. The public-import candidate has its own verification boundary.
+
+The full native keypad remains available. The custom page uses the owner-approved
+two-handed fixed-button layout: EDGE/TURN on the left and right, KICK/JUMP/BRAKE
+in the center. The phone-verified audio implementation is retained; v0.1.2 changes
+only the public packaging/import boundary and final app identity around that baseline.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

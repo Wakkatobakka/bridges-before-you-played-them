@@ -1,0 +1,12 @@
+S20 — Rush Marine’s phone report becomes a shared reference
+Evidence type: Checkpoint reporting requirements
+Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / docs/REPORT_REQUIREMENTS.md
+Selected source lines: 3-5
+
+These inherited report requirements name Rush Marine 0.0.9 as the reference and describe the Snowboarding pilot. They document a shared reporting convention, not BREW interpreter counters inside DeadShot.
+
+Every backend must provide a snapshot without boot/reset, preserve a last-session report and keep its existing diagnostic features accessible through Tools. Shared presentation cannot be a reason to drop backend detail.
+
+The Rush Marine 0.0.9 device report is the reporting reference reviewed here. Its summary leads with live-session status, input press/release counts, interpreter/display counters, resource/audio outcomes and framebuffer results, followed by the retained trace. This pilot follows that structure using Snowboarding's available facts; it does not fabricate BREW counters in a DoJa game.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

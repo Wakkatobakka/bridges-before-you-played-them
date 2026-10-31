@@ -1,0 +1,41 @@
+Q207 / Original LZMA wrapper and disposable decoded caches
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 223–258
+Source SHA-256: 4366352e234599ea83d928a2c283f224d65f3f6e6fb0f913afcc22e83e1fb358
+
+## v0.1.4 original loader acceleration
+
+The original wrapper at 0x10861C takes IFile in r0, output buffer in r1 and
+output length pointer in r2. r1=0 size queries still execute in ARM. Successful
+host calls return r0=0 to LR, preserve SP and callee-saved registers, write the
+exact uncompressed bytes/length, and preserve the original read-ahead position:
+a 13-byte header followed by complete 64 KiB fread blocks, bounded by EOF.
+All 3,330 actual original routine calls establish this contract, including
+multi-block maps and archive-tail resources. No guest program bytes are patched.
+
+NativeLzma enables only for the exact original module and PACK SHA256 plus
+wrapper words E92D4FF7/E24DD802/E8BD8FF0. Each call requires a read-only original
+PACK handle with the same verified backing array and an indexed entry boundary.
+It checks output bounds before any writes. Decode failure leaves guest memory
+and file position untouched and executes the original routine. Unknown original
+identities retain ARM decoding. XZ for Java 1.12 is bundled offline; official
+source, license and binary/source hashes are retained in reference/. D8 consumes
+the binary dependency; no platform-native decoder or online setup is required.
+
+Read-only FileState handles now retain immutable filePayloads backing bytes.
+Writable handles clone them, and an unexpected write to a read-only shared
+handle detaches its bytes before mutation, preserving previous copy isolation.
+This avoids repeatedly allocating/copying all 52,532,706 archive bytes per open.
+No original file contents or save formats are changed.
+
+Decoded assets use a per-session access-order 8 MiB memory cache and optional
+32 MiB app-private disk cache. Disk namespace includes the full PACK SHA256;
+keys contain entry offset/packed length. Records validate magic, output length,
+exact file size and output SHA256, and writes rename a complete temporary file.
+Corrupt/truncated records are removed and decoded again. Cache storage failures
+are ignored; no saves or runtime snapshots are cached. Android may evict it.
+
+Reports include host decoder/cache counters and time, fallbacks, avoided file
+copy volume and first-gameplay time since launch. The latter includes menus and
+user input and is explicitly labelled; it is not isolated map-load timing.
+The existing gameplay/fire-held frame timing and touch controls are retained.

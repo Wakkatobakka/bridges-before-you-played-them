@@ -1,0 +1,10 @@
+D205 / Original world, saves and separate phone boundaries
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 25–29
+Source SHA-256: 3aff747274ce5ce08c13399c161fe1fef041a15142c4c251c5b3eb8fd575de10
+
+VERIFICATION AND LIMITS
+Original executable: title, character selection, opening story, first-level gameplay, move/turn/action, map/menu, native Save Game, fresh-session Continue, original audio-source matching, suspend/resume and native teardown verified on the host JVM.
+Android framework: cold startup before content attachment, normal/keypad modes, measured safe bounds, digital pad geometry, touch/action ownership, hardware holds through switching, both orientations, font scale 1.3, Android Back, pause cleanup, startup fault capture and independent reporting with a blocked game worker tested under Robolectric. This is not physical-device gameplay testing.
+The phone screenshot/recording establishes an immediate v0.1.0 crash but supplies no exception stack or density value; the reproduced density fault matches that failure timing. A successful launch of this update on the handset is not claimed.
+The complete campaign, later puzzles/bosses, physical-phone speed/audio quality, touch comfort and actual Downloads permission/storage behavior remain unverified. Original CMID scores use Android MIDI synthesis, whose instrument timbre can differ. Native handset vibration requests currently have no Android vibration output.

@@ -1,0 +1,46 @@
+Q206 / Original side-move arithmetic and separate fire-held timing
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 180–220
+Source SHA-256: 4366352e234599ea83d928a2c283f224d65f3f6e6fb0f913afcc22e83e1fb358
+
+The original Joy_AdvancedUpdate at 0x1835C0 chooses AxisTurn (4) for left X in
+Casual, and AxisSide (3) in Expert. The touch device now selects the already
+compiled AxisSide path for left X during IN_Move. At 0x10E22C it saves the
+current horizontal-axis descriptor at 0x82B394 and temporarily supplies 3.
+At the common original epilogue (0x10E9C4), it captures the real forward/side
+usercmd fields and restores the saved descriptor before the original returns.
+Original instructions continue executing, including the original strafe
+arithmetic. The original preset cvar and numbered/shoulder binding table are
+retained; no original code, player coordinates or camera angles are written.
+The exact entry/epilogue/adapter instruction words are checked when touch mode
+is enabled. The native test proves both strafe directions without yaw change,
+restored descriptor/preset/bindings, and forward + strafe + look + fire together.
+
+AIM is now one ViewGroup containing an 88 dp fire target. Its touch router owns
+all pointer IDs within that surface and selects firing only from a contact's
+initial hit. Look-only contacts can cross the target without firing. A firing
+contact keeps its own shared BridgeInput source while dragging outside the
+button. Additional aim/fire contacts use distinct IDs; the newest aim contact
+owns look, and superseded contacts cannot release another contact's key hold.
+Accessibility taps still use the actual embedded Android Button. Original
+fire buttons retain their drag behavior. All original controls and shared UI
+1.1.2 remain present. Both supplied integration kits remain unchanged.
+
+Reference swipe gain remains 0.22 degrees/dp horizontally and is now 0.14
+vertically, still translated into native input samples before the original's
+sensitivity/inversion/view clamp. No averaging filter is introduced.
+
+AndroidEglDriver calls a swap observer with monotonic wall time, readback plus
+pixel-conversion duration, and actual swap success. FrameTiming groups only
+consecutive successful swaps in active original gameplay (key_dest game and
+connection state active, original refresh_prepped byte set and loading-plaque
+byte clear). The original CL_Frame and loading-plaque instructions establish
+these fields. Menus, loading and Android lifecycle gaps break the
+interval chain. A second category requires the original fire binding to be
+held at both endpoints. The report explicitly calls this fire-held gameplay,
+not enemy/combat detection. It includes a bounded rolling 10-second window,
+interval p50/p95/max, FPS, capture mean cost and cumulative active-category FPS.
+Reports remain cached and exported by the independent writer; new filenames
+correctly identify v0.1.3. Native input/fire-state classification, timing math
+and the production swap observer have separate tests. These metrics have not
+yet been measured on a physical phone with v0.1.3.

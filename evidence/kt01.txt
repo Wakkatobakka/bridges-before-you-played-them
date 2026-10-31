@@ -1,0 +1,22 @@
+KT01 / The clean BREW family reaches Katamari
+Source: 18-Katamari_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 3–19
+Source SHA-256: fc81e4cd1fe0c49f9143e126f5f4f683c8ef68041b2fe53f193db25f9964fa01
+
+The original 137168-byte 2008 ARMv5/Thumb module runs in the Java BREW
+compatibility layer. The core comes from the clean BioShock v0.2.0 lineage,
+including Contra's native timer deadlines and exact bitmap memory watches;
+the UI follows Resident Evil Genesis. It does not reuse the old hot BioShock
+v0.1.7 build. No gameplay is reconstructed and no game instructions are patched.
+
+TITLE INTEGRATION
+Class ID 0x0106CC3B, native framebuffer 240x320. Selected module/resource.bar
+are byte-identical across the unnumbered and screen-capture variants. Clean
+MIF/icon comes from the latter. All three exact original ZIPs are retained;
+the other 2009 variant has different native maps and archived player progress.
+
+Existing runtime gzip sources, original BMP decode/palettes and native file
+services cover this resource.bar. Katamari adds the display/font measurement
+services, original SoundPlayer memory-source handling, the optional original
+0x01005000 query, and graphics circle/ellipse rendering. Circle/ellipse
+outlines honor no-fill mode; border thresholds are calculated once per draw.

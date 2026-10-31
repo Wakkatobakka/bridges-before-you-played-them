@@ -1,0 +1,13 @@
+AE04 / Tutorial and generated campaign run on the original VM
+Source: Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 23–30
+Source SHA-256: 071618f768b8d212a3c2100d28b75fb632999dd5e51af260f1ff81bfe096b6a6
+
+PASS — Original title/menu/tutorial on release C ABI host: 3,524 ticks, zero VM
+faults and input overflows, all eight direction frame changes, live minimap,
+build menu, original pause/menu return, native snapshot framebuffer roundtrip.
+Original monophonic audio events observed. No campaign/tutorial completion claimed.
+Separate manual final-runtime Campaign 1 evidence: generated map, original briefing,
+live map with starting army, build/minimap access, pause/resume and snapshot
+roundtrip; 2,275 ticks, zero VM faults/input overflows. Unit orders were exercised
+but no full mission objective or combat outcome was certified.

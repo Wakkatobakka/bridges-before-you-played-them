@@ -1,0 +1,17 @@
+BS03 / Finding the original controls inside the data
+Source: 17-BioShock_3D_Bridge_v0.2.0_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.0_PRIVATE/evidence/original-analysis/original_findings.txt
+Selected lines: 22–33
+Source SHA-256: f5531ff18bcbe27c54519372ff4741d6d415da6be3af0c9148cca7291af5f6e4
+
+Original controls
+- Directly recovered bio1.dat resource 109, controls.txt, envelope offset 0x1FEDC2,
+  payload length 405, envelope 8. See original_controls.txt; this was independently
+  compared with historical metadata, with no prior runtime/source imported.
+- 2 forward ; 8 backward ; 4 turn left ; 6 turn right ; 7 strafe left ; 9 strafe right.
+- 5 attack; OK crouch; 0 use/pick; 1 plasmid toggle; 3 weapon toggle.
+- LSK reload/refill EVE;RSK refill health;CLR pause; arrow LEFT ammo inventory.
+- Hacking pipe grid: numeric 2/8/4/6 navigation ; 5 reveal tile ; OK increase flow speed.
+- Native UP/DOWN also provide verticallook, despite absent help text. Original
+  routine 0x1BEF50 queries numeric 4/6 and native UP/DOWN separately. Native
+  literal 0xE027 at 0x1BF294 plus 0xA/0xB at 0x1BEF9C/0x1BEFA0 forms UP/DOWN.
+- Menu arrow keys and numeric world keys must retain their distinct identities.

@@ -1,0 +1,12 @@
+KH90 / Historical image / Kingdom Hearts V CAST
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/evidence/v0.1.0-baseline/tutorial-play.png
+Source SHA-256: 88518e83e4f2e279ad18c5c3c3832eb5eae40b7f247750b4dc07e7df7b6c19a1
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/evidence/v0.1.0-baseline/tutorial-play.png
+SHA-256: 88518e83e4f2e279ad18c5c3c3832eb5eae40b7f247750b4dc07e7df7b6c19a1
+
+The fresh original New Game tutorial in the176×220 Swerve renderer. Historical desktop original-ARM/game-engine output, not a phone image.
+
+Scope: Unchanged historical desktop original-runtime framebuffer. Visually inspected: game-only pixels, no personal interface and no EXIF. Not a physical-phone screenshot.

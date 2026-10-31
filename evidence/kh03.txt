@@ -1,0 +1,17 @@
+KH03 / Both original modules reach the tutorial and separately seeded chapter entries
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/evidence/v0.1.0-baseline/README_FIRST.txt
+Selected lines: 22–33
+Source SHA-256: 631ae31ea95612c5d2ee73b621ac843956b1cfe25ad8250c0fa7eafbbb2cf417
+
+WHAT WAS VERIFIED
+- Untouched original game and engine execute their own ARM/Thumb code.
+  The original Swerve renderer draws the native 176 x 220 framebuffer.
+- New Game reaches the tutorial. Walking advances the steering prompt; Action
+  works. Read-only inspection of original input flags proves simultaneous
+  forward/right/Action and independent releases, without writing game state.
+- Separate archived-save TEST FIXTURES reach island scenes, Agrabah's opening
+  scene/dialogue and Castle's playable bridge area/HUD. These are entry/path
+  checks, not completed levels, combat coverage or a complete campaign test.
+- Native suspend/resume preserves checked original progress bytes; APP_STOP
+  cleanup completes on the checked paths. The game uses its own file writes
+  and tmp.dat rename transactions; there is no invented quick-save.

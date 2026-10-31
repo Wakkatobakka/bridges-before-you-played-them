@@ -1,0 +1,19 @@
+BJ10 / Five current framework tests use explicit worker doubles
+Source: Banjo_Kazooie_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 22–35
+Source SHA-256: 6032ea96d35609dd17000416b5141ae5ad0e86ea16604da31556d90bc2830dbd
+
+Actual Banjo MainActivity against the compiled release JAR:
+All 5 Android framework integration tests pass. The game worker and report I/O
+are explicitly test doubles, not simulated or claimed original gameplay.
+Tests exercise the real Activity, shared controls and renderer View:
+- Cold startup, both modes, stable renderer attachment, native aspect, drawing,
+  minimum button geometry at 1080x2340, 2340x1080 and 960x1920.
+- Two pad contacts plus held Power/Throw; independent direction/action releases.
+- Numeric 5 aliases and physical holds across inline mode switches; original
+  Select/Pause/star/hash logical bindings.
+- Report and fault callback wiring without pausing; Android Back exits while
+  keypad is open and releases held inputs without sending the original softkey.
+- Controller key-up in utilities and lifecycle pause cleanup.
+The test environment does not resolve the APK's app-specific icon resource;
+its packaged pixels are separately verified by APK inspection (aapt crunches PNGs).

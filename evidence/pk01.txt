@@ -1,0 +1,33 @@
+PK01 / Original Offline Play, kingdom progression and save reload
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/VALIDATION.json
+Selected lines: 3–30
+Source SHA-256: 82eebf75b91e065590b475851b7b02cb04e7c5fbae67ea26c5df400e349010de
+
+  "verified": [
+    "original executable loaded",
+    "title and Offline Play",
+    "New Game",
+    "original opening narrative",
+    "Grape tutorial",
+    "kingdom and party screens",
+    "numeric 5 confirm and 7 cancel",
+    "directional navigation",
+    "both softkeys map to original N-Gage menu inputs",
+    "original Save > Yes writes 10584-byte save.dat",
+    "full process restart offers Continue",
+    "Continue returns to original kingdom screen",
+    "every supplied game file is byte-identical in Android seed",
+    "Android APK built, aligned and signature verified",
+    "original Shop Buy screen reached after save reload"
+  ],
+  "not_verified": [
+    "physical Android execution",
+    "S25 Ultra screen boundaries by screenshot",
+    "Android native audio output",
+    "Android Downloads report save on-device",
+    "Android background/resume on-device",
+    "full campaign",
+    "battle progression",
+    "online services"
+  ],
+  "host_audio": "unavailable: cubeb stream cannot initialize in test environment without audio output",

@@ -1,0 +1,23 @@
+RG15 / Reports no longer wait for a busy game worker
+Source: REGenesis_Bridge_v0.6.2_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.2_PRIVATE/IMPLEMENTATION.md
+Selected lines: 20–37
+Source SHA-256: 271a5d59d825d25d75a0cc80a0029381a5a911bb6be2a33b02f238d7614a2d3b
+
+BridgeController preserves guest startup, timer scheduling, audio and original
+atomic save persistence. close() releases held keys, sends the existing suspend
+lifecycle event, persists original save payloads, releases MediaPlayers and quits
+the worker. Normal background/resume retains the session. Game execution changes
+were limited to a read-only bounded trace-tail accessor; its complete diff is in
+evidence/runtime-diagnostic-only.diff. No original payload, CPU/ABI behavior,
+save format, entropy handling, renderer or timer-delay formula was changed.
+
+GenesisReports initializes before UI construction and uses the kit's fallback
+BridgeReports, because the supplied bridge only had worker-bound report capture
+and sharing. Once per second (or immediately for faults/close), the game worker
+publishes immutable diagnostic text with runtime counters, errors, heap, save
+hashes, read-only game state and at most 60,000 original trace characters. This
+avoids repeatedly materializing the entire growing log. Report export reads only
+that immutable text plus snapshot age; a stalled guest cannot block capture or
+Downloads IO. Original guest snapshots remain lightweight during input.
+Synchronous private fault evidence precedes best-effort asynchronous Downloads
+export. API26–28 permission handling is limited to direct report export.

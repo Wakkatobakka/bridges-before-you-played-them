@@ -1,0 +1,12 @@
+KT90 / Historical image / Katamari in the original timed level after the countdown repair
+Source: Katamari_Bridge_v0.1.4_PRIVATE/evidence/timed-level/02_original_timed_gameplay.png
+Source SHA-256: 0fee50e0906f07438a7393dfca4d7ef4f07691ad99066439edb0580d69fa0d9d
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Katamari_Bridge_v0.1.4_PRIVATE/evidence/timed-level/02_original_timed_gameplay.png
+SHA-256: 0fee50e0906f07438a7393dfca4d7ef4f07691ad99066439edb0580d69fa0d9d
+
+The original timed Make a Star 1 scene after the circular-countdown service was implemented. Retained desktop ARM runtime frame; not the phone session that exposed the fault.
+
+Scope: Historical original-ARM desktop framebuffer; unchanged source pixels, visually inspected, game only and zeroEXIF.

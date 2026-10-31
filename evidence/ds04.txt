@@ -1,0 +1,9 @@
+DS04 / The discarded CFG experiment produced zero stats
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 26–29
+Source SHA-256: 22e4a067616ca96ab5fc86815ba24fc96ffa22b56ea889b3024176827f4edfa0
+
+LIMITS
+Host original-engine and Robolectric evidence is not a physical-device test. Touch comfort, audible Android music/effect decoding, long play and real Omni production import/public-export carry-forward remain unverified. Battles/endgame have not been acceptance-tested. No substitute gameplay, patched statistics or fabricated execution was used.
+
+The initial discarded-CFG experiment produced zero character stats. The final APK includes the exact supplied original CFG as necessary baseline data. Actual user saves override it; host test saves never seed an installation.

@@ -1,0 +1,18 @@
+Z10 — Replay the phone inputs to recover indexed geometry
+Evidence type: Checkpoint development notes
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v019_README_FIRST.md
+Selected source lines: 5-13
+
+The recorded replay uses an ABI-counting graphics driver on the desktop. It is not a new phone-GPU gameplay verdict.
+
+## v0.1.9 — original indexed 3D geometry
+
+Replaying **all 28 original Zeebo HID button press/release events** from the physical S25 v0.1.8 report reproduced the exact GLES `0x0103D8DD + 0x140` fault at the Chapter 1 boundary. Three missing original GLES 1.x operations were then traced and implemented against Android's actual `GLES10` driver:
+
+- **`+0x140 glMultMatrixx`**: original 16-element GLfixed matrix copied directly from ARM RAM; no substituted matrix.
+- **`+0xDC glDrawElements`**: original unsigned-short or unsigned-byte indices read from ARM memory; the largest original referenced index is used to bound and pin the game's vertex and texture-coordinate arrays for the native GPU.
+- **`+0xA8 glColorPointer`**: original per-vertex RGBA bytes copied from guest RAM and pinned for drawing. Also works with the previously implemented `glDrawArrays` path.
+
+Unchanged original-game desktop replay now completes **500 native timer callbacks**, **497 GLES swaps**, **7,740 indexed geometry draws**, **7,740 matrix multiplications**, **215 vertex-color pointer calls**, **27 original texture uploads**, and **169 original file opens**, with **no guest execution fault**. Desktop test uses an ABI-counting graphics driver, not a real phone GPU. The Android version compiles and has a signed EGL14/GLES10 implementation of those calls.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

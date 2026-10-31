@@ -1,0 +1,10 @@
+D08 — Four-way movement and horizontal aim
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.8-report.txt
+Selected source lines: 26-26
+
+
+
+0.000  CONTROL MODE    Compact 4-way baseline + horizontal camera/aim; walking assist=true; repeat=true; camera reverse=false; aim reverseX=false
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

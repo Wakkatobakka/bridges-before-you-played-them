@@ -1,0 +1,14 @@
+WR02 / One timer slot lost the sound callback
+Source: 14-Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/evidence/timer_queue/verification.txt
+Selected lines: 3–11
+Source SHA-256: f8d1cceec853a8d3ec0eab5081d8a90c8013ea0d59a495debe86da568fcf7d4c
+
+Implemented independent registrations keyed by callback/data, each retaining its original deadline. Replacement only touches an identical pair. Cancellation handles null callback and matching data. Earliest registration is exposed to Android scheduling; real pumping checks its due time, and removes it before entering the guest. Virtual clock conversion shifts all registrations and pumping advances to the earliest deadline.
+
+NativeTimerRegression: PASS. Real ARM callback stubs independently wrote game marker 1 and sound marker 2 in deadline order. Verified no early real-time callbacks, all deadline conversion, callback/data identity, replacement ordering, cancellation of multiple callbacks sharing data, empty-queue reporting.
+
+WolfProbe sequence: tick 80, tap 5 (sound YES), tick 100.
+Session remains live; 181 timer callbacks executed; 184 display updates; 176x220 city/cinematic frame, 36080 nonblack pixels; no boot/live failure.
+Original guest SoundPlayer reached CreateInstance, SetData 29420 bytes, and Play 29420 bytes (trace.log lines 1371–1374). Previously the single lastTimer slot lost this callback.
+
+Playback completion still requires Android audio notification; desktop probe does not synthesize it.

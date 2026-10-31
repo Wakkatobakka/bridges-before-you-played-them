@@ -1,0 +1,15 @@
+B13 — The original prompt and the later phone gameplay
+Evidence type: Historical images
+Source: Rush Marine preservation / original host framebuffer and phone contact sheet
+
+Both images inspected as pixels and copied byte-identically. The host capture and physical phone evidence are labeled separately. No private notification text, account information or paths are visible.
+
+0.0.3 historical host capture: rush_v0.0.3_frame.png, 128×160.
+The original guest produced the Enable Sound? prompt. This is a host framebuffer image, not a phone screenshot.
+Image SHA-256: 3867f966fcdd7b07ad0a41e694dd4adc91c4e99826714a3f4e59be01d8ef2978
+
+0.0.9 physical phone evidence: video_contact_sheet.jpg, 13 retained phone views.
+Original contact sheet reproduced unchanged; source MP4 is not present in this inspected checkpoint.
+Image SHA-256: 4428544d89a38597db6ace0d7d6f4303a22635e665ec2da53cba7dce0ab1f0d3
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

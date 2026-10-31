@@ -1,0 +1,33 @@
+BS20 / The later normalization preserves the engine
+Source: BioShock_3D_Bridge_v0.2.2_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.2_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 3–6, 35–55
+Source SHA-256: 6e6e317012973ac469ff3042c1c245cc3bb6344ef3975a0ba21d7578f6c56f42
+
+Baseline: previously delivered BioShock v0.2.1/code10, recovered by its exact
+Library identity. Package com.wakka.omnibridge.bioshock3d, now code11/version0.2.2.
+Same signing key/certificate, launcher icon and private game-save location.
+No reconstruction, mock gameplay or previous BAD BUILD code is introduced.
+
+[... selected excerpt ...]
+
+BrewRuntime.java and all game/audio assets are byte-identical to v0.2.1.
+BridgeController changes are version/package-report identity and the corrected
+CPU scope sentence only: utilities now remain part of foreground accounting.
+No execution, timer, cache, audio, atomic save, CPU sample or lifecycle-worker
+implementation changes. SAVE REPORT preserves the independent writer and
+published immutable snapshot; no worker lock or report-driven runtime call.
+
+Evidence scope
+Current normalization-v0.2.2 contains5 real Activity/custom-control Android
+framework scenarios,1 production blocked-worker/report scenario, the unchanged
+kit's12 framework regressions,39 production input/lifecycle checks,13 accounting
+checks,49 mappings, independent native timer checks, and APK byte/audio/signature
+inspection. Framework fixtures are explicitly not original execution.
+
+Original-engine boot/world/combined-input/save/Continue/exact-LOAD evidence was
+recorded for v0.2.1 and is retained because its engine and game bytes are exact.
+It was not rerun or relabeled as new v0.2.2 original-engine execution.
+
+Preview images combine the actual recorded original framebuffer with the current
+framework-rendered control layout and a fixture icon. They are layout QA images,
+not physical phone screenshots or claimed live game sessions.

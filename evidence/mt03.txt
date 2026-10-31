@@ -1,0 +1,6 @@
+MT03 / The original dungeon and system save reach the host
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/evidence/FINAL_VERIFICATION.txt
+Selected lines: 1–1
+Source SHA-256: e704747f82e689a5c0746c4a628b00e0f65bc0807e02e92d299f885cb1f2c9e2
+
+PASS: original title, dungeon, very short movement tap, map, map toggle, command/system menu, original save, fresh-process reload, background parking, resume and report generation while parked. No runtime faults. Android hardware layout, sound and Downloads export remain device checks. Combat and full campaign not yet exercised.

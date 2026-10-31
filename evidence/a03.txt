@@ -1,0 +1,28 @@
+A03 — One instruction in the runtime
+Evidence type: Compatibility trial
+Source: Ashen_Movement_Timing_Finding_2026-10-19.txt
+Selected source lines: 58-76
+
+The dedicated Ashen runtime was edited; the original game executable was unchanged. No binary is distributed here.
+
+Leave the computed counter unmasked for Ashen:
+
+    - res &= TICK_MASK;
+    + // Ashen-only runtime: leave res unmasked.
+
+The native time provider, timer origin, tick period and existing pause logic
+were left intact. No FPS cap, time-delay setting, minimum-timestep clamp,
+forced velocity reset or friction constant was changed.
+
+ACTUAL ANDROID BINARY CHANGE
+The delivered test used a reversible binary compatibility edit to the pinned
+ARM64 native library; it was not a complete source rebuild of EKA2L1.
+Exactly one instruction changed:
+
+    Before: and w10, w9, #0xfffffffe
+    After:  mov w10, w9
+
+The subsequent conditional select therefore receives the unmasked counter.
+This changes the EKA1 result while preserving the existing EKA2 result.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,31 @@
+BS18 / The phone keeps warming with diagnostics off
+Source: BioShock_3D_Bridge_v0.1.7_PERFORMANCE_READOUT.txt
+Selected lines: 56–81
+Source SHA-256: 673ab651933739f09619fc44ef33164473325cf485f6dfcc702bafb393cd608d
+
+Actual phone measurement — prior v0.1.6/code7
+The supplied report was captured2026-10-10 19:22:13 -0500 on Samsung SM-S938U,
+Android16/API36, arm64-v8a.29foreground/unpaused samples cover421661ms (~7min).
+Battery temperature29.0→35.9C (+6.9C); headroom0.567→0.837; final severityLIGHT.
+Battery temperature is not skin or CPU junction temperature. External power
+mask0 throughout;17→12% battery endpoints are coarse and do not measure watts.
+
+Detailed diagnostics OFF:14valid CPU intervals over210626ms, summed process
+CPU224114ms,106.4038% of one core. ON:12valid intervals over180366ms,
+178727ms process CPU,99.0913% of one core. These include all app threads and
+can exceed100%. Context/session segments differ, so ON/OFF is not a controlled
+comparison. OFF nevertheless shows substantial CPU activity without detailed
+logging. The prior timer correction is applied: recent posted delay average
+1.996ms for native2ms request. Continued warming does not establish a heat cure.
+No reported host/native/save/audio failure;12188callbacks/25,846,600,480ARMsteps.
+Final snapshot is background/paused/menu, so its recent9.503ms pump average
+must not be compared to a different earlier world workload as a version gain.
+Complete report and29CSV rows: evidence/device_heat_v0.1.7/.
+
+What remains unmeasured
+Physical v0.1.7 Android ART performance, JNI pin/copy/GC behavior, all-process
+CPU utilization, battery energy, FPS, touch feel and cooling. No phone is
+connected to this build environment. Later levels, live hacking and full game
+completion remain unverified. This update makes a measured execution change;
+the existing sparse on-phone measurements remain to establish its real effect.
+Reports identify the active engine, including a Java library-load fallback.

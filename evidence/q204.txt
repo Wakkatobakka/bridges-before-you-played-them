@@ -1,0 +1,25 @@
+Q204 / Desktop fallback had missed the phone mipmap route
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 116–135
+Source SHA-256: 4366352e234599ea83d928a2c283f224d65f3f6e6fb0f913afcc22e83e1fb358
+
+## v0.1.1 phone loading repair
+
+Both supplied phone reports stop at the production compressed-texture guard:
+`target=0xDE1 level=1 format=0x8C92 dimensions=32x64 size=1024`. The existing
+ATC RGB decoder accepts those bytes; an inherited `level != 0` guard rejected
+them first. v0.1.1 permits levels 0 through 11 within the existing bounded
+2048-pixel texture contract and preserves the original level passed to GLES.
+Payload length validation and invalid-level rejection remain active.
+
+The former desktop renderer used a separate texture adapter and an empty
+extension fixture, so it exercised the game's uncompressed fallback. Current
+tests reproduce the exact failure against the archived v0.1.0 Android adapter,
+then exercise the actual AndroidEglDriver.invokeGles. Test-only EGL/GL
+service sinks keep this separate from physical Android acceptance. Full guest
+play and reload runs advertise the explicit GL_ATI_imageon_misc capability
+fixture, route every compressed upload through the production Android adapter,
+and submit its decoded bytes to real Mesa OpenGL. Those v0.1.1 runs passed 1,851
+compressed uploads including 1,612 nonzero mip levels and five matches of the
+reported 32x64 level-1 shape. This source and service-shim change is test-only;
+no Android framework replacements are packaged in the APK.

@@ -1,0 +1,20 @@
+R05 — The screen marker worked; the GPU picture was still missing
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.2.7-decision-from-v0.2.6.txt
+Selected source lines: 3-13
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+Observed on SM-S938U / Android 16:
+- The fixed cyan square with magenta center was visible.
+- The orange CPU ROCKMAN rectangle, cyan cross, and label were visible in the gameplay view.
+- The v0.2.6 report independently logged the same body region around x=99.9..143.7, y=27.6..118.4.
+- Rockman's actual GLES Figure triangles/wire/points still did not appear through the normal presentation path.
+- Runtime remained free of GL errors and caught game exceptions.
+
+Conclusion:
+- The CPU model/view/projection mapping is now strongly corroborated by the independent Android 2D marker.
+- AndroidPlatform.back -> front -> Overlay presentation works and uses the same logical screen mapping.
+- The unresolved boundary is the separate EGL/GLES color buffer versus the bitmap-backed 2D presentation layer.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

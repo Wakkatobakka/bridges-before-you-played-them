@@ -1,0 +1,26 @@
+DS02 / Heap, phone naming and media contracts
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/AGENTS.md
+Selected lines: 21–41
+Source SHA-256: 680cf22d5c926ea5ca78719ab898bb67e874285b63fa2c5a673263dcade6c2e7
+
+Help pages in evidence/controls are the input authority. Numeric 2/4/6/8
+are original direction aliases; 1/3/7/9 are separate original diagonal keys.
+Do not replace these with simultaneous cardinals or an analog stick.
+The original diagonal digits retain their alternate battle meanings.
+CLR/0 and Select/5 remain original actions; Android Back exits the Activity.
+
+The IHeap +0x18 service returns Boolean reserve status, NOT a malloc pointer;
++0x1c reports heap usage. DeviceInfo +24 supplies total RAM. Posted startup
+events must drain at event boundaries. Preserve bitmap cache coherence.
+
+Native phone text input uses the actual ITextCtl boundary, including naming,
+multi-tap digits and original name validation. +0x08 handles events, +0x0c
+redraws, +0x10 sets active, +0x14 reads active, +0x38 returns live UTF-16 text.
+String service +0xd8 is strstr, not strcmp; +0x118 lowercases the name before
+the original banned-substring validation. +0xa0/+0xe4 convert text encodings.
+
+Shell +0xac performs media sniffing (initial ENEEDMORE/byte-count query,
+then original-byte MIME detection); +0x80 resolves the matching media class.
+Original MIDI bytes stay exact. CmidAudio only unwraps the single original
+QCELP WAVE into QCP without changing packets. Actual Android decoder support
+and audible output remain device acceptance requirements.

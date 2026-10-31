@@ -1,0 +1,10 @@
+OE90 / Historical image / Orcs and Elves II original CAVE IN scene
+Source: Orcs_Elves_II_Bridge_v0.1.0_PRIVATE/evidence/host_original_3d_scene.png
+Source SHA-256: d1fea91aa2bb9c9cb1833b892f5430d6887c3d0afbde31149325696113c8d02a
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: Orcs_Elves_II_Bridge_v0.1.0_PRIVATE/evidence/host_original_3d_scene.png
+Image SHA-256: d1fea91aa2bb9c9cb1833b892f5430d6887c3d0afbde31149325696113c8d02a
+
+An unchanged 176×220 original-runtime frame retained in the 0.1.0 checkpoint. The CAVE IN message, dungeon and creatures are historical desktop host output.

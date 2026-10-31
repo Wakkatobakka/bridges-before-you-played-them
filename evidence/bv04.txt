@@ -1,0 +1,20 @@
+BV04 / Original gaming keys corrected the failed initial hypothesis
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 25–39
+Source SHA-256: 469fd7ce44bdad7aa62c68f6a92ebdcebddba112e39ec78ec8213492e57a73b0
+
+CONTROLS — PRIMARY EVIDENCE, INCLUDING A CONSEQUENT CORRECTION
+Original Options > Keys: movement is the controller, Jump is gaming A,
+Change form is gaming B. The controller center is distinct from numeric 5.
+The device profile is decoded from original C:/private/10202be9/20001079.cre.
+For /hardware/input/devices/0/orientation_270:
+  primaryactionkey (0x3b000f) = 228 = 0xE4
+  secondaryactionkey (0x3b0011) = 229 = 0xE5
+  keytranslationdata maps E4 to RGA 0x01000000, E5 to 0x02000000.
+The game's saved settings confirm orientation=3, key_action_270=80 (gaming A)
+and key_change_form_270=81 (gaming B). The JNI sink accepts scan codes directly.
+The initial generic Application0/Application1 (B4/B5) hypothesis did not
+produce jump and was replaced BEFORE delivery. No B4/B5 A/B binding is shipped.
+Native profile and real ngiinput/game disassembly are retained as evidence.
+Other mappings: arrows 10/11/0E/0F; center A7; softkeys A4/A5; Clear 1;
+digits ASCII and # 7F. All are runtime scan codes, not Android key codes.

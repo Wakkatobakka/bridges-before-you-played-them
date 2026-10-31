@@ -1,0 +1,26 @@
+S11 — Reserve system bars, then separate the game stage
+Evidence type: Checkpoint control investigation
+Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / baseline/original-CONTROL_NOTES.txt
+Selected source lines: 44-49, 51-58
+
+
+
+v0.0.10 window cleanup
+----------------------
+- Input code is unchanged from v0.0.9.
+- GameView.java is byte-for-byte identical to the v0.0.9 input-restored source.
+- Only Android window/container behavior changed: the game view now lives inside
+  a Dirge-style inset root that reserves the real system-bar/cutout area.
+
+[... selected excerpt ...]
+
+v0.0.12 shell/layout correction
+-------------------------------
+- The input semantics above are unchanged.
+- Game rendering was split into GameDisplayView; GameView is now the controller
+  view only, mirroring Dirge Bridge's separate game-stage + GamePad structure.
+- The router from hitAreaAt() onward is unchanged from v0.0.9.
+- Visual control coordinates are recalculated inside the controller's own
+  wrap-content region instead of a full-screen canvas.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

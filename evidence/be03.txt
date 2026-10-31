@@ -1,0 +1,10 @@
+BE03 / Reuse the model parser without multiplying the camera twice
+Source: Biohazard_Episodes_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.0_PRIVATE/HANDOFF.md
+Selected lines: 3–7
+Source SHA-256: ebfc8bffd78f09a5bd2a2157865425aebc9f498df4c3d66a666044eaa5e9ecf3
+
+Entry: `BioMain.start()` creates `b`, installs the DoJa canvas and starts its own game thread. First playable state in the observed route is `b.ah == 8`. The native logical surface is 240x320; the original game centres its 240x240 content at y=40. The bridge aspect-fits this surface and publishes only after graphics unlock.
+
+The game uses `com.nttdocomo.ui.graphics3d` and float `util3d` APIs, whereas the previous Monster Hunter runtime uses `opt.ui.j3d`. The adapter preserves the game-supplied float transforms and uses the previous MBAC/MTRA parser. Translation and near/far values are scaled by 64 while the matrix basis uses 4096 fixed-point. Scaling the basis by an extra 64 produces oversized broken models. Keep these contracts separate.
+
+Transform indices are row-major (translation 3, 7, 11). Multiply is postmultiply and supports self-aliasing. Float trigonometry is in degrees. `Vector3D.dot(a,b)` is static: matching the descriptor without matching invocation kind is insufficient. `verification/api-invocations.txt` records actual static/instance calls, and `api-refs.txt` records the larger constant-pool reference set.

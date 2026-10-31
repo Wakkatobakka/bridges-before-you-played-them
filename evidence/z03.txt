@@ -1,0 +1,32 @@
+Z03 — The first visible message is the original Portuguese startup error
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v012_physical_phone_report.txt
+Selected source lines: 5-27
+
+
+
+Guest executed instructions: 14150272
+Applet created: true
+Native event delivered: EVT_APP_START code 0
+Guest accepted native start: true
+Guest H2Z file opens: 103
+Guest H2Z bytes read: 8562720
+Native timer registrations: 5
+Native timer pending now: true
+Native timer callbacks: 4
+Original IDisplay.DrawText calls: 9
+Original IDisplay.Update calls: 4
+Guest EGL initialization failed: true
+Original Zeebo 3D image frames: 0 (EGL/GLES not implemented)
+Native Zeebo HID inputs: unimplemented
+Fault: none
+
+--- Latest native IDisplay frame text ---
+Este aplicativo não pode ser @(0,0) rect=true [0,80,640,40] flags=00008220
+iniciado. @(0,0) rect=true [0,120,640,40] flags=00008220
+Favor escolher qualquer @(0,0) rect=true [0,160,640,40] flags=00008220
+outro aplicativo. @(0,0) rect=true [0,200,640,40] flags=00008220
+Pressione qualquer tecla para @(0,0) rect=true [0,280,640,40] flags=00008220
+fechar este aplicativo. @(0,0) rect=true [0,320,640,40] flags=00008220
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

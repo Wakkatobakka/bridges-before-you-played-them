@@ -1,0 +1,25 @@
+B08 — A RIGHT label that does not move right
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/RELEASE_NOTES_v0.0.8.md
+Selected source lines: 3-18
+
+
+
+## Why this build exists
+
+v0.0.7 proved the custom controls were mislabeled at the semantic layer. The host had assumed BREW D-pad alias values were trustworthy player-facing directions. The physical recording showed they were not: a button labeled RIGHT did not produce rightward movement, and gameplay could also enter an unwanted continuous-fire state.
+
+## Changes
+
+- Deleted the old custom direction mapping instead of trying to patch its labels.
+- Player-facing directions now emit Rush Marine's documented numeric handset keys directly: **2 up, 4 left, 8 down, 6 right**.
+- Diagonals emit **1, 3, 7, 9** directly; they are no longer synthesized from two alias keys.
+- **FIRE** now emits original numeric **5**, not the assumed SELECT alias.
+- **AUTO** emits original numeric **0** only on an explicit player tap. No startup or movement path sends 0.
+- Kept the complete raw MGS-style handset keypad behind **Keypad** for reference/compatibility work.
+- Kept the fixed, non-scrolling gameplay layout and added release checks preventing scrolling from returning.
+- Removed the gameplay **Report** button. Diagnostics remain behind Bridgekeeper Tools; this control pass is validated by actual on-screen behavior, not by another report.
+- Preserved the returned v0.0.7 recordings and prior APK as evidence of the failed mapping so the lesson is not lost.
+- No new audio behavior is claimed; v0.0.7 media work is left intact while controls are corrected first.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

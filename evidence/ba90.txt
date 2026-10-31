@@ -1,0 +1,10 @@
+BA90 / Historical image / Brothers in Arms parachute opening
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/evidence/acceptance/06_original_3d_parachutes.png
+Source SHA-256: 482eade14717dd9786f2a51dc29dd389cce598364888d7ee89f8fa88a79ca8bc
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/evidence/acceptance/06_original_3d_parachutes.png
+Image SHA-256: 482eade14717dd9786f2a51dc29dd389cce598364888d7ee89f8fa88a79ca8bc
+
+The retained BIA240 host acceptance captured the original parachute sequence. This is the game’s native framebuffer on a desktop test host, not a phone recording.

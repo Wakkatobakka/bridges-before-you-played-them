@@ -1,0 +1,14 @@
+A12 — The window had to exist before its controls could be built
+Evidence type: Startup repair notes
+Source: Ashen v0.1.3 / README_FIRST.txt
+Selected source lines: 10-14
+
+
+
+STARTUP FIX IN v0.1.3
+Creates Android window decor before requesting the system-bar controller.
+Fault capture now precedes gameplay view construction. The global kit remains
+v1.1.0 with this local hotfix; its included source/JAR/DEX were rebuilt.
+The real Activity startup and early fault-report regression pass on the host.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

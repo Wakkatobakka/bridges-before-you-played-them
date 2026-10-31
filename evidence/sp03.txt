@@ -1,0 +1,13 @@
+SP03 / The static audio buffer was rejected before samples were written
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 9–16
+Source SHA-256: 06ce1acf0abb5ab71ffb8d12e58434c843cac466165df2b2e06bacc9b1c9762e
+
+AUDIO FIX
+The old player rejected the normal MODE_STATIC waiting-for-data state before
+writing any samples. The player now accepts that state, writes native-order
+PCM16, verifies the entire buffer and loaded state, then starts playback.
+Pause/resume, stopped/replaced melodies and completed clips are handled on an
+independent audio worker. Reports include requests, starts, written frames,
+error count and the actual last failure. The original melody data and tone
+renderer are retained. No replacement soundtrack was added.

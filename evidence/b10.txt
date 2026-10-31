@@ -1,0 +1,29 @@
+B10 — The 0.0.9 phone run retains the working session
+Evidence type: Phone runtime report
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/device-evidence/RushMarine-Bridge-0.0.9-report-20261003-212702.txt
+Selected source lines: 1-20
+
+Summary of one physical session. The audio starts/failures are backend events; listening observations are preserved separately in the later notes. Guest instruction counts are cumulative work, not an FPS metric.
+
+RUSH MARINE BRIDGE v0.0.9
+DEVICE RUN REPORT
+Captured: 2026-10-03 21:26:16 -0500
+Device: samsung SM-S938U
+Android: 16 (API 36)
+ABIs: arm64-v8a
+Package: com.wakka.rushbridge
+Persistent session: LIVE
+Live key events: 616 (press 308 / release 308)
+Last key: 0xE031 pressRc=1 releaseRc=1
+Guest steps: 454759078
+Timer callbacks: 11121 / display updates: 11121
+DrawRect / BitBlt: 153731 / 1285788
+BAR data/images: 6 / 18
+PNG pixel decodes: 18 success / 0 failed
+Guest IMedia: objects 3 / data 3 / play 4 / stop 1
+Last guest audio resource: 0x2336 / serial 5
+Android audio host: PAUSED (starts 4 / stops 0 / failures 0)
+Unhandled iface calls: 0
+Framebuffer: PASS 128x160 nonblack=20323
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

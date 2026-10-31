@@ -1,0 +1,12 @@
+S15 — The owner accepts 0.1.3, then redirects the control work
+Evidence type: Recorded owner feedback
+Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / verification/OWNER_FEEDBACK_20261020.txt
+Selected source lines: 1-3
+
+
+
+Owner feedback on delivered v0.1.3: "Perfect. It works great now, thank you."
+Owner then reports custom buttons incorrectly mapped and not aligned with the current standard, and approves the discussed correction.
+Scope: v0.1.3 installs/runs. Correct custom primary mapping/panel now. Do not infer that the new v0.1.4 controls have been tested on the phone.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

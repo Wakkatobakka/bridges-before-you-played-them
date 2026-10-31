@@ -1,0 +1,17 @@
+DO04 / Raw numeric two is not the phone Up key
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/TECHNICAL_HANDOFF.txt
+Selected lines: 55–66
+Source SHA-256: d4c8909c3bcc93a5bd45a7b62b9e874efed919a56917a638cceceff66dc8e424
+
+INPUT
+Native phone directions: -1 up, -2 down, -3 left, -4 right; -5 = FIRE / OK.
+Native getGameAction transforms are respected, including the game's explicit
+raw overrides for numeric 1, 2 and 3. In particular raw 2 is NOT normalized into
+Up by the bridge before the original Canvas receives it.
+Softkeys -6/-7 invoke registered native SCREEN/BACK commands. #=35 is sound.
+Numeric 0 follows the same confirm handler as FIRE in the only scene that
+accepts it (q). '*' is explicitly ignored by m. The UI now preserves the full original numeric keypad inline.
+Scene f / native state 11: rooftops (1 swing; 2 web).
+Scene g / native state 13: subway (1 left; 2 jump; 3 right).
+Scene c / native state 15: boss (1 left; 2 web; 3 right).
+Touch reference counts, cancellation and background releases avoid stuck keys.

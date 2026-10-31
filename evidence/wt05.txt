@@ -1,0 +1,13 @@
+WT05 / Quit and static restoration use original initializer values
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/NORMALIZATION_NOTES.txt
+Selected lines: 5–12
+Source SHA-256: 72506b1c4b809d7175b22858e0f106487d76c2bbde56ff9dfd7982f8ebb27ab0
+
+Changed MainActivity only for kit configuration, explicit inline original keypad,
+hardware-source ownership, saved mode, startup fault capture and real Back cleanup.
+Engine now fences actual teardown off the UI, uses native d.l() Quit, lets the
+original worker run destroyApp (which saves via d.h and closes audio via d.i),
+and restores the previous uncaught handler when it owns it. OriginalSession
+captures original non-final static fields after their actual class initializers,
+then restores fresh copies on re-entry after old teardown completes. It does not
+invent game values, modify persisted data or alter original gameplay timing.

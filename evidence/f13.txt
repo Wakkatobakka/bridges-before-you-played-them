@@ -1,0 +1,19 @@
+F13 — “Audio works perfect.”
+Evidence type: Recorded owner feedback
+Source: FFVII Snowboarding preservation / PHONE_FEEDBACK_20261004_AUDIO.txt
+Selected source lines: 1-10
+
+
+
+OWNER PHONE FEEDBACK — 2026-10-04
+
+Scope: FFVII Snowboarding Omni audio-fix build, before the two-stage custom-control revision.
+
+Owner report: "Audio works perfect."
+
+Interpretation:
+- Restored Snowboarding music playback is phone-verified by the owner.
+- This does not independently validate the later two-stage custom-control revision.
+- Native keypad behavior remains intentionally unchanged.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,17 @@
+S17 — The original handler catches the earlier Action mistake
+Evidence type: Checkpoint host verification
+Source: DeadShot_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / verification/VERIFICATION_v0.1.4.txt
+Selected source lines: 22-29
+
+
+
+PASS — original JAR input-handler regression, through actual backend routing:
+       Type 1/2 custom primary sets and releases original mfire manual-attack
+       flag. Type 3/4 sets and releases original kotei facing-lock flag. Native
+       direction/diagonal flags and releases match selected original family.
+       The regression also proves that old Confirm (20) does not fire in type 1.
+PASS — custom panel rendered/reviewed in manual and automatic modes. Internal
+       previews are framework renders, not phone gameplay captures.
+PASS — passport/handoff schema checks; candidate remains draft for new controls.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

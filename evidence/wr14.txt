@@ -1,0 +1,16 @@
+WR14 / Fresh combat checks and retained historical suites
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/VERIFICATION.txt
+Selected lines: 11–21
+Source SHA-256: 9935efd724d38ad37968816709fa2b06328f67d9c0f8b899f847eb10dd1af5f0
+
+PASS: fresh NativeTransformRegression on the unchanged runtime: typed ITransform view/lifetime, native matrix ABI, all 8 rotations/mirrors, clipping, key/opaque compositing, scaling, RGB565 DIB cache coherence and unsupported singular matrix handling. Result: evidence/v014-NativeTransformRegression.log.
+
+PASS: fresh HostExitRegression: original STOP/Release, canceled timers, retained native save bytes, no injected game key and repeated cleanup/stale-input safety. Result: evidence/v014-HostExitRegression.log.
+
+PASS: fresh original-engine FirstCombatRegression: player HP 100 to 97 to 94 to 91; pistol ammo 10 to 6; guard HP 40 to 24 to 9 to 0 and corpse flag; post-combat Y 1376 to 1312; native timers continue to 999 and runtime stays live. Result: evidence/v014-FirstCombatRegression.log and evidence/v014-first-combat/. No synthetic gameplay or original executable patch is used.
+
+HISTORICAL BASELINE: the earlier full native acceptance/save/audio/cinematic/timer suite and 12-test shared UI Kit replay are retained as v0.1.3 evidence. They were not rerun in full for this layout-only release. Runtime and shared kit are byte-identical. The current five game-specific Android scenarios and the three native regressions above were freshly run for v0.1.4.
+
+VISUAL QA: evidence/v014-normal-layout.png and evidence/v014-keypad-layout.png show actual measured Android widgets rendered through their own onDraw methods with an original-engine combat capture used as a static renderer fixture. Both previews were inspected. They are host layout previews, not live phone screenshots. See evidence/V014_PREVIEW_SCOPE.txt.
+
+SCOPE: signed APK inspection, real original-engine host execution and Android framework checks. No physical Android device or emulator was connected. Actual phone update/cold launch, live Downloads export, audio output, touch/controller comfort, physical system/cutout insets, device heat/performance and full-game completion remain unverified for v0.1.4. Framework startup exercises the actual controls/kit in a test Activity; it is not packaged MainActivity running on a phone.

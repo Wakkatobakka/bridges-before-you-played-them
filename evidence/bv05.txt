@@ -1,0 +1,21 @@
+BV05 / Original Linux game and corrected jump, with different-core boundary
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 75–90
+Source SHA-256: 469fd7ce44bdad7aa62c68f6a92ebdcebddba112e39ec78ec8213492e57a73b0
+
+ORIGINAL EXECUTION — LINUX HOST
+Official EKA2L1 master-416fd7994 AppImage, Xvfb/software OpenGL, Nokia 5320.
+Genuine title/menu, Options/Keys, intro, native loading, 3D opening level and
+controller movement and the corrected native E4 jump were observed. The
+airborne ball and separate ground shadow are visible in host-correct-E4-in-game.png.
+Up plus Right produces simultaneous native
+movement; original camera follows that movement. Original movement and Jump A
+tutorials and original pause/menu were reached. See actual host screenshots.
+The earlier F1/F2 host keyboard routing was bypassed with dedicated host-only
+letter aliases to the same native softkey codes; Android does not use Qt keys.
+No game code was patched for this test.
+An earlier online Rankings experiment crashed the Linux host; logs are kept
+as earlier-configuration evidence, not represented as a failure reproduced
+against the finished Android APK. Online/Arena features remain unverified.
+The host runtime is a different build from the recovered Android native core.
+No claim of equivalence follows from seeing the game on Linux.

@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="We had startup and input counters on the phone, but a black viewport. The package was missing a resource directory that included eight renderer shaders."><meta property="og:title" content="The shaders never made it into the APK."><meta property="og:description" content="We had startup and input counters on the phone, but a black viewport. The package was missing a resource directory that included eight renderer shaders."><meta property="og:type" content="website"><title>Bounce: Boing Voyage · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / Bounce: Boing Voyage</div><div class="eyebrow">N-Gage 2.0 / Development history</div><h1>The shaders never made it into the APK.</h1><p class="dek">We had startup and input counters on the phone, but a black viewport. The package was missing a resource directory that included eight renderer shaders.</p><div class="article-meta"><span>Coverage: 0.1.0 → 0.1.1</span><span>2 min read</span><span>8 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#a-jump-on-the-host">A jump on the host.</a></li><li><a href="#counters-over-black">Counters over black.</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">Bounce took us from classic N-Gage into a newer phone environment. We kept the Ashen-derived Android EKA2L1 core and prepared the Nokia 5320 software stack. There was more to bring along than the game file.<a class="cite" href="#source-BV01" data-source="BV01" aria-label="Open evidence BV01">BV01</a><a class="cite" href="#source-BV08" data-source="BV08" aria-label="Open evidence BV08">BV08</a></p><section id="a-jump-on-the-host"><h2>A jump on the host.</h2><p>The Linux route reached the original title, Keys screen and 3D opening. An initial generic action-key hypothesis was replaced with the device’s actual gaming-key mapping. The corrected E4 input made the ball jump.<a class="cite" href="#source-BV04" data-source="BV04" aria-label="Open evidence BV04">BV04</a><a class="cite" href="#source-BV05" data-source="BV05" aria-label="Open evidence BV05">BV05</a></p><figure class="historical-figure wide-shot"><a href="../../assets/history/collection-bounce-0.png" target="_blank" rel="noopener"><img src="../../assets/history/collection-bounce-0.png" alt="The original Bounce ball airborne above its ground shadow after the corrected E4 Jump input. Retained Linux EKA2L1 host screenshot; this does not show the repaired Android APK." loading="lazy"></a><figcaption><span class="eyebrow">Historical host capture</span><p>The original Bounce ball airborne above its ground shadow after the corrected E4 Jump input. Retained Linux EKA2L1 host screenshot; this does not show the repaired Android APK.</p><p>Open the image for the full original view.</p><a class="cite" href="#source-BV90" data-source="BV90" aria-label="Open evidence BV90">BV90</a></figcaption></figure><p>That host ran a different EKA2L1 build from the inherited Android core. A ball in the Linux window could not certify the packaged phone renderer.<a class="cite" href="#source-BV05" data-source="BV05" aria-label="Open evidence BV05">BV05</a></p></section><section id="counters-over-black"><h2>Counters over black.</h2><p>On the 0.1.0 phone build, we had initialization, a surface, input dispatch and a game-setting file. The viewport stayed black while the log filled with program/uniform errors. The APK seed had left out the entire resources directory, including eight core GLES shaders.<a class="cite" href="#source-BV02" data-source="BV02" aria-label="Open evidence BV02">BV02</a></p><p>We restored 31 exact Ashen support resources before JNI startup on every launch, including installations where ready-v1 already existed. We could repair that directory in place and keep the player’s game files and saves.<a class="cite" href="#source-BV03" data-source="BV03" aria-label="Open evidence BV03">BV03</a></p><p>Shader checks and a rendered host fixture passed, while the repaired phone run remained a separate next result. Reporting also kept both the log head and tail so a flood of repeated errors could not bury the first useful failure.<a class="cite" href="#source-BV03" data-source="BV03" aria-label="Open evidence BV03">BV03</a><a class="cite" href="#source-BV06" data-source="BV06" aria-label="Open evidence BV06">BV06</a></p></section><details class="records-note"><summary>About these records</summary><p>Bounce uses the dependency-bearing EKA2L1/Nokia stopgap, not a completed independent runtime. The Linux jump, Android black viewport and repaired host/framework checks are distinct records. The image is an unchanged Linux window from the original game, not proof the corrected Android APK was played. Readiness repair preserves saves and does not overwrite the full seed.</p></details><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected source lines, investigation notes and recorded feedback. Open a receipt for the original context and scope.</p><details class="source-item" id="source-BV01"><summary><span class="source-title">BV01 / Ashen core, newer Nokia environment</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 66–73</p><pre>WHAT WAS REUSED
+Ashen v0.1.3's unmodified Android EKA2L1 core, JNI callbacks, lifecycle,
+first-install save protection and independent reporting. Its Pocket Kingdom/
+Shadowkey runtime lineage is retained in provenance. The original N-Gage
+Symbian 6 firmware was replaced with the required Nokia 5320 Symbian 9.3 FP2
+files and N-Gage 2.0 service dependencies. This is a newer platform generation.
+Actual Wakka Bridge Gameplay UI Kit v1.1.2 source is compiled into the APK.
+Its source/JAR/tests are preserved in app/ui-kit/.</pre><div class="source-tools"><a href="../../evidence/bv01.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV01" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV08"><summary><span class="source-title">BV08 / EKA2L1 and original environment credits</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/THIRD_PARTY_NOTICES.txt · selected lines 3–12</p><pre>EKA2L1 Symbian/N-Gage runtime by the EKA2L1 contributors.
+https://github.com/EKA2L1/EKA2L1
+GPL-3.0-or-later. License and recovered source snapshot are in upstream/.
+Unmodified native binary identity/provenance: upstream/PROVENANCE.json.
+
+Bounce Boing Voyage, the Nokia device environment and N-Gage service retain
+their respective original owners' rights. The supplied .n-gage was preserved
+unchanged. Additional device/service inputs are recorded in provenance.
+The separate bridge frontend and app-registration resource do not confer
+ownership over original game, artwork, firmware or service materials.</pre><div class="source-tools"><a href="../../evidence/bv08.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV08" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV04"><summary><span class="source-title">BV04 / Original gaming keys corrected the failed initial hypothesis</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 25–39</p><pre>CONTROLS — PRIMARY EVIDENCE, INCLUDING A CONSEQUENT CORRECTION
+Original Options &gt; Keys: movement is the controller, Jump is gaming A,
+Change form is gaming B. The controller center is distinct from numeric 5.
+The device profile is decoded from original C:/private/10202be9/20001079.cre.
+For /hardware/input/devices/0/orientation_270:
+  primaryactionkey (0x3b000f) = 228 = 0xE4
+  secondaryactionkey (0x3b0011) = 229 = 0xE5
+  keytranslationdata maps E4 to RGA 0x01000000, E5 to 0x02000000.
+The game's saved settings confirm orientation=3, key_action_270=80 (gaming A)
+and key_change_form_270=81 (gaming B). The JNI sink accepts scan codes directly.
+The initial generic Application0/Application1 (B4/B5) hypothesis did not
+produce jump and was replaced BEFORE delivery. No B4/B5 A/B binding is shipped.
+Native profile and real ngiinput/game disassembly are retained as evidence.
+Other mappings: arrows 10/11/0E/0F; center A7; softkeys A4/A5; Clear 1;
+digits ASCII and # 7F. All are runtime scan codes, not Android key codes.</pre><div class="source-tools"><a href="../../evidence/bv04.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV04" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV05"><summary><span class="source-title">BV05 / Original Linux game and corrected jump, with different-core boundary</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 75–90</p><pre>ORIGINAL EXECUTION — LINUX HOST
+Official EKA2L1 master-416fd7994 AppImage, Xvfb/software OpenGL, Nokia 5320.
+Genuine title/menu, Options/Keys, intro, native loading, 3D opening level and
+controller movement and the corrected native E4 jump were observed. The
+airborne ball and separate ground shadow are visible in host-correct-E4-in-game.png.
+Up plus Right produces simultaneous native
+movement; original camera follows that movement. Original movement and Jump A
+tutorials and original pause/menu were reached. See actual host screenshots.
+The earlier F1/F2 host keyboard routing was bypassed with dedicated host-only
+letter aliases to the same native softkey codes; Android does not use Qt keys.
+No game code was patched for this test.
+An earlier online Rankings experiment crashed the Linux host; logs are kept
+as earlier-configuration evidence, not represented as a failure reproduced
+against the finished Android APK. Online/Arena features remain unverified.
+The host runtime is a different build from the recovered Android native core.
+No claim of equivalence follows from seeing the game on Linux.</pre><div class="source-tools"><a href="../../evidence/bv05.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV05" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV90"><summary><span class="source-title">BV90 / Historical image / Bounce: Boing Voyage</span><span class="source-kind">Historical host capture</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/evidence/host-correct-E4-in-game.png</p><p>Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.</p><pre>Unchanged historical image.
+Source member: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/evidence/host-correct-E4-in-game.png
+SHA-256: 1251f11069184a441fbd248b9070e83c8712b9cc23d273d654a850997ad765b1
+
+The original Bounce ball airborne above its ground shadow after the corrected E4 Jump input. Retained Linux EKA2L1 host screenshot; this does not show the repaired Android APK.
+
+Scope: Historical Linux original-game execution in Nokia5320 guest environment; different EKA2L1 build from inherited Android core.</pre><div class="source-tools"><a href="../../evidence/bv90.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV90" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV02"><summary><span class="source-title">BV02 / The phone black viewport and omitted shader resources</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 92–114</p><pre>PHONE v0.1.0 FAILURE / v0.1.1 REPAIR
+The returned Samsung SM-S938U / Android 17 API 37 video shows a black viewport.
+Its genuine manual report confirms native initialization, original launch
+request, one native surface connection, surface 1028x771 and 156 dispatched
+input transitions. These counters are not FPS or gameplay-success evidence.
+The report lists original-game settings created in the guest, suggesting the
+original process executed beyond registration. Its native log tail is flooded
+with glUseProgram error 1281 and glUniform error 1282. Initial log diagnostics
+were displaced from the old tail-only report.
+
+The v0.1.0 packaged seed has no resources/ directory. The actual native core
+references eight external resources//*.vert/*.frag shader files. Upstream
+Android packaging explicitly copies the GLES shaders into resources/.
+The working supplied Ashen seed contains them, along with audio banks and
+upscale resources; all 31 are now restored byte-identically in a separate ZIP.
+All eight base shaders match the preserved GLES upstream source.
+
+RendererAssets installs/repairs and SHA-256 verifies only resources/ before
+JNI, even with ready-v1 already present. Guest seed, original files, config,
+native core and shared UI kit are unchanged. Same package/signing certificate,
+version code 2; intended as an in-place update. Native reports now include the
+first 64 KiB and last 128 KiB rather than losing startup errors in a flood.
+Phone evidence and exact restored-file hashes are retained in evidence/.</pre><div class="source-tools"><a href="../../evidence/bv02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV03"><summary><span class="source-title">BV03 / Repair before every startup without replacing saves</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 15–33</p><pre>v0.1.1 restores all 31 original renderer/audio resources from the working
+Ashen v0.1.3 seed, byte-for-byte. An independent resources/ installer verifies
+SHA-256 before native startup on EVERY launch. It runs even when the old
+ready-v1 guest marker already exists, and repairs missing/corrupt core resources.
+The existing guest seed, game files, firmware, UI kit and native core are
+unchanged. The installer only writes resources/; it does not modify guest
+saves, settings or configuration. Reports now retain the start AND end of the
+native log, so repeated errors cannot hide startup shader diagnostics.
+
+INSTALL THIS AS AN UPDATE over v0.1.0. The package and private signing key are
+the same, and version code is 2. Do not uninstall or clear app data to apply it.
+The actual upgrade path preserves existing guest files in the Android
+framework regression. All five core GLES programs compile/link/use in host
+Mesa GLES, and the screen sprite shader produces 256 exact fixture pixels.
+These checks validate the repair; v0.1.1 still needs a physical-phone test.
+
+The supplied original executable previously booted its title, introduction,
+Options &gt; Keys and 3D opening level in a different Linux EKA2L1 build.
+That host evidence does not establish Android gameplay or audio success.</pre><div class="source-tools"><a href="../../evidence/bv03.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV03" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-BV06"><summary><span class="source-title">BV06 / Keep both ends of the native log</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/CHANGES_v0.1.1.txt · selected lines 3–21</p><pre>Repair the black viewport reported on the first phone build.
+
+Root cause found: v0.1.0 omitted the external renderer resources needed by
+its unchanged native core. Native initialization/input counters continued,
+but shader program/uniform calls failed repeatedly.
+
+Restore all 31 original resources from the working supplied Ashen seed,
+including all eight GLES shader files. Verify immutable resources before
+native startup, independently of ready-v1; repair individual missing/corrupt
+files. Only resources/ is written by this migration. Guest seed and game data
+are unchanged. Retain the same private update signing key; version code 2.
+
+Keep the beginning and end of the native log in reports so repeated driver
+errors cannot displace the initial shader failure. Include resource state.
+
+Validation: 497 package/integrity checks; four production Android Activity
+regressions including actual ready-v1 upgrade preservation; all five renderer
+programs compile/link/use in Mesa GLES, with 256 exact screen-sprite pixels.
+No v0.1.1 phone rendering or audio success has yet been observed.</pre><div class="source-tools"><a href="../../evidence/bv06.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="BV06" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../star-wars-force-unleashed/index.html">Star Wars: The Force Unleashed →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

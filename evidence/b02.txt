@@ -1,0 +1,26 @@
+B02 — Rush Marine carries the work from DoJa into BREW
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / README.md
+Selected source lines: 5-7, 27-37
+
+
+
+Rush Marine Bridge is an independent Android compatibility bridge for running a user's own compatible copy of **Mega Man: Rush Marine**, the English **BREW 1.1.11 / CDM2030 128×160** release.
+
+It executes the original game's **ARM/Thumb module** through a Java interpreter and supplies the BREW services that this title uses. The original game drives the gameplay.
+
+[... selected excerpt ...]
+
+## Why Rush Marine Bridge exists
+
+Dirge, DeadShot, and FFVII Snowboarding were about making old DoJa games practical to play on modern Android. Rush Marine carries that bridge work into BREW.
+
+The starting point was a preserved feature-phone package. Getting that package onto a modern phone meant making its original ARM instructions execute, supplying the phone services it expected, recovering its image and audio paths, and working out what its keypad events actually did.
+
+This was developed through repeated chat-based AI iterations and testing on my phone. The reports and recordings mattered: things that looked correct on the host still broke on Android, and several assumed control mappings turned out to be wrong in real gameplay.
+
+The working BREW runtime was then brought into the shared Wakkan/Omni bridge structure: a familiar front door, a larger game view, compact controls, and readable reports. This standalone public release adds local game-data import while retaining that baseline.
+
+The original game and its preservation are separate from my bridge work. My aim here is to make the preserved game usable on modern Android.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

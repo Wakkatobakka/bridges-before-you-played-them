@@ -1,0 +1,17 @@
+Q201 / RE4 Zeebo supplies the compatibility starting point
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 3–14
+Source SHA-256: 4366352e234599ea83d928a2c283f224d65f3f6e6fb0f913afcc22e83e1fb358
+
+The original `quake2brew.mod` bytes remain unchanged. A SHA256/instruction-guarded
+host fast path now substitutes the file-to-buffer LZMA operation; the remaining
+game execution is interpreted ARM. Its module entry loads
+the BREW applet, starts its own game thread, reads its PACK/LZMA archive and
+executes the original Quake engine, menus, map logic, input adapter and saves.
+The host implements the required ARM/BREW services and translates original GL
+commands to Android GLES1. No Java Quake gameplay implementation is present.
+
+The starting compatibility source was the preserved RE4 Zeebo v0.1.10 private
+checkpoint. No RE4 executable or assets are included. Both supplied UI 1.1.2 and
+Omni handoff kits are preserved verbatim in `reference/`. Their old verification
+records are reference material, separate from this game's current evidence.

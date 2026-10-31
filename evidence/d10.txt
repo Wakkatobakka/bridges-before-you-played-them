@@ -1,0 +1,13 @@
+D10 — A short effect gets a complete output stream
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.2.0-report.txt
+Selected source lines: 699-702
+
+
+
+6.731  AUDIO PAD       Short MLD padded with silence for Android stream completion; audibleFrames=3048 streamFrames=11520
+   6.731  AUDIO QUEUE     Resampled MLD 8000 -> 48000 Hz; audibleFrames=3048 streamFrames=11520
+   6.734  AUDIO PLAY      48 kHz streamed MLD playback started; audibleFrames=3048 streamFrames=11520 volume=100
+   6.960  AUDIO COMPLETE  48 kHz streamed MLD playback reached end; audibleFrames=3048 streamFrames=11520
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

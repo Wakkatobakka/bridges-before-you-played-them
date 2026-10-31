@@ -1,0 +1,12 @@
+CR09 / A shared pad repair reaches both Contra control modes
+Source: Contra_4_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.3_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 3–5, 9–9
+Source SHA-256: 3937b50ce04b5b6a602be6bebf9fdb1ff398e8c8f0a0a266c71344c333bbd1b3
+
+BOUNDED v0.1.3 UPDATE: replaced the complete shared kit with the supplied v1.1.2 source and JAR. Both MainActivity's normal pad and ContraKeypad's alternate pad already instantiate BridgeDigitalPad with verified simultaneous-cardinal inputs, so both receive the repair. MainActivity.java, ContraKeypad.java and BrewRuntime.java are byte-for-byte identical to v0.1.2. BridgeController.java differs only in versionCode/versionName and UI-kit report identifiers. No layout, game mapping, original runtime, physics, timer, audio, save, lifecycle or reporting mechanism was changed.
+
+The v1.1.2 model stores each contact's keys by stable pointer ID and sends their union. Lifting one pad finger releases only its keys; another pad finger or registered physical owner keeps any shared key held. One-thumb diagonals remain available. The update retains the previous decor/startup fix. The contact repair originates in the supplied shared kit; no Ashen-specific game/runtime changes were imported.
+
+[... selected excerpt ...]
+
+Game execution: BrewRuntime.java is byte-identical to v0.1.1. Expected SHA-256: 93d61d186c3d03fe270cf4fdf80c8d2368f6cb5331a78dc6b5e315d196897a33. MOD/SP/MIF/SIG/store and all 26 unique original MIDI assets remain exact. The timer-deadline, precise bitmap-cache watches, low-cost presentation snapshots, original saves and audio notification order remain in place.

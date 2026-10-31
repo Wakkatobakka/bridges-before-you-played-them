@@ -1,0 +1,20 @@
+SW05 / The exact host, framework and renderer scope
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 3–17
+Source SHA-256: 415788c48a924f7d99c219f73c0bd381be4be9c6cc2cd010a316f8d7116d398d
+
+PASS: Android API 35 Java compile and min-API D8; signed/aligned APK.
+PASS: 82 original-payload/core/renderer/kit/clean-seed packaging checks.
+PASS: 4 actual Robolectric Android API 34 Activity tests against this bridge.
+PASS: 5 exact APK GLES programs compile/link/use; 256 fixture pixels match.
+PASS: 27 installer records pass embedded SHA-1; 25 selected bytes preserved.
+
+Linux host evidence: startup, calibration, menus/controls, tutorial accepts
+Left -> Up -> numeric 8 as the first pattern. No campaign progress implied.
+starwars-recovered.png is the native attract sequence, not controlled story.
+The first host investigation used the reused environment before title cleanup;
+final seed cold boot is recorded separately. Linux core differs from Android.
+
+NOT DEVICE VERIFIED: original Android execution/rendering/audio, thumb comfort,
+phone pause/resume, save/load, live Downloads export and Android Back.
+Online features are unverified. Original host Exit path crashed once.

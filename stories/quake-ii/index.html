@@ -1,0 +1,207 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="We hit a mipmap guard on Android that the old desktop test had missed. Later, we worked on the long wait for the original map to finish loading."><meta property="og:title" content="The phone took the texture path the host missed."><meta property="og:description" content="We hit a mipmap guard on Android that the old desktop test had missed. Later, we worked on the long wait for the original map to finish loading."><meta property="og:type" content="website"><title>Quake II · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / Quake II</div><div class="eyebrow">Zeebo / Development history</div><h1>The phone took the texture path the host missed.</h1><p class="dek">We hit a mipmap guard on Android that the old desktop test had missed. Later, we worked on the long wait for the original map to finish loading.</p><div class="article-meta"><span>Coverage: 0.1.0 → 0.1.4</span><span>2 min read</span><span>9 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#level-one">Level one.</a></li><li><a href="#the-long-load">The long load.</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">We started Quake II from the RE4 Zeebo compatibility work. The phone then took a compressed-texture path our earlier desktop renderer had sidestepped.<a class="cite" href="#source-Q201" data-source="Q201" aria-label="Open evidence Q201">Q201</a><a class="cite" href="#source-Q203" data-source="Q203" aria-label="Open evidence Q203">Q203</a></p><section id="level-one"><h2>Level one.</h2><p>The phone’s EGL context and readbacks were working before a 32×64 compressed texture at mip level 1 hit the guard. The existing decoder accepted its bytes; an inherited level-not-zero check rejected them first.<a class="cite" href="#source-Q203" data-source="Q203" aria-label="Open evidence Q203">Q203</a><a class="cite" href="#source-Q204" data-source="Q204" aria-label="Open evidence Q204">Q204</a></p><p>Our earlier desktop fixture advertised no relevant extension, so the game used its uncompressed fallback. We revised the checks to reproduce the actual Android adapter failure, then sent compressed uploads through that production adapter into Mesa. Now we were checking the route that had failed on the phone.<a class="cite" href="#source-Q204" data-source="Q204" aria-label="Open evidence Q204">Q204</a></p><figure class="historical-figure wide-shot"><a href="../../assets/history/collection-quake_ii-0.png" target="_blank" rel="noopener"><img src="../../assets/history/collection-quake_ii-0.png" alt="The original Quake II world and weapon in a retained 640×480 desktop original-runtime frame." loading="lazy"></a><figcaption><span class="eyebrow">Historical host capture</span><p>The original Quake II world and weapon in a retained 640×480 desktop original-runtime frame.</p><p>Open the image for the full original view.</p><a class="cite" href="#source-Q290" data-source="Q290" aria-label="Open evidence Q290">Q290</a></figcaption></figure></section><section id="the-long-load"><h2>The long load.</h2><p>Later loader acceleration was bound to the measured original LZMA wrapper and archive identity. All 3,330 decoded entries were compared with actual original ARM output, including lengths and file positions. Disposable caches could help without becoming required game data.<a class="cite" href="#source-Q207" data-source="Q207" aria-label="Open evidence Q207">Q207</a><a class="cite" href="#source-Q208" data-source="Q208" aria-label="Open evidence Q208">Q208</a></p><p>The retained single-run desktop first-map comparison fell from 33.820 seconds to 5.682 cold and 4.851 warm. Those loading times include decompression, setup, texture uploads and verification swaps. The strengthened route waited for an active original map instead of assuming a fixed number of frames meant loading was done.<a class="cite" href="#source-Q208" data-source="Q208" aria-label="Open evidence Q208">Q208</a><a class="cite" href="#source-Q209" data-source="Q209" aria-label="Open evidence Q209">Q209</a></p><p>We kept the original control, save and reload checks alongside the loader work. The missing texture contract and the long loading wait were different problems. Both stood between opening the game and settling into its map.<a class="cite" href="#source-Q205" data-source="Q205" aria-label="Open evidence Q205">Q205</a><a class="cite" href="#source-Q206" data-source="Q206" aria-label="Open evidence Q206">Q206</a><a class="cite" href="#source-Q208" data-source="Q208" aria-label="Open evidence Q208">Q208</a></p></section><details class="records-note"><summary>About these records</summary><p>The phone texture fault, production-adapter reproduction and desktop map timings retain separate scopes. The retained image is historical desktop original-runtime output. Exact decoder comparisons establish their stated bytes/contracts, not whole-game equivalence or phone speed. The latest loader source explicitly lacks a physical-phone result for that repair.</p></details><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected source lines, investigation notes and recorded feedback. Open a receipt for the original context and scope.</p><details class="source-item" id="source-Q201"><summary><span class="source-title">Q201 / RE4 Zeebo supplies the compatibility starting point</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md · selected lines 3–14</p><pre>The original `quake2brew.mod` bytes remain unchanged. A SHA256/instruction-guarded
+host fast path now substitutes the file-to-buffer LZMA operation; the remaining
+game execution is interpreted ARM. Its module entry loads
+the BREW applet, starts its own game thread, reads its PACK/LZMA archive and
+executes the original Quake engine, menus, map logic, input adapter and saves.
+The host implements the required ARM/BREW services and translates original GL
+commands to Android GLES1. No Java Quake gameplay implementation is present.
+
+The starting compatibility source was the preserved RE4 Zeebo v0.1.10 private
+checkpoint. No RE4 executable or assets are included. Both supplied UI 1.1.2 and
+Omni handoff kits are preserved verbatim in `reference/`. Their old verification
+records are reference material, separate from this game's current evidence.</pre><div class="source-tools"><a href="../../evidence/q201.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q201" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q203"><summary><span class="source-title">Q203 / The physical phone stops at a compressed level-one texture</span><span class="source-kind">Phone runtime report</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/evidence/phone-reports/Quake_II_Bridge_v0.1.0_FAULT_20261025_044238_673.txt · selected lines 16–25, 32–35</p><pre>Android real EGL context active: true
+Original guest EGL swaps: 253
+Android GLES1 calls: 12871
+Original geometry draws: 1969
+Original texture uploads: 52
+Readbacks passed: 253
+Readbacks failed: 0
+Original GL errors preserved: 0
+GPU RGB pixels latest: 23893
+GPU RGB pixels maximum: 306615
+
+[... selected excerpt ...]
+
+Android audio failure: none
+Android host failure: none
+Original gameplay/input outcome: not yet verified on phone
+Guest fault: thread -&gt; IllegalStateException: Unrecognized guest compressed texture shape target=0xde1 level=1 format=0x8c92 dimensions=32x64 size=1024</pre><div class="source-tools"><a href="../../evidence/q203.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q203" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q204"><summary><span class="source-title">Q204 / Desktop fallback had missed the phone mipmap route</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md · selected lines 116–135</p><pre>## v0.1.1 phone loading repair
+
+Both supplied phone reports stop at the production compressed-texture guard:
+`target=0xDE1 level=1 format=0x8C92 dimensions=32x64 size=1024`. The existing
+ATC RGB decoder accepts those bytes; an inherited `level != 0` guard rejected
+them first. v0.1.1 permits levels 0 through 11 within the existing bounded
+2048-pixel texture contract and preserves the original level passed to GLES.
+Payload length validation and invalid-level rejection remain active.
+
+The former desktop renderer used a separate texture adapter and an empty
+extension fixture, so it exercised the game's uncompressed fallback. Current
+tests reproduce the exact failure against the archived v0.1.0 Android adapter,
+then exercise the actual AndroidEglDriver.invokeGles. Test-only EGL/GL
+service sinks keep this separate from physical Android acceptance. Full guest
+play and reload runs advertise the explicit GL_ATI_imageon_misc capability
+fixture, route every compressed upload through the production Android adapter,
+and submit its decoded bytes to real Mesa OpenGL. Those v0.1.1 runs passed 1,851
+compressed uploads including 1,612 nonzero mip levels and five matches of the
+reported 32x64 level-1 shape. This source and service-shim change is test-only;
+no Android framework replacements are packaged in the APK.</pre><div class="source-tools"><a href="../../evidence/q204.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q204" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q290"><summary><span class="source-title">Q290 / Historical image / Quake II</span><span class="source-kind">Historical host capture</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE/evidence/guest-state-0019.png</p><p>Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.</p><pre>Unchanged historical image.
+Source member: Quake_II_Bridge_v0.1.4_PRIVATE/evidence/guest-state-0019.png
+SHA-256: b15ba0f975971c7d448e30c7a1e663d68efe7a5c1faf50daa538713b75c51eff
+
+The original Quake II world and weapon in a retained 640×480 desktop original-runtime frame.
+
+Scope: Historical original ARM/desktop OpenGL output; game-only pixels, no personal UI. Not a phone screenshot or a direct visual measure of loading speed.</pre><div class="source-tools"><a href="../../evidence/q290.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q290" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q207"><summary><span class="source-title">Q207 / Original LZMA wrapper and disposable decoded caches</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md · selected lines 223–258</p><pre>## v0.1.4 original loader acceleration
+
+The original wrapper at 0x10861C takes IFile in r0, output buffer in r1 and
+output length pointer in r2. r1=0 size queries still execute in ARM. Successful
+host calls return r0=0 to LR, preserve SP and callee-saved registers, write the
+exact uncompressed bytes/length, and preserve the original read-ahead position:
+a 13-byte header followed by complete 64 KiB fread blocks, bounded by EOF.
+All 3,330 actual original routine calls establish this contract, including
+multi-block maps and archive-tail resources. No guest program bytes are patched.
+
+NativeLzma enables only for the exact original module and PACK SHA256 plus
+wrapper words E92D4FF7/E24DD802/E8BD8FF0. Each call requires a read-only original
+PACK handle with the same verified backing array and an indexed entry boundary.
+It checks output bounds before any writes. Decode failure leaves guest memory
+and file position untouched and executes the original routine. Unknown original
+identities retain ARM decoding. XZ for Java 1.12 is bundled offline; official
+source, license and binary/source hashes are retained in reference/. D8 consumes
+the binary dependency; no platform-native decoder or online setup is required.
+
+Read-only FileState handles now retain immutable filePayloads backing bytes.
+Writable handles clone them, and an unexpected write to a read-only shared
+handle detaches its bytes before mutation, preserving previous copy isolation.
+This avoids repeatedly allocating/copying all 52,532,706 archive bytes per open.
+No original file contents or save formats are changed.
+
+Decoded assets use a per-session access-order 8 MiB memory cache and optional
+32 MiB app-private disk cache. Disk namespace includes the full PACK SHA256;
+keys contain entry offset/packed length. Records validate magic, output length,
+exact file size and output SHA256, and writes rename a complete temporary file.
+Corrupt/truncated records are removed and decoded again. Cache storage failures
+are ignored; no saves or runtime snapshots are cached. Android may evict it.
+
+Reports include host decoder/cache counters and time, fallbacks, avoided file
+copy volume and first-gameplay time since launch. The latter includes menus and
+user input and is explicitly labelled; it is not isolated map-load timing.
+The existing gameplay/fire-held frame timing and touch controls are retained.</pre><div class="source-tools"><a href="../../evidence/q207.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q207" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q208"><summary><span class="source-title">Q208 / All original outputs match and the first map loads sooner on desktop</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/VERIFICATION.md · selected lines 8–18, 23–47</p><pre>| Check | Result |
+| --- | --- |
+| Original decoder equivalence | All 3,330 entries compared with actual original ARM routine execution. All 145,520,364 output bytes, lengths, complete-block read-ahead file positions and buffer bounds match. 12,915,109,803 original ARM instructions executed for this comparison. |
+| Runtime hook contract | Original CPU dispatch returns success/output length/file position and preserves stack/callee-saved registers. Unknown archive identity and changed wrapper instructions reject acceleration. Read-only handles share bytes; writable handles and unexpected read-handle writes retain copy isolation. |
+| Decoded cache | Exact round trip; corrupt, truncated and wrong-size records rejected; invalid paths rejected; bounded disk use; unavailable cache storage does not gate execution. The working memory cache remains bounded to 8 MiB. |
+| Cold/warm execution | Cold: 400 host decodes, 145 memory hits, zero disk hits. Warm: 400 disk hits, 145 memory hits, zero host decodes. Both reach the actual active original map and render verification frames; zero fallback calls. |
+| Original play and save | 566 original swaps, 83,077 GLES calls, 10,300 draws, 1,997 texture uploads. The four original current-to-save1 files match byte-for-byte; no guest fault. |
+| Fresh native reload | The original saved map becomes active and renders: 250 swaps, 14,232 GLES calls, 1,516 draws, 1,976 textures; shutdown fault=null. The strengthened check waits for native gameplay state instead of assuming a fixed frame count completes loading. |
+| Native controls | All 13 masks/releases, live Casual/Expert fire routing, menu Back, fine swipe, strafe without yaw, simultaneous forward/strafe/aim/fire, release-to-zero, preset/descriptor retention and timing categories pass against the accelerated original ARM execution. |
+| Texture and GPU adapter | Production Android adapter levels 0–7, earlier phone shape, malformed input, actual swap/readback observer, wall-clock/capture classification and exact pixel conversion pass with explicit desktop platform services. Play and completed reload both submit 1,851 compressed uploads / 1,612 mip uploads / five earlier phone-shape matches. |
+| Core regression | CPU multiply, contact buffer, continuous fine touch response, cancellation, gameplay/fire-held timing and bounded ring tests pass. |
+
+[... selected excerpt ...]
+
+## Loading comparison
+
+| Desktop JVM/Mesa | First-map loading |
+| --- | ---: |
+| v0.1.3 original ARM loader | 33.820 seconds |
+| v0.1.4, new empty disk cache | 5.682 seconds |
+| v0.1.4, warm disk cache | 4.851 seconds |
+
+These are single controlled desktop runs, not phone performance measurements.
+The same original new-game choice is driven through native input. Original
+startup/intro timing changes the number of confirmation presses needed. Timing
+starts at the confirmation that triggers the original loading-plaque flag,
+then includes original progress frames, decompression, map setup, texture
+uploads and three verification swaps after native gameplay becomes active.
+Menu waiting before the map request is excluded. No background tests ran during
+the final timings. The cold run uses a new unique empty cache directory and
+asserts real host decodes; the warm run reuses it and asserts disk hits. Baseline
+came from the preserved v0.1.3 source without profiling instrumentation.
+The earlier fixed-frame navigation/connection-state timing attempts were not
+used for these results. Baseline timing was retained while cold/warm were
+repeated to verify cache conditions. Raw logs and summary accompany the build.
+
+The new run avoided 28,688,578,258 bytes of repeated read-handle backing copies
+across startup/menu/first-map opens. This is avoided allocation/copy volume,
+not additional persistent memory or a measure of disk reads.</pre><div class="source-tools"><a href="../../evidence/q208.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q208" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q209"><summary><span class="source-title">Q209 / The latest loader has no physical-phone result yet</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/VERIFICATION.md · selected lines 49–59</p><pre>## Limits and acceptance
+
+No physical Android test occurred here. Phone loading time, gameplay FPS, GPU
+behavior, audio, report output/background recovery and the complete campaign
+remain owner acceptance work. This build makes no measured gameplay FPS claim.
+Existing original negative viewport submissions remain visible in desktop GL.
+
+The external Omni host project was unavailable, so its old 84 production
+intake/export checks remain a labelled v0.1.0 baseline. Current embedded recipe,
+original-file identities, package identity and signing continuity were checked;
+no game-specific Omni source change is needed.</pre><div class="source-tools"><a href="../../evidence/q209.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q209" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q205"><summary><span class="source-title">Q205 / Correct native buttons and fine touch input</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md · selected lines 139–170</p><pre>The running original ARM callbacks prove the face masks: UID 0106C40B -&gt; 0001
+(ZEEBO_1/203), UID 0106C40A -&gt; 0002 (ZEEBO_2/204), UID 0106C40D -&gt; 0004
+(ZEEBO_3/205), UID 0106C40C -&gt; 0008 (ZEEBO_4/206). The former inherited
+2/4 UID assignment was reversed. Original menu Back is key 204/button 2;
+button 1 confirms. All thirteen face/shoulder/secondary controls are checked
+for their exact native mask and clean release by QuakeControlProbe.
+
+ControlsState reads this exact edition's relocated keybinding table at
+0x82D438 and original key_dest at 0x1FA914. It does not write either. Labels
+track the actual commands rather than guessing Casual/Expert from a saved
+preference. FIRE · DRAG resolves the native UID bound to +attack. Context or
+binding changes release touch contacts before changing the captions/routing.
+
+The floating MOVE origin starts at the contact point. A continuous 6% radial
+deadzone and curved magnitude replace the previous discontinuous 12% cutoff.
+The original HID helper itself suppresses stick changes below 25%. Touch mode
+retains it for menu navigation, and supplies continuous virtual samples through
+the unchanged NBI adapter only at the original IN_Move poll (0x10E22C), after
+the original has calculated frame speed. Every original instruction still runs.
+The suspended ARM registers, flags, instruction mode and current PC are restored
+after the adapter calls. No original code, binding, angle or position is patched.
+
+NBI axis events E024/E023/E028/E027 deliver left X/Y and right X/Y in the
+original fixed-point format. Touch look accumulates relative distances (0.22
+reference degrees per dp at the original default sensitivity), sampled once at
+the original poll. Conversion uses the original frame speed and axis-mode flags.
+The game still applies its sensitivity, inversion, view clamp and actual preset.
+Swipe impulses can reach 3x virtual deflection for quick turns; pending look is
+bounded to 18 degrees. Stationary touch does not hold a turning velocity. A
+1 dp native test changes yaw by about -0.214 degrees, below one degree and in
+the original rightward direction. Menu motion is discarded. Cancel, pause,
+resize, preset changes and restart clear contact/motion state.</pre><div class="source-tools"><a href="../../evidence/q205.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q205" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-Q206"><summary><span class="source-title">Q206 / Original side-move arithmetic and separate fire-held timing</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md · selected lines 180–220</p><pre>The original Joy_AdvancedUpdate at 0x1835C0 chooses AxisTurn (4) for left X in
+Casual, and AxisSide (3) in Expert. The touch device now selects the already
+compiled AxisSide path for left X during IN_Move. At 0x10E22C it saves the
+current horizontal-axis descriptor at 0x82B394 and temporarily supplies 3.
+At the common original epilogue (0x10E9C4), it captures the real forward/side
+usercmd fields and restores the saved descriptor before the original returns.
+Original instructions continue executing, including the original strafe
+arithmetic. The original preset cvar and numbered/shoulder binding table are
+retained; no original code, player coordinates or camera angles are written.
+The exact entry/epilogue/adapter instruction words are checked when touch mode
+is enabled. The native test proves both strafe directions without yaw change,
+restored descriptor/preset/bindings, and forward + strafe + look + fire together.
+
+AIM is now one ViewGroup containing an 88 dp fire target. Its touch router owns
+all pointer IDs within that surface and selects firing only from a contact's
+initial hit. Look-only contacts can cross the target without firing. A firing
+contact keeps its own shared BridgeInput source while dragging outside the
+button. Additional aim/fire contacts use distinct IDs; the newest aim contact
+owns look, and superseded contacts cannot release another contact's key hold.
+Accessibility taps still use the actual embedded Android Button. Original
+fire buttons retain their drag behavior. All original controls and shared UI
+1.1.2 remain present. Both supplied integration kits remain unchanged.
+
+Reference swipe gain remains 0.22 degrees/dp horizontally and is now 0.14
+vertically, still translated into native input samples before the original's
+sensitivity/inversion/view clamp. No averaging filter is introduced.
+
+AndroidEglDriver calls a swap observer with monotonic wall time, readback plus
+pixel-conversion duration, and actual swap success. FrameTiming groups only
+consecutive successful swaps in active original gameplay (key_dest game and
+connection state active, original refresh_prepped byte set and loading-plaque
+byte clear). The original CL_Frame and loading-plaque instructions establish
+these fields. Menus, loading and Android lifecycle gaps break the
+interval chain. A second category requires the original fire binding to be
+held at both endpoints. The report explicitly calls this fire-held gameplay,
+not enemy/combat detection. It includes a bounded rolling 10-second window,
+interval p50/p95/max, FPS, capture mean cost and cumulative active-category FPS.
+Reports remain cached and exported by the independent writer; new filenames
+correctly identify v0.1.3. Native input/fire-state classification, timing math
+and the production swap observer have separate tests. These metrics have not
+yet been measured on a physical phone with v0.1.3.</pre><div class="source-tools"><a href="../../evidence/q206.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="Q206" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../nfs-carbon-zeebo/index.html">Need for Speed: Carbon — Domine a Cidade →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

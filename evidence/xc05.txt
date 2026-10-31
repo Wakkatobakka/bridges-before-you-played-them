@@ -1,0 +1,11 @@
+XC05 / The original flip and slide keys stay distinct
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 36–41
+Source SHA-256: 4c37201c87a2aaafd759ad33a7ab39aecf898b7d065d766ead1eff3a83124c24
+
+CONTROLS
+D-pad left/right runs, up jumps, down crouches. JUMP repeats original 2 beside
+SPIN (5). FLIP 1/3 and SLIDE 7/9 remain separate original moves.
+SELECT advances menus. BACK / PAUSE (-7) opens the original Quit?/No menu;
+choose No with SELECT to resume. Literal # and * remain accessible.
+ORIGINAL KEYPAD / D-PAD RETURN switches inline. Android Back cleans up and exits.

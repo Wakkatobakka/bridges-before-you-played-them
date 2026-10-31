@@ -1,0 +1,21 @@
+T08 — The game handles unavailable camera hardware itself
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.15.md
+Selected source lines: 23-34
+
+
+
+| Service | Actual behavior |
+| --- | --- |
+| Camera | Property0 reports unavailable; property1 returns measured initialization failure2. The original guest displays its failure page, updates its camera preference, and continues through its own fallback. No Android camera implementation or camera permission is claimed. |
+| Secure storage | Get/Put success is0. The original opaque settings blob is retained, hashed, and restored with the requested exact size; failures remain errors rather than guessed settings. |
+| User filesystem | Original all.dz callbacks are copied at registration; Open/Read/EOF/Seek/Tell/Close dispatch to the measured functions. EOF is2, Close is5. Host memory files support the measured read/write/position/EOF path. |
+| User memory manager | s3eMemorySetUserMemMgr records original malloc/realloc/free callbacks; ordinary memory operations execute those original callbacks. Base allocation services retain their host implementation and avoid recursion into the guest manager. |
+| Guest heap | A bounded reusable 16MiB arena replaces the nonreclaiming bump model. Host-reserved blocks are distinct from releasable guest blocks. Realloc preserves data; free allows reuse. Memory property2 is total remaining arena bytes; property4 is the largest aligned contiguous free block. |
+| Zero-byte allocation | The original C++ allocator rejects NULL for zero-length arrays. A zero-byte guest request receives a unique releasable one-byte allocation. The original diagnostic path exposed the remaining-memory property2 requirement while correcting this behavior. |
+| Keyboard | AnyKey returns an actual active key ID, which the original guest subsequently passes to GetState. KeyboardUpdate snapshots DOWN/PRESSED/RELEASED edges. ClearState clears consumed edges while retaining physical contact ownership. |
+| Timing/lifecycle | Guest execution remains on MGS-Guest with cooperative yield. Foreground, window focus, and explicit Pause are independent; cancellation remains observable while paused. |
+| Media | Original guest mixer/generator callbacks run only on the interpreter worker. AndroidAudioHost receives original PCM and asks for bounded new chunks according to playback-head demand. UI lifecycle only changes input flags; the worker handles sink pause/resume/close. |
+| Display | Original software-rendered 320x240 RGB565 presents are aspect-fit into a retained View/Bitmap/pixel buffer. Latest-frame coalescing avoids a queue of stale display updates. |
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

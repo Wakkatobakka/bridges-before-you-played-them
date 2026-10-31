@@ -1,0 +1,38 @@
+BJ06 / Original timer and the tested scope
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 3–22, 34–43
+Source SHA-256: f5b8bb7522dd364bdd3c1e0c2c8fb9a40adacaa15ae47e434486f95669c7b98c
+
+VERIFIED THROUGH EXECUTION
+The exact supplied original ExEn NEXE package executes through the VM.
+Legal screen, publisher splash, title, main menu and campaign navigation render.
+Original sliding gameplay scrolls, eggs and obstacles appear, and left/right
+inputs change Banjo's position. The first Egg Scramble mission was cleared
+with 45 eggs, awarded the first Jiggy, and progressed naturally into Sheep Dip.
+Holding numeric 5 changes its power gauge; releasing launches the fishing line.
+Holding/releasing Down produces the same resulting raster as numeric 5.
+Right softkey pauses and Select resumes.
+Short press/release input transitions queued before a VM tick are preserved.
+Native snapshots restore the exact frame and the same next 12 frames; this
+also passes after native shutdown and a fresh boot. The original game writes
+its own save-Banjo_Kazooie.dat file through saveCtx.
+The original game requests a 125 ms timer period (8 ticks per second).
+See evidence/validated_suite/, evidence/progression/ and their reports for frame hashes, control actions,
+timings and runtime counters. No VM faults, warnings or input overflows were
+observed in the verified paths.
+The final reproducible checks executed 1,559 ticks with zero VM faults,
+warnings or input overflows. Snapshot continuation also passed in a separate
+host process. The current combined record is evidence/VERIFIED.txt.
+
+[... selected excerpt ...]
+
+SCOPE / REMAINING DEVICE CHECKS
+Host execution is not physical Android testing. Phone touch feel, performance,
+battery temperature, system-bar behavior and hardware audio have not yet been
+measured on the S25 Ultra. Later missions and complete campaign progression
+are not certified by the tested opening paths.
+The verified game paths emit no melody events. Audio remains unverified; the
+Android frontend supports native ExEn monophonic melody requests, but that
+does not establish that this title produces sound or that the game's full
+audio behavior is reproduced. No extracted Sound OFF text is treated as an
+observed menu setting.

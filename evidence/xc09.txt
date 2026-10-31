@@ -1,0 +1,11 @@
+XC09 / Both original melody buffers pass the release-class tests
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/audio-release-class-tests.txt
+Selected lines: 1–6
+Source SHA-256: 6616385685fd3b2fbaa4471349017b8b016f65d39c9e0855558112196ccd0c4e
+
+Android API34 AudioTrack framework check; host output sink, no physical speaker claim.
+[Robolectric] WARN: Android SDK 36 requires Java 21 (have Java 17). Tests won't be run on SDK 36 unless explicitly requested.
+EMPTY_STATIC_TRACK_STATE=2
+ORIGINAL_MELODY_1 accepted_bytes=936684 peak=4915 state=1 play_state=3
+ORIGINAL_MELODY_2 accepted_bytes=936684 peak=4915 state=1 play_state=3
+CRASH ANDROID AUDIO: tests=6 failures=0

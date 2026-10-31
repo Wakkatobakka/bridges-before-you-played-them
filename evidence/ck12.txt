@@ -1,0 +1,37 @@
+CK12 / Motion samples arrived; the game never read them
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/docs/MOTION_V007_FIX.md
+Selected lines: 3–24, 26–32
+Source SHA-256: a370934bbe9003efc8d56a233add81a204add37b05c4afdf162533c1cb53c0f7
+
+The physical v0.0.6 report contains 11,472 accelerometer samples and seven mode changes, but zero RollReader polls. The host received phone motion; the original guest remained in its key-reader fallback.
+
+## Cause
+
+The original settings have a draft and a committed copy:
+
+| Original API | Meaning |
+| --- | --- |
+| `c.t.l(2)` | Read draft control setting, used by the options display and some minigame logic. |
+| `c.t.c(2, value)` | Write draft control setting. `0` is gesture, `1` is KEY. |
+| `c.t.m(2)` | Read committed control setting, consulted by `c.f.c(int)` when selecting a reader. |
+| `c.t.c()` | Original save/commit function, copying draft settings into the committed settings. |
+
+v0.0.6 wrote and reported the draft setting without calling the original commit function. When the toolbar requested gesture mode, `c.f.c` still saw committed KEY mode and selected active reader `1`. The toolbar therefore said MOTION while the guest never called RollReader or ShakeReader.
+
+## Repair
+
+The Android toolbar writes the original setting, invokes the original save/commit function, and replays `c.f.z`, the original game's current reader request. That field retains the requested reader even when KEY mode falls back to reader `1`. This preserves the original requests for roll (`2`), shake (`3`), and the forced-gesture flag (`16`) used by motion practice, rather than selecting a reader from an overlay guess.
+
+The mode display now follows committed `c.t.m(2)`. Reports include original requested and active reader values, RollReader poll count, ShakeReader poll count, and last sampled shake strength. The original save format and 4,096-byte scratchpad remain intact. The original commit function also commits any other draft options, matching the game's own options-close behavior.
+
+The report's `Sensor neutral pending=true` occurred while the activity was paused for saving the report. `Paused: true`, PhoneSystem attribute 2 = 0, and the game thread waiting in `Host.awaitActive` corroborate that state. It is separate from the mode-commit defect.
+
+[... selected excerpt ...]
+
+## Verification
+
+`MotionIntegrationProbe` executes the charset-compatible derivative of the original guest JAR against production bridge classes and Android API doubles. It feeds accelerometer events into `ChokkanInput`, lets the actual guest game loop poll its readers, and observes original guest fields. It does not invoke RollReader directly or supply steering/charge keys during the motion checks.
+
+All five cases prove committed gesture mode, correct original active reader, sensor ingestion, persisted setting byte, and return to committed KEY mode. Skydiving, sledding, and dance prove signed left/right/forward tilt values through the original guest integration. Sledding additionally proves a change in the original player's world position. Hammer proves charge power from sensor shake; quiz proves the original reveal-strength field responds to sensor shake. The three roll cases also verify that a fresh sample after suspension becomes neutral without retaining earlier tilt.
+
+A separate original `c.t.b()` load regression reproduces the draft/committed mismatch, reloads both saved modes, and verifies other options and a saved score survive the original commit. See `tests/runtime/motion-*-verified.txt` and `motion-settings-verified.txt` for exact passing output. This validates the repaired dispatch and guest behavior; physical phone response still needs the next APK test.

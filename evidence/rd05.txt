@@ -1,0 +1,26 @@
+RD05 / Original installer integrity and stated phone boundary
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 43–63
+Source SHA-256: f855356b967288a1918f0744e65012b29fc204c977728bad1e65bb8c91465134
+
+VERIFIED HERE
+Original installer: all 38 records decompress and match embedded SHA-1;
+36 unchanged records are selected for the matching FP2 environment.
+Real Linux EKA2L1 run: fresh campaign, 3D movement/turning, aiming, firing
+(ammo 15 to 14), reload (back to 15), native paused interface and real audio.
+Android framework: five tests covering actual Activity startup/layout,
+inline modes, independent pad/action contacts, controller ownership,
+early fault recording, renderer repair/save isolation and report export
+through a real file-backed provider fixture. JNI gameplay is disabled there.
+Omni's unchanged 0.5.11 preparation rebuilt all 9,380 seed files and 31
+renderer files identically from verified sources, repeated preparation kept
+a live-save sentinel, and a changed original was rejected.
+Five GLES programs and a real 256-pixel renderer fixture pass on host Mesa.
+APK CRC, signature/alignment and 9,828 packaging/integrity assertions pass.
+
+PHONE CHECK STILL REQUIRED
+Actual Android native execution, touch comfort, sound, gamepad hardware,
+pause/resume, Back to Omni, live Downloads export and an in-game save/load
+round trip. The full campaign and all later protected content were not
+completed. Linux host execution uses a different EKA2L1 build from Android;
+its success is useful evidence, not proof of identical handset behavior.

@@ -1,0 +1,34 @@
+OE03 / From an early284-instruction stop to the original world
+Source: Orcs_Elves_II_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Orcs_Elves_II_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 19–37, 48–54
+Source SHA-256: a604d701e69dc0ebb30c30fff2bf92b3f718e30b7ac006f95537aea7c4d75a0c
+
+WHAT WAS ACTUALLY VERIFIED
+- Original unchanged 2007 Electronic Arts BREW ARM module launched on a desktop Java host.
+- Original native game ran intro, title menus, New Game, difficulty, story,
+  and rendered a moving first-person 3D opening scene using original assets.
+- More than 450 original timer callbacks and 17 native SELECT interactions
+  with no guest runtime failure in a representative host smoke test.
+- 115 original BREW CMID/QCELP sound assets decoded into playback-ready WAV.
+  Eight sampled original playback events matched these exact assets.
+- Original guest-generated sd_ save slots and config survived a new runtime session.
+- Compiled APK: Android 8.0+ (API 26), original 176x220 game display,
+  private game saves, on-device runtime, report capture, original game input.
+- APK compiled and cryptographically signed (APK signature schemes v2/v3).
+
+STILL TO BE TESTED ON A PHYSICAL PHONE
+- Real Android app launch, touch/control feel, frame pacing/heat, sound playback,
+  save persistence across full Android application restart, combat and later levels.
+- One early startup BREW service call remains a provisional compatibility response,
+  empirically sufficient for the host launch; full service semantics are unconfirmed.
+This is the first playable CANDIDATE, not a verified end-to-end completed game.
+
+[... selected excerpt ...]
+
+PROJECT LINEAGE
+Adapted BREW/ARM execution base from the Wolfenstein RPG bridge and
+Doom RPG's original-input/audio Android integration. REGenesis v0.6.1 is the
+UI/report philosophy reference, not the source of Orcs & Elves II controls.
+Omni Devourer initial frontier: interface 0x0100102E, method offset 0x20,
+284 ARM instructions and no rendered frame. This build advances through
+original menu/story and 3D startup in host execution.

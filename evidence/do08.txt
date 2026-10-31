@@ -1,0 +1,25 @@
+DO08 / The original scene probes are direct entry, not a playthrough
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/VERIFICATION.txt
+Selected lines: 35–44, 63–69
+Source SHA-256: 3d59f851f8ed0c323f79edb77078ac83e912f601e3b7ad5c5ff5bfc641b4b062
+
+PASSED — ORIGINAL EXECUTION AND SAVES ON HOST
+RMS fresh-JVM reload/deduplication, image transforms, clipping and blocking
+clock tests pass. Real original subway and Doc Ock scenes render and respond
+to their numeric controls and native pause. These are direct scene-entry
+probes, not a natural complete-game playthrough.
+The same probes pass with separate JVM-loaded original classes/resources.
+That verifies guest namespace/resource behavior, not Android DexClassLoader.
+The original logo pixels match exactly; timer CPU comparison is about
+100% of one host core before blocking versus 1.6% after. No phone thermal
+result is inferred. See original-execution-v0.1.2.log and clock-comparison.json.
+
+[... selected excerpt ...]
+
+PHONE EVIDENCE / REMAINING SCOPE
+The earlier v0.1.0 S25 Ultra report showed original rooftop execution,
+matched presses/releases, MIDI requests, RMS writes and Downloads report export.
+That report belongs to v0.1.0. No phone/emulator was attached for v0.1.2.
+Standalone and hosted Android DEX startup, live touch comfort, safe-area fit,
+mode switching, audible sound, background/resume, Back-to-Omni and Downloads
+export still need phone confirmation. No full-game completion is claimed.

@@ -1,0 +1,17 @@
+M09 — The next phone run rejects every Figure triangle
+Evidence type: Phone runtime report
+Source: Monster Hunter i preservation / baseline/original/evidence/v0.0.6_physical/Monster-Hunter-i-Bridge-v0.0.6-report.txt
+Selected source lines: 21-28
+
+
+
+J3D figures: 30 queued triangles=0 drawn triangles=0
+J3D rejects total: index=0 near=12324 far=0 backface=0
+J3D crossings total: near=0 far=0 missingTexture=0 drawFailures=0
+J3D primitives: calls=548 submitted=11274 queued triangles=2678 drawn triangles=2660
+J3D primitive culls: near=9935 far=0 crossing=132 bad=0
+Last primitive: type=4 flags=0x400 attrs=0x60 submitted=1 queued=0 drawn=0 cull[near=1,far=0] crossing=0 bad=0 textured=false
+Last J3D: verts=589 patterns=6/14 queued=0 drawn=0 z=-818..-493 near=128 far=10240 fov=512 reject[idx=0,near=474,far=0,backface=0] crossing[near=0,far=0] missingTex=0 drawFail=0
+Latest fatal:
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

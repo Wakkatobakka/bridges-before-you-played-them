@@ -1,0 +1,18 @@
+CK13 / Why decoded Japanese still broke its own wrapping
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/docs/V007_RUNTIME_FINDINGS.md
+Selected lines: 15–27
+Source SHA-256: 31877d625ada23b5034d0a897ea6c593da65c9099c729911a1d099859726b856
+
+## Japanese text
+
+Video 00:00: lobby descriptions overflow the cream bubble. Video 00:26: `ロビーに戻りますか？` has a replacement character and choices below the cyan panel. Video 00:41: `もう一度、トライしますか？` is split into corrupted extra lines.
+
+Original `c.j.a(String)` uses default-encoded bytes and fixed byte widths. The original CP932 encoding uses two-byte Japanese characters; Android UTF-8 uses three. Resource-only UTF-8 conversion allowed strings to decode, but subsequent byte wrapping split UTF-8 characters and made extra lines. Drawing-time replacement or Unicode width normalization cannot recover that layout correctly.
+
+A reproducible build step translates eight default-charset String calls in five guest classes to explicit `windows-31j`. It changes only String encoding overloads. All 55 other classes and all resource entry bytes are copied exactly. The original JAR and DEX remain exact preserved assets; the loader runs a separate compatibility DEX. `Host.openJarResource` returns raw resource bytes, avoiding expanded tables overflowing the guest's fixed4,561-byte input buffer. `tools/TranslateGuest.java` and the included compatibility manifest document each translated call.
+
+The original byte-based line widths, halfwidth characters, ASCII control markers and bitmap-font indices are retained. The return/retry panels should contain two lines; the skydiving lobby description should contain five lines instead of seven. No font size or guest coordinates are changed.
+
+## Verification scope
+
+Current test outputs are retained under `tests/text`, `tests/input` and `tests/runtime`. These execute the guest methods with Java/Android doubles; they do not substitute for testing the new tilt/shake feel on the S25 Ultra. The established renderer and audio implementations are unchanged. Full completion remains unverified.

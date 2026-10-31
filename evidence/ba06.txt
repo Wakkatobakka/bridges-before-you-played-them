@@ -1,0 +1,10 @@
+BA06 / One sound needed conversion-marker adaptation
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/README_FIRST.txt
+Selected lines: 29–33
+Source SHA-256: e35da56dad0500a4b25d6cfaac51e9986e8c9ec25ce962881b6118f6fff1d6f4
+
+The original sounds pack is expanded using verified container-header transformations
+and the existing ZIP/LZMA and legacy CMID decoder. One CMID has two unsupported
+non-audio control markers; its converter input is adapted and one PCM filename is
+aliased. The original sounds.bar and native audio events remain intact. All 47 decoded
+PCM sample streams and all three MIDI files match the existing build exactly.

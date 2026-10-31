@@ -1,0 +1,14 @@
+NW04 / Original Quit permits a fresh session in the same process
+Source: Nowhere_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Nowhere_Bridge_v0.1.1_PRIVATE/IMPLEMENTATION.txt
+Selected lines: 43–51
+Source SHA-256: 44b8351e0249558602ed221910469db3b929cb21ea145d4429313df8994be682
+
+Original Quit tears down native static state. Engine.get can create a new
+session in the same Android process after the original MIDlet has ended;
+MIDP event generation prevents duplicate event workers on relaunch.
+
+APK payload checks compare every original resource byte for byte. Host tests
+exercise raster transforms, clip bounds, all 17 MIDI payloads and RMS persistence.
+The gameplay replay uses native input only, including opening text, inventory,
+movement and background/resume. Host audio backend captures original bytes;
+it does not establish audibility on a physical Android device.

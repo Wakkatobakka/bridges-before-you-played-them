@@ -1,0 +1,12 @@
+MA90 / Historical image / The original Mutant Detector offer with Take and Play
+Source: Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/evidence/acceptance/06_optional_detector_offer.png
+Source SHA-256: db486c6ac7458ac6c9ea495c3309bf9498f522dd15db75c8fe3404d0d0f22ba3
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/evidence/acceptance/06_optional_detector_offer.png
+SHA-256: db486c6ac7458ac6c9ea495c3309bf9498f522dd15db75c8fe3404d0d0f22ba3
+
+Original optional Mutant Detector offer: Take at left, Play at right. Historical 132×176 host frame.
+
+Scope: Historical host original-runtime framebuffer; not physical-phone output or a framework UI fixture. Visually inspected game-only, zero EXIF, unchanged bytes.

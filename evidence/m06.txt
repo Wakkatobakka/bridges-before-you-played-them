@@ -1,0 +1,14 @@
+M06 — 589 vertices arrive, but no triangles make it through
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V005_REPORT_AND_RENDER_NOTES.txt
+Selected source lines: 3-7
+
+
+
+REAL-DEVICE INPUT FOR THIS PASS
+- Samsung SM-S938U / Android 16.
+- v0.0.4 reaches live game state and draws the working 2D HUD/dialog layer.
+- v0.0.4 decodes model textures and submits Figure data, but the observed live log showed a Figure with 589 vertices producing 0 queued triangles.
+- The v0.0.4 on-screen LOG was a 240-line rolling buffer. That is inadequate as the primary test artifact because old lines disappear and the tester cannot save the full run.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

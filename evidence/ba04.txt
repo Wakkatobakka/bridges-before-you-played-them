@@ -1,0 +1,14 @@
+BA04 / Short taps, repeated taps and background release regression
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/evidence/controller-checks.log
+Selected lines: 11–19
+Source SHA-256: 8521d4339b3a69e18145b7c700afca448648fc5b199e525daeb92c6721aa37f3
+
+PASS original applet boot
+PASS short tap down retained until original callback
+PASS input never pumps guest timer
+PASS release follows original due callback
+PASS second tap queued behind first pending release
+PASS rapid taps retain three distinct native pairs
+PASS background immediately releases holds and queued edges
+PASS background input ignored
+PASS original ARM remains live

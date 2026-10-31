@@ -1,0 +1,21 @@
+S09 — The original game chooses four-way or numeric movement
+Evidence type: Checkpoint control investigation
+Source: 06-DeadShot_Omni_Bridge_v0.1.1_Preservation.zip / baseline/original-CONTROL_NOTES.txt
+Selected source lines: 21-32
+
+
+
+DeadShot's own key_con option controls movement family:
+  modes 0 / 2 = four-way DoJa D-pad movement
+  modes 1 / 3 = numeric-keypad movement, including diagonals
+
+v0.0.5 touch behavior:
+- The movement disc reads DeadShot's current key_con value and automatically emits
+  the correct original movement family.
+- Numeric modes expose eight 45-degree movement sectors; D-pad modes remain four-way.
+- The action area exposes the actual *, # and OK/Select keys. No A/B/C aliases.
+- Soft1 and Soft2 are exposed as MENU and BACK-style pill buttons; if DeadShot supplies
+  a short soft-label string, the host displays that original label instead.
+- Multi-touch and oversized invisible hit targets remain enabled.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

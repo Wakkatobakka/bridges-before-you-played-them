@@ -1,0 +1,14 @@
+DR08 / Physical report and revised layout have separate scopes
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 9–11, 15–17
+Source SHA-256: ec46a343e3b39c0e6b1a6f941e837e30e59745778c440dc8027f2ec392087d26
+
+All 95 original CMID audio resources have playback conversions: 92 QCELP effects to PCM WAV and three original musical scores to Standard MIDI. Duplicate resources share 83 hash-keyed files. PCM sample counts were verified, and Java independently parsed all three MIDI tracks. Android supplies MIDI instrument synthesis. The v0.1.0 phone report records nine Android audio starts and zero audio errors.
+
+Native music completion callbacks re-enter the original game and issue its loop request. Detailed diagnostics are off for ordinary play. Bounded host checks verified real-clock timer dispatch, immediate press/release handling, immutable changed-frame publication and absent routine full traces. These checks are not phone FPS or heat measurements.
+
+[... selected excerpt ...]
+
+Test scope: opening gameplay, original save/reload and exercised native services. Enemy combat, later levels and complete game progression have not been verified here. The user reports good game feel on the S25 Ultra; the v0.1.0 report shows no host/runtime/save/audio errors, six battery readings of 36.1 C and thermal status 0. Those sparse readings are not sustained-performance measurements.
+
+v0.1.1 layout: dynamically applies Android system-bar and display-cutout insets to the outer layout, preserves fixed base padding without accumulation, and keeps original framebuffer aspect-fit scaling. API 30+ uses native typed insets; API 26-29 uses legacy system insets with API 28+ cutout maxima. System bars remain visible. Original-engine host checks were rerun successfully. APK versionCode 2, matching application ID and signing certificate, byte-identical original payloads/audio and alignment were verified. The updated layout has not yet been observed on the physical phone.

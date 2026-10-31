@@ -1,0 +1,12 @@
+NW90 / Historical image / Nowhere
+Source: Nowhere_Bridge_v0.1.1_PRIVATE/evidence/verified_03_play.png
+Source SHA-256: 694445dc3cab0876ba0f31786e69f30f7f1705b368cc24fb09daaba5124e8d79
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Nowhere_Bridge_v0.1.1_PRIVATE/evidence/verified_03_play.png
+SHA-256: 694445dc3cab0876ba0f31786e69f30f7f1705b368cc24fb09daaba5124e8d79
+
+The original 240×320 opening room, with the player at the left. Retained desktop guest output, not a phone screenshot.
+
+Scope: Historical original MIDlet host replay using rasterizing graphics backend.

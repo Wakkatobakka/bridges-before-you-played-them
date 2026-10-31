@@ -1,0 +1,35 @@
+NC07 / Accelerator and brake sit beside original steering inputs
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 10–39
+Source SHA-256: 10ec4fd2255bd78616812e5791bb217bd11813e10ea927ac93055b5accd76c3a
+
+DRIVING CONTROLS
+Left thumb: digital steering pad. Up changes camera; down looks back.
+The pad now accepts independent contacts and combined directions. Another
+finger pressing or releasing cannot discard a direction that is still held.
+Right thumb: ACCELERATE and BRAKE / REVERSE. Nitro and handbrake are nearby.
+The original button identifiers and menu OK/BACK actions appear beneath
+function labels. Auxiliary buttons and PAUSE remain accessible.
+
+The touch labels/bindings follow the running game's stored control preset.
+A: accelerate 1, brake 2, nitro ZL, handbrake ZR, auxiliary 3/4.
+B: accelerate ZR, brake ZL, nitro 4, handbrake 2, auxiliary 1/3.
+The bridge reads the original profile field; it does not write the preset.
+Other preset values retain original button labels. Touch analog steering
+for C is still pending; use A or B for this control test.
+
+ORIGINAL Z-PAD is a visible one-tap inline switch to every original button.
+DRIVING CONTROLS returns in one tap. Both modes keep the same game renderer
+and viewport. Switching releases touch holds and retains physical holds.
+The selected mode survives Android saved-state restoration; pressed keys do
+not. No playable control dialog or game restart is involved in switching.
+
+Portrait: controls stay at the bottom with bounded heights and left/right
+thumb groups. The frame fits the original 4:3 picture. Spare portrait space
+stays outside the picture rather than stretching it or inflating the pedals.
+Landscape: steering flanks the picture on the left, driving actions on the
+right, and the mode switch sits below the clear center picture.
+The game picture is never covered by the controls, cropped or stretched.
+
+PAUSE uses original UID 0x0106C403 and opens the game's Menu de Pausa.
+Android Back exits through cleanup, separately from original 2 / BACK.

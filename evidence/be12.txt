@@ -1,0 +1,10 @@
+BE12 / A clip rectangle changed the projection
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/HANDOFF.md
+Selected lines: 17–21
+Source SHA-256: e904eed5a24d85d33bde1c9f4fe0ec61f864c6e90e04676f13e05a90c3c8415e
+
+Version 0.1.1 corrects high-level 3D projection: use full canvas height and centre, independent of setClipRectFor3D. Apply that clip only at flushBuffer, intersecting the active 2D clip. The original b.j(width,height) assigns b.X to height; c.K(room,7) multiplies raw camera FOV by b.X/240. Room 20 is 45° × 320/240 = 60° (MC angle 533, focal 277), and room 21 is 70° × 320/240 = 93.333° (MC angle 876, focal 150). The old 180px-height conversion produced room 21 MC angle 1245/focal 84, matching the phone report. Never resize models or modify player/world positions to compensate for projection.
+
+Control labels observe original soft labels and c.fc (Types A/B/C/D). In gameplay b.ah==8 and b.ai==1, the right soft label indicates whether the weapon is raised. The manual text.out entries 306–313 define direction/numeric variants; entries 358–366 supply published soft labels. Labels and help now translate these functions while preserving every mask and control position.
+
+The supplied Samsung SM-S938U Android 16 recording/report reaches the third camera and reports 146 resource opens, zero misses, 22 successful audio starts, and zero draw failures. Its single battery reading is not a temperature trend. The revised host checks load and draw rooms 20/21 deterministically with test positions inside the original wall bounds, rather than replaying that phone session. Physical validation of the correction, phone save/continue, full campaign completion, controller analog axes, exact perspective texture correction and spatial audio remain outside the recorded host checks.

@@ -1,0 +1,28 @@
+T10 — The phone asks for an audio channel the old tests missed
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.16.md
+Selected source lines: 5-11, 13-21
+
+
+
+## Device failure and coverage gap
+
+The supplied Samsung SM-S938U Android16/API36 v15 report records 926 presents followed by `mem-read8-oob-0x000000FC`, 6144 submitted PCM samples and no Android-host failure. The supplied video contains silent decoded AAC. Its heap still has nearly15MB free, so the report does not indicate arena exhaustion. These exact inputs and their checksums remain under `evidence/device-v0.0.15-launch`.
+
+The old CapturingMediaHost only demanded channel0 and discarded channel property2. Consequently earlier original-world/PCM tests did not run the channel1 decoder that the production Android sink requested on the phone. The old 16-byte generator descriptor overlapped the adjacent PCM buffer; original decoder0x00173FB5 reads source fields at16/20 and writes EOS at28. The main-loop PC0x0017B08E in v15 was restored after the nested fault, masking the actual callback location. v16 stores nested fault PC/state/registers before restoring the outer execution state.
+
+Separate Android startup reasoning is independently reproduced by the sink contract: the old stream buffer was at least4096 mono frames, while demand stopped at3072 queued frames. Android's default API31+ stream start threshold is capacity. That queue can stay in startup underrun; the physical report itself did not record its actual head/threshold, so that precise device-side mechanism remains an inference. The new sink explicitly sets threshold1 on API31+ and measures per-channel head progress.
+
+[... selected excerpt ...]
+
+## Current measured audio contracts
+
+Read `AUDIO_IMPLEMENTATION_v0.0.16.md` for original disassembly, source units and callback ABI. The descriptor is32 bytes: channel0, destination4, requested count8, mono flag12, original source16, source count20, unused/unconfirmed24 initialized0, output EOS byte28. Final positive PCM is submitted before EOS handling. Original repeat/loop metadata determines whether the source restarts or the sink stops demand and drains. Natural completion is delivered once, after consumed head reaches written samples; no final buffer is thrown away.
+
+The original decoder resamples channel source-frequency property1 to global output-frequency property1. Generated AudioTracks therefore use the output rate; changing the source property does not retune already-resampled output. Global output-rate changes retune active generated tracks. Direct static PCM continues using its source rate. Existing source-frequency clamp4k..48k is retained. Channel/master gain application is retained; wider original volume behavior remains a future fidelity concern.
+
+Modern steady demand remains1024 samples whenever the lead is below3072; the4096-frame stream buffer reserves one full chunk. Avoid tiny1–3-frame requests as the head advances. API26–30 cannot set the startup threshold, so they prime the effective full buffer. A finite source shorter than capacity is cached only during initial unconsumed startup and uploaded as exact static PCM. Static tracks start in STATE_NO_STATIC_DATA: upload must precede the initialized-state check. No padding or replacement sound is created.
+
+Used-channel summaries retain accepted/nonzero/played counts, head, activity, guest pause, EOS, source/output rates, play count and threshold. Global counters retain master volume, lifecycle pause and failures. Accepted nonzero samples establish generated signal; head progress establishes AudioTrack consumption. Neither proves speaker output. Encoded MediaPlayer support remains separate from this original PCM path.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

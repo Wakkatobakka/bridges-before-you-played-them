@@ -1,0 +1,51 @@
+RG16 / Later original execution and framework scopes stay distinct
+Source: REGenesis_Bridge_v0.6.2_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.2_PRIVATE/evidence/FINAL_VERIFICATION.txt
+Selected lines: 12–19, 27–48, 50–59
+Source SHA-256: 7d6f58ff1b62d5fd6dde5df40c24b17be1d12cc9d92eed1476aa45ebc52b08f0
+
+ORIGINAL GAME DESKTOP EXECUTION: PASS
+25/25 retained acceptance checks: original initialization, title, mansion,
+movement, inventory, pause, actual save payloads, save reload, MIDI resource
+parsing, suspend/resume, 1000 timer callbacks, bounded live heap and unpatched
+original executable bytes. Separate audio probe and lightweight input/5-key
+probe pass. Numeric/directional investigation ran the original guest and read
+its known diagnostic fields; it did not patch guest memory. Original embedded
+help confirms numeric alternatives and native target/aim semantics.
+
+[... selected excerpt ...]
+
+GENESIS ANDROID FRAMEWORK INTEGRATION: PASS
+9/9 API34/Robolectric/native-graphics checks against compiled production classes:
+- cold construction before content attachment; both inline modes, stable renderer
+- continuous four-way touch movement and separate held ACTION, both release orders
+- exact original keypad codes; essential actions retained in keypad mode
+- duplicate touch/controller ownership, mode switches, cancel and lifecycle cleanup
+- 320x568, 360x640, 412x915, 800x1280 portrait layouts; font scales 1.0/1.3/1.5;
+  minimum standard button and square D-pad bounds, required text height
+- production Activity mounts actual APK resources/assets and boots original guest
+- Android Back in keypad mode finishes without CLR, drops session, quits worker
+- report export through a test ContentProvider while the game worker is blocked;
+  held physical input preserved, no share Activity; rejected export retains private
+  pending evidence and shows failure rather than export success
+- startup fault evidence persists before a game worker has published state
+
+The production-renderer test was additionally rerun with recursive invalidation
+for software-canvas snapshots, and asserted original game pixels remain visible
+in both modes. The resulting normal/keypad viewport image regions are identical.
+The screenshots use the production renderer and actual original mansion pixels,
+staged with original key/timer calls on the game worker. They are framework test
+captures, not phone screenshots or real-time performance evidence. Pause/resume
+retains the original live session and clears owned holds.
+
+[... selected excerpt ...]
+
+SCOPE / REMAINING DEVICE ACCEPTANCE
+No physical phone or Android emulator was used for v0.6.2. Compilation, desktop
+execution and Android-framework tests do not establish thumb comfort, real
+system safe-area/font behavior, audible MIDI, actual device MediaStore/Downloads
+behavior, physical-controller operation or full combat/playthrough completion.
+Check these on the user's device, including both control modes, original CLR,
+Android Back to Omni, background/resume, and report export. Real API26–28 permission
+interaction was not exercised; its production request/legacy writer path is kept.
+No original code/assets were patched; only a bounded read-only trace-tail accessor
+was added to the runtime for independent cached reports.

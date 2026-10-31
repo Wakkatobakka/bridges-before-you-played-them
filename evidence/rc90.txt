@@ -1,0 +1,12 @@
+RC90 / Historical image / Ratchet & Clank: Going Mobile
+Source: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/evidence/verified_03_jump.png
+Source SHA-256: 251ac11d3dbdd77f972eac41a897667282dc7c5c997fe3f91744d96769a527a3
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/evidence/verified_03_jump.png
+SHA-256: 251ac11d3dbdd77f972eac41a897667282dc7c5c997fe3f91744d96769a527a3
+
+Ratchet jumping in the original 240×320 level. Retained desktop original-game output, not a phone screenshot.
+
+Scope: Historical original-J2ME host framebuffer; visually inspected, game only, zeroEXIF.

@@ -1,0 +1,17 @@
+SH08 / A report can publish while the original worker is suspended
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 67–78
+Source SHA-256: 4db03fc56df7529d6675ece80c98c513f62d8554cf92ea0c22451ee7c8d41a29
+
+LIFECYCLE AND REPORTS
+Real Android Engine tests run the original adapted MIDlet and resources using
+Android framework rendering/decoding. MediaPlayer is a test shadow. Background
+suspension, resume, original worker teardown and re-entry with a preserved file
+sentinel pass. Two real-Engine framework tests pass. The actual report writer
+publishes a valid .txt through a test Android content provider while the original
+worker is suspended. Rejected publication is reported as failure and the private
+pending report survives for retry. This provider test is separate from actual
+Downloads behavior on the phone.
+The original engine catches exceptions during optional asset lookup, empty RMS
+initialization and packed-data fallback. Reports preserve those separately from
+bridge faults. Their existence is not proof of a crash or proof of correctness.

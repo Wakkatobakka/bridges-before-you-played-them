@@ -1,0 +1,12 @@
+DO90 / Historical image / Spider-Man: Doc Ock
+Source: SpiderMan_DocOck_Bridge/evidence/acceptance/03_rooftops.png
+Source SHA-256: 908983c8ea3b5deab16466808bed2a5afac64014c68d01afdf181fbf4364b968
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: SpiderMan_DocOck_Bridge/evidence/acceptance/03_rooftops.png
+SHA-256: 908983c8ea3b5deab16466808bed2a5afac64014c68d01afdf181fbf4364b968
+
+The Spanish original rooftop section,176×182, with its ¡Adelante! prompt, retained from desktop original-game execution.
+
+Scope: Historical originalMIDlet JVM framebuffer, not phone screenshot. Clean game-only pixels, zeroEXIF.

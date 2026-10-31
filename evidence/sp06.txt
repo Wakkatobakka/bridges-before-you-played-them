@@ -1,0 +1,14 @@
+SP06 / The original PCM reaches the Android output API
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 25–33
+Source SHA-256: 6f87efa677d2b0d04adc5b53fe8f6c837df112843f1e63dbba263e813ddaf31c
+
+PASS: Production AudioTrack wrapper receives original nonzero PCM through the
+      Android framework's Robolectric audio sink: 508032 bytes / 254016 frames,
+      one playback start, zero errors. A strict lifecycle fixture reproduces
+      STATE_NO_STATIC_DATA and requires write before play; short-write failure
+      details, pause/resume, completed clips and queued replacement cancellation
+      are also checked. No physical audio output is attached to this environment.
+PASS: Independent report capture remains responsive with a deliberately blocked
+      VM handler. This fixture has no Downloads provider; failure/pending text
+      is checked, rather than claiming a real MediaStore export.

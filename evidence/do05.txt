@@ -1,0 +1,21 @@
+DO05 / Original scene controls and Genesis presentation reference
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/TECHNICAL_HANDOFF.txt
+Selected lines: 44–59
+Source SHA-256: d4c8909c3bcc93a5bd45a7b62b9e874efed919a56917a638cceceff66dc8e424
+
+VIRTUAL DISPLAY
+176x182 matches the supplied xa.png title canvas. It is rendered proportionally
+without cropping/stretching. Android controls live outside the original image.
+The Genesis v0.6.1 MainActivity and this project's standing instructions guided
+the dark/cyan layout, compact icon/title header and centered digital D-pad.
+A native vector/adaptive mask icon is both launcher and upper-left header icon.
+The 512px fallback replaces the old 15px launcher bitmap; original icon.png
+inside the game remains byte-identical.
+Current system-bar, cutout and navigation insets become root content padding.
+No immersive hiding is used. Device layout remains pending.
+
+INPUT
+Native phone directions: -1 up, -2 down, -3 left, -4 right; -5 = FIRE / OK.
+Native getGameAction transforms are respected, including the game's explicit
+raw overrides for numeric 1, 2 and 3. In particular raw 2 is NOT normalized into
+Up by the bridge before the original Canvas receives it.

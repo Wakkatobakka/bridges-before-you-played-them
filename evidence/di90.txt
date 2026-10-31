@@ -1,0 +1,12 @@
+DI90 / Historical image / Dragon Island
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE/evidence/03-level.png
+Source SHA-256: b152751d5827d4beb3fcf6caf445d349253b994c2a36064410aec2a59731d9f3
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Dragon_Island_Bridge_v0.1.1_PRIVATE/evidence/03-level.png
+SHA-256: b152751d5827d4beb3fcf6caf445d349253b994c2a36064410aec2a59731d9f3
+
+Dragon Island’s original 240×320 first level, character/platform and HUD, retained from historical desktop ARM execution. Original framebuffer pixels, not a phone screenshot.
+
+Scope: Unchanged historical desktop original-runtime framebuffer. Visually inspected: game-only pixels, no personal interface and no EXIF. Not a physical-phone screenshot.

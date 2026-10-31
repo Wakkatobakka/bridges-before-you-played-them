@@ -1,0 +1,37 @@
+Q205 / Correct native buttons and fine touch input
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 139–170
+Source SHA-256: 4366352e234599ea83d928a2c283f224d65f3f6e6fb0f913afcc22e83e1fb358
+
+The running original ARM callbacks prove the face masks: UID 0106C40B -> 0001
+(ZEEBO_1/203), UID 0106C40A -> 0002 (ZEEBO_2/204), UID 0106C40D -> 0004
+(ZEEBO_3/205), UID 0106C40C -> 0008 (ZEEBO_4/206). The former inherited
+2/4 UID assignment was reversed. Original menu Back is key 204/button 2;
+button 1 confirms. All thirteen face/shoulder/secondary controls are checked
+for their exact native mask and clean release by QuakeControlProbe.
+
+ControlsState reads this exact edition's relocated keybinding table at
+0x82D438 and original key_dest at 0x1FA914. It does not write either. Labels
+track the actual commands rather than guessing Casual/Expert from a saved
+preference. FIRE · DRAG resolves the native UID bound to +attack. Context or
+binding changes release touch contacts before changing the captions/routing.
+
+The floating MOVE origin starts at the contact point. A continuous 6% radial
+deadzone and curved magnitude replace the previous discontinuous 12% cutoff.
+The original HID helper itself suppresses stick changes below 25%. Touch mode
+retains it for menu navigation, and supplies continuous virtual samples through
+the unchanged NBI adapter only at the original IN_Move poll (0x10E22C), after
+the original has calculated frame speed. Every original instruction still runs.
+The suspended ARM registers, flags, instruction mode and current PC are restored
+after the adapter calls. No original code, binding, angle or position is patched.
+
+NBI axis events E024/E023/E028/E027 deliver left X/Y and right X/Y in the
+original fixed-point format. Touch look accumulates relative distances (0.22
+reference degrees per dp at the original default sensitivity), sampled once at
+the original poll. Conversion uses the original frame speed and axis-mode flags.
+The game still applies its sensitivity, inversion, view clamp and actual preset.
+Swipe impulses can reach 3x virtual deflection for quick turns; pending look is
+bounded to 18 degrees. Stationary touch does not hold a turning velocity. A
+1 dp native test changes yaw by about -0.214 degrees, below one degree and in
+the original rightward direction. Menu motion is discarded. Cancel, pause,
+resize, preset changes and restart clear contact/motion state.

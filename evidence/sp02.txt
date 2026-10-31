@@ -1,0 +1,17 @@
+SP02 / Full-width shorts, resource arrays and a real SMS price
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/native/README.md
+Selected lines: 16–27
+Source SHA-256: b1d20e00b2fadeb2cf998fa12a5b475dcbc0c3ec835acc815b4c9ebde5c6f67d
+
+South Park repairs:
+- Implement Sms.getPrice as a real VM String from the original 16.16 tariff
+  table and currency. The unimplemented native previously returned null and
+  caused a later unchecked operand-stack subtraction to crash.
+- Bound-check invokestatic argument subtraction.
+- Give short arrays full-width dynamic element storage. SALOAD sign-extends
+  signed 16-bit values, SASTORE preserves all 16 bits. Bytes/chars retain their
+  byte storage. The previous byte-only short model erased packed velocity
+  high bytes and made movement remain at zero.
+- Resource.readShorts/readInts preserve every element and advance the full
+  resource cursor, including arrays longer than 63 inline slots.
+- Unsupported offline SMS returns failure, never a fabricated success reply.

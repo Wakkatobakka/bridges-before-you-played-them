@@ -1,0 +1,14 @@
+SP05 / Original input enters all thirteen episodes
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 10–18
+Source SHA-256: 6f87efa677d2b0d04adc5b53fe8f6c837df112843f1e63dbba263e813ddaf31c
+
+PASS: 523-tick original Kenny movement/save/snapshot regression rerun.
+      Up, Down and idle produce distinct frames; original cows spawn;
+      300-byte original save; exact eight-tick replay; no faults or overflows.
+PASS: All thirteen episodes entered via original inputs from a clean boot and
+      an input-reached chooser snapshot. Observer follows original scenes
+      17 -> 18 -> 22 -> 23 -> 9 with the correct episode 0..12. Pinkeye needs
+      an extra original loading/confirmation step. Original required keys are
+      exercised. 2268 cumulative ticks; zero faults or input overflows.
+      This does not certify full minigame completion.

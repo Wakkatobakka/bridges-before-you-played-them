@@ -1,0 +1,18 @@
+PK05 / The unchanged EKA2L1 core and Nokia system ROM
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 3–9, 13–15
+Source SHA-256: 18297ca6b3540365feb96db666a70fc13fad9de7f5f72468b0c9388726aaf728
+
+EKA2L1 Symbian/N-Gage runtime
+Copyright (c) EKA2L1 contributors. GPL-3.0-or-later.
+https://github.com/EKA2L1/EKA2L1
+The native library is unmodified from the upstream continuous Android release.
+The corresponding upstream source snapshot and license accompany this checkpoint
+in upstream/. See upstream/PROVENANCE.json for exact commit and file hashes.
+EKA2L1 includes third-party dependencies; their notices/licenses are retained in
+
+[... selected excerpt ...]
+
+Pocket Kingdom: Own the World, original game code/assets: SEGA Corporation, 2004.
+Nokia N-Gage system ROM: Nokia. The original game and device files are separate
+from the bridge/runtime and are not relicensed by this document.

@@ -1,0 +1,12 @@
+Q290 / Historical image / Quake II
+Source: Quake_II_Bridge_v0.1.4_PRIVATE/evidence/guest-state-0019.png
+Source SHA-256: b15ba0f975971c7d448e30c7a1e663d68efe7a5c1faf50daa538713b75c51eff
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Quake_II_Bridge_v0.1.4_PRIVATE/evidence/guest-state-0019.png
+SHA-256: b15ba0f975971c7d448e30c7a1e663d68efe7a5c1faf50daa538713b75c51eff
+
+The original Quake II world and weapon in a retained 640×480 desktop original-runtime frame.
+
+Scope: Historical original ARM/desktop OpenGL output; game-only pixels, no personal UI. Not a phone screenshot or a direct visual measure of loading speed.

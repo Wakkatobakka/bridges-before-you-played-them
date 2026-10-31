@@ -1,0 +1,21 @@
+M07 — The polygon reader and clipping shortcut could erase a model
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V005_REPORT_AND_RENDER_NOTES.txt
+Selected source lines: 35-46
+
+
+
+RENDERER CORRECTNESS CHANGES
+A source comparison against the MIT-licensed MascotME MascotCapsule v3 implementation exposed two concrete mistakes/shortcuts in v0.0.4:
+
+1. COLORED POLYGON BITSTREAM ORDER
+MBAC colored polygons are stored as material -> vertex indices -> color index.
+v0.0.4 consumed material -> color index -> vertex indices.
+v0.0.5 consumes the original bitstream order while retaining our internal [material,color,index...] layout.
+
+2. DEPTH-PLANE HANDLING
+MascotCapsule behavior culls a triangle at the near plane only when all three vertices are behind it, and at the far plane only when all three are beyond it. Crossing polygons proceed to clipping.
+v0.0.4 rejected a polygon if ANY vertex crossed either plane, which could erase entire models.
+v0.0.5 stops discarding those crossing triangles. The current Canvas proof renderer uses the already near-clamped projected vertex as an approximation and records every crossing. Full attribute-preserving near/far clipping remains a later renderer step if the evidence says it is needed.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

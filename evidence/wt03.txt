@@ -1,0 +1,14 @@
+WT03 / Absent optional splash files have an original PNG fallback
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/evidence/original_v0.1.0_docs/IMPLEMENTATION.txt
+Selected lines: 29–37
+Source SHA-256: 7da6724c104ff10a4b8cc9852ba5a81785445f693279537f46c87887aca95e11
+
+The original tries optional s.ani/s.bgs splash animation, catches their absence,
+and falls back to intact /s PNG screens. Those two assets are absent in the
+original JAR. Only corresponding caught NullPointerExceptions are classified as
+known optional-asset observations, not runtime faults. All other faults retain
+stack evidence and automatic report export.
+
+Native MIDI bytes go unchanged to Android MediaPlayer, including volume and
+background pause/resume. Audibility/timbre on a physical phone is unobserved.
+Host audio capture preserves requested bytes rather than claiming handset sound.

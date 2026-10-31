@@ -1,0 +1,27 @@
+M08 — The characters and terrain were taking different routes
+Evidence type: Checkpoint investigation notes
+Source: Monster Hunter i preservation / baseline/original/V006_PRIMITIVE_AND_IMAGE_NOTES.txt
+Selected source lines: 3-8, 10-18
+
+
+
+Evidence from the physical v0.0.5 SM-S938U run:
+- Game logic, HUD, enemies and hunter Figure models execute in hunt gameplay.
+- Report recorded 1,394 Figure submissions and 289,967 drawn Figure triangles with no fatal exception.
+- The world/terrain remained absent or appeared as diagnostic lines because renderPrimitives() still used the old fixed 2D wire proof and ignored the active view transform/projection.
+- The game repeatedly constructed PrimitiveArray(4, 0x3000, 255) and PrimitiveArray(3, 0x0a00, 255). These values align with the MascotCapsule v3 data flags: texture coordinates (0x3000), per-face normals (0x0200), and per-face colors (0x0800). Therefore the actual constructor ABI is (primitive type, data flags, primitive count), not (type, count, flags).
+- The v0.0.5 report also caught repeated Android IllegalStateException: Immutable bitmap passed to Canvas constructor for decoded GIF assets.
+
+[... selected excerpt ...]
+
+v0.0.6 changes:
+1. Correct PrimitiveArray constructor semantics and buffer sizing.
+2. Replace fixed wireframe renderPrimitives() with camera-aware projected triangle/quad rendering using the active view transform, perspective, center, clip, primitive texture selection, texture coordinates and per-face/per-command colors.
+3. Preserve primitive render attributes used by MH i (lighting bit, color key, half/additive blend bits) for texture/blend behavior where currently supported.
+4. Persist primitive counters in the exported REPORT so the next physical run shows submitted, queued, drawn, culled and crossing primitive geometry.
+5. Convert decoded MediaImage bitmaps to mutable ARGB_8888 software bitmaps before creating the DoJa Image Graphics wrapper. This removes the repeated immutable-bitmap Canvas exception seen throughout the v0.0.5 report.
+6. EN and JP game payloads remain unchanged.
+
+This is still a proof renderer: full lighting, additive/subtractive blending, perspective-correct texture mapping, and full clipping remain future correctness work. The purpose of this pass is to restore the major missing PrimitiveArray world path and obtain a much more meaningful on-device scene/report.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

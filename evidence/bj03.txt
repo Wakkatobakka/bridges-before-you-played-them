@@ -1,0 +1,18 @@
+BJ03 / Pacing, FIFO and snapshots gained in the Banjo bridge
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/native/README.md
+Selected lines: 42–54
+Source SHA-256: 29a38d4839150c0b171dac3614a32be3d519e11fe9666bea894dcad6d6e4c02e
+
+`banjo_state_size()`, `banjo_state_save(buffer, capacity)`, and `banjo_state_load(buffer, length)` support native snapshots within the same running session. These preserve image rasters, palette indices, class statics, heap objects, framebuffer, and pending input. They are separate from the game's own persistent `saveCtx` storage.
+
+## Project modifications
+
+- Added the C ABI host and Android JNI shim.
+- Removed the upstream recurring Banjo heap census and object creation tracing. Opcode tracing stays disabled, and runtime warnings are held in a fixed buffer for an explicit report.
+- Replaced the debug allocator with the freeing SMP allocator while retaining the VM's garbage collection between ticks.
+- Preserved the original requested timer period; removed the upstream global 75 ms speedup.
+- Added a bounded FIFO for key transitions. Brief taps and multiple touch controls arrive in order without advancing extra game ticks.
+- Added a direct auxv reader so page-size and vDSO discovery work from a shared library without external libc symbols.
+- Corrected native snapshot serialization to preserve decoded image pixels and palette indices. Snapshot version is 4.
+- Preserve the live allocator interface when reconstructing a snapshot, so a stored process address is never reused as an allocator vtable.
+- Made an instruction-budget halt observable as an aborted host tick instead of reporting a normal return.

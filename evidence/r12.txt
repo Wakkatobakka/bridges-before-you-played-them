@@ -1,0 +1,14 @@
+R12 — Shared model-format knowledge, distinct rendering paths
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / docs/ARCHITECTURE.md
+Selected source lines: 11-15
+
+
+
+## Models and animation
+
+MbacMesh decodes original MB bone-local vertices, hierarchy, topology, per-corner UVs, material/texture slots, colors and appearance patterns. Texture decodes the original BMP resources used by Figure. Figure batches use original texture/material selection and upload to the preserved GLES1 backend; unavailable textures retain a defined geometry fallback.
+
+ActionTable and MtraAnimation decode the original MT actions rather than supplying an empty duration. Action maxima and the guest's setTime remain Q16 frame values. Figure evaluates bone channels and composes them through the original hierarchy, applying the pose to the corresponding bone-local vertex ranges. Pose changes refresh the GLES vertex buffers; topology and source resources are retained. setAction starts the selected action at zero, and the guest then advances its own time. Animated appearance patterns follow the same action/time state. Monster Hunter supplied useful shared-format decoding knowledge; Rockman's presentation continues through ui.graphics3d/D4D/GLES rather than its incompatible opt.ui.j3d renderer.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

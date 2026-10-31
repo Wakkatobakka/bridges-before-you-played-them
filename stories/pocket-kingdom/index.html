@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162b2c"><meta name="description" content="We reached Offline Play, saved through the original menu, and returned to the kingdom with Continue after a complete host restart."><meta property="og:title" content="The kingdom survived the process."><meta property="og:description" content="We reached Offline Play, saved through the original menu, and returned to the kingdom with Continue after a complete host restart."><meta property="og:type" content="website"><title>Pocket Kingdom: Own the World · Bridges Before You Played Them</title><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css"><script defer src="../../assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><div class="wrap"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">[ / ]</span><span>Bridges Before<br>You Played Them<small>Wakka’s development archive</small></span></a><nav aria-label="Main navigation"><a href="../../index.html#histories">Histories</a><a href="../../index.html#catalogue">Index</a><a class="desktop-link" href="../../stories/legion/index.html">LEGION</a><a class="desktop-link" href="../../index.html#method">The evidence</a><a class="desktop-link external" href="https://github.com/Wakkatobakka/Omni-Player">Omni Player <span aria-hidden="true">↗</span></a></nav></div></header><div class="read-progress" aria-hidden="true"></div><main id="main"><div class="article-hero"><div class="wrap"><div class="breadcrumbs"><a href="../../index.html">Archive</a> / <a href="../../index.html#histories">Histories</a> / Pocket Kingdom: Own the World</div><div class="eyebrow">N-Gage / Development history</div><h1>The kingdom survived the process.</h1><p class="dek">We reached Offline Play, saved through the original menu, and returned to the kingdom with Continue after a complete host restart.</p><div class="article-meta"><span>Coverage: 0.1.0 → 0.1.1</span><span>2 min read</span><span>7 receipts</span></div><div class="reader-tools js-only"><button type="button" id="print-story">Print / save as PDF ↗</button><a class="text-link" href="#sources">Open the receipts ↓</a></div></div></div><div class="wrap article-body"><aside class="toc" aria-label="On this page"><div class="eyebrow">In this chapter</div><ol><li><a href="#save-yes">Save. Yes.</a></li><li><a href="#keep-the-kingdom">Keep the kingdom during the update.</a></li><li><a href="#sources">The receipts</a></li></ol><div class="toc-foot"><a href="../../index.html#catalogue">← All 52 projects</a></div></aside><article class="prose"><p class="intro">With Pocket Kingdom, we could already follow Offline Play into New Game, the Grape tutorial and the kingdom screens. The next useful question was whether we could leave and come back with the game’s own save.<a class="cite" href="#source-PK01" data-source="PK01" aria-label="Open evidence PK01">PK01</a></p><section id="save-yes"><h2>Save. Yes.</h2><figure class="historical-figure wide-shot"><a href="../../assets/history/collection-pocket_kingdom-0.png" target="_blank" rel="noopener"><img src="../../assets/history/collection-pocket_kingdom-0.png" alt="The original Grape tutorial and party discussion in the retained v0.1.0 Linux EKA2L1 host window. The save/restart outcome is separately recorded in PK01." loading="lazy"></a><figcaption><span class="eyebrow">Historical host capture</span><p>The original Grape tutorial and party discussion in the retained v0.1.0 Linux EKA2L1 host window. The save/restart outcome is separately recorded in PK01.</p><p>Open the image for the full original view.</p><a class="cite" href="#source-PK90" data-source="PK90" aria-label="Open evidence PK90">PK90</a></figcaption></figure><p>The original Save menu, confirmed with Yes, wrote a 10,584-byte save.dat. After the whole host process restarted, Continue returned to the kingdom. The route then reached Shop and Buy. The state came from the game’s own persistence, rather than a substitute snapshot presented as a native save.<a class="cite" href="#source-PK01" data-source="PK01" aria-label="Open evidence PK01">PK01</a></p></section><section id="keep-the-kingdom"><h2>Keep the kingdom during the update.</h2><p>For the later shell, we used Witcher’s presentation and Genesis’s inline-switching model around the same native SurfaceView. We kept the game’s Save distinct from SAVE REPORT. One saved the kingdom; the other saved diagnostic text.<a class="cite" href="#source-PK02" data-source="PK02" aria-label="Open evidence PK02">PK02</a></p><p>An existing readiness marker prevented an update from extracting the seed over the installed guest drives. The runtime, game-save paths and native core remained the earlier baseline. The current Activity checks deferred native boot, preserving the historical kingdom run as historical evidence.<a class="cite" href="#source-PK03" data-source="PK03" aria-label="Open evidence PK03">PK03</a><a class="cite" href="#source-PK04" data-source="PK04" aria-label="Open evidence PK04">PK04</a></p><p>We still depended on EKA2L1 and the original Nokia system ROM. Pocket Kingdom could join the collection while I kept working toward an independent runtime. Getting the kingdom back and replacing that platform dependency were separate jobs.<a class="cite" href="#source-PK05" data-source="PK05" aria-label="Open evidence PK05">PK05</a><a class="cite" href="#source-L02" data-source="L02" aria-label="Open evidence L02">L02</a></p></section><details class="records-note"><summary>About these records</summary><p>The original save/restart/Continue sequence is a historical Linux host route, not battle completion or current phone acceptance. The displayed emulator window is unchanged. The later shell tests defer native gameplay and do not establish audible phone playback. Nokia platform dependencies remain explicit.</p></details><section id="sources"><h2>The receipts</h2><p class="source-intro">Selected source lines, investigation notes and recorded feedback. Open a receipt for the original context and scope.</p><details class="source-item" id="source-PK01"><summary><span class="source-title">PK01 / Original Offline Play, kingdom progression and save reload</span><span class="source-kind">Historical host validation record</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/VALIDATION.json · selected lines 3–30</p><pre>  "verified": [
+    "original executable loaded",
+    "title and Offline Play",
+    "New Game",
+    "original opening narrative",
+    "Grape tutorial",
+    "kingdom and party screens",
+    "numeric 5 confirm and 7 cancel",
+    "directional navigation",
+    "both softkeys map to original N-Gage menu inputs",
+    "original Save &gt; Yes writes 10584-byte save.dat",
+    "full process restart offers Continue",
+    "Continue returns to original kingdom screen",
+    "every supplied game file is byte-identical in Android seed",
+    "Android APK built, aligned and signature verified",
+    "original Shop Buy screen reached after save reload"
+  ],
+  "not_verified": [
+    "physical Android execution",
+    "S25 Ultra screen boundaries by screenshot",
+    "Android native audio output",
+    "Android Downloads report save on-device",
+    "Android background/resume on-device",
+    "full campaign",
+    "battle progression",
+    "online services"
+  ],
+  "host_audio": "unavailable: cubeb stream cannot initialize in test environment without audio output",</pre><div class="source-tools"><a href="../../evidence/pk01.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK01" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-PK90"><summary><span class="source-title">PK90 / Historical image / Pocket Kingdom: Own the World</span><span class="source-kind">Historical host capture</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/host_progression.png</p><p>Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.</p><pre>Unchanged historical image.
+Source member: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/host_progression.png
+SHA-256: 5e481a63045825eb7bd69215712c65f8aede43ad87420b31ce1835659dd3192f
+
+The original Grape tutorial and party discussion in the retained v0.1.0 Linux EKA2L1 host window. The save/restart outcome is separately recorded in PK01.
+
+Scope: Historical original-game Linux host emulator window, retained as earlier evidence in v0.1.1. No battle completion, phone audio or current phone execution follows from the image.</pre><div class="source-tools"><a href="../../evidence/pk90.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK90" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-PK02"><summary><span class="source-title">PK02 / Witcher presentation and Genesis switching around the same native view</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 7–31</p><pre>GAMEPLAY UI UPDATE
+Actual Wakka Bridge Gameplay UI Kit v1.1.1 source is embedded, including its
+cold-Activity startup fix. The Witcher gameplay screen supplies the shared
+presentation; Resident Evil Genesis supplies the inline switching model.
+
+A continuous square digital D-pad supports thumb sliding between directions.
+5 CONFIRM and 7 CANCEL keep the original game inputs. MENU LEFT and MENU RIGHT
+keep the two original softkeys. The same primary actions remain available in
+both modes. ORIGINAL KEYPAD / D-PAD RETURN switches the bottom controls with
+one tap. Numeric mode retains the separate original N-Gage D-pad, 1–9, *, 0,
+#, both softkeys and Clear. Required game keys are never in a dialog.
+
+The same native SurfaceView stays attached and has the same viewport dimensions
+when switching modes. Native proportions are retained. The header shows the
+actual launcher icon, game title, platform, SAVE REPORT and utilities menu.
+Android system Back leaves gameplay through cleanup; original 7/softkeys remain
+separate. Backgrounding releases held input and suspends the native surface;
+resuming reconnects it. The kit owns touch and controller input separately.
+
+SAVE REPORT exports a real .txt directly to Downloads/Pocket Kingdom Bridge/
+through the existing independent writer, without game-worker or JNI calls.
+Startup fault capture is installed before View construction. Reports whose
+Downloads export fails remain in app storage and retry with the next report;
+a failed export is shown as a failure. Original Save &gt; Yes is still the game
+save mechanism; SAVE REPORT is diagnostic only.</pre><div class="source-tools"><a href="../../evidence/pk02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-PK03"><summary><span class="source-title">PK03 / An update must not reseed the saved kingdom</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/README_FIRST.txt · selected lines 33–48</p><pre>PRESERVED
+Package com.wakka.pocketkingdom, UID 0x101FD3DD and the original signing key.
+The entire runtime seed, original game assets, native EKA2L1 library and save
+paths are byte-identical to v0.1.0. The existing ready-v1 install marker remains;
+updating the APK does not reseed or overwrite the installed guest.
+No new game implementation, title reconstruction or simulated gameplay.
+
+VALIDATION
+See VERIFICATION.txt and evidence/ for this version's actual test results.
+Robolectric Activity tests use the real Android framework, compiled application
+resources and production Activity. Native guest execution is explicitly disabled
+in those UI tests; their input recorder checks JNI dispatch, not original gameplay.
+The original v0.1.0 campaign/save/reload evidence remains under
+evidence/baseline-v0.1.0/ and is not presented as a new on-device test.
+Physical S25 gameplay, thumb comfort, Android audio, Downloads export and
+background/resume remain device checks. No new phone run is claimed here.</pre><div class="source-tools"><a href="../../evidence/pk03.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK03" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-PK04"><summary><span class="source-title">PK04 / The current Activity checks defer native gameplay</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt · selected lines 14–42</p><pre>PASS: Four tests using the actual Pocket Kingdom Activity and compiled APK
+resources under Robolectric Android API34:
+- Cold Activity creation before window decor exists, real View layout/draw,
+  insets and stable renderer dimensions/parent during keypad switching.
+- JNI input recording verifies continuous thumb direction sliding, native
+  direction codes, simultaneous touch/physical ownership, keypad switching,
+  original softkeys/Clear/#/cancel and Android Back exiting without softkeys.
+- Startup View failure reaches the preinstalled fault recorder before boot;
+  a real pending .txt survives a refused Downloads destination, and the
+  previous uncaught handler receives the original exception once.
+- Production normal/keypad controls are rendered through native Android
+  graphics and visually inspected. These are host framework renders with
+  boot deferred, not phone screenshots or original game execution.
+
+PASS: 40 production geometry/density cases, 8,520 assertions for square D-pad,
+48dp minimum key targets, separate native directions in keypad mode, no
+control overlap, usable viewport, and stable shared mode slot.
+PASS: The exact supplied v1.1.1 JAR passes all nine kit Android framework
+regressions with native graphics (startup, multitouch, insets, dialogs,
+mode switching, Back, cleanup and fault propagation).
+
+UI tests defer boot and disable/record the native JNI boundary. No game
+screens or guest success are simulated, and no test code is shipped in the APK.
+Original v0.1.0 host gameplay/save evidence is retained separately, not rerun or
+presented as a new physical-device result.
+
+NOT VERIFIED HERE: physical S25 launch, comfort, live game input, native audio,
+actual Downloads export, game saves and Android background/resume on the phone.
+No complete campaign playthrough or online service restoration is claimed.</pre><div class="source-tools"><a href="../../evidence/pk04.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK04" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-PK05"><summary><span class="source-title">PK05 / The unchanged EKA2L1 core and Nokia system ROM</span><span class="source-kind">Checkpoint investigation notes</span></summary><div class="source-content"><p>Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/THIRD_PARTY_NOTICES.txt · selected lines 3–9, 13–15</p><pre>EKA2L1 Symbian/N-Gage runtime
+Copyright (c) EKA2L1 contributors. GPL-3.0-or-later.
+https://github.com/EKA2L1/EKA2L1
+The native library is unmodified from the upstream continuous Android release.
+The corresponding upstream source snapshot and license accompany this checkpoint
+in upstream/. See upstream/PROVENANCE.json for exact commit and file hashes.
+EKA2L1 includes third-party dependencies; their notices/licenses are retained in
+
+[... selected excerpt ...]
+
+Pocket Kingdom: Own the World, original game code/assets: SEGA Corporation, 2004.
+Nokia N-Gage system ROM: Nokia. The original game and device files are separate
+from the bridge/runtime and are not relicensed by this document.</pre><div class="source-tools"><a href="../../evidence/pk05.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="PK05" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details><details class="source-item" id="source-L02"><summary><span class="source-title">L02 / The ExEn push and the ongoing Nokia runtime quest</span><span class="source-kind">Owner recollection</span></summary><div class="source-content"><p>Source: Archive-building conversation / owner explanation</p><p>Current owner explanation of motivation and ongoing work. It does not establish a completed independent Nokia runtime or a precise release chronology. The source wording is retained.</p><pre>the big Exen push was in response to me pushing our all of the BREW and J2ME games lol. also Ashen and finding out about nokia games runtimes being interwined witht the game software put me on a quest to make my own nokia runtime lol im still in the process of doing it. bu tin the mean time im a stop gag like with exen.</pre><div class="source-tools"><a href="../../evidence/l02.txt" download>Download excerpt ↓</a><button class="clear js-only" data-copy-source="L02" type="button">Copy excerpt</button><span class="copy-result" role="status"></span></div></div></details></section><div class="next-read"><span>Continue through the archive</span><a href="../shadowkey/index.html">The Elder Scrolls Travels: Shadowkey →</a></div></article></div></main><dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="dialog-source-title"><div class="dialog-top"><p class="eyebrow">From the receipts</p><button type="button" class="dialog-close" aria-label="Close evidence">×</button></div><div class="dialog-body"></div></dialog><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">Bridges Before You Played Them</div><div>Built from the surviving record. Curated by Wakka.</div></div><div class="footer-links"><a href="../../index.html#about">About the project</a><a href="../../index.html#catalogue">Project index</a><a href="../../index.html#method">Editorial method</a><a href="https://github.com/Wakkatobakka">Wakka on GitHub ↗</a></div></div><small>An independent development-history archive. Game names belong to their respective owners. Original game packages, bridge implementation source, firmware, build tools and signing material are not distributed here. Edition 1.1 · October 2026.</small></div></footer></body></html>

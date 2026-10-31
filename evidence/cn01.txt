@@ -1,0 +1,20 @@
+CN01 / Original countdown and race reached the host
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/evidence/host-execution.json
+Selected lines: 1–16
+Source SHA-256: 14bc84a4532d61400d2d3bb9e35f5196e9e308a39bec0b4b1349ee7726be26a1
+
+{
+  "runtime": "EKA2L1 Linux host master-6ac519122",
+  "uid": "0x101FD3F1",
+  "verified": [
+    "original main menu",
+    "original mode/character/track selection",
+    "original race countdown and 3D race/HUD",
+    "native 5 menu confirm and acceleration",
+    "native selection key pause menu"
+  ],
+  "audio_tested": false,
+  "physical_android_tested": false,
+  "completed_game": false,
+  "screenshots": "evidence/host/"
+}

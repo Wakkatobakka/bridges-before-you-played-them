@@ -1,0 +1,7 @@
+DO03 / Same logo, less host timer-thread CPU
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/evidence/execution-verification.txt
+Selected lines: 1–2
+Source SHA-256: 6779dd1c8c145a3d0347a7c7096e7405147cb0d5940f48977b169fdea8e2b373
+
+PASS original subway and Doc Ock scene rendering, input and native pause (direct scene-entry probes).
+PASS busy-wait CPU comparison and pixel-identical original startup image: [{'runtime': 'original-busy-wait', 'wall_seconds': 1.500155924, 'original_timer_thread_cpu_seconds': 1.499740046, 'one_core_percent': 99.9722776817165}, {'runtime': 'blocking-host-clock', 'wall_seconds': 1.500194667, 'original_timer_thread_cpu_seconds': 0.024006056, 'one_core_percent': 1.6001960630886578}]

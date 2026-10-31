@@ -1,0 +1,14 @@
+UP08 / Later Omni export reports preparation failure before gameplay
+Source: Uprising_report_20261022_165652_301.txt
+Selected lines: 15–15, 26–26, 37–37
+Source SHA-256: 0af865644f4a3f4373cc132b8684aee62f69267ce3fcc823663d41e5f29abcaf
+
+Thu Oct 22 16:56:37 CDT 2026 | PREPARATION_FAILED | Load the original Uprising download again to finish this update. Your existing game and saves are kept.
+
+[... selected excerpt ...]
+
+Thu Oct 22 16:54:59 CDT 2026 | PREPARATION_FAILED | Load the original Uprising download again to finish this update. Your existing game and saves are kept.
+
+[... selected excerpt ...]
+
+Thu Oct 22 16:54:52 CDT 2026 | PREPARATION_FAILED | Load the original Uprising download again to finish this update. Your existing game and saves are kept.

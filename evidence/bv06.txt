@@ -1,0 +1,24 @@
+BV06 / Keep both ends of the native log
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/CHANGES_v0.1.1.txt
+Selected lines: 3–21
+Source SHA-256: 036b8014126db93bf9cd145ef660beec206292f4564e8daf4261e9dec6fd1464
+
+Repair the black viewport reported on the first phone build.
+
+Root cause found: v0.1.0 omitted the external renderer resources needed by
+its unchanged native core. Native initialization/input counters continued,
+but shader program/uniform calls failed repeatedly.
+
+Restore all 31 original resources from the working supplied Ashen seed,
+including all eight GLES shader files. Verify immutable resources before
+native startup, independently of ready-v1; repair individual missing/corrupt
+files. Only resources/ is written by this migration. Guest seed and game data
+are unchanged. Retain the same private update signing key; version code 2.
+
+Keep the beginning and end of the native log in reports so repeated driver
+errors cannot displace the initial shader failure. Include resource state.
+
+Validation: 497 package/integrity checks; four production Android Activity
+regressions including actual ready-v1 upgrade preservation; all five renderer
+programs compile/link/use in Mesa GLES, with 256 exact screen-sprite pixels.
+No v0.1.1 phone rendering or audio success has yet been observed.

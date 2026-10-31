@@ -1,0 +1,18 @@
+RG10 / The owner had reached the first combat encounter on the baseline
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/README_FIRST.md
+Selected lines: 3–3, 20–28
+Source SHA-256: dfe18cdfaa3537637f0f51a303f83d8c437ddb72a61ecba74d585a5456cd3001
+
+**This is a bounded update to the owner-tested playable v0.6.0, not a new emulator or altered game.** The owner's S25 Ultra has also run the original first combat encounter in the next room without reported crashes/errors.
+
+[... selected excerpt ...]
+
+## Verification performed here
+
+- Host suite: **25/25** original game acceptance checks passed (title, mansion, movement, inventory, pause, save/load, MIDI, endurance, intact game assets).
+- Focused `AVK_5` test in live original game state: Jill facing changed **1 → 5** on the eight-direction system (180°); session remained alive.
+- Per-input lightweight path returned **no serialized trace**, and explicit snapshot still contained the original `AVK_5` press/release trace.
+- Android APK assembled, zipaligned, signed and signature verified (v2/v3) using the original private certificate.
+- APK package `com.wakka.regbridge.probe03`; versionCode 7; no network permissions; original three BREW SHA-256 hashes unchanged.
+
+**Not claimed:** v0.6.1 has not yet been physically run on the S25 Ultra, and measurements from the new timer/input diagnostics are not yet collected. Owner-proven combat pertains to the already-running baseline.

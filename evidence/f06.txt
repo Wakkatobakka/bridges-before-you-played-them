@@ -1,0 +1,10 @@
+F06 — After 1/64 scaling, Cloud fits a much smaller footprint
+Evidence type: Phone runtime report
+Source: Snowboard-Bridge-v0.0.17-report-20260929-224824.txt
+Selected source lines: 143-143
+
+
+
+3.892  3D FIGURE      cloud.mbac tri=423 queued=394 textured=394/423 tex=SB_basic.bmp uv=2..141,1..95 projected=222 bbox=109..132,-43..16 viewZ=65..75 raw=-177..147/-50..277/-326..383 bind=-282..282/0..689/-326..383 pose=anim poseBounds=-186..148/-129..581/-253..410 worldBounds=-2.91..2.31/-2.02..9.08/-3.95..6.41 unitScale=1/64 patterns=3 pat=0x4 patHide=28 action=cloud.mtra#25 time=0 maxFrame=458752 front/back=222/0 near=1 far=500 fov=45
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

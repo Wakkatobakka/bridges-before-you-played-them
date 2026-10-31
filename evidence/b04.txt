@@ -1,0 +1,20 @@
+B04 — The original code draws Enable Sound?
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.3_HLE_FINDINGS.md
+Selected source lines: 3-13
+
+
+
+The v0.0.2 S25 report exposed repeated display-interface calls during the first 10 ms timer callback. Rather than painting a Java replacement screen, v0.0.3 implements the behavior on the BREW host objects that the original executable is already calling.
+
+## Pixel backing
+
+Compatible bitmaps now own ARGB pixel arrays. PNG resources loaded from `mmassaultbacksmall.bar` are decoded through a platform hook and `IImage.Draw` blits those pixels into the currently selected BREW bitmap destination.
+
+## Display calls
+
+The repeatedly observed display `+0x14` call contains a pointer to four signed 16-bit values whose live values form sane in-bounds rectangles, followed by frame/fill color values and flags. v0.0.3 models that measured call as rectangle drawing. The timer-ending display `+0x1C` call is modeled as the frame update boundary.
+
+The resulting output is not synthetic: executing the original timer code produces 432 rectangles over six updates and a coherent 128×160 screen reading **Enable Sound?**.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

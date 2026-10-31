@@ -1,0 +1,18 @@
+D02 — English 1.0 enters the running game
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.1-report.txt
+Selected source lines: 9-10, 33-36
+
+Translation credited in the report to TurquoiseHammer / Yuvi.
+
+Audio: MLD/MFi synthesis NOT implemented (silent diagnostic mode)
+English patch: English 1.0 (TurquoiseHammer / Yuvi) applied; resource retains japanese.dat filename
+
+[... selected excerpt ...]
+
+   0.027  DEX             Loaded verified English 1.0 game DEX in memory; English-patched JAR retained for resources
+   0.028  GAME CODE       VincentApplication.start
+   0.028  RESOURCE        class_list.txt
+   0.038  BOOT            Game start returned; game-owned render thread is running
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,15 @@
+BJ04 / Numeric 5 is not Select
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/evidence/intake/PACKAGE_FINDINGS.md
+Selected lines: 42–51
+Source SHA-256: 1b75d77d9a6c9b1eddfac1983427625e39cf0f874c96bc20ef72710ea86dd2fe
+
+- Help resource76 states catching controls: hold Down OR5 to increase power; release to throw.
+- Help names the soft-button Pause to pause.
+- Upstream host codes: UP='2'(50), DOWN='8'(56), LEFT='4'(52), RIGHT='6'(54).
+- Upstream FIRE/SOFT1=-8 (primary command/Select); SOFT2=-7 (secondary command/Back).
+- Numeric5=53 is distinct from menu Select code -8. Safe dedicated gameplay action choice is53.
+- Banjo handlers call inherited key mapping hash0xd82cfb99, then compare returned action constants0x55ffee01..05.
+- Two game inputs are to be delivered as press and release, retaining holds for throw charging.
+- Main initializer queries runtime screen width and height rather than declaring fixed dimensions.
+- Upstream starts with device Manuf.003, 132×176, depth8. Need execution validation to confirm practical layout.
+- No justification for diagonal game input was found: handlers compare four direction actions plus fire.

@@ -1,0 +1,21 @@
+DO06 / Three original MIDI files, four absent names
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/TECHNICAL_HANDOFF.txt
+Selected lines: 68–83
+Source SHA-256: d4c8909c3bcc93a5bd45a7b62b9e874efed919a56917a638cceceff66dc8e424
+
+AUDIO
+The three MIDI assets in the supplied JAR are passed unchanged to Android
+MediaPlayer. State, seek and infinite-loop controls implement the Player API
+used by the original game. The original sound loader also names four MIDI files
+that are absent from this JAR; its original exception handling is retained.
+Host probes parse actual MIDI streams and request playback/completion callbacks;
+this does not verify audible Samsung output. Original deallocation, menu stop
+and native resume requests are retained.
+
+PERSISTENCE
+RMS uses atomic durable writes, original record IDs and named stores. It
+implements listRecordStores as required by SpiderManMobile.k(). Original SMM
+record 1 is four bytes: sound, saved mode, saved level, unlock indicator.
+Fresh-process native reload of sound=false was observed without new disk writes.
+Generic RMS tests additionally exercise byte-exact reload and unchanged writes.
+No test RMS data is installed in the APK.

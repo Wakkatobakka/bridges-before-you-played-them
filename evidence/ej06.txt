@@ -1,0 +1,8 @@
+EJ06 / A 100ms wait without 100ms of busy work
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/cooperative_sleep.txt
+Selected lines: 1–3
+Source SHA-256: 254a6f3a919f635252e432b412f11dfda97f0ba32e14a4274a8d6ec36dd83559
+
+Original native100ms sleep: wall 99.69ms; thread CPU 99.71ms
+Cooperative same original100ms sleep ABI: wall 101.13ms; thread CPU 0.34ms
+PASS: original elapsed wait preserved; worker parked during wait.

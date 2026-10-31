@@ -1,0 +1,16 @@
+Q209 / The latest loader has no physical-phone result yet
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/VERIFICATION.md
+Selected lines: 49–59
+Source SHA-256: 1c99e78937812a4a9514b5daf2a363cff6ba6256a1b8c1b7dbbe534ed3b0f686
+
+## Limits and acceptance
+
+No physical Android test occurred here. Phone loading time, gameplay FPS, GPU
+behavior, audio, report output/background recovery and the complete campaign
+remain owner acceptance work. This build makes no measured gameplay FPS claim.
+Existing original negative viewport submissions remain visible in desktop GL.
+
+The external Omni host project was unavailable, so its old 84 production
+intake/export checks remain a labelled v0.1.0 baseline. Current embedded recipe,
+original-file identities, package identity and signing continuity were checked;
+no game-specific Omni source change is needed.

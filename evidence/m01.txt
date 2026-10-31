@@ -1,0 +1,22 @@
+M01 — Text is decoded before the game can draw it
+Evidence type: Technical investigation
+Source: Monster Hunter i v0.1.4 / PHONE_TEXT_FIX_v0.1.2.md
+Selected source lines: 3-5, 15-21
+
+
+
+Owner evidence: `1000098213.mp4` shows replacement diamonds in Options values, the Leather Set dialogue and the quest list. The unchanged phone resources store their text in Windows-31J (CP932). The original game constructs strings with `new String(byte[])` / `new String(byte[], offset, length)`; Android decodes those bytes as UTF-8. Once decoded incorrectly, source characters are lost, so drawing-time character substitutions would be unreliable.
+
+This fix adapts recognized resources before the original game builds strings. All original EN/JP JAR/DEX/seed bytes, compressed resource archives and existing scratchpad/save files remain untouched. The adapter operates on newly inflated in-memory byte arrays only.
+
+[... selected excerpt ...]
+
+The other 18 recognized entries are typed tables consumed by original `a.class`. The first byte is column count. Each column declares a type byte and a width byte. Type 2 is a nul-terminated text field; types 0/1 are signed/unsigned numeric fields. The original parser derives row stride and offsets from these widths.
+
+`LegacyTextResources.adapt()` strictly decodes recognized text with Windows-31J and emits UTF-8. Plain resource line endings and ASCII commands stay intact. For recognized typed tables, only type 2 strings are converted; column widths grow when needed, and the row stride changes consistently. Every numeric cell is copied byte-for-byte. Row counts and column types remain the same. Converted widths must fit the original one-byte schema; invalid charset data or schema raises an error and JarInflater retains the original bytes with a complete diagnostic.
+
+The allowlist contains only the known 21 names. Unknown entries, model data, image data, audio and arbitrary binary resources bypass adaptation. A `.txt.dat` suffix alone never triggers conversion: many files with that suffix are binary tables.
+
+Strict standard Shift_JIS rejects extension characters found in the actual EN dialogue and JP dialogue/manual resources. Windows-31J successfully decodes every source text cell in both payloads. This is why the adapter uses CP932 rather than guessing replacement glyphs.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

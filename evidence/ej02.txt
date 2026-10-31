@@ -1,0 +1,9 @@
+EJ02 / A seek bug became a garbage-collector fault
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 15–18
+Source SHA-256: e2ec7fc39c299a7b1b0dcd345c5a935364e70b38656922651404900b25a1fc2c
+
+EARTHWORM ABI CORRECTIONS
+The inherited IFile.Seek implementation used incorrect origin values and returned zero on success. Earthworm's original BREW ABI uses START=0, END=1, CURRENT=2 and returns the resulting byte position. Incorrect navigation read the data.bar directory as constants.bin, creating a malformed VM array whose data pointer reached the module start; the original native GC then faulted. Correcting seek origins and return values fixes the startup fault. No ARM instruction or game asset patch was required.
+
+The adapted services also supply the original 240x320/depth16 device-info prefix, free bytes from the actual 16MiB guest heap, BREW3 packed version, font metrics, named BAR resource selection/path normalization, and normal sound policy. Optional carrier information is reported unavailable with the original error/size convention. The new startEarthwormSession factory accepts the original module, resource map, saves, pixel decoder and explicit diagnostic mode.

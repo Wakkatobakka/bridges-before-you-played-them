@@ -1,0 +1,33 @@
+S02 — The owner accepts a specific baseline
+Evidence type: Recorded owner feedback
+Source: DeadShot Omni v0.1.0 / PHONE_FEEDBACK_20261004.txt
+Selected source lines: 5-5, 7-19, 21-24
+
+
+
+oh fuck yes! this is the preferred version. i still need to fix the custom UI layer for this one obviously. but even normalizing things is just helping in general. button inputs even make more sense. so whats our next step then?
+
+[... selected excerpt ...]
+
+SCOPED ACCEPTANCE
+The owner selects the exact DeadShot Omni 0.1.0 APK as preferred going forward,
+and reports clearer button inputs. Custom control UI tailoring remains open.
+Use this complete source/update identity for normal subsequent chat iterations.
+The original 0.0.12 runtime remains its preservation input/reference.
+
+SCREENSHOTS INSPECTED
+Screenshot_20261004_014929.jpg: title screen with custom deck, shared toolbar,
+complete game stage and status. Native STAR/POUND, OK/Action and soft keys remain.
+Screenshot_20261004_014959.jpg: gameplay with shared full native keypad;
+toolbar reads Controls for returning to the custom deck.
+Both show four-way native mode; these images do not validate eight-way or
+hardware input combinations. Phone gameplay/input preference is owner-reported.
+
+[... selected excerpt ...]
+
+Audio output, lifecycle stress and report chooser/export success were not
+separately reported in this feedback. Do not treat them as confirmed by images.
+The build-time description baked into the unchanged APK says phone validation
+is pending; this receipt supersedes it for the scoped owner acceptance above.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

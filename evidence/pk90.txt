@@ -1,0 +1,12 @@
+PK90 / Historical image / Pocket Kingdom: Own the World
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/host_progression.png
+Source SHA-256: 5e481a63045825eb7bd69215712c65f8aede43ad87420b31ce1835659dd3192f
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/evidence/baseline-v0.1.0/host_progression.png
+SHA-256: 5e481a63045825eb7bd69215712c65f8aede43ad87420b31ce1835659dd3192f
+
+The original Grape tutorial and party discussion in the retained v0.1.0 Linux EKA2L1 host window. The save/restart outcome is separately recorded in PK01.
+
+Scope: Historical original-game Linux host emulator window, retained as earlier evidence in v0.1.1. No battle completion, phone audio or current phone execution follows from the image.

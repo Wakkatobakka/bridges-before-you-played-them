@@ -1,0 +1,11 @@
+EJ09 / A tap that lives long enough to be seen
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 37–42
+Source SHA-256: e2ec7fc39c299a7b1b0dcd345c5a935364e70b38656922651404900b25a1fc2c
+
+INPUT AND PRESENTATION
+The multitouch D-pad retains source reference counts for touch/controller chords. The action key preserves original tap-to-whip/hook and hold-to-fire behavior. Dedicated 1/2/3 buttons supply the actual diagonal/vertical jump key codes. The complete original keypad is available.
+
+A touch or accessibility tap released before the game polls input remains native-down through one normally scheduled native tick, then receives its release. Long holds release immediately once sampled. Re-press cancels a deferred release without a duplicate press. Background, focus loss and restart clear native held keys, including pending releases. This adds no input-driven timer callback.
+
+The Android player scales the original framebuffer proportionally with nearest-pixel rendering and applies actual system/navigation/cutout insets. Frame snapshots follow changed pixel revisions. Native bitmap caches invalidate on changes to their exact backing byte ranges, including guest and host writes.

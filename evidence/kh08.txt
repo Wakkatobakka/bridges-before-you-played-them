@@ -1,0 +1,15 @@
+KH08 / Original engine and effects keep their timing and test boundaries
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/AGENTS.md
+Selected lines: 30–39
+Source SHA-256: f17daa0c4dfa2032eb4e8bffd40b7c63334d9e272a198a70f3c098b0566d649b
+
+Native timers keep their original deadlines. Input, reports and media callbacks
+do not pump extra game ticks. Quick releases may wait only until one naturally
+due callback has seen the press; lifecycle releases are immediate. The 500M
+per-callback instruction limit is a fault ceiling for heavy scene loads, not a
+performance target. Virtual clocks and guest-memory inspection are host tests.
+
+The original optional font extension is unavailable; system sans is a disclosed
+fallback. CMX WAVE effects are unwrapped without changing QCELP packets and
+passed as QCP to Android. Do not claim phone playback without device evidence.
+Original MIDI is unchanged. No replacement soundtrack or looping under levels.

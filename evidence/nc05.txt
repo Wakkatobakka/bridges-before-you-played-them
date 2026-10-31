@@ -1,0 +1,14 @@
+NC05 / Native input contracts and framework controls have distinct scopes
+Source: NFS_Carbon_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / NFS_Carbon_Bridge_v0.1.1_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 21–29
+Source SHA-256: c339834610483756f84f132f8ae94ca4ea27dc6ea0a546c64e19b24b16ad990c
+
+## Verification
+
+The eight Carbon API34 Android framework scenarios include 48 geometry cases (A/B, two modes, six phone/tablet orientation sizes, font 1.0/1.3), target and text bounds, square D-pad and clear picture, actual root dispatch for two pad contacts plus accelerator through all six release orders in both modes/orientations, other direction pairs/opposites, sliding, nitro, cancellation, inline switch, physical ownership, preset changes, insets, resize, pause/Back, report wiring and isolated state/recovery. Native Android drawing generates the supplied previews from an original desktop game frame; the worker boundary is shadowed. These are not phone gameplay or thumb-comfort measurements.
+
+The modified shared UI JAR passed all 12 Android framework scenarios plus its existing host input/pad/geometry/configuration checks. `evidence/shared-ui-release-gate.txt` pins its SHA256. The original 28 focused compatibility checks still pass.
+
+`CarbonLifecycleProbe` uses actual compiled APK runtime classes and original ARM mapper 0x00102F88. It checks Up + Right + accelerator as distinct native press descriptors, independent release order, held-set preservation, no fabricated extra event, and read-only native default-preset A. This is an input contract, not race driving. It then verifies cold EVT_APP_STOP/CloseApplet with real Mesa swaps and no remaining runnable guest. No runtime fault occurred in that contract.
+
+Final package validation covers every original hash, complete strict-v1 assets/resources/native inventory, ZIP integrity, APK v2/v3 signatures, and identical owner signer for update installation. Current production Omni round-trip and physical Android comfort, full GPU/audio/performance and native campaign saves remain unverified.

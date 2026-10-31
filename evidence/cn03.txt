@@ -1,0 +1,20 @@
+CN03 / The original racing defaults stay separate
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 5–19
+Source SHA-256: eefae0513f50a2e85adc2c352e53956afd26aad90622249b1ef0f836153bb39f
+
+CONTROLS
+Slide continuously across the square digital D-pad to steer/navigate; Down reverses while stopped. Touch directions use four-way cardinal behavior; physical axis mappings are preserved.
+ACCEL / OK = original 5. BRAKE = 6. HOP / DRIFT = 2. ITEM = 4.
+MENU L/R are the original selection keys; either pauses a race.
+Tap the permanent ORIGINAL KEYPAD switch beside the controls to change the panel inline. The three-dot menu is for utilities/help. The game remains visible, with all digits, softkeys, Clear, a complete square digital D-pad, original controller press and four large racing actions accessible. D-PAD RETURN restores the race layout. Android Back closes gameplay and returns to the previous app/Omni when launched from there.
+The original game can reconfigure controls in Options > Controls. Labels reflect its defaults.
+Controller: left stick/D-pad steer; A/right trigger accelerate; B/left trigger brake; Y/R1 hop; X/L1 item; Start/Menu L; Select/Menu R.
+
+REPORTS
+SAVE REPORT writes a real .txt directly to Downloads/Crash Nitro Kart Bridge/, independently of the game worker. No share sheet. Startup/display faults attempt automatic reports. Failed exports remain pending privately for retry and report a real failure. Reports include runtime/session state, input events, original executable verification, lifecycle, native log and guest file state.
+
+IMPLEMENTATION
+Original N-Gage/Symbian executable, UID 0x101FD3F1, and all 11 supplied files preserved byte-for-byte. Unmodified EKA2L1 ARM64 core and clean NEM-4 firmware seed, reusing the recent private N-Gage bridge runtime foundation.
+Actual Wakka Gameplay UI Kit v1.1.1 source embedded: original game View, 176:208 aspect, real original AIF icon, title/platform, dark/cyan styling, safe insets, responsive minimum-size controls, direct one-tap inline switching and native Android Back. No game library/dashboard. No INTERNET permission. No recreated game code or simulated success.
+Saves stay in private guest C/E drives. Initial extraction never overwrites existing files. Host testing does not alter the clean Android seed.

@@ -1,0 +1,20 @@
+SIM01 / The half-second pet voice that would not finish
+Source: Sims_2_Pets_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sims_2_Pets_Bridge_v0.1.2_PRIVATE/FIX_NOTES_v0.1.1.txt
+Selected lines: 5–19
+Source SHA-256: 4110dc4a6495b71acaa4b14a453dfa1f228b8436001722616c37106b89c75747
+
+WHAT DEVICE EVIDENCE SHOWS
+ - Original game is rendering in the pet-training room.
+ - Frame count 7591; key down/up 120/120; fatal error none.
+ - Audio:create at 14:41:32.466 and 14:41:56.757, both audio/AMR bytes=438.
+ - Exact original asset in JAR for 438 bytes is '88', AMR-NB duration 0.48sec.
+
+ROOT CAUSE (ORIGINAL BYTECODE + SHIM)
+ - Original j.a(int) creates AMR players for original assets IDs 85-94,
+   and MIDI player for ID 95.
+ - Original c.c(int) (invoked from game's PetsApp.x(int) effect path)
+   calls Player.setLoopCount(-1), then Player.start().
+ - v0.1.0 PhonePlayer translated -1 directly to Android
+   MediaPlayer.setLooping(true), resulting in endless voice playback.
+ - Because looping does not complete, PlayerListener.endOfMedia does not fire,
+   preventing the guest's normal effect-completion handling.

@@ -1,0 +1,23 @@
+M04 — Phone evidence, renderer changes and the 0.1.4 boundary
+Evidence type: Checkpoint summary
+Source: Monster Hunter i v0.1.4 / README_FIRST.txt
+Selected source lines: 7-20
+
+Counters are reported by the retained checkpoint summary; the underlying recording is not reproduced in this edition.
+
+The hunter renderer honors the game's explicit weapon/effect pattern choice after setting its animated posture, instead of forcing the animation's default visibility mask again at draw time. Bone animation remains active; the visual issue was persistent wrong model parts. Exact original guest/model regressions document the actual states and preserve the native DoJa pattern convention.
+Fractional movement frames now interpolate correctly instead of snapping to the previous integer key. Exact original movement tracks prove the changed poses; integer-frame poses remain identical to the preserved baseline.
+Portrait layout and safe Sprint behavior remain. Buttons use available space for wider faces and forgiving nearby taps, with clear pressed feedback and standard haptics that respect phone settings. Native keys release immediately; brief visual feedback does not hold an action. Controls keep their original contact until lift, preserving safe movement/attack combinations.
+Reports identify MONSTER HUNTER i and the installed app version, rather than the shared shell version. New exports use Monster-Hunter-i-v0.1.4-report-<timestamp>-<suffix>.txt. Downloads uses Downloads/MonsterHunteri; Save as and Share use the same game/version filename. Original retained reports remain resolvable and their archived contents stay intact. Tools/exports keep complete counters, current/previous logs and error stacks.
+
+PHONE EVIDENCE
+Latest exact report/video are under verification/phone-v0.1.3. Actual standalone0.1.3 on Samsung SM-S938U Android16/API36 reports792200drawn triangles/0draw failures,246audio starts/0failures,60virtual text resources/0failures and361presses/361releases with no held contacts. Owner says portrait controls finally feel better; footage motivates weapon/effect visibility and touch-feedback work. This is partial phone evidence. Current0.1.4 host/build/original-guest checks do not imply new phone or full-game acceptance.
+
+PRESERVED
+Original EN/JP JAR/DEX/seeds, save paths/update key/package, native non-inverted directions, configurable bindings, full keypad/hardware controls, Sprint lifecycle safety, original gold icon, vector ABI/terrain/camera, CP932 text, material fades/overlays, completed frames, production audio and full diagnostics remain. Four sampled effects remain phone-unvalidated; Android GM approximates original handset instruments. Native12/20FPS pacing/GC are unchanged. No cross-app save migration is implemented.
+Original0.0.9 and prior0.1.1/0.1.2/0.1.3 source/fingerprints/APKs remain under baseline/. Exact current and cumulative engine deltas are recorded honestly. No Player source is included in this current standalone checkpoint.
+
+BUILD / NEXT CHAT
+Read AGENTS.md, artifact-passport.json, artifact-handoff.json, engine-revision.json and docs/ARCHITECTURE.md. Use Python3/Java17+, API35 android.jar and Linux build-tools35.0.0; set ANDROID_JAR/ANDROID_BUILD_TOOLS. Run tools/build.py, tools/check.py and tools/finalize_handoff.py. This title uses local shared0.1.5 for report workflow; earlier Player shared0.1.4 is deliberately untouched. Keep the private checkpoint with source/tests/evidence/update keys/original payloads. Android9/API28+.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

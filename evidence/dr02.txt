@@ -1,0 +1,19 @@
+DR02 / The automap needed its original background fill
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/runtime-verification.txt
+Selected lines: 25–31, 39–42
+Source SHA-256: 0795c4b535157dfe5db29d10f4d632baab77e8fb91b187c28df91cab67347e3f
+
+Compatibility work extends the BREW/CPU bridge: native UTF16 BARstrings,
+string conversions/printf, memory sources+gzip streams, correct CreateDIB
+ABI (depth,width,height), packed palettes/pitch, bitmap blits, IGraphics
+primitives/clips/default backgrounds and native IMediaCMID commands and
+notifications. It does not replace original game logic. IDisplay.DrawRect
+RGB_NONE with fillflag2 uses the original configured background rather than
+skipping the fill; this was necessary for real automap drawing.
+
+[... selected excerpt ...]
+
+Independent static review confirmed original automap at MOD0x864C starts with
+DrawRect(RGB_NONE,RGB_NONE,flags2). Explored floors/walls depend on original tile
+flags; small red explored area/yellow marker at this tutorial position agrees
+with the original branch conditions and colors.

@@ -1,0 +1,12 @@
+BE13 / Room 21 puts Jill back in the staircase corridor
+Source: Biohazard_Episodes_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Biohazard_Episodes_Bridge_v0.1.4_PRIVATE/verification-v012/projection-visual-check.txt
+Selected lines: 1–7
+Source SHA-256: 5b9607f641bf52970cbe4f04f4b48ea91f4f46af150ce82ed84499761de15e2d
+
+Controlled original room draws using identical fixture positions inside original wall bounds.
+Room20: (-54,0,-5), old MC855/focal155 vs corrected MC533/focal277.
+Room21: (10,0,-10), old MC1245/focal84 vs corrected MC876/focal150.
+Before captures use the original v0.1.0 Graphics.java, isolated host classes and original game assets.
+Corrected room21 puts Jill in the right staircase corridor rather than toward the junk and railing.
+Corrected room20 enlarges the model to the canvas-based camera scale and moves it onto the matching floor region.
+Original game/player data remain unchanged; test-only positions are not a replay of the phone session.

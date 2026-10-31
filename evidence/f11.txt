@@ -1,0 +1,43 @@
+F11 — The arrows were edging; 4 and 6 were turning
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.21_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 7-18, 22-40
+
+
+
+## Why the old control layout felt wrong
+
+The game's packaged help defines the original Button scheme as:
+
+- 4 / 6 = Turn Left / Turn Right
+- Up (or 2) = Kick
+- Down (or 8) = Slow Down
+- Confirm (or 5) = Jump / Spin Jump
+- D-pad Left (or 1) = Left Edge Control
+- D-pad Right (or 3) = Right Edge Control
+
+The previous bridge exposed D-pad Left/Right as the main steering control, which meant the primary touch arrows were sending edge-control commands rather than the game's actual 4/6 turning commands.
+
+[... selected excerpt ...]
+
+- Added DoJa numeric key masks for KEY_4 and KEY_6 using the official Display key codes (0x04 and 0x06).
+- Replaced the four separate game-direction circles with one large drag-style virtual control pad.
+- During active racing (`Retry / Menu` soft labels):
+  - drag left/right -> numeric 4/6 actual turning,
+  - drag up -> Kick,
+  - drag down -> Slow Down,
+  - diagonals combine turn + kick/slow in one touch.
+- Added a large JUMP button (Confirm/5 behavior).
+- Added separate large EDGE L / EDGE R buttons for the original D-pad edge-control actions.
+- Preserved Retry/Menu soft keys below the gameplay controls.
+- Outside an active race the same left pad automatically becomes a normal cardinal D-pad, so menus/config/help remain navigable.
+- Multi-touch remains supported so steering + Jump/Edge inputs can be combined.
+- Diagnostics now label numeric steering input as TURN_L / TURN_R.
+
+## Intentionally unchanged
+
+- v0.0.20 font/text corrections.
+- All 3D, animation, texture, camera, presentation-buffer and fade behavior.
+- Audio remains the existing MLD stub in this build; audio is the next runtime target after confirming the corrected original steering inputs on-device.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

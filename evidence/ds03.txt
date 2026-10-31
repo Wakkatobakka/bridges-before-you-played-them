@@ -1,0 +1,15 @@
+DS03 / Original character creation, save reload and nonzero attributes
+Source: DragonSword_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / DragonSword_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 12–21
+Source SHA-256: 22e4a067616ca96ab5fc86815ba24fc96ffa22b56ea889b3024176827f4edfa0
+
+PASS — unchanged original BREW ARM/Thumb module, BARs, MIF and required CFG fingerprints.
+PASS — native module factory and original applet event execution.
+PASS — original main menu/help and exact game-derived control mappings.
+PASS — fresh unnamed original CFG templates: name entry, original name validation and game-owned save.
+PASS — original opening dialogue, native movement and map transition into a building.
+PASS — reload of native 1471-byte save into the selected character.
+PASS — character-details screen after resume: EXP 0/38, HP 145/145, MP 100, AT 30 and DEF 10 drawn by original code.
+PASS — suspend/resume and stop events in original host execution.
+PASS — original MIDI requests dispatched with exact unwrapped score bytes.
+PASS — original CMID QCELP WAVE: 12 exact packets, 1920 decoded samples at 8000Hz; Java container matches independent Python and FFmpeg decodes it.

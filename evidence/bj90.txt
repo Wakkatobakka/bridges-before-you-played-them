@@ -1,0 +1,12 @@
+BJ90 / Historical image / Banjo after the first Egg Scramble clear
+Source: Banjo_ExEn_Bridge_v0.1.0_PRIVATE/evidence/progression/01_first_mission_clear.png
+Source SHA-256: 6f0752b4ecf9867bc35e09d2de986341cf0831dc2556c0f45824f1415f475fb3
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Banjo_ExEn_Bridge_v0.1.0_PRIVATE/evidence/progression/01_first_mission_clear.png
+SHA-256: 6f0752b4ecf9867bc35e09d2de986341cf0831dc2556c0f45824f1415f475fb3
+
+Banjo after the first Egg Scramble clear,45 eggs shown and the original Jiggy message. Historical desktop original-runtime frame.
+
+Scope: Historical desktop original-runtime framebuffer; not a physical-phone screenshot.

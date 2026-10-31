@@ -1,0 +1,11 @@
+BA03 / Touch down and release must survive the native timer
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 51–56
+Source SHA-256: 69b0cc2b4483f7ed6bc9aab9c289714abdc1762ed820cca93a47a64545de0d74
+
+Original native event semantics: EVT_KEY_PRESS 0x101 sets pending down bits at
+applet+0x498; EVT_KEY_RELEASE 0x102 sets release bits at applet+0x49C. The native
+timer consumes these. Production input queue prevents short taps from disappearing
+by retaining down through one naturally due native callback. Every edge is retained;
+releaseAll releases immediately during background/focus loss. No Katamari-specific
+modal memory offsets or control descriptions are used for game routing.

@@ -1,0 +1,10 @@
+T04 — A real Now Loading frame reaches the phone
+Evidence type: Phone runtime report
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / evidence/v0.0.9-device/MGS-Mobile-Bridge-v0.0.9-report.txt
+Selected source lines: 90-90
+
+
+
+FIRST_FRAME = MGS_NOW_LOADING_PRESENT_CAPTURED | guest-authored 320x240 RGB565 loading present is shown in the Android viewport after MGS resource archives are attached
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

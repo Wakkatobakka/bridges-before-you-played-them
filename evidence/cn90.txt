@@ -1,0 +1,12 @@
+CN90 / Historical image / Crash Nitro Kart
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/evidence/host/host-driving.png
+Source SHA-256: f880e27ad5d36cb070d84fa443a3cb0bd6b5c7a896cbb440a082d39a49b288a1
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/evidence/host/host-driving.png
+SHA-256: f880e27ad5d36cb070d84fa443a3cb0bd6b5c7a896cbb440a082d39a49b288a1
+
+Crash driving in the original N-Gage race, retained from the v0.1.0 Linux EKA2L1 host run. The emulator window is preserved unchanged.
+
+Scope: Historical Linux host original-game emulator capture. It establishes a recorded racing scene, not a completed race, Android frame rate, physical control comfort or speaker audio.

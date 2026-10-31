@@ -1,0 +1,22 @@
+KT11 / The countdown needed a clipped circular sector
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 162–178
+Source SHA-256: 81e00360f891775614d20809302925edd094b563f8e7571db2830a2ad0915aee
+
+UPDATE FROM THE PHONE REPORT (v0.1.1)
+The owner's SM-S938U / Android 17 report reached 469 original callbacks before
+IGraphics cls 0x01002001 method 0x64 failed at native LR 0x108460. Android audio
+had 4 starts and 0 errors, battery 29.0 C, thermal status 0 during the short run.
+Those measurements establish this run only; no extrapolation to long play.
+
+The native caller supplies five signed shorts: center(x,y),radius,startAngle,
+sweepAngle. The countdown draws a clipped quarter-circle at(screenWidth,0),
+radius 30,start 270,sweep -90, then overlays the elapsed-time sector. The new
+backend supports signed/wrapping/full/zero sweeps, fill/outline and clipping;
+it writes through the existing DIB coherence path. No game instructions patched.
+Per-draw trigonometry sets the two rays; the pixel loop uses cross-products.
+
+Regression uses the supplied archived config from the other original ZIP only
+as a host fixture to unlock Make a Star 1. It reproduces exactly the same error
+with v0.1.0; the new runtime executes the native sector and 1000 further timed
+callbacks. This fixture is never preloaded by the Android app.

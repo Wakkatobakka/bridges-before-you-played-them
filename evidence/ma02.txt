@@ -1,0 +1,27 @@
+MA02 / PLAY and TAKE SMS are different original commands
+Source: 25-Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 14–35
+Source SHA-256: 9cb87cffdb016d7c9dc214736acd7114fb02bfcc30d3ab690ab280aa45033895
+
+Normal controls follow the original active screen:
+- Title: large START action.
+- Menus: arrows and large SELECT action.
+- Briefings/tips: large CONTINUE action.
+- Original item/confirmation dialogs: PLAY / TAKE SMS or YES / NO.
+- Live level/map: original movement, strafe, fire, grenade and map deck.
+PLAY is prominent on the optional detector offer. TAKE SMS and digit 5 retain
+the original optional-service action. NO leaves the SMS loop.
+Original SMS/ranking services are unavailable; no network/SMS permissions
+are requested.
+
+ORIGINAL KEYPAD / D-PAD RETURN swaps controls inline. Both layouts show live
+original commands. Keypad 5 says START, SELECT, CONTINUE, TAKE SMS, YES or FIRE
+as appropriate. Original codes and physical bindings are retained.
+Context changes release touch contacts; registered physical holds retain
+their owners. The renderer continues without resetting or altering the game.
+
+D-pad UP/DOWN moves forward/backward; LEFT/RIGHT turns during gameplay.
+1/7 strafe right/left,5 fires/acts,* throws,# accesses map/search.
+The original help incorrectly lists some movement numbers; labels follow
+actual original EXN/platform execution. Exact digits and both softkeys remain
+in keypad mode. Gameplay right softkey is QUIT MENU.

@@ -1,0 +1,25 @@
+SK06 / The newer shell and old original-world evidence are separate
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/VERIFICATION.txt
+Selected lines: 21–40
+Source SHA-256: 104236f9f8fa64e1d15ba28e4b6d62c2969178fd62e231c4586f3e6cf3832b69
+
+- Production MainActivity/resources tested with Android callbacks: 2 tests pass.
+  Cold creation, safe insets, attach/draw, actual targets, one-tap mode buttons
+  across five portrait/landscape spaces, stable renderer, no boot restart and
+  teardown are checked. Injected SurfaceView construction failure confirms
+  fault capture precedes UI/native startup and preserves a failed export locally.
+
+LIMITS
+Robolectric executes Android framework/UI code, with the JNI boundary shadowed
+and native boot deferred. It is not physical Android gameplay evidence.
+This pass has no new phone run. Control comfort, actual controller/device
+behavior, S25 Ultra safe areas, graphics/audio, live Downloads reporting,
+background/resume and original-game play/save/load still need device checking.
+The geometry cases describe available measured space after outer safe padding;
+root sizes below the usable minimum must not be claimed as supported.
+
+PRESERVED ORIGINAL-GAME EVIDENCE
+Host screenshots/logs/save are historical v0.1.0 evidence: original N-Gage game
+boot, character creation, native 3D scene and movement, pause/save, and reload
+after process restart through Linux EKA2L1. The payload is unchanged. This pass
+does not repeat or extend that historical gameplay verification.

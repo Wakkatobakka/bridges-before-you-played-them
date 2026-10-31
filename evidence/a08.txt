@@ -1,0 +1,24 @@
+A08 — A saved investigation with no completed experiment
+Evidence type: Tool investigation record
+Source: AshenFindings.txt
+Selected source lines: 9-15, 47-51
+
+This is an unfinished tool-side investigation, not evidence that Ashen failed to run.
+
+Status: budget_reached
+
+Reason: The investigation time budget was reached. Completed experiments are saved; continue with another budget.
+
+Runtime adapter: Not checked
+
+Time spent: 60000 ms across 1 saved sessions. Latest chosen overall investigation budget: 60 seconds. Omni stops early when its supported experiments are finished.
+
+[... selected excerpt ...]
+
+
+
+## Complete experiment ledger
+
+No experiment completed in this session. The checkpoint retains the input and unfinished stage.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

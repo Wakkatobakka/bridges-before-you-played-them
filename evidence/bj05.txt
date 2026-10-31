@@ -1,0 +1,17 @@
+BJ05 / A Jiggy, Sheep Dip and snapshots across a fresh process
+Source: 01-Banjo_Kazooie_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Banjo_ExEn_Bridge_v0.1.0_PRIVATE/evidence/VERIFIED.txt
+Selected lines: 13–24
+Source SHA-256: 4dfa4c64c88728109cefa1773a0189c144d1ecd8938895003110d41bac367798
+
+Observed original bytecode behavior:
+- Publisher splash, Banjo title, main menu and Rescue Kazooie campaign loaded.
+- Original sliding gameplay advanced, with eggs, obstacles and input-controlled Banjo movement.
+- First Egg Scramble mission completed with 45 eggs; first Jiggy awarded.
+- Next Sheep Dip mission loaded through normal campaign progression.
+- Holding numeric 5 for 8 ticks moved the power gauge; releasing cast the fishing line.
+- Holding Down and releasing produced exactly the same charge and cast framebuffer hashes as numeric 5.
+- Left and Right produced different visible Banjo positions from an identical saved state.
+- Pause held a stable framebuffer for 40 ticks; Select resumed gameplay.
+- Native game saveCtx produced a nonempty per-game save file.
+- Snapshot restore reproduced the saved framebuffer and a subsequent 12-tick sequence exactly.
+- Core reboot and separate-process restore were exercised. Missing image buffers and stale allocator bindings were found and fixed before these final passes.

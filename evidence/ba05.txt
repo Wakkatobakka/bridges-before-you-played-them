@@ -1,0 +1,22 @@
+BA05 / First mission, movement, pause and save reload
+Source: Brothers_in_Arms_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Brothers_in_Arms_Bridge_v0.1.3_PRIVATE/evidence/acceptance.log
+Selected lines: 1–1, 24–24, 30–38
+Source SHA-256: d98f55bb69f4104f453c702a89bc4ce46f7a1b78d020fcefa1b8dbd3be3537eb
+
+PASS original module boots unmodified
+
+[... selected excerpt ...]
+
+PASS held Up changes original rendered scene
+
+[... selected excerpt ...]
+
+PASS native pause and resume render distinct screens
+PASS original suspend and resume events
+PASS original ARM operation remains live
+PASS native save serialized 30016 bytes
+PASS fresh original runtime accepts saved profile
+PASS native save bytes survive fresh runtime reload
+PASS native 240x320 framebuffer
+PASS no unsupported interface on exercised path
+PASS total=37 steps=2656542689 callbacks=545 mediaPlays=2 audioPayloads=2

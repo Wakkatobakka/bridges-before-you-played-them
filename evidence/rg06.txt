@@ -1,0 +1,7 @@
+RG06 / Rush Marine supplied the reused execution baseline
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/baseline/REGenesis_Bridge_v0.5.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.5.0_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 45–46
+Source SHA-256: 792b9fae95d7c1f37b9775ecdaae2d4304cd5d0d2c1396a83ee2c76fe04ffab0
+
+## Provenance / public references
+Reused baseline: owner's supplied `Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip`, runtime `runtime/rushmarine/src/com/wakka/rushbridge/runtime/BrewRuntime.java`. No repository-wide license grant was selected in that package; preserve its notices and keep this owner-private copy private.

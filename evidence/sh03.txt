@@ -1,0 +1,15 @@
+SH03 / Caption observations come from actual draw calls
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/evidence/control_evidence_notes.txt
+Selected lines: 1–10
+Source SHA-256: 03fa0d328ba3ab3cf0c20d3ae0f4db103d17773ff4439c7c209eb9552821cc57
+
+Original source audit for v0.1.1
+Original e.x renders d.c menu stack captions from d.b:String (left) and
+d.c:String (right), at BOTTOM|LEFT / BOTTOM|RIGHT and height minus two pixels.
+Original g.c and g.a(Graphics) render scene/dialogue captions at the same edge.
+NativeControls observes these real draw calls before rasterization within each
+Canvas repaint. Original guest classes keep the same production j2me transform.
+Original d.a()Z returns whether d.c:Vector is nonempty. Original g.a()Z uses
+inherited e.t:int (sys_battleState) to handle Fire and draw the crosshair.
+g.f:boolean tracks invGun availability. All are read only. Actual host key 1
+changed INTERACT -> FIRE -> INTERACT in the captured original sequence.

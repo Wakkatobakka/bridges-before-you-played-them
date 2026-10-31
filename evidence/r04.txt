@@ -1,0 +1,20 @@
+R04 — Restore the transform and investigate the model units
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.2.4-decision-from-v0.2.3.txt
+Selected source lines: 20-30
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+v0.2.4 changes one conceptual layer:
+1. Restore view*object composition.
+2. Treat preserved host lookAt as already GLES -Z eye space (no second axis flip).
+3. Render decoded Figure vertices at 1/64 model-unit scale.
+4. Simultaneously log candidate frustum coverage at 1/32, 1/64, 1/100 and 1/128, plus raw/scaled model height and camera-to-object distance.
+5. Keep textures, animation, D4D world decoding and audio unchanged.
+
+Why 1/64 for the rendered probe:
+- It is a compact binary unit conversion consistent with packed integer model storage.
+- Applying it to the v0.2.3 recorded camera/object matrices places all four known Rockman body meshes inside the 60-degree view in an offline check.
+- It is explicitly a probe, not a claim that 1/64 is the final format-wide scale. The on-device candidate telemetry and visual size will decide the next step.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

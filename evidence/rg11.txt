@@ -1,0 +1,22 @@
+RG11 / Center 5 turned Jill; duplicate SELECT did not
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/IMPLEMENTATION.md
+Selected lines: 3–7, 10–18
+Source SHA-256: 3fef0ae81549f077fbc6b5d53721640332f2eab8f642e09a7b2caf19d61a508c
+
+The v0.6.0 working original-game execution remains authoritative. This pass does **not** alter the game's ARM instructions, BREW host ABI implementation, save persistence, audio player, or viewport pixels.
+
+1. `MainActivity.directionalCluster`: center cell sends `BrewRuntime.AVK_5` / displays `5 TURN`, instead of the duplicate `AVK_SELECT`. Separate ACTION / OK continues to send `AVK_SELECT`. Both modes retain keypad `5`, all four arrow inputs, inventory, CLR and action. Updated control help text.
+2. `BrewRuntime.Session.pressKey`, `releaseKey`, `tapKey`: return the existing lightweight `frame()` rather than full `snapshot()` in their response paths. `frame()` includes counters, framebuffer and audio state but not the entire debug trace; `snapshot()` still collects the trace on explicit report export. Game execution path and event call remain untouched.
+3. `BridgeController`: instrument phone-side elapsed real time for input queue wait and handler processing, plus timer callback work. Numbers are averaged and maxima reported for the session. No virtual-clock, timer interval, game speed, display or audio scheduling changes.
+
+[... selected excerpt ...]
+
+## Verified inputs
+
+Focused desktop runtime test uses **the original BREW game, not simulated state**: after entering the mansion, original Jill-facing byte changed `1` to `5` after `AVK_5` input; `AVK_5` is `0xE026`. The test also verifies that live event results omit the serialized trace and explicit full snapshot retains it. Existing acceptance checks remain 25/25.
+
+## Measurement caveats
+
+- `Measured timer work` is wall-clock duration of the host tick handler (including audio/persistence/UI scheduling), not simulated frames or guest virtual milliseconds.
+- `Measured input dispatch` splits wait time in the Android worker queue from time spent processing and sending an event. It does not include touchscreen hardware sampling or GPU display latency, and is **not** FPS.
+- Device-level input latency and performance improvements remain to be evaluated from an S25 v0.6.1 report; reducing allocation opportunities is not a proven speedup until measured.

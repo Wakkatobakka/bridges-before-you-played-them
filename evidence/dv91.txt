@@ -1,0 +1,12 @@
+DV91 / Historical image / Driv3r Quick Guide after the panel repair
+Source: Driv3r_Bridge_v0.1.4_PRIVATE/evidence/text_fix/after/01_initial.png
+Source SHA-256: 5e8ee4bfc51b1a1b1cac436cd88e7855ed8e01910af53a4a72f84d87687381db
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Driv3r_Bridge_v0.1.4_PRIVATE/evidence/text_fix/after/01_initial.png
+SHA-256: 5e8ee4bfc51b1a1b1cac436cd88e7855ed8e01910af53a4a72f84d87687381db
+
+After the panel repair: the original Quick Guide occupies its 100×130 black panel with correct client bounds. Historical 120×160 host frame.
+
+Scope: Historical host original-runtime framebuffer; not physical-phone output or a framework UI fixture. Visually inspected game-only, zero EXIF, unchanged bytes.

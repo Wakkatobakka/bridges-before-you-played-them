@@ -1,0 +1,15 @@
+SW07 / Original game and EKA2L1 credits
+Source: Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Star_Wars_Force_Unleashed_Bridge_v0.1.0_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 3–12
+Source SHA-256: 6d2a0fe1b2df9bd8fd8639a732fd22f9e3bbf17b25135bbdab793c098fb474b1
+
+EKA2L1 native ARM64 compatibility runtime: EKA2L1 contributors, GPL-3.0.
+Retained source and license: upstream/EKA2L1-source-2b253a25e.zip and
+upstream/EKA2L1-LICENSE.txt. Exact binary/source provenance is recorded in
+upstream/PROVENANCE.json. Runtime binary is unchanged from Ashen lineage.
+
+Star Wars: The Force Unleashed: original copyright notices and ownership of
+Lucasfilm, Universomo, THQ Wireless and other respective rights holders remain.
+The supplied original game and pre-existing compatibility helpers are kept
+private and byte-identical. Nokia Symbian/N-Gage firmware and service files
+retain their respective original ownership and notices.

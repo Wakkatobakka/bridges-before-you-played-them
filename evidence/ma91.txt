@@ -1,0 +1,12 @@
+MA91 / Historical image / Mutant Alert original first-person level
+Source: Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/evidence/acceptance/08_live_level.png
+Source SHA-256: c7f23d938abb031dfd5df3a49947ed5b891d6ca79074eee35681de7a5482ebd8
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Mutant_Alert_ExEn_Bridge_v0.1.2_PRIVATE/evidence/acceptance/08_live_level.png
+SHA-256: c7f23d938abb031dfd5df3a49947ed5b891d6ca79074eee35681de7a5482ebd8
+
+Original first-person level and HUD, 132×176, captured by the historical original-VM host probe.
+
+Scope: Historical host original-runtime framebuffer; not physical-phone output or a framework UI fixture. Visually inspected game-only, zero EXIF, unchanged bytes.

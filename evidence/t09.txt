@@ -1,0 +1,16 @@
+T09 — The original Utility Room and Snake movement appear on the host
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.15.md
+Selected source lines: 7-13
+
+
+
+## Proven frontier and limits
+
+New Game now loads the original `FirstFloorUtility` room and renders the original 3D Snake intro, room geometry/textures, and first Codec scene. The full `MovementGameplayProbe` run reached **2,923,120,640 interpreter steps**, then ended by requested cancellation without an interpreter fault. Its final arena summary was **3,157,743 live / 13,619,473 free bytes** out of 16MiB. See `evidence/host-v0.0.15-movement/result.txt`, the console trace, and the original frame captures, including `frame-0800.png`.
+
+That probe's frame-timed Skip/direction sequence occurred during the intro/Codec flow. Nonzero arrow polls in that run alone do not establish controlled player movement. A separate screen-directed controlled run subsequently reached the playable first utility room: command sequence3 presses **Right11 for12 frames atframe2821**, then sequence5 presses opposite **Left9 for12 frames atframe3351**. Original captures show Snake moving against the room geometry and minimap. CLR79 exits the opening Codec. See `evidence/host-v0.0.15-controlled/verification.txt`, `before-right.png`, `after-right.png`, `after-left.png`, and `commands-log.txt`. The controlled run ends cleanly at configured cancellation after **9,662,954,496 steps**, with **3,157,587 live /13,619,629 free** arena bytes; PCM capture contains8192 samples,8190 nonzero. XYZ vectors were not measured. No completed level, whole-game compatibility, physical-phone frame rate, or speaker playback is established by these host captures.
+
+Host restart proof is separate and complete: the original **1,886-byte settings blob** is accepted by guest SecureStorageGet, the original camera preference survives and skips the camera test on restart, presents stop/resume with Pause, and cancellation while paused exits the worker. The restart capture contains **16,384 original PCM samples / 16,378 nonzero** at the host-selected 22,050-Hz rate. See `evidence/host-v0.0.15-restart-lifecycle/verification.txt`.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

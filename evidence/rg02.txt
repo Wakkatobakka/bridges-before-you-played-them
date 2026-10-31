@@ -1,0 +1,11 @@
+RG02 / The original applet reaches its first unimplemented resource
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/baseline/REGenesis_Bridge_v0.5.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.5.0_PRIVATE/history/REGenesis_Bridge_v0.3.0_PRIVATE_CHECKPOINT.zip ! REGenesis_v0.3.0_PRIVATE/README_FIRST.md
+Selected lines: 3–8
+Source SHA-256: 0485330afb3fae2f18cf46ee081d1745289c7a78f7606cde28a563cfa17f3113
+
+## What works, precisely
+- The game's **original, unchanged** `residentevil.mod`, `residentevil.bar` and `REGenesis.mif` are embedded in a signed Android APK with verified SHA-256 values.
+- The sandboxed Java ARM32 interpreter now supplies a **minimal synthetic** call environment. It runs the original module's loader route and observes a successful return code `0`, a nonzero allocated module pointer and populated module vtable after 64 guest instructions.
+- A second **original game-code** phase calls the resulting IModule CreateInstance route using class ID `0x01073FCF`. The applet allocation succeeds, then initialization reaches a resource service request involving `residentevil.bar`, resource number `5006` (`0x138E`) after 812 additional ARM instructions. The interpreter halts deliberately at this unimplemented service.
+- This is a **host-side execution trace** proven under test, NOT gameplay or completed AEE applet initialization. The proprietary BREW/AEE runtime, resource processing, screen drawing, dispatch loop, audio and saves are not implemented. In particular, temporary virtual-function pointers and phone dimensions are experimental—not verified BREW ABI definitions.
+- APK compiles, verifies v2/v3 signatures, and includes shareable diagnostics; as of this checkpoint **APK has not been tested on the user's S25 Ultra**. No Internet permission is requested.

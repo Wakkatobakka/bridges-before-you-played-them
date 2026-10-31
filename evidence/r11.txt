@@ -1,0 +1,19 @@
+R11 — An eight-degree turn became eight radians
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / docs/DEVICE_v0.3.5_FINDINGS.md
+Selected source lines: 34-43
+
+
+
+| Bytecode boundary | Evidence |
+|---|---|
+| Native `av.r()`, offsets 1170–1185 | Held Left calls `s.f(0,8,0)` and `h.g(0,8,0)`; Right at 1409–1424 uses -8. |
+| Native `s.f(float,float,float)`, offsets 32–49 | Passes the raw Y angle to `Transform.rotate(Vector3D,float)` and multiplies the result into the native object transform. |
+| Preserved host `Transform.rotate(Vector3D,float)`, code address `00b878` | Forwards the angle unchanged to the four-float overload. |
+| Preserved host `Transform.rotate(float,float,float,float)`, code address `00b8a8` | At instruction offsets `0017–0021`, passes the raw angle directly into `Math.cos` and `Math.sin`. No degree conversion occurs. |
+
+An intended native 8-degree turn therefore becomes 8 radians, equivalent to a 98.366-degree heading change modulo 360. That changes ordinary forward motion from a small curve into a mostly sideways displacement. The same mismatch also affects the guest's other raw degree rotations, including 90-degree commands.
+
+The v0.3.6 math patch adds the conversion only inside `rotate`. It preserves the inherited 3×4 matrix indexing, local translate/scale, multiplication order, inverse, transpose, vector APIs and the current GLES-facing `lookAt` convention. It does not change controls, guest assets, collision logic or script gates. The two self-contained math classes must load in a parent of the preserved host/compatibility loader, ensuring that all layers share the same `Transform` and `Vector3D` types.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

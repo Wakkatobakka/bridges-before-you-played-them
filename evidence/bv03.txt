@@ -1,0 +1,24 @@
+BV03 / Repair before every startup without replacing saves
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 15–33
+Source SHA-256: 9475458f8520db90cbb54fcc464d087b49ae97c9ea2e417fdfa423b632dc90a3
+
+v0.1.1 restores all 31 original renderer/audio resources from the working
+Ashen v0.1.3 seed, byte-for-byte. An independent resources/ installer verifies
+SHA-256 before native startup on EVERY launch. It runs even when the old
+ready-v1 guest marker already exists, and repairs missing/corrupt core resources.
+The existing guest seed, game files, firmware, UI kit and native core are
+unchanged. The installer only writes resources/; it does not modify guest
+saves, settings or configuration. Reports now retain the start AND end of the
+native log, so repeated errors cannot hide startup shader diagnostics.
+
+INSTALL THIS AS AN UPDATE over v0.1.0. The package and private signing key are
+the same, and version code is 2. Do not uninstall or clear app data to apply it.
+The actual upgrade path preserves existing guest files in the Android
+framework regression. All five core GLES programs compile/link/use in host
+Mesa GLES, and the screen sprite shader produces 256 exact fixture pixels.
+These checks validate the repair; v0.1.1 still needs a physical-phone test.
+
+The supplied original executable previously booted its title, introduction,
+Options > Keys and 3D opening level in a different Linux EKA2L1 build.
+That host evidence does not establish Android gameplay or audio success.

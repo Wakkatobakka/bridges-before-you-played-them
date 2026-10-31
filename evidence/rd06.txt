@@ -1,0 +1,22 @@
+RD06 / EKA2L1, original device dependencies and public preparation boundary
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 1–17
+Source SHA-256: 809694adf2c7c80d38e9ba4d1c84acb3c14c0dd569f20e94e544b1ac5e8194d1
+
+Resident Evil: Degeneration Bridge — PRIVATE owner test build.
+Original Resident Evil: Degeneration code, artwork and resources belong to
+Capcom and their respective owners. This package is not an official Capcom,
+Nokia or Ideaworks3D product. The supplied original container is retained
+unchanged; it includes pre-existing helper executables and prepared data.
+
+Compatibility runtime: EKA2L1, GPL-3.0. Runtime source is retained in the
+private checkpoint under upstream/ together with its license and provenance.
+https://github.com/EKA2L1/EKA2L1
+The Android native library is byte-identical to the inherited private core.
+
+This private build includes the Nokia 5320 RM-409 device/service environment.
+Public export removes original packages, the prepared runtime seed, device
+software and sound banks; the existing Omni 0.5.11 preparation pipeline
+reconstructs verified inputs locally after the player supplies the original.
+Technical preparation does not establish redistribution or firmware terms.
+No public publication is performed by this handoff.

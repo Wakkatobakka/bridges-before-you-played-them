@@ -1,0 +1,12 @@
+DO01 / The exact supplied game is Spanish J2ME
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/README_FIRST.txt
+Selected lines: 1–7
+Source SHA-256: ddd5a75b907de7ec58e240d8e5b4c45a765e5b5503ca1c5acbf8533e68ddcd76
+
+SPIDER-MAN VS DOC OCK BRIDGE v0.1.2 — PRIVATE ANDROID BUILD
+
+INSTALL
+Open SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE.apk on the phone and install.
+The launcher name is Spider-Man: Doc Ock. Android 8.0 or later (API 26).
+The supplied original game is included; no game import or internet is needed.
+This particular Sony Pictures v6.2.20 JAR is Spanish.

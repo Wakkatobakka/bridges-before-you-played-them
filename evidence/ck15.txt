@@ -1,0 +1,35 @@
+CK15 / The later shell preserved custom Chokkan controls
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/README.md
+Selected lines: 5–21, 23–32
+Source SHA-256: 6d097548cecbc5979a269b4b9070cf5a4edb93d64c0d143a9adad2554c1a89d7
+
+This normalization uses v0.0.7 as its base. The supplied project checkpoint was v0.0.6; the later private checkpoint was found while locating the original signing key. v0.0.7's motion-setting commit/reader restoration and CP932 Japanese text fixes are preserved.
+
+## What changed
+
+- Launcher icon, title, DoJa platform label and a visible SAVE REPORT button fit the original 44dp header allocation.
+- SAVE REPORT writes directly to `Downloads/Chokkan_Crash_Bridge/` using the actual UI kit v1.1.2 exporter. It does not open a file picker, release gameplay holds, pause the game or require the game worker to answer.
+- Reports contain a dated published runtime snapshot, fresh worker state/stack, live counters and recent persistent log tails. Snapshot age and unavailable state are explicit.
+- Fault capture is installed before gameplay View construction; faults retain local evidence and attempt independent export.
+- Android system Back and Close game run real input/audio/game cleanup, finish the Activity and return to the caller, including Omni Player.
+
+## Preserved gameplay
+
+All existing control positions, sizes, labels, input mappings, pad sliding/diagonal behavior, multi-touch aggregation, hammer TAP behavior, quiz answers/BRIGHTEN and original softkeys remain intact. TOUCH/MOTION keeps its original visible position, mode requests, tilt/shake sensitivity, recentering and sensor lifecycle.
+
+The game viewport retains the exact existing position, dimensions, native 240x320 proportions and per-profile scaling formulas. Chokkan's original custom canvas remains responsible for its layout. The shared viewport/control planners are not substituted.
+
+Original `game.jar`, `game.dex`, `initial.sp`, v0.0.7 `game-compat.dex` and its charset manifest are byte-identical to the v0.0.7 APK. Renderer/audio implementations and `ChokkanInput.java`/`ControlProfile.java` are unchanged. The accelerometer remains an adaptation of the original SH904i camera gesture readers.
+
+[... selected excerpt ...]
+
+## Verification
+
+- Android API35 compile, min-API28 D8, APK alignment/signature/package checks.
+- Original signing certificate matches v0.0.7 and the preserved owner key.
+- Eight Android API34 framework tests with native graphics pass, including 180 exact baseline geometry comparisons across nine profiles, five phone/tablet sizes, two densities and two font scales; real MotionEvent multi-touch; input cancellation/lifecycle; cold construction; startup faults; report success/failure and exports while a worker fixture holds the screen lock.
+- All five motion integration probes execute the preserved game's actual Java bytecode with desktop Android/media/sensor doubles. Original roll/shake ingestion, hammer power, sled steering, quiz reveal and KEY restoration pass.
+- Sensor mapping, original setting/score persistence and 1,165 CP932 text assertions pass.
+- Kit v1.1.2's complete host and twelve Android framework checks pass against the embedded JAR.
+
+See `evidence/v008/` and `docs/BUILD_VALIDATION.txt`. Framework layout previews use a retained original guest title frame as a fixture; they are not a new gameplay recording. No physical-handset verification of this APK is claimed. Actual sensor feel, audio playback, live Downloads visibility and full minigame completion remain handset checks.

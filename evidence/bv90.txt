@@ -1,0 +1,12 @@
+BV90 / Historical image / Bounce: Boing Voyage
+Source: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/evidence/host-correct-E4-in-game.png
+Source SHA-256: 1251f11069184a441fbd248b9070e83c8712b9cc23d273d654a850997ad765b1
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Bounce_Boing_Voyage_Bridge_v0.1.1_PRIVATE/evidence/host-correct-E4-in-game.png
+SHA-256: 1251f11069184a441fbd248b9070e83c8712b9cc23d273d654a850997ad765b1
+
+The original Bounce ball airborne above its ground shadow after the corrected E4 Jump input. Retained Linux EKA2L1 host screenshot; this does not show the repaired Android APK.
+
+Scope: Historical Linux original-game execution in Nokia5320 guest environment; different EKA2L1 build from inherited Android core.

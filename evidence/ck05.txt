@@ -1,0 +1,24 @@
+CK05 / Why the first repair was incomplete
+Source: 04-Chokkan_Crash_Bridge_v0.0.6_Preservation.zip / Chokkan_Crash_Bridge_v0.0.6_Preservation/docs/V006_RUNTIME_FINDINGS.md
+Selected lines: 3–15, 21–23
+Source SHA-256: 79f8141c7b5e33616913e47a9aecdf629cb3e2de834f1bf38408201737436c69
+
+## PrimitiveArray ABI correction
+
+The actual constructor is `(type, flags, primitiveCount)`. The v0.0.5 host interpreted the second argument as the primitive count. Chokkan calls include `(4, 12288, 64)` and `(5, 4096, 1)`, so the earlier large allocations and size() results were wrong even after avoiding the immediate out-of-bounds access. This build interprets all three arguments correctly and supplies backing stores by the requested primitive topology.
+
+## Rendering
+
+The former renderFigure implementation counted calls without drawing. Primitive calls drew placeholder connected lines. The new host decodes real MBAC models and MTRA skeletal animation, transforms and projects the authored geometry, decodes texture atlases, and supports textured point sprites, quads and triangles. It preserves 2D/3D ordering and publishes a completed 240x320 frame to the UI.
+
+## Input
+
+Mappings come from original bytecode. Skydiving uses directional steering; sledding uses horizontal steering; dancing accepts directional combinations; hammer power responds to discrete key events on original STAR/POUND/0 keys; quiz answers use original1–9. Original gesture mode is selected through c.t's original setting methods on the game thread. Android accelerometer data replaces the old phone camera motion source. The guest's scene setup remains responsible for selecting roll or shake readers.
+
+The guest active scene is a loop-local variable. Its pending scene field is cleared after entry and cannot drive an overlay reliably. Scene observation therefore uses each original scene's Frame.setBackground call. Original modal menus are separately recognized so directions and confirmation remain accessible.
+
+[... selected excerpt ...]
+
+## Completion scope
+
+A clean original-game hammer run verifies repeated tap charging, setting power, angle selection and sustained flight with advancing fruit/distance counters. An earlier claimed result-screen check could not be corroborated by the final clean run and is excluded. Landing, results and full completion remain real-device tests.

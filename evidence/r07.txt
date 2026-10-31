@@ -1,0 +1,17 @@
+R07 — The character is visible, but the stage still has no decoder
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.2.9-decision-from-v0.2.8.txt
+Selected source lines: 3-10
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+Observed on SM-S938U / Android 16:
+- The full 240x240 GLES-to-Android composite works visibly. Figure geometry now appears across the normal gameplay viewport and responds as the game state/camera changes.
+- Device report repeatedly captures 3,838 non-black pixels in the GLES frame and copies all 3,838 into the Android bitmap, with zero GL errors and zero caught game exceptions.
+- Several distinct 2-bit G.726 MLD payload sizes decode/play successfully (24,264; 17,928; 32,616; 57,792 resampled frames), while 4-bit mono ADPM remains unsupported.
+- Area 5 still loads a5_1.d4d and its BMP resources, but Group/D4D world geometry remains absent because Group is only a preserved shell.
+
+Next bounded target:
+Do not guess a D4D renderer yet. Rockman's own game code already converts .d4d into the byte[] passed to Object3D.createInstance(byte[]). Instrument that exact generated mesh-group container and record its root/section structure plus a bounded byte sample. Keep v0.2.8 rendering and audio unchanged so the next device report is pure structural evidence for the Group parser.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,24 @@
+S03 — A control-only candidate, with a rollback baseline
+Evidence type: Control verification notes
+Source: DeadShot Omni v0.1.1 / CUSTOM_CONTROLS_0.1.1.txt
+Selected source lines: 3-17
+
+
+
+Scope authorized by owner: custom controls page only.
+
+INTENDED EXECUTABLE DELTA
+- DeadShot profile GameView custom deck targets the actual 244dp shell slot.
+- Duplicate custom OK/Confirm surface removed; ACTION remains KEY_SELECT (20).
+- Redundant CONTROL/mode card removed.
+- Soft1/Soft2 and */# top-row targets: 58dp high; */# 58dp wide.
+- Movement surface: 148dp maximum, preserving existing direction math and four/eight-way behavior.
+- ACTION: 110dp, inset 12dp from right edge, label hint "OK / SELECT".
+
+UNCHANGED BY INTENT
+Shared toolbar/status/full keypad, runtime, renderer, game payloads/resources, audio, pause/resume, reports, native key numbers, mode translation, contact capture and hardware mapping.
+
+STATUS
+Host build/signature/checks PASS. Physical phone comfort/geometry not yet validated. Owner-approved rollback baseline remains 0.1.0.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

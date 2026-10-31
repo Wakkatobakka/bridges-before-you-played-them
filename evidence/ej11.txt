@@ -1,0 +1,9 @@
+EJ11 / Music starts quietly, then the volume rises
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 32–35
+Source SHA-256: e2ec7fc39c299a7b1b0dcd345c5a935364e70b38656922651404900b25a1fc2c
+
+AUDIO
+The original guest supplies decompressed MIDI/CMID bytes to IMedia. Android routes each request by SHA-256 of those exact original bytes. Ten standard MIDI files are preserved unchanged. Twenty-one CMID effects are decoded from the original IMA ADPCM samples to 16kHz mono signed 16-bit WAV, with no replacement sound or gain adjustment. tools/prepare_earthworm_audio.py regenerates and validates them; use --java-check for independent Java MIDI verification. The APK stores these assets uncompressed so AssetManager.openFd can address them.
+
+The original game can PLAY at volume zero and raise the volume afterward. VOLUME events update the existing player in place. They preserve the PLAY serial used to guard START/DONE callbacks, so a volume change neither recreates playback nor invalidates its callback. Guest START/DONE notifications and actual original MIDI plus CMID effect payloads are covered by final acceptance and routing evidence.

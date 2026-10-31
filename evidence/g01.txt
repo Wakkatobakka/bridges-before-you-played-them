@@ -1,0 +1,16 @@
+G01 — The phone stops before its first frame
+Evidence type: Phone fault report
+Source: God of War: Betrayal v0.1.2 / startup-fault report
+Selected source lines: 3-9
+
+Device-identifying and app-installation-path lines are omitted.
+
+Report reason: startup-fault
+God of War: Betrayal Bridge v0.1.2
+Original MIDlet 1.4.58 Nokia 352x416; original code with one-byte optional audio-request hook
+Original SHA256: 42c829b3dbe2f5d21cd940b8ecedbca94f8a34e9054eb152a892785ebba42a29
+frames=0 lastFrameAgeMs=1792971649420
+active=true ended=false keys=0 pending=1
+shimResourceReads=0 rmsWrites=0 faults=1 audioStarts=0
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,20 @@
+RC05 / Exiting an original infinite render loop cleanly
+Source: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/CHANGES_v0.1.2.txt
+Selected lines: 1–15
+Source SHA-256: cb45a151fb529a22a58de1a32089d63a6b350779c2cb729bca6f5083bd3bb0fe
+
+v0.1.2: integrate shared Gameplay UI Kit v1.1.1
+
+Replaces the bespoke gameplay shell with the released library JAR. Adds continuous
+square digital pad, one-tap inline original keypad/return, J2ME subtitle and
+shared safe-area/header/control sizing. Preserves all existing original input
+codes and the dedicated 1/3 jump shortcuts. Hardware keys and axes now use the
+kit's owned sources so mode switches release touch without dropping hardware.
+
+System Back now runs session cleanup and exits to the caller, independently of
+the original right softkey. A runtime exit guard stops the original infinite
+render loop at the compatibility boundary; the original audio owner is cleared,
+workers joined and original destroyApp invoked. Normal guest timing, rendering,
+audio, assets and save behavior are unchanged. Startup fault persistence is
+initialized before the shared screen constructor. Reports use the existing
+independent writer and cache measured UI state without game-worker calls.

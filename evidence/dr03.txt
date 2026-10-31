@@ -1,0 +1,18 @@
+DR03 / The real opening corridor and save Continue
+Source: 13-Doom_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_RPG_Bridge_v0.1.1_PRIVATE/evidence/acceptance/runtime-verification.txt
+Selected lines: 11–23
+Source SHA-256: 0795c4b535157dfe5db29d10f4d632baab77e8fb91b187c28df91cab67347e3f
+
+PASS — original JAMDAT splash, Doom RPG sound prompt/mainmenu, New Game,
+original story/cinematic and real first-person corridor with NPCs/HUD.
+PASS — native arrow forward/back and left/right turning. Numeric1/3 strafe;
+7 and* accepted as weapon controls;5 delivered to the native action handler
+and displays its “Nothing to use” response at the starting position.
+PASS — # opens original automap with explored tile/player marker and can exit;
+0 opens original Game Menu. Map screen clears the previous3D background.
+PASS — original Save Game writes extensionless config17B, world8037B,
+player122B and player2119B. These files were exported, then supplied to a new
+session. Native Continue appeared and loaded the first3D area/HUD again.
+PASS — ordinary run detailsOFF, no unsupported interface/service signatures
+observed across this route, no routine trace collection. Separate real-clock
+quiet/immutable-frame and original audio loop callback checks passed.

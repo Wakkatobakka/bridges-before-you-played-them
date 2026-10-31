@@ -1,0 +1,22 @@
+RD01 / Inherited device environment and existing generic preparation
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 3–7, 27–35
+Source SHA-256: f855356b967288a1918f0744e65012b29fc204c977728bad1e65bb8c91465134
+
+Install Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE.apk.
+Android 10+ / ARM64 / OpenGL ES 3.0. Package: com.wakka.redegeneration.
+The private APK includes your supplied N-Gage 2.0 game and the inherited Nokia
+5320 environment. First launch prepares its private files. No separate
+emulator, firmware selection or launcher screen is required.
+
+[... selected excerpt ...]
+
+OMNI
+In Omni Private 0.5.11 or newer, use Add / update bridges and select this APK.
+It contains original recognition and the same generic N-Gage 2.0 preparation
+contract used for Bounce and Star Wars. Public preparation rebuilds the game
+from the exact supplied .n-gage fingerprint and verified shared support.
+The owner's existing Create public update workflow remains the release path.
+No separate public Omni update APK is supplied or published here.
+Complete Android import/export and hosted native gameplay still need your
+phone check. Host preparation validation is described in VERIFICATION.txt.

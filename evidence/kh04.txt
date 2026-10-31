@@ -1,0 +1,20 @@
+KH04 / Wonderland gameplay is missing, despite surviving splash material
+Source: Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE_Checkpoint.zip / Kingdom_Hearts_VCAST_Bridge_v0.1.1_PRIVATE/evidence/v0.1.0-baseline/README_FIRST.txt
+Selected lines: 46–60
+Source SHA-256: 631ae31ea95612c5d2ee73b621ac843956b1cfe25ad8250c0fa7eafbbb2cf417
+
+WHAT STILL NEEDS TESTING / KNOWN LIMITS
+- Physical phone startup, speed, heat, touch comfort, audio, background/resume,
+  Downloads export and gameplay through later scenes have not been verified.
+  Host instruction counts and virtual clocks are not phone performance results.
+- QCELP effects are passed to Android as QCP. Decoder availability can vary by
+  phone; successful desktop decoding does not prove Android playback. Errors
+  are recorded. Original MIDI is passed unchanged to Android's synthesizer.
+- Android system sans substitutes for the unavailable optional font extension;
+  text metrics and raster edges can differ from the original handset.
+- Wonderland gameplay is absent from this original ZIP. Journal/splash material
+  does not make it a playable chapter. No replacement or automatic skip exists;
+  a complete normal campaign through that missing chapter is not possible here.
+- Current Omni hosted import/remove/reimport with save preservation, and two
+  cumulative production public exports, remain acceptance checks. The included
+  independent contract audit is not a substitute for those host/phone checks.

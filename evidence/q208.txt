@@ -1,0 +1,44 @@
+Q208 / All original outputs match and the first map loads sooner on desktop
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/VERIFICATION.md
+Selected lines: 8–18, 23–47
+Source SHA-256: 1c99e78937812a4a9514b5daf2a363cff6ba6256a1b8c1b7dbbe534ed3b0f686
+
+| Check | Result |
+| --- | --- |
+| Original decoder equivalence | All 3,330 entries compared with actual original ARM routine execution. All 145,520,364 output bytes, lengths, complete-block read-ahead file positions and buffer bounds match. 12,915,109,803 original ARM instructions executed for this comparison. |
+| Runtime hook contract | Original CPU dispatch returns success/output length/file position and preserves stack/callee-saved registers. Unknown archive identity and changed wrapper instructions reject acceleration. Read-only handles share bytes; writable handles and unexpected read-handle writes retain copy isolation. |
+| Decoded cache | Exact round trip; corrupt, truncated and wrong-size records rejected; invalid paths rejected; bounded disk use; unavailable cache storage does not gate execution. The working memory cache remains bounded to 8 MiB. |
+| Cold/warm execution | Cold: 400 host decodes, 145 memory hits, zero disk hits. Warm: 400 disk hits, 145 memory hits, zero host decodes. Both reach the actual active original map and render verification frames; zero fallback calls. |
+| Original play and save | 566 original swaps, 83,077 GLES calls, 10,300 draws, 1,997 texture uploads. The four original current-to-save1 files match byte-for-byte; no guest fault. |
+| Fresh native reload | The original saved map becomes active and renders: 250 swaps, 14,232 GLES calls, 1,516 draws, 1,976 textures; shutdown fault=null. The strengthened check waits for native gameplay state instead of assuming a fixed frame count completes loading. |
+| Native controls | All 13 masks/releases, live Casual/Expert fire routing, menu Back, fine swipe, strafe without yaw, simultaneous forward/strafe/aim/fire, release-to-zero, preset/descriptor retention and timing categories pass against the accelerated original ARM execution. |
+| Texture and GPU adapter | Production Android adapter levels 0–7, earlier phone shape, malformed input, actual swap/readback observer, wall-clock/capture classification and exact pixel conversion pass with explicit desktop platform services. Play and completed reload both submit 1,851 compressed uploads / 1,612 mip uploads / five earlier phone-shape matches. |
+| Core regression | CPU multiply, contact buffer, continuous fine touch response, cancellation, gameplay/fire-held timing and bounded ring tests pass. |
+
+[... selected excerpt ...]
+
+## Loading comparison
+
+| Desktop JVM/Mesa | First-map loading |
+| --- | ---: |
+| v0.1.3 original ARM loader | 33.820 seconds |
+| v0.1.4, new empty disk cache | 5.682 seconds |
+| v0.1.4, warm disk cache | 4.851 seconds |
+
+These are single controlled desktop runs, not phone performance measurements.
+The same original new-game choice is driven through native input. Original
+startup/intro timing changes the number of confirmation presses needed. Timing
+starts at the confirmation that triggers the original loading-plaque flag,
+then includes original progress frames, decompression, map setup, texture
+uploads and three verification swaps after native gameplay becomes active.
+Menu waiting before the map request is excluded. No background tests ran during
+the final timings. The cold run uses a new unique empty cache directory and
+asserts real host decodes; the warm run reuses it and asserts disk hits. Baseline
+came from the preserved v0.1.3 source without profiling instrumentation.
+The earlier fixed-frame navigation/connection-state timing attempts were not
+used for these results. Baseline timing was retained while cold/warm were
+repeated to verify cache conditions. Raw logs and summary accompany the build.
+
+The new run avoided 28,688,578,258 bytes of repeated read-handle backing copies
+across startup/menu/first-map opens. This is avoided allocation/copy volume,
+not additional persistent memory or a measure of disk reads.

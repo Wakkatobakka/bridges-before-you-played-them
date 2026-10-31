@@ -1,0 +1,34 @@
+B03 — The original module needs a real handset profile and timer
+Evidence type: Checkpoint investigation notes
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / baseline/original-docs/evidence/reverse/V0.0.2_HLE_FINDINGS.md
+Selected source lines: 3-15, 30-38
+
+
+
+## Evidence origin
+
+The v0.0.1 physical S25 Ultra report proved the exact preserved module could load, construct class `0x01094C5E`, and accept `EVT_APP_START`. That report is retained under `evidence/device/`.
+
+The v0.0.2 host investigation then followed the original executable one requested service at a time rather than inserting a synthetic framebuffer success path.
+
+## Dependency chain observed
+
+`module → applet → device info → persistent file → BAR resources/images → compatible bitmaps/display destinations → timer callback`
+
+## Device information
+
+The game constructor reads the handset dimensions through the shell. Leaving this structure zeroed caused an invalid negative allocation downstream. Supplying the preserved build's actual 128×160 profile removes that failure and advances the original code naturally.
+
+[... selected excerpt ...]
+
+## Display / bitmap path
+
+The game queries image dimensions, asks the display for its destination bitmap, creates compatible bitmaps matching loaded image dimensions, switches display destination, issues image draw operations, then restores/switches destinations. v0.0.2 models those interface objects and preserves this control flow.
+
+Current compatible bitmaps are structural HLE objects with width/height metadata. They do not yet contain/present authentic pixel backing.
+
+## Timer path
+
+The startup sequence schedules a 10 ms callback at `0x001131D8` with the applet pointer as callback data. v0.0.2 invokes one real scheduled callback after START. It executes **36,874 original instructions**, returns normally, and schedules another 10 ms callback.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

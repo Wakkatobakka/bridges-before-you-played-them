@@ -1,0 +1,10 @@
+SJ03 / Keeping the original tick without the spin
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/INPUT_FINDINGS.txt
+Selected lines: 58–62
+Source SHA-256: 4d07c4c327533af664c3281d372e6e5a6c02c51fef20438ca000c46cd8a43a21
+
+TIMING / HEAT
+- Original run() busy-waits without any sleep: backwards loops to bytecode13 until Diff-Timer >=100ms (bytecode51..73).
+- During that polling it repeatedly increments nTimeCountB; gameplay time uses its modulo10 as a small arbitrary fractional time component. This is CPU-speed-dependent in the original; not a diagnostic task.
+- Original game update cadence is 100ms (10Hz). Patch ONLY run() call at51 from System.currentTimeMillis()J to Host.frameClock()J, preserving all method lengths/branches. Host.frameClock must sleep to lastReturned+100ms and await active foreground before returning. The original shared currentTimeMillis method reference is rebound to Host.gameClock()J so all elapsed guest timers exclude background suspension. frameClock must return that same pause-aware clock domain. Graphics/physics/branches remain unchanged.
+- This turns original spin into a bounded sleep without changing movement, physics, images, or the intended10Hz game update. All original timer-call instruction bytes except run51 stay identical; shared method reference rebinding adapts their clock domain.

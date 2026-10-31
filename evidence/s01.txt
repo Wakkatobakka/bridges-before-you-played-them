@@ -1,0 +1,22 @@
+S01 — A complete keypad returns in 0.0.12
+Evidence type: Build verification
+Source: DeadShot v0.0.12 / VALIDATION_v0.0.12.txt
+Selected source lines: 13-20, 37-39
+
+
+
+Requested UI/input delta
+------------------------
+- Toolbar third button is now Keypad while the ergonomic pad is visible.
+- Pressing Keypad swaps the lower controller view to a complete original phone keypad.
+- While the phone keypad is visible, the toolbar button reads D-pad and returns to the ergonomic controller.
+- Full keypad exposes L soft, Up, R soft / Left, OK, Right / Down / 1-9 / *, 0, #.
+- Keypad uses the same captured-contact behavior so a finger remains tied to the key where it started.
+
+[... selected excerpt ...]
+
+Note
+----
+This validation covers source/build/signature/payload integrity in the build environment. Physical-device behavior still requires the normal S25 Ultra test run.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

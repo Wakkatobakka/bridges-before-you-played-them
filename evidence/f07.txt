@@ -1,0 +1,25 @@
+F07 — Cloud and the course share the upside-down projection
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.18_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 3-18
+
+
+
+## Perspective Y-orientation pass
+
+v0.0.17 proved the Figure 1/64 model-to-world conversion: Cloud now occupies a sane on-screen footprint (roughly tens of pixels rather than thousands), but the device recording shows Cloud and the perspective course geometry vertically inverted.
+
+The bridge had an internal projection inconsistency:
+
+- parallel projection mapped `+viewY` to `+screenY`
+- perspective projection mapped `+viewY` to `-screenY`
+
+On the device, this made Snowboarding's mostly-negative-Y course geometry appear above the horizon while Cloud's mostly-positive-Y Figure geometry appeared head-down. v0.0.18 changes only the perspective screen-Y mapping so it matches the DoJa/Canvas downward-positive screen convention already used by the parallel path:
+
+`screenY = centerY + viewY * focal / viewZ`
+
+The change is applied to both Figure and Primitive perspective projection. Figure scaling, MTRA animation, pattern filtering, textures, camera transforms, +Z view convention, Z buffer, terrain generation, controls, storage and reporting are unchanged.
+
+Telemetry remains enabled so the device report can confirm Cloud's bbox/depth after the orientation correction.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

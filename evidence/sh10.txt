@@ -1,0 +1,6 @@
+SH10 / Selected records recovered from the truncated checkpoint
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / editorial archive inspection
+Source SHA-256: d2b428a56f6a16116a444a8cc7f841d1ba6651a759546c7f090bb1882560059a
+Context: Derived archive finding, not an original game-session log. The full recovery inventory remains private.
+
+The 39,671,591-byte supplied checkpoint has no ending ZIP directory and is rejected by the ordinary ZIP reader. Read-only local-header recovery found 141 complete members before the truncated SDK tail. Recovered members were accepted only when decompression, uncompressed size and CRC32 matched their local headers. The selected documents and historical images used here passed those checks. Original archive bytes were not repaired or replaced.

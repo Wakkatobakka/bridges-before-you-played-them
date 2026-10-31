@@ -1,0 +1,30 @@
+UP04 / Phone recording exposes missing inventory and text actions
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 5–29
+Source SHA-256: b65ac7143ca9da7fcdf5ca87ddd0d4b4e71e2e013128af605a0296ba88404aac
+
+CUSTOM CONTROL COMPLETENESS — v0.1.2 / 2026-10-19
+The v0.1.1 phone recording exposed missing direct Inventory input in custom
+mode. UprisingControls.normal now defines five actions: BACK / PAUSE (-7),
+INVENTORY / 0 (48), ACTION / OK (-5), TEXT UP / 7 (55) and TEXT DOWN / 9 (57).
+The two text buttons scroll descriptions in inventory and item exchange.
+These mappings are documented by the original l.class help fields eN=0,
+eO=7 and eP=9. Native t.a(int) remains untouched. All help sections were
+reviewed: movement and OK/Back cover search, combat, target and aim modes;
+0 plus 7/9 supply the additional inventory/exchange actions.
+
+The actual unchanged kit arranges Back/Pause above Inventory on the left,
+four-way sliding D-pad in the center, and the larger Action above the two
+text-scroll buttons on the right. Keypad mode retains all five action buttons
+and the separate original D-pad, with the numeric cluster. Compact keypad
+actions now use two rows; normal mode reserves the same taller slot, so the
+same renderer retains its dimensions and parent when switching modes.
+
+Run tests/run_android_ui.py for six production Activity tests, including the
+regression that finds and touches all three missing actions in BOTH modes.
+In keypad mode, releasing a labeled action while its duplicate digit is held
+must not release the original key. Switching modes clears held touch input.
+The existing tests also cover startup/insets, movement, native pointers,
+Android Back/cleanup, independent report export and startup faults.
+See current VERIFICATION.txt. Previous v0.1.1 handoff and verification are
+retained under evidence/baseline-v0.1.1.

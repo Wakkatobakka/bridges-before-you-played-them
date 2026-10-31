@@ -1,0 +1,10 @@
+SK01 / Pocket Kingdom supplied the runtime and firmware foundation
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/THIRD_PARTY_NOTICES.txt
+Selected lines: 3–7
+Source SHA-256: 4843bf501d98e52e8923500d4454809b8593fc891c6998c1c81a5adbff985f1d
+
+Original game code/assets: The Elder Scrolls Travels: Shadowkey, from the user-supplied RAR. All game files byte-identical; ownership remains with the original rights holders.
+
+EKA2L1 core: EKA2L1 contributors, GPL-3.0-or-later. Unmodified ARM64 native binary reused from the private Pocket Kingdom checkpoint. Corresponding upstream source snapshot, license and provenance are in upstream/. Native core SHA-256 is recorded there.
+
+Nokia N-Gage NEM-4 V4.03 firmware: reused from the same supplied-project checkpoint; firmware rights remain with their respective owners.

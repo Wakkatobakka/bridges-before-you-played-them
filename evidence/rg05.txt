@@ -1,0 +1,18 @@
+RG05 / Keep the original sprite conversion and avoid repeated work
+Source: 10-REGenesis_Bridge_v0.6.1_PRIVATE_CHECKPOINT.zip / REGenesis_Bridge_v0.6.1_PRIVATE/baseline/REGenesis_Bridge_v0.6.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.6.0_PRIVATE/baseline/REGenesis_Bridge_v0.5.0_PRIVATE_CHECKPOINT.zip ! REGenesis_Bridge_v0.5.0_PRIVATE/TECHNICAL_HANDOFF.md
+Selected lines: 20–22, 29–35
+Source SHA-256: 792b9fae95d7c1f37b9775ecdaae2d4304cd5d0d2c1396a83ee2c76fe04ffab0
+
+- IDIB layout: +8 pixels, +12 palette, +16 native transparency key, +20/+22 width/height u16, +24 byte pitch u16, +26 palette size u16, +28 depth u8, +29 color scheme u8.
+- Original ARM converts decoded RGB565 bitmap pixels into indexed sprite DIBs. Preserve that conversion; it establishes the transparency indices. ROP 7 uses the native key, not 'all black is transparent'.
+- IDisplay BitBlt arguments: x/y/width in r1/r2/r3; height/source/sourceX/sourceY/ROP on stack. SetClip/GetClip offsets are +0x48/+0x4C; clipping is tracked per destination.
+
+[... selected excerpt ...]
+
+## Performance changes already tested
+Host draw operations update ARGB buffers and defer RGB565 guest-memory flush until the guest requests DIB access. Memory-page stamps invalidate decoded pixel/palette caches when original ARM code writes. Do not restore full-bitmap decode/re-encode on every tiny rectangle or blit: it is dramatically slower. Display pixels are still sourced from the original game.
+
+## Evidence
+`tests/Acceptance.java` boots fresh, selects New Game, advances original dialogue, turns/walks Jill, opens inventory and pause, saves through the original confirmation, then creates a fresh runtime and selects Load. It exercises suspend/resume, 10,000 additional idle callbacks, allocation reuse, original resource decoding, and unchanged in-memory MOD bytes. It does not inject gameplay RAM values or teleport Jill.
+
+Read-only observed fields relative to the applet: mode +E4, overlay +A3, Jill grid +AD/+AE, facing +B8, floor index +118, interaction state +6EE. These are diagnostics, not host control knobs.

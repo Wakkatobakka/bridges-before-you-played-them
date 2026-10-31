@@ -1,0 +1,21 @@
+DO09 / Separate prepared guest classes and generic reconstruction
+Source: SpiderMan_DocOck_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / SpiderMan_DocOck_Bridge/TECHNICAL_HANDOFF.txt
+Selected lines: 143–158
+Source SHA-256: d4c8909c3bcc93a5bd45a7b62b9e874efed919a56917a638cceceff66dc8e424
+
+OMNI 0.5.7 STRICT HANDOFF — v0.1.2
+The build embeds omni-game/import/export properties and omni-preparation.json.
+handoff-plan.json is generated from the exact original and APK inventory.
+The whole original JAR is explicitly private original data. All 67 original
+resources plus the original manifest are root-original entries. Every Android
+res entry is retained bridge UI. guest.dex and clock.dex are derived assets;
+the main DEX contains no original class definitions. Public capsules replace
+the private JAR and both guest DEX assets with empty placeholders, and remove
+root originals. No source, signing key or private environment is embedded.
+
+The recipe uses only original-files-v1, zip-entry-v1, replace-bytes-v1 and
+guest-none-v1. It extracts verified resources, applies exact byte substitutions
+to d.class's same-length UTF8 owner, and runs the unmodified production D8
+compiler twice in mode none. Expected class inventory is pinned for all 19
+original classes and the separate d.class overlay; resource bytes are exact.
+No per-package Omni rule, external checkpoint script or Omni source edit is used.

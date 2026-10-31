@@ -1,0 +1,24 @@
+A01 — The key was released; movement continued
+Evidence type: Movement investigation
+Source: Ashen_Movement_Timing_Finding_2026-10-19.txt
+Selected source lines: 12-16, 97-104
+
+
+
+RELEVANT UPSTREAM ISSUE
+https://github.com/EKA2L1/EKA2L1/issues/577
+The existing report describes slippery Ashen movement that differs from the
+reporter's hardware experience. The finding here adds a specific runtime
+cause to investigate, a minimal compatibility change and measured results.
+
+[... selected excerpt ...]
+
+Before, v0.1.4-diagnostic:
+- 934 retained completed-frame samples; 438 (46.9%) had zero elapsed ticks.
+- Remaining samples had two ticks at a reported rate of 64 Hz.
+- All 92 retained guest key events matched the overlapping Java event log.
+- Neutral movement commands were zero while position continued changing.
+- One uninterrupted example was still moving 1.194 seconds after release.
+- Median observed completed-frame callback gap: 16.647 ms.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,44 @@
+BS17 / Native batching cuts desktop CPU for identical game work
+Source: BioShock_3D_Bridge_v0.1.7_PERFORMANCE_READOUT.txt
+Selected lines: 3–14, 31–54
+Source SHA-256: 673ab651933739f09619fc44ef33164473325cf485f6dfcc702bafb393cd608d
+
+Outcome
+Compiled native ARM batches consistently reduce calling-thread desktop CPU
+by about40% for exactly the same original-game work. This is a substantial
+execution-efficiency result, not a measured phone-cooling or FPS result.
+
+Measured comparison
+Exact delivered v0.1.6 Java interpreter versus v0.1.7 native-enabled candidate.
+Four independent Linux x86_64/OpenJDK17 JVMs; two per workload, reversing the
+first execution order. Each variant receives192warmup callbacks before timed
+work. Each process records8alternating pairs of32callbacks. No profiler/JFR.
+Current-thread CPU includes JNI/native instructions, but excludes background
+JIT/GC and other app threads. Native loading is required and explicitly proven.
+
+[... selected excerpt ...]
+
+All four runs:
+  Identical4,145,409,506 instructions/1024timed callbacks per variant.
+ 62.980130400s →37.695485659s CPU;40.147% aggregate reduction.
+ 32paired blocks, every block lower CPU; range25.190% to50.125%.
+ Median39.614%; descriptive95% bootstrap median interval38.903%–40.944%.
+ This interval describes these blocks, not a population or Android prediction.
+ Allocated bytes160,176,528 →160,476,936 (+0.188%); no allocation win claimed.
+
+Outside timing,664fixture checks and46paired complete-state captures compare
+all public Result primitive fields/failure text, original instruction counts,
+complete64MiB RAM, exact pixels, saves, audio-event logs, inputs and requested
+timers. All match.3,087,007,744 bytes of RAM per variant are hashed outside timing.
+Raw per-block CSV, source/compiler/library identities, reproduction scripts and
+per-process results are retained in evidence/native_performance_v0.1.7/.
+
+Implementation
+C++ interprets the unchanged original ARM instruction stream in batches of at
+most8192instructions. Java retains Thumb, unsupported ARM and original BREW
+host services. The original renderer, clocks, native instructions, physics,
+content, atomic saves, media and functional budgets remain. No FPS cap, PC
+profiler, busy-loop bypass or guest state patch is added. The requested2ms
+delay is not a rendered-frame rate. Faster callbacks can change real callback
+throughput under the preserved scheduling, so40% less CPU per work does not
+establish40% less whole-process phone CPU or heat.

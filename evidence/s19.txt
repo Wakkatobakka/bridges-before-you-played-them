@@ -1,0 +1,11 @@
+S19 — DeadShot gameplay beside the complete original keypad
+Evidence type: Preserved phone screenshot
+Source: DeadShot Omni 0.1.0 / Screenshot_20261004_014959.jpg
+
+Inspected as pixels. This is the earlier owner-preferred 0.1.0 phone image, not evidence of the new 0.1.4 controls. No private notification text, account details or private paths are visible.
+
+October 4 phone screenshot: original DeadShot gameplay, HUD and full handset keypad.
+Preserved unchanged in the inspected Omni 0.1.1 and later 0.1.4 checkpoints.
+Image SHA-256: e862909eea6358ee0ce0677c43d1b2cef158d224f5b96a2e954fab9face41580
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

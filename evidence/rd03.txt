@@ -1,0 +1,22 @@
+RD03 / Distinct original game actions and controller aliases
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/README_FIRST.txt
+Selected lines: 9–25
+Source SHA-256: f855356b967288a1918f0744e65012b29fc204c977728bad1e65bb8c91465134
+
+PLAY
+SELECT / PAUSE selects original menus, advances dialogue and opens the paused
+interface according to the game's current prompt. EXIT AIM / KNIFE / BACK is
+the separate original right softkey; it also skips opening dialogue.
+D-pad moves forward/back and turns; simultaneous move/turn is preserved.
+ACTION / AIM / FIRE is original Gaming B. Press to aim, then press to fire.
+RELOAD is original Gaming A. RUN is the original center key.
+STATUS = original 1; MENU = original #. Original keypad preserves the complete
+separate D-pad, center, digits, *, #, original softkeys, Clear and primary
+combat actions. ORIGINAL KEYPAD / D-PAD RETURN switches inline in one tap.
+Android system Back exits gameplay separately from the original game keys.
+
+GAMEPAD
+D-pad/left stick = digital directions; A/RT = action/aim/fire;
+B/LT = reload; X = original right softkey; Y = original 1 status;
+Start = original left softkey; Select = original # menu; Enter/center = Run.
+No second camera stick or replacement game behavior is introduced.

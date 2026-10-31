@@ -1,0 +1,8 @@
+DU01 / The original supplied Micro3D engine executes
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/v0.1.0-TECHNICAL_HANDOFF.txt
+Selected lines: 1–3
+Source SHA-256: 72e8c47a89e735f6d3b9d9484d663a0880c789dc70d24864b81b82455c0e12d6
+
+Original package: DukeNukem3D_114.rar. Main class 0x01034B16. Original duke3d.mod at guest 0x00100000; original imicro3d.mod at 0x00300000, class 0x010292C3, version 3.0.0 C. Each module receives BREW system tables at base-8/base-4. Original micro engine CreateInstance is invoked on a separate nested stack, restoring outer CPU state. Hardware accelerated optional class 0x0101F0AA is unavailable; original supplied Micro3D fallback executes.
+
+Foundation: clean BioShock v0.2.0 ARM/Thumb CPU/BREW services, with RE Genesis visual hierarchy. Duke requires caller-buffer IShell.LoadResData with query mode -1 and a size pointer; BAR selection follows original filename arguments. IMalloc allocation/release and wide formatting were added from actual module calling sequences. QCELP factory class 0x01005503 uses the preserved media ABI. System DrawText supplies a small host font; Duke menus, mission text, HUD and assets retain original bitmap fonts. IMenuCtl is a host service implementing the original title, item text/IDs, selection and rendering; EVT_COMMAND 0x0200 returns the original item ID to original native logic. Native Quit is item 0; Cancel is item 1. No executable or resource patches.

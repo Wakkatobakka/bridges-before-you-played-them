@@ -1,0 +1,11 @@
+CK11 / Later phone outcome: every minigame plays
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/docs/V007_RUNTIME_FINDINGS.md
+Selected lines: 3–7
+Source SHA-256: 31877d625ada23b5034d0a897ea6c593da65c9099c729911a1d099859726b856
+Context: The checkpoint records owner feedback and describes a named phone recording. That source recording is not included in the inspected archive.
+
+## Phone evidence from v0.0.6
+
+Wakka reported that every minigame plays and touch controls feel very good. The attached recording `Screen_Recording_20261011_002551.mp4` shows skydiving, hammer throw and menus, with hammer results around 00:41 (TOTAL54, distance27m). This adds real-phone hammer landing/results evidence; the previously withdrawn desktop landing claim remains withdrawn.
+
+The attached report `Chokkan-Crash-Bridge-v0.0.6-game-report.txt` records 11,472 sensor samples, seven mode switches and zero roll polls. Rendering and audio failures are zero. Neutral pending at report export reflects the activity/file-picker pause and is not the primary input fault.

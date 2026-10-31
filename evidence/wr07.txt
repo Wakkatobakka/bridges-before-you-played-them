@@ -1,0 +1,6 @@
+WR07 / Six emitted audio clips and stale callback rejection
+Source: 14-Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/evidence/audio/result.txt
+Selected lines: 1–1
+Source SHA-256: 5a0a552e9cb520ec4618b12f2309dbe2b1f33995da4446bdbd95945cd15adf2a
+
+PASS guest QCP/PCM hash verification: plays=6 unique_hashes=6 starts=6 completions=1 stops=5 replays=4 stale_rejected=4 start_callback_steps=72 completion_callback_steps=18

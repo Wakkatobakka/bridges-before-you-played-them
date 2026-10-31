@@ -1,0 +1,32 @@
+A06 — The observer is attached to the original game
+Evidence type: Phone runtime report
+Source: Ashen-20261019-175740-203-manual.txt
+Selected source lines: 195-200, 205-218
+
+The selected trace retains monotonic diagnostic timings, not personal identifiers. F rows are completed frame observations; K rows are guest input events. Raw positions are fixed-point integers.
+
+ASHEN MOVEMENT PROBE v1
+Hooks use 6r21.app code-segment UID 101FD3E9 and original code fingerprint 5EF10702.
+EKA1 DLL applications can run inside AppRun; matching is by the exact game image.
+Guest key handler active: true
+Completed gameplay frame hook active: true
+Trace callbacks add overhead. No movement/timing settings are changed.
+
+[... selected excerpt ...]
+
+# K: boottime_ms,K,event_type(2=up/3=down),scan,raw_before
+# F: boottime_ms,F,frame,frame_gap_ms,tick_delta,tick_hz,dt_fixed8,state,raw_up,raw_down,raw_left,raw_right,raw_4,raw_6,command_strafe,command_forward,command_vertical,position_x,position_y,position_z,angle_x,angle_y,angle_z,probe_body_us
+# raw key values are opaque original-game state codes; positions/commands are raw fixed-point integers.
+204694394.637,F,2891,16.103,0,64,0,6,0,4,4,4,4,4,0,256,0,-307882,511203,-28656,0,0,3325833,24.4
+204694410.044,F,2892,15.407,2,64,8,6,3,4,4,4,4,4,0,256,0,-307948,511221,-28656,0,0,3325833,26.1
+204694425.209,F,2893,15.165,0,64,0,6,3,4,4,4,4,4,0,256,0,-307948,511221,-28656,0,0,3325833,21.7
+204694446.298,F,2894,21.089,2,64,8,6,3,4,4,4,4,4,0,256,0,-307778,511318,-28656,0,0,3325833,27.6
+204694459.833,F,2895,13.535,2,64,8,6,3,4,4,4,4,4,0,256,0,-307502,511419,-28656,0,0,3325833,26.0
+204694466.848,K,2,16,3
+204694476.332,F,2896,16.499,0,64,0,6,1,4,4,4,4,4,0,0,0,-307502,511419,-28656,0,0,3325833,24.2
+204694497.261,F,2897,20.929,2,64,8,6,4,4,4,4,4,4,0,0,0,-307226,511520,-28656,0,0,3325833,26.7
+204694509.694,F,2898,12.433,0,64,0,6,4,4,4,4,4,4,0,0,0,-307226,511520,-28656,0,0,3325833,21.2
+204694528.685,F,2899,18.991,2,64,8,6,4,4,4,4,4,4,0,0,0,-306950,511621,-28656,0,0,3325833,55.2
+204694543.283,F,2900,14.598,0,64,0,6,4,4,4,4,4,4,0,0,0,-306950,511621,-28656,0,0,3325833,27.1
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,22 @@
+Q203 / The physical phone stops at a compressed level-one texture
+Source: Quake_II_Bridge_v0.1.4_PRIVATE_FULL_CHECKPOINT.zip / Quake_II_Bridge_v0.1.4_PRIVATE/evidence/phone-reports/Quake_II_Bridge_v0.1.0_FAULT_20261025_044238_673.txt
+Selected lines: 16–25, 32–35
+Source SHA-256: 9e9beb5d97e5c78d234a00f8b2220970dd083de46aa8688a3dfb5d7893e4097c
+
+Android real EGL context active: true
+Original guest EGL swaps: 253
+Android GLES1 calls: 12871
+Original geometry draws: 1969
+Original texture uploads: 52
+Readbacks passed: 253
+Readbacks failed: 0
+Original GL errors preserved: 0
+GPU RGB pixels latest: 23893
+GPU RGB pixels maximum: 306615
+
+[... selected excerpt ...]
+
+Android audio failure: none
+Android host failure: none
+Original gameplay/input outcome: not yet verified on phone
+Guest fault: thread -> IllegalStateException: Unrecognized guest compressed texture shape target=0xde1 level=1 format=0x8c92 dimensions=32x64 size=1024

@@ -1,0 +1,16 @@
+R13 — Follow the original materials back to their images
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.7 preservation / verification/D4D_WORLD_MATERIAL_PROVENANCE.md
+Selected source lines: 17-23
+
+
+
+The native VertexBuffer descriptor references a signed-short, two-component UV array. Its UV bias is stored at descriptor offsets 52 and 56, and the scalar at 64. The decoded first `a1_3` UV is approximately `(0.9872478, 0.2206726)` using `bias + signed sample * scalar`. Coordinates outside `[0,1]` remain intact; the textures' authored repeat modes select GL_REPEAT. RGB or RGBA vertex arrays provide the stage's baked colors. Native triangle-strip lengths in this retained corpus are all three, so the previously rendered topology remains identical.
+
+The decoder follows each Mesh topology/Appearance pair, its Texture2D reference, and its original Image2D reference. The game's converter has already changed the BMP palette from BGR to RGB and flipped the bottom-up BMP rows. Independent Python BMP decoding supplies a separate SHA-256 oracle for every selected texture, and the actual Group renderer's recorded GL uploads must match those original colors and row order. REPLACE materials with no alpha threshold render opaque; authored ALPHA/cutout materials retain their palette alpha. Native alpha thresholds, blend modes, depth test/write flags, and polygon offsets reach the GL submission path.
+
+`python tests/check_world_materials.py` passed 591,498 parser/corpus checks and 814 actual Group GL submission assertions. These checks validate the original resource bytes, material references, buffers, GL state, texture reuse, and fallback bounds. They are JVM recording-sink checks, not Android/GPU or phone acceptance.
+
+Known native water textures contain Texture2D AnimationTrack references. This pass retains and applies their stored constant UV transforms, records `animatedTexturesStatic`, and does not claim animated water UV tracks. Future unsupported material or object layouts have explicit diagnostic fallback. Supported native stages no longer receive the prior neutral shades and wireframe overlay.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

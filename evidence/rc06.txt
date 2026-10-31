@@ -1,0 +1,31 @@
+RC06 / The shared contact repair and generic J2ME preparation
+Source: Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE_CHECKPOINT.zip / Ratchet_Clank_Going_Mobile_Bridge_v0.1.3_PRIVATE/CHANGES_v0.1.3.txt
+Selected lines: 1–26
+Source SHA-256: 0e1f2ffebc91cd58d00d3070ccaffc77cb2ef7963ee32c9de2d68c514d4319a2
+
+v0.1.3 — normalization to Gameplay UI Kit 1.1.2 and Omni Handoff Kit v1
+
+Uses the supplied, unchanged v1.1.2 JAR in javac and D8. Retains Ratchet's
+four-way 2/8/4/6 pad and separate original 1/3 diagonal jumps. The new kit's
+independent-pointer regression fix is included; Ratchet's required mappings,
+original execution, audio, save format, reporting and Back cleanup are unchanged.
+
+Build now generates strict Omni import/export/game/preparation metadata from the
+actual original JAR and APK inventory before signing. All 76 original root
+resources and eleven guest classes are declared, as are both Android resources
+and retained notices. Private contains the verified original JAR. Public export
+strips originals and rebuilds module-code/guest.dex with Omni's supported generic
+j2me compiler. No new Omni engine or package-specific export rule is required.
+
+Production Omni 0.5.7 importer/exporter checks passed with host Android-service
+adapters: private intake, readiness, signed export, original stripping, fresh
+Public reconstruction, exact resource hashes/class inventory, stable save
+identity, remove/restart/reimport, changed same-version replacement, repeated
+exports including an unrelated addition, and save retention without duplicates.
+Validation exports are temporary test outputs and are not a public release.
+
+Fresh host input/contact/geometry/configuration tests passed, including the exact
+Ratchet profile, original gameplay states and two shutdown/reopen cycles.
+Supplied kit evidence includes twelve API34 framework tests; those were not
+rerun here. Physical-phone startup, layout, touch, audible audio and Downloads
+export remain unverified in this environment. See evidence/v013/verification.json.

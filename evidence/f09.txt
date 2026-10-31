@@ -1,0 +1,28 @@
+F09 — The screen was showing unfinished frames
+Evidence type: Checkpoint development notes
+Source: Snowboard_Bridge_v0.0.19_Preservation.zip / BUILD_NOTES.md
+Selected source lines: 5-23
+
+
+
+Polish the now-playable v0.0.18 build without destabilizing gameplay. This pass targets the startup/menu flashing shown in the 2026-09-29 device recording and reduces the always-visible development chrome.
+
+## Evidence
+
+The second v0.0.18 recording repeatedly exposes black/gray/white intermediate versions of the same Square Enix/credit/title frame. Two bridge behaviors could produce exactly that:
+
+1. The bridge displayed the same 240x240 bitmap while the game thread was still drawing into it. `BridgeLog`, `flushBuffer()` and UI updates could therefore trigger Android redraws before `Graphics.unlock(true)` marked the DoJa frame complete.
+2. DoJa `DrawableObject3D.setTransparency()` defines 100 percent as fully opaque/source-visible for `BLEND_ALPHA` and `BLEND_ADD`. The bridge had this reversed (100 -> transparent). Snowboarding's fade helper explicitly uses `BLEND_ALPHA` with changing 0..100 transparency.
+
+## Changes
+
+- Added a two-buffer presentation layer. The game continues drawing into its existing back buffer; `Graphics.unlock(true)` copies the completed frame into the inactive presentation bitmap and atomically swaps it visible.
+- `Graphics3D.flushBuffer()` no longer invalidates/presents a half-finished frame.
+- Corrected DoJa blend semantics:
+  - `BLEND_NORMAL`: transparency ignored, opaque draw.
+  - `BLEND_ALPHA`: source contribution = transparency percent (`100` = opaque).
+  - `BLEND_ADD`: destination + source * transparency percent, saturated per RGB channel.
+- Primitive default transparency is now 100 percent.
+- Added primitive blend/transparency telemetry for future reports.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

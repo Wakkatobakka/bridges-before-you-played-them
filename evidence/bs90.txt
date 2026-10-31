@@ -1,0 +1,10 @@
+BS90 / Historical image / BioShock 3D original playable world
+Source: BioShock_3D_Bridge_v0.2.0_PRIVATE/evidence/acceptance/18_original_playable_world.png
+Source SHA-256: 7ebef8d031a035d2abdd684f4014c7e1b421ac801f06c607498f05e61794d1bc
+Context: Reviewed original game image; no personal interface or image metadata. This is a retained desktop original-runtime capture, not a new phone screenshot.
+
+Unchanged historical game framebuffer.
+Source member: BioShock_3D_Bridge_v0.2.0_PRIVATE/evidence/acceptance/18_original_playable_world.png
+Image SHA-256: 7ebef8d031a035d2abdd684f4014c7e1b421ac801f06c607498f05e61794d1bc
+
+The original 176×220 world and HUD from the retained 0.2.0 desktop acceptance. This is original-game host output, not evidence of phone cooling.

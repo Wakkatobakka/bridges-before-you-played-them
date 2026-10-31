@@ -1,0 +1,9 @@
+AT01 / Witcher supplied interfaces; Sonic supplied the build capsule
+Source: Age_of_Empires_III_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Age_of_Empires_III_Bridge_v0.1.1_PRIVATE/docs/PROVENANCE.txt
+Selected lines: 1–4
+Source SHA-256: 4cf9e04efb14075241ebc8e4ed0d986dfcb4252148a647dafe6d1d8b46fcac92
+
+Compatibility foundation: private Witcher Crimson Trail m-witcher source from the existing Omni 0.5.0 private workspace. Reused resource/graphics/display/MIDlet interfaces; adapted only this project for Nokia MIDP 1.0, 128x128, ARGB4444, original font calls, RMS, lifecycle and OTA sound.
+Build-tool capsule reused from supplied Sonic Jump private checkpoint.
+Gameplay UI is the exact supplied Wakka Bridge Gameplay UI Kit 1.1.2 JAR, SHA256 318dc30cd0cee50c750daf1f5fdd0b077aafdbbf152b76b6b31392c081981c9c. No kit source changes.
+No original gameplay logic reconstruction or imported native RTS substitute.

@@ -1,0 +1,11 @@
+DU06 / The earlier checkpoint itself had to be recovered
+Source: DukeNukem_3D_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / DukeNukem_3D_Bridge_v0.1.2_PRIVATE/evidence/v0.1.1-TECHNICAL_HANDOFF.txt
+Selected lines: 53–58
+Source SHA-256: 767d50ea7601e17155398c1346239668e37c13ca124e78e8f5152a79462b65e5
+
+Base archive recovery: original v0.1.0 ZIP lacks its central directory and ends
+partway through its SDK android.jar. 116 complete entries were recovered using
+local headers and verified uncompressed sizes + CRC32. Game/source/signing/tool
+entries preceding the truncation were intact. Only SDK android.jar was supplied
+from the already-attached Ashen v0.1.3 checkpoint. Baseline SHA manifests and the
+recovery inventory are kept under evidence/. Final archive must pass testzip.

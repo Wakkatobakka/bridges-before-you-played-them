@@ -1,0 +1,23 @@
+XC02 / A healthy empty AudioTrack was rejected
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 3–20
+Source SHA-256: 872420efa8f1dc02065602bc2599067a484c2d431c7d37935180bea9df97b7b0
+
+REPRODUCED ROOT CAUSE
+Android MODE_STATIC AudioTrack begins in STATE_NO_STATIC_DATA (2) until its
+first successful write. The previous code required STATE_INITIALIZED (1)
+before writing; it rejected a valid track and never submitted any PCM.
+The actual Android API34 framework reproduces the failure in
+  evidence/audio-baseline-failure.txt
+using the v0.1.0 source and Crash's original melody data, without mocking the
+player, AudioTrack constructor, getState or write/play lifecycle.
+Reference: https://developer.android.com/reference/android/media/AudioTrack
+The platform audio output sink is supplied by Robolectric's stock native shadow;
+this is not a physical speaker or Android-device listening test.
+
+AUDIO REPAIR
+Accept a healthy waiting-for-data track. Submit the entire PCM16 buffer through
+the supported ByteBuffer write API. Validate accepted byte count and readiness
+before play. Preserve the original synthesis function exactly. Stop cancels
+queued work; paused tunes retain their loaded buffer; late callbacks after close
+are ignored. Keep the actual failure message in independent report snapshots.

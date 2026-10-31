@@ -1,0 +1,24 @@
+D01 — The first report: execution, silence, Japanese text
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.1.0-report.txt
+Selected source lines: 9-11, 13-17, 4540-4540
+
+
+
+Audio: MLD/MFi synthesis NOT implemented (silent diagnostic mode)
+English patch: NOT applied; original Japanese game
+Save warning: original config has savingEnabled=false; progression saving NOT verified
+
+[... selected excerpt ...]
+
+Frames submitted: 3425
+Draw calls: 54599
+Textures generated: 236
+Resource opens: 201
+GL errors: 0
+
+[... selected excerpt ...]
+
+   0.033  GAME CODE       VincentApplication.start
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

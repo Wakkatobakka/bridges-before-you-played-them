@@ -1,0 +1,14 @@
+MT02 / Short taps preserve the original update cadence
+Source: Megami_Tensei_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Megami_Tensei_Bridge_v0.1.1_PRIVATE/TECHNICAL_FINDINGS.txt
+Selected lines: 10–18
+Source SHA-256: a8e515a541ad416967def60d47b77ec3870deeb9e6d4b9643027192e669ad82e
+
+Input FIFO retains an opposite transition of the same key until the following repaint, ensuring a down/up pair arriving within one 100 ms interval survives an original game update. Touch events do not add game updates. Repaint is bounded and parks when backgrounded, forwarding native hideNotify. Short taps, sustained movement and native pause behavior checked on host.
+
+Original RMS store: mega, first record stores original game save bytes. Writes are atomic and durable. Absence on first run is expected and logged separately from runtime faults. No host save is bundled into app storage.
+
+Original MMAPI music: sound/0.mid through sound/3.mid; Android MediaPlayer backend preserves requested looping and pauses when backgrounded. Completion callback supplies Long media time (the guest dereferences event data). Audible playback is unobserved.
+
+Interface: one gameplay screen, actual launcher icon at upper-left, native aspect ratio, dark/cyan palette, centered directional/confirm controls, secondary map/command/cancel/map-view inputs, two softkeys and SAVE REPORT. Current system bar/cutout/mandatory gesture insets applied once, bars remain visible. Measured content drives control sizing. Layout metrics cached on UI thread for reports. No physical Android layout verification yet.
+
+Diagnostics: independent executor, Downloads/Megami Tensei Bridge via MediaStore on API29+, legacy permission on API26-28, pending private fault copy and retry. Samples primitive guest state without invoking/waiting on game worker. Host confirms report generation works while worker is parked; device export remains unobserved.

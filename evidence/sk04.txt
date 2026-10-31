@@ -1,0 +1,35 @@
+SK04 / Ashen startup reference and retained physical ownership
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/UI_INTEGRATION_v0.1.2.txt
+Selected lines: 3–6, 17–34, 41–42
+Source SHA-256: b106b3dc57b2825184039d164aa92ba367c2b2ba8829c454eeb8122afec6f04d
+
+The current kit's PROJECT_INSTRUCTIONS_REPLACEMENT.txt is retained unchanged
+in app/ui-kit/ and copied in full into AGENTS.md before game-specific guidance.
+The supplied Ashen v0.1.3 checkpoint was used as a private integration/startup
+test reference. Shadowkey retains its own controls and original runtime/data.
+
+[... selected excerpt ...]
+
+Keypad mode explicitly retains the complete separate original D-pad. It uses
+BridgeControls.makeKeypad(..., true), all original numeric/star/hash keys,
+MENU L/CLEAR/MENU R and large duplicate 5/7 action buttons. Whole groups reflow
+at narrower widths. Digits=48–57; star=42; hash=127; softkeys/clear=164/1/165.
+The shared permanent ORIGINAL KEYPAD / D-PAD RETURN switch sits outside both
+panels. Overflow contains only utilities/help. The preferred deck is 364dp;
+responsive minimum sizing governs actual measured space. Both modes reserve
+the same slot and do not recreate the renderer or restart/pause the worker.
+
+All touch inputs use shared owned sources. Mode changes release only touches;
+registered physical holds remain. The shared kit forwards key-up from utility
+and help dialogs. Existing Shadowkey hardware mapping is unchanged.
+
+UI kit v1.1.1 creates the window decor before requesting its insets controller,
+repairing the pre-setContentView cold construction crash. The Activity's existing
+fault handler now installs before FrameLayout/SurfaceView/UI construction.
+Game boot, input dispatch boundary, lifecycle, report writer and save extraction
+implementations are preserved. Only the report version banner changes.
+
+[... selected excerpt ...]
+
+Evidence from v0.1.1 is under evidence/history/v0.1.1/. Host original gameplay
+screens/logs/saves are v0.1.0 historical evidence, not new device verification.

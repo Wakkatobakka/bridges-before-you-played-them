@@ -1,0 +1,11 @@
+XC07 / The installed Omni said Ready
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 44–49
+Source SHA-256: 4c37201c87a2aaafd759ad33a7ab39aecf898b7d065d766ead1eff3a83124c24
+
+OMNI
+Original recognition, import rules, UI resources and stable save identity are
+unchanged. The user's installed Omni marked the previous bridge Ready.
+The old checkpoint's EXN-only audit did not test Omni's real export/import
+handling and must not be read as a confirmed Omni export blocker.
+This audio update introduces no new preparation operation or original asset.

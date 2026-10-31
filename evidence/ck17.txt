@@ -1,0 +1,10 @@
+CK17 / Draft versus committed setting reproduced
+Source: Chokkan_Crash_Bridge_v0.0.8_PRIVATE_CHECKPOINT.zip / Chokkan_Crash_Bridge_v0.0.8_PRIVATE/evidence/v008/MotionSettingPersistenceProbe.txt
+Selected lines: 1–5
+Source SHA-256: ee5733b4c86c607f430e543b625738465e9195059119686203d8a4b44e0ea43e
+
+ChokkanBridge SAVE: Initialized KEY-mode scratchpad: 4096 bytes
+ChokkanBridge BOOT: Chokkan Crash host ready: 240x320, SH904i / DoJa 5.0, preserved game settings, CP932 guest text
+DRAFT_COMMITTED_REPRO_PASS draft=0 committed=1
+MOTION_STARTUP_PERSISTENCE_PASS draft=0 committed=0 persisted=0 otherOptionsPreserved=true scorePreserved=true
+KEY_STARTUP_PERSISTENCE_PASS draft=1 committed=1 persisted=1 scorePreserved=true

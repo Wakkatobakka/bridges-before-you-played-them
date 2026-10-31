@@ -1,0 +1,27 @@
+Z14 — The later 0.1.10 shell retains its own phone-test boundary
+Evidence type: Later verification summary
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / README_FIRST.md
+Selected source lines: 45-62
+
+
+
+## Verification and remaining gaps
+- The v1.1.1 kit's 35,022 input assertions, 59,221 geometry assertions,
+  configuration checks and min-26 D8 checks pass. See evidence logs.
+- 52 additional host screen-planner profiles for this original RE4 layout pass.
+- Original RE4 host replay: 500 timers, 7,740 indexed 3D draws,
+  27 original textures, 28 native HID events, no guest exception.
+- Android APK builds and verifies v2/v3 signatures; all 17 original game assets
+  match the v0.1.9 packaged assets exactly; code input/graphics runtime
+  implementations are unchanged.
+- Source bundle passed an independent clean extraction/rebuild; see Evidence.
+- NO actual Android phone test of v0.1.10 yet. UI cold Activity startup,
+  landscape/insets/font scales, real touch hit regions, live SAVE REPORT,
+  Android Back, multi-touch, resume, controls in original gameplay,
+  graphics/audio and saves need device verification.
+- Analog joystick inputs are absent. No gameplay completion or playability is
+  asserted by this checkpoint. See historical v0.1.9 evidence for the furthest
+  original code reached. Existing gameplay and report behavior are preserved
+  as far as host-level tests can establish.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

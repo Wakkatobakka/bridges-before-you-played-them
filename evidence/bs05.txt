@@ -1,0 +1,21 @@
+BS05 / Why a240×320 allocation did not mean a240×320 main screen
+Source: 17-BioShock_3D_Bridge_v0.2.0_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.0_PRIVATE/evidence/original-analysis/original_findings.txt
+Selected lines: 49–64
+Source SHA-256: f5531ff18bcbe27c54519372ff4741d6d415da6be3af0c9148cca7291af5f6e4
+
+Screen evidence and limitation
+- MIF contains icon dimensions but no logical screen resolution metadata.
+- Original sprite coordinate routines0x1A2030/0x1A2104/0x1A224C hardcode
+  176 horizontal and204 vertical content extents, scaling from 240x298 art coordinates.
+- Native routine 0x1B4FF4 explicitly requests a temporary 24-bit 240x320 DIB,
+  allocates 230400 bytes, BitBlts it, and releases it. This is not proof that the
+  main logical screen should be 240x320; it appears to be the loading/ad path.
+- Fresh main/title graphics occupy a 176x220 region. With default device DIB 240x320,
+  the native bottom prompt appears around y305 while original content remains
+  176 wide. A 176x220 device DIB places the original content/footer in one logical canvas.
+- Therefore176x220 is the supported selected display profile, combining fixed
+  176x204 content with 16 footer rows. Total height 220 is a layout inference, not
+  metadata exposed by MIF. Explicitoriginaltemporary DIB requests retain size.
+- A private analysis runtime clone logged Shell.GetDeviceInfo calls; none were
+  emitted through cold boot + 146 timer callbacks. The observed footer placement
+  therefore appears to follow device bitmap dimensions, rather than that prefix.

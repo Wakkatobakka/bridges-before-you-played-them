@@ -1,0 +1,19 @@
+R02 — The HUD was alive over a black playfield
+Evidence type: Checkpoint investigation notes
+Source: Rockman v0.3.3 preservation / evidence/v0.1.7-video-observation.md
+Selected source lines: 3-12
+
+Preserved inside the original 0.3.3 archive retained by the later checkpoint.
+
+Source recording: `Screen_Recording_20260926_002703.mp4` (user device; not duplicated into this preservation ZIP to avoid unnecessary size).
+
+Observed behavior:
+- No runtime diagnostic/failure state during the recording.
+- English in-game HUD remains live over a black 3D playfield.
+- English item/menu UI opens, navigates, and closes normally.
+- Visible item list includes Energy Canteen, Hyper Cartridge, Bottle Rocket, Solver, and Thick Pipe.
+- This matches the report: game loop continues with zero caught exceptions and zero GL errors, while the current Graphics3D bridge records Figure/Group/Primitive submissions but does not yet decode scene/model geometry.
+
+Conclusion used for v0.1.8: stop chasing missing API methods and begin real 3D asset decoding/rendering. Figure MB/MBA/MBAC is the first bounded target; D4D Group/world geometry remains separate.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

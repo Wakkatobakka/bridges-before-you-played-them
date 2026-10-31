@@ -1,0 +1,15 @@
+KT10 / The phone reaches the timed countdown and faults
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/evidence/phone-v010/Katamari-Bridge-v0.1.0-report-20261015-220143.txt
+Selected lines: 8–17
+Source SHA-256: 686fa7b556a016746d23a67fac41b45834d372b6994d2aa2d01a6325d087981a
+
+Host failure: none
+Save error: none
+Module loaded: true; applet created: true; start accepted: true
+Original ARM steps: 58165290; timer callbacks: 469; key events: 34
+Display updates: 465; blits: 20269; framebuffer: 240x320
+Images: 25; images decoded: 0; decode failures: 0; unknown interfaces: 1
+CPU error: null; live error: timer -> RuntimeException: Unsupported BREW interface cls=01002001 off=0x64 r0=0100E588 r1=03EFFF64 r2=F0001064 r3=00000054 lr=0x00108460
+Original audio play/stop requests: 4/15
+Android audio starts/stops/errors: 4/2/0; Track completed 0; muted=false
+Timer policy: original SetTimer registration deadlines; only due callbacks execute; one queued worker tick; no input-driven timer pumping

@@ -1,0 +1,24 @@
+KT16 / Thirty clipped labels, no smaller type
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 3–21
+Source SHA-256: 81e00360f891775614d20809302925edd094b563f8e7571db2830a2ad0915aee
+
+The current supplied kit is still v1.1.2 and v0.1.3 already embeds it exactly.
+A real Android text-layout audit found 30 clipped shuffle button instances
+across 72 profiles (both modes, 320/360/412/480dp widths, 640/740/915dp heights,
+font scales1.0/1.3/1.5). Only the keypad-mode SHUFFLE labels failed; default
+font layouts were already satisfactory. The original failing evidence is
+retained in evidence/v0.1.3-large-font-clipping.txt.
+
+KatamariControls now displays SLIDE / direction + digit for original AVK_1
+and AVK_3. All input codes, emphasis weights, pad configuration, controls,
+keypad, targets, viewport, renderer and game behavior match v0.1.3. No fonts
+were reduced and no shared-kit source was changed. Apart from version strings,
+MainActivity, BridgeController and ReportStore are byte-identical to v0.1.3.
+Original BrewRuntime remains byte-identical. The manifest updates versionCode
+4->5 with the same package and signing owner for installation over v0.1.3.
+
+The Activity runner includes the new independent text-fit audit. Packaging
+now verifies and fsyncs a temporary signed APK, then commits the final path
+atomically. The final complete checkpoint also verifies every ZIP entry and
+SHA256SUMS before upload. See VERIFICATION.txt for current check outcomes.

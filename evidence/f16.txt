@@ -1,0 +1,12 @@
+F16 — Cloud upright in the later 0.0.23 screenshot
+Evidence type: Preserved screenshot
+Source: 1000095964.jpg
+
+Inspected as pixels before inclusion. The image has no personal contact details, private installation paths, signing data or account identifiers. Screenshot copyright remains with its respective game owners.
+
+The preserved screenshot displays Cloud upright on his snowboard, a snowy course/bridge, and the bridge controls.
+The on-screen version label reads Snowboard Bridge 0.0.23.
+The chapter reproduces this image unchanged. It is a later screenshot, not an image of the chest or upside-down failure.
+Image SHA-256: deaa75dbbb4906fc52d24042ea3fe9ba7594dd8ee4330e0527fc1022cd41c91a
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

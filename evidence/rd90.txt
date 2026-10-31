@@ -1,0 +1,12 @@
+RD90 / Historical image / Resident Evil: Degeneration
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/evidence/degeneration-shot-verified.png
+Source SHA-256: d607162f6ce19bef8fc44ff7d8eef49b33ea7653b3f27148d2098d3b1a0e09ee
+Context: Retained historical host output. Original emulator chrome, where present, is part of the unchanged source image. No phone capture or phone performance is inferred.
+
+Unchanged historical image.
+Source member: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/evidence/degeneration-shot-verified.png
+SHA-256: d607162f6ce19bef8fc44ff7d8eef49b33ea7653b3f27148d2098d3b1a0e09ee
+
+Leon aiming after the original shot, with ammo14 visible. Historical Linux EKA2L1 screenshot; RD02 records15→14 and originalA reload to15.
+
+Scope: Historical original-game Linux host execution, not Android phone output or an enemy/campaign completion claim.

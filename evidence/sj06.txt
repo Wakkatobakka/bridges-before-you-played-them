@@ -1,0 +1,26 @@
+SJ06 / Actual-guest short taps, movement, jumping and pause
+Source: 03-Sonic_Jump_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Sonic_Jump_Bridge_v0.1.0_PRIVATE/evidence/jvm/validation.txt
+Selected lines: 1–21
+Source SHA-256: e4c52d9f6a406c37f3b6ab0e3ba56464bec6c6e77f3695013fe3d6cb2c79ac24
+
+Sonic Jump actual guest JVM validation
+Android graphics are AWT-backed test shims. MediaPlayer is a command-observing shim; this run does not prove audible output, Android touch routing, phone heat, or on-device presentation.
+Capture 01-title: 1/0; soft labels [♪○, Quit]
+Verified original MIDI start commands and completion callback looping; audible Android output requires a device.
+Capture 02-main-menu: 1/1; soft labels [Select, Back]
+Verified menu UP/DOWN masks alter real nKey selection;20ms DOWN tap survives100ms guest sampling.
+Capture 03-zone-select: 1/2; soft labels [Select, Back]
+Capture 04-story: 2/0; soft labels [Next, ]
+English story loaded 13 original text pages; first page=^RRRRRRRING...^^^^^
+Capture 05-gameplay: 2/2; soft labels [Pause, ]
+Movement sample RIGHT: x=120, power=0, start=true, anime=5, KEY=false, hurt=false, facing=true
+Verified held LEFT/RIGHT: nPlayX 58 → 120 → 48; momentum RIGHT=0, LEFT=-8.
+Verified Jump uses SELECT at an original accepted jump opportunity; boHiJump latched/released; sampled nJumpF=0 (post-physics).
+Capture 06-movement-and-jump: 2/2; soft labels [Pause, ]
+Cadence (active gameplay): 2.004 s wall, 20 ticks, 20 frame submissions, 11.837 ms guest-thread CPU (0.59% of one core); gameMode 2→2.
+Capture 07-paused: 2/9; soft labels [Resume, Title]
+Verified guest Pause and Resume consume SOFT1; SELECT does not resume.
+Verified background pause: no ticks, frames, or movement for900ms; held keys cleared; resumes.
+Cadence (guest paused menu): 2.204 s wall, 22 ticks, 22 frame submissions, 4.454 ms guest-thread CPU (0.20% of one core); gameMode 9→9.
+Verified guest save/reopen: sound option persisted;266240bytes and original resource sentinel intact.
+PASS: actual patched guest reached title, main menu, zone menu, English story, gameplay, paused gameplay and reopened title.

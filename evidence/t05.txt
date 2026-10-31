@@ -1,0 +1,21 @@
+T05 — The memory probe reaches the title, which still needs input
+Evidence type: Phone runtime report
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / evidence/v0.0.13-device/MGS-Mobile-Bridge-v0.0.13-report.txt
+Selected source lines: 98-100, 2377-2382
+
+
+
+S3E_MEMORY_GET_INT_4 = PASS | property=4 serviced as the largest contiguous allocatable heap block; measured MGS caller subtracts 1024, mallocs the remainder, then frees it
+S3E_SURFACE_PRESENT = PASS | guest called s3eSurfaceShow; presents=626 nonzero_pixels=70639/76800 crc32=36A2BAAD; frame remains displayable even if later execution stops
+FIRST_FRAME = MGS_TITLE_SCREEN_PRESENT_CAPTURED | guest-authored Metal Gear Solid Mobile title screen with PRESS ANY KEY is shown in the Android viewport
+
+[... selected excerpt ...]
+
+S3E_HOST_API_DISPATCH = ACTIVE | measured S3E services are serviced and guest execution reaches the software-surface present path
+BREW_RUNTIME_INIT = PARTIAL_TITLE_SCREEN_PATH | startup, resources, localization, timed splash chain, memory-capacity probe and post-ideaworks loading are crossed into the Metal Gear Solid Mobile title screen
+MGS_APPLET_START = BOOT_SEQUENCE_TITLE_REACHED | guest has reached its own title screen; full BREW lifecycle/gameplay is still not claimed
+AUDIO_INIT = DEFERRED_FOR_VISUAL_DISCOVERY | audio capability is deliberately disabled in this probe so renderer bring-up can be isolated
+INPUT_INIT = TITLE_POLLING_REACHED_LIVE_KEYS_NOT_ATTACHED | MGS is polling s3eKeyboardGetState and the title screen says PRESS ANY KEY; Android keypad-to-guest live state is now the next bridge step
+FAILURE_FRONTIER = MGS_TITLE_SCREEN_INPUT | Metal Gear Solid Mobile title screen is reached; next unresolved layer is live Android keypad state into s3eKeyboardGetState
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

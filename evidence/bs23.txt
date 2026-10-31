@@ -1,0 +1,16 @@
+BS23 / Retained original simultaneous movement and turn
+Source: BioShock_3D_Bridge_v0.2.2_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.2_PRIVATE/evidence/combined/host-acceptance.log
+Selected lines: 38–48
+Source SHA-256: e77e1ac345fc98ee2a7b50c298be455fd88f2a71f6cac9c399f50953595bad2e
+
+COMMAND untilworld 600
+untilworld_600 alive=true diagnostics=false callback_count=1332 steps=5388186164 clock_ms=133200 audio_started=14 audio_completed=7 mode=8 secondary=2 ui=35 numeric=true xyz=[29608232, -5028538, -22357716] facing=[0, 0, -65536] movement_allowed=1
+COMMAND snap original_playable_world
+original_playable_world alive=true diagnostics=false callback_count=1332 steps=5388186164 clock_ms=133200 audio_started=14 audio_completed=7 mode=8 secondary=2 ui=35 numeric=true xyz=[29608232, -5028538, -22357716] facing=[0, 0, -65536] movement_allowed=1
+COMMAND assertnumeric true
+assertnumeric_true alive=true diagnostics=false callback_count=1332 steps=5388186164 clock_ms=133200 audio_started=14 audio_completed=7 mode=8 secondary=2 ui=35 numeric=true xyz=[29608232, -5028538, -22357716] facing=[0, 0, -65536] movement_allowed=1
+COMMAND combined
+PASS original simultaneous movement/turn and both release orders
+combined_ alive=true diagnostics=false callback_count=1353 steps=5489497517 clock_ms=135300 audio_started=15 audio_completed=7 mode=8 secondary=2 ui=35 numeric=true xyz=[30163432, -4871520, -26597396] facing=[-56854, -2072, -32650] movement_allowed=1
+COMMAND quit
+final alive=true diagnostics=false callback_count=1353 steps=5489497517 clock_ms=135300 audio_started=15 audio_completed=7 mode=8 secondary=2 ui=35 numeric=true xyz=[30163432, -4871520, -26597396] facing=[-56854, -2072, -32650] movement_allowed=1

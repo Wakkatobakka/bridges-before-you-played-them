@@ -1,0 +1,12 @@
+DV92 / Historical image / Driv3r after original gas and left steering input
+Source: Driv3r_Bridge_v0.1.4_PRIVATE/evidence/driving_controls/04_gas_and_left.png
+Source SHA-256: ff94e3db475ed7756ea0610cad83747137f005d58ca427b1f879dc4037e94dee
+Context: Original game pixels retained from the stated historical host check. No physical-phone capture is implied.
+
+Unchanged historical image.
+Source member: Driv3r_Bridge_v0.1.4_PRIVATE/evidence/driving_controls/04_gas_and_left.png
+SHA-256: ff94e3db475ed7756ea0610cad83747137f005d58ca427b1f879dc4037e94dee
+
+Original 120×160 world after native accelerator and left steering, from the historical Real Steering host probe. This does not measure physical thumb feel.
+
+Scope: Historical host original-runtime framebuffer; not physical-phone output or a framework UI fixture. Visually inspected game-only, zero EXIF, unchanged bytes.

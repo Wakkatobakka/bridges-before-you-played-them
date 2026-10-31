@@ -1,0 +1,7 @@
+XC08 / The original player fails before filling its buffer
+Source: 22-Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Bandicoot_ExEn_Bridge_v0.1.1_PRIVATE/evidence/audio-baseline-failure.txt
+Selected lines: 2–3
+Source SHA-256: 00ab929f846b8039d384618135ca39d893715514c31037d497838da5f17f7111
+
+EMPTY_STATIC_TRACK_STATE=2
+java.lang.AssertionError: Original melody was rejected before its static PCM buffer could be filled expected:<0> but was:<1>

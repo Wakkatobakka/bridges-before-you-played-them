@@ -1,0 +1,30 @@
+PK02 / Witcher presentation and Genesis switching around the same native view
+Source: Pocket_Kingdom_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Pocket_Kingdom_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 7–31
+Source SHA-256: 102615c05d41ec76aea926ad3403d4640285af4097800265542433cbb94e7cc8
+
+GAMEPLAY UI UPDATE
+Actual Wakka Bridge Gameplay UI Kit v1.1.1 source is embedded, including its
+cold-Activity startup fix. The Witcher gameplay screen supplies the shared
+presentation; Resident Evil Genesis supplies the inline switching model.
+
+A continuous square digital D-pad supports thumb sliding between directions.
+5 CONFIRM and 7 CANCEL keep the original game inputs. MENU LEFT and MENU RIGHT
+keep the two original softkeys. The same primary actions remain available in
+both modes. ORIGINAL KEYPAD / D-PAD RETURN switches the bottom controls with
+one tap. Numeric mode retains the separate original N-Gage D-pad, 1–9, *, 0,
+#, both softkeys and Clear. Required game keys are never in a dialog.
+
+The same native SurfaceView stays attached and has the same viewport dimensions
+when switching modes. Native proportions are retained. The header shows the
+actual launcher icon, game title, platform, SAVE REPORT and utilities menu.
+Android system Back leaves gameplay through cleanup; original 7/softkeys remain
+separate. Backgrounding releases held input and suspends the native surface;
+resuming reconnects it. The kit owns touch and controller input separately.
+
+SAVE REPORT exports a real .txt directly to Downloads/Pocket Kingdom Bridge/
+through the existing independent writer, without game-worker or JNI calls.
+Startup fault capture is installed before View construction. Reports whose
+Downloads export fails remain in app storage and retry with the next report;
+a failed export is shown as a failure. Original Save > Yes is still the game
+save mechanism; SAVE REPORT is diagnostic only.

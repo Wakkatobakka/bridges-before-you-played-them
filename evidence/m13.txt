@@ -1,0 +1,18 @@
+M13 — Textured terrain reaches the phone, with faults still present
+Evidence type: Phone runtime report
+Source: Monster Hunter i preservation / baseline/original/evidence/v0.0.8_physical/Monster-Hunter-i-Bridge-v0.0.8-report.txt
+Selected source lines: 24-32
+
+
+
+J3D figures: 640 queued triangles=140621 drawn triangles=138358
+J3D rejects total: index=0 near=300 far=0 backface=174245
+J3D crossings total: near=16 far=0 missingTexture=0 drawFailures=2263
+J3D primitives: calls=2620 submitted=117288 queued triangles=146854 drawn triangles=137772
+J3D primitive culls: near=38924 far=0 crossing=3046 bad=0
+J3D primitive materials: texturedCalls=2470 colorKeyCalls=1028 blendHalfCalls=415 blendAddCalls=432 blendSubCalls=134
+Last primitive: type=3 flags=0x3000 attrs=0x50 submitted=6 queued=6 drawn=6 cull[near=0,far=0] crossing=0 bad=0 textured=true
+Last J3D: verts=271 patterns=1/1 queued=253 drawn=253 z=1359..1724 near=128 far=10240 fov=512 reject[idx=0,near=0,far=0,backface=283] crossing[near=0,far=0] missingTex=0 drawFail=0
+Latest fatal:
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,12 @@
+KT13 / Katamari borrows RE4 Zeebo’s independent report design
+Source: Katamari_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Katamari_Bridge_v0.1.4_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 180–186
+Source SHA-256: 81e00360f891775614d20809302925edd094b563f8e7571db2830a2ad0915aee
+
+Reporting follows RE4 Zeebo v0.1.9 ReportStore: immutable cached native metadata
+at most once per 5 foreground seconds, plus faults; no framebuffer clone for
+sampling. Manual export reads the volatile cache and queues an independent
+writer; it never posts to or locks the guest. File saving uses MediaStore
+Downloads on Android 10+, with private-external Documents fallback on 8/9.
+Detected faults automatically export a FAULT TXT. Heavy instructions traces
+remain off during play. See tests/report for busy-worker/session-lock coverage.

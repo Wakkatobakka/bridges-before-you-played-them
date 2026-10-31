@@ -1,0 +1,10 @@
+CR04 / Exact pixel comparisons survived cache and timer changes
+Source: 11-Contra_4_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 11–15
+Source SHA-256: 3694363e1d25e46640b1467f2f2155e0336239771fd43f6472817738c3af1490
+
+Focused cache and timer regression passed 84 assertions. An independent decoder compares cached pixels with native DIB bytes after 160 arbitrary w8/w16/w32/copy mutations, range-boundary writes, bulk writes, palette/depth/key/stride/pointer/size changes, shared backing memory and host RGB565 commits. Release and reused allocation probes leave no retired watches. Complete tap presentation retains pending pixels. Native SetTimer tests cover registration timing, pre-registration work, due callbacks, cancellation and zero delay.
+
+An external v0.1.0 baseline comparison passed 32,486 checks across boot, level entry and 180 callbacks with movement, diagonal aim, jumping, pause and lifecycle events. Every compared framebuffer, live bitmap header/backing/palette, MIDI event/data and store file agrees exactly, with matching native instructions and event/blit counts. The final compared scenario executed 25,209,889 native instructions and 78,416 blits.
+
+Uninstrumented runtime-cost replays used six runs of 100 callbacks per configuration, each with 9,513,040 original instructions, 34,829 blits and the same final frame hash. Median CPU time across the last five runs was 623.470 ms for v0.1.0 full snapshots and 358.423 ms for v0.1.1 changed-revision snapshots, about 42.5% less host CPU. Median allocated bytes fell from 40.816 MB to 39.273 MB. Snapshot equality checks occur outside the timed replay. This uses forced timers and an identical virtual guest clock; it measures desktop runtime cost, not phone temperature or Android frame cadence.

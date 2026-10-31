@@ -1,0 +1,10 @@
+WR01 / Contra with Genesis and Doom services becomes Wolfenstein’s foundation
+Source: 14-Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.0_PRIVATE/TECHNICAL_HANDOFF.txt
+Selected lines: 5–9
+Source SHA-256: 4e938642a42a691c6db44b753af24d1d1aa66697d52ba0dc54458405c9a8b8cf
+
+Original Wolfenstein RPG 7.1.32 en.mtv3cb (Motorola V3c English), CLSID 0x01081949, native 176x220 canvas. Original MOD/BAR/MIF/config.txt bytes are unchanged; the Android-free ARM/Thumb interpreter executes the original engine.
+
+Foundation: Contra 4 v0.1.1 bridge with Resident Evil Genesis and Doom RPG compatibility services. Native timers are independent registrations keyed callback/data, with captured registration deadlines. Earliest due callback is removed before execution; one Android worker callback pumps only due guest timers. This preserves the separate 50 ms game-loop and 100 ms sound timers which a single pending slot would overwrite.
+
+Added original startup requirements: retained bitmap QueryInterface 0x01001029 alias; GetAppletInstance during constructor via native output pointer; SYS_B+0x16C allocation annotation preserving allocated pointer; SYS_B+0x140 ARM va_list indirection; queued shell PostEvent returning native boolean success; ISound registration/config/volume notification and guest-compatible vibration calls. Rendering retains the tested original IDIB/IGraphics compatibility and coherent byte-range bitmap caches. No guest executable patches are applied.

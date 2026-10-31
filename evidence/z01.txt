@@ -1,0 +1,13 @@
+Z01 — The Brazilian edition, ghost weapons and the menu workaround
+Evidence type: Owner recollection
+Source: Wakka / archive conversation / October 30, 2026
+
+Current owner recollection, retaining wording. The later private video review separately confirms the menu/visibility sequence. This chapter documents the bug and workaround; no game repair was performed.
+
+“i didnt know it was brazillian until we got the fricken game running.”
+
+“leon didnt render but the gun and knife did and everything worked so it was the ghost gun”
+
+“leon will acutlaly rneder find if you open the menu. i think its hilarous so thats why its not fixed yet.”
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

@@ -1,0 +1,14 @@
+RD02 / Original aiming, shot and reload on the Linux host
+Source: Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Resident_Evil_Degeneration_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 8–16
+Source SHA-256: 9219f8d377e6f1c22b6dcc9eb35a01e71c5e7f14a6b4bec9265b4d5895565e25
+
+REAL GAME EXECUTION — LINUX HOST
+Fresh campaign entered from the original menus and opening dialogue.
+3D movement and turning accepted simultaneous held directions.
+Original B entered laser aiming; another B fired, ammo 15 -> 14.
+Original A reloaded to 15. Original paused/map/inventory/options interfaces
+were observed. This does not claim an enemy encounter or campaign completion.
+Original game audio was generated and captured through a private audio sink;
+statistics and a 10-second sample are retained in evidence/.
+This host core differs from the unchanged Android core.

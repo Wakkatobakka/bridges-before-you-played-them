@@ -1,0 +1,28 @@
+SIM05 / A real keypad and action controls around the same game
+Source: Sims_2_Pets_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Sims_2_Pets_Bridge_v0.1.2_PRIVATE/UI_INTEGRATION_v0.1.2.txt
+Selected lines: 9–31
+Source SHA-256: 3345340d232e903644df6d2ffc2d30eadadcb80f2a11c3cf4f345a027b514537
+
+Normal (four cardinal directions; no guessed diagonal behavior)
+  Up -1, Down -2, Left -3, Right -4, pad center -5.
+  Left group: L SOFT -6, * 42, 0 48.
+  Right group: ACTION -5, R SOFT -7, # 35.
+  Two separately touch-owned ACTION (-5) targets for two-handed convenience;
+  releasing one does not release the other while held.
+
+Original keypad replaces normal pad (no separate D-pad needed):
+  1=49, 2=50/UP, 3=51
+  4=52/LEFT, 5=53/FIRE, 6=54/RIGHT
+  7=55, 8=56/DOWN, 9=57
+  *=42, 0=48, #=35
+  L soft=-6 and R soft=-7 are independently available on either side.
+  MIDP getGameAction maps number 2/4/6/8/5 to original UP/LEFT/RIGHT/DOWN/FIRE.
+  Numeric mode removes duplicate * 0 # action columns to reduce clutter.
+  The touch deck is made by the shared BridgeControls.makeKeypad standard
+  component with an alternate reduced softkey action spec.
+
+Physical original mappings remain from v0.1.1:
+  Android DPAD_UP/-1, DPAD_DOWN/-2, LEFT/-3, RIGHT/-4,
+  DPAD_CENTER/ENTER/BUTTON_A/-5; KEYCODE_STAR/42, POUND/35,
+  MENU/BUTTON_X/-6, BUTTON_B/BUTTON_Y/-7, numeric 0..9/ASCII 48..57.
+  Android KEYCODE_BACK is NEVER mapped to guest -7.

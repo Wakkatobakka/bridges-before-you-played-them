@@ -1,0 +1,11 @@
+AE05 / An EXN is not the complete original runtime input
+Source: Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Age_of_Empires_II_ExEn_Bridge_v0.1.0_PRIVATE/VERIFICATION.txt
+Selected lines: 40–45
+Source SHA-256: 071618f768b8d212a3c2100d28b75fb632999dd5e51af260f1ff81bfe096b6a6
+
+PASS — Strict inventory hashes every original asset, retained Android icon asset,
+notices and compatibility library. Exact EXN recognition and stable game identity
+embedded before signing. Game/firmware/font data absent from native ELF.
+EXN-only public source reconstruction is BLOCKED: requires original platform
+classes exen_builtins.bin and original font_5x8.bin, neither present in the EXN.
+No production Omni import/host or cumulative public-export acceptance was run.

@@ -1,0 +1,8 @@
+DV10 / Several earlier bridges supply compatibility patterns
+Source: 23-Driv3r_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Driv3r_Bridge_v0.1.4_PRIVATE/THIRD-PARTY-NOTICES.txt
+Selected lines: 3–5
+Source SHA-256: b091c8702333d8433529691d421b01f64f1060c374b9ccaec0066174fd7d5e74
+
+Compatibility implementation reuses the BREW runtime, Android input ownership, deadline scheduling and presentation patterns supplied with the Resident Evil Genesis, Rush Marine, Contra and later BioShock / Katamari bridges. This build adds title-specific older BREW ABI support without translating or replacing the original game logic.
+
+Host system-font fallback pixels derive from DejaVu Sans Mono. Their license is retained in app/assets/DejaVu-NOTICE.txt. The fallback is a host BREW display service; it is not the original handset font. Original game bitmaps, cars, maps, characters and music are preserved.

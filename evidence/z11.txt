@@ -1,0 +1,23 @@
+Z11 — Zeebo face buttons are not a phone keypad
+Evidence type: Later checkpoint summary
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / README_FIRST.md
+Selected source lines: 14-27
+
+
+
+- Header: genuine Zeebo launcher image, RESIDENT EVIL 4, ZEEBO / BREW,
+  one-tap SAVE REPORT, three-dot utilities (control help, restart, exit).
+- Renderer: the existing live FrameCanvas unchanged in content, letterboxed
+  at original 640 x 480 (4:3). Not stretched to an arbitrary portrait rectangle.
+- Controls: original 4-way Zeebo D-pad UIDs, thumb sliding and owned touch;
+  face buttons 1-4 remain a 2x2 cluster, ZL, HOME and ZR remain distinct.
+  The labels 1-4 are four controller **face** buttons, NOT a telephone numeric
+  keypad, so no inappropriate original-keypad alternate mode was created.
+- Analog sticks are still NOT implemented; there is no fake analog input and
+  no invented controller mappings. Full gameplay and camera controls remain
+  unverified. Verified Zeebo HID codes originate in BrewRuntime.java.
+- Kit input ownership safely handles duplicate touches and touch release on
+  pause/exit; Android system Back triggers original guest teardown and returns
+  to the launching Activity / Omni if launched by it. It is not the game HOME.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

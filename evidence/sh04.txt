@@ -1,0 +1,20 @@
+SH04 / The original hallway saves and reloads
+Source: Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Silent_Hill_Orphan_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 36–50
+Source SHA-256: 4db03fc56df7529d6675ece80c98c513f62d8554cf92ea0c22451ee7c8d41a29
+
+ORIGINAL EXECUTION
+Executed the supplied original M / a–i classes with all original assets and chunks.
+The production Omni j2me transformer redirects Class.getResourceAsStream and
+inserts probes into existing exception handlers. No gameplay logic, rooms,
+scripts, puzzle progression, combat rules or assets were reconstructed.
+Host replay and APK builds produced identical adapted original class bytes.
+
+Observed genuine original language selection, sound screen, title/menu, tutorial,
+Ben's introduction, the orphanage hallway, cursor movement and the Gun inventory.
+Invoked the original native Save command, observed Game saved, shut down the
+MIDlet and its workers, restarted, selected Saved game and rendered the saved
+hallway again. See saved_live.png, inventory_direct.png and loaded_room.png.
+The save receipt records hashes without packaging the test profile.
+Observed original MIDI requests; audio bytes were retained for diagnosis.
+This does not establish audible output or completion of the game.

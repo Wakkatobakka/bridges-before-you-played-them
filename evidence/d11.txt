@@ -1,0 +1,14 @@
+D11 — Host pause and audio pause move together
+Evidence type: Phone runtime report
+Source: Dirge-Bridge-0.2.1-report.txt
+Selected source lines: 1079-1083
+
+
+
+92.958  SESSION PAUSE   Paused (background, menu, surface, or user)
+  92.974  AUDIO SESSION PAUSE Host paused; playbackHead=192000 audibleFrames=3716904 streamFrames=3716904
+  93.872  SESSION PAUSE   Resumed
+  93.873  CONTROL CONTEXT Right pad context unavailable / game-owned
+  93.892  AUDIO SESSION RESUME Host resumed; playbackHead=192960
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

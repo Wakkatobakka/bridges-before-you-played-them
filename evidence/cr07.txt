@@ -1,0 +1,8 @@
+CR07 / Host efficiency did not establish phone cooling
+Source: 11-Contra_4_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Contra_4_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 27–29
+Source SHA-256: 3694363e1d25e46640b1467f2f2155e0336239771fd43f6472817738c3af1490
+
+The user supplied a v0.1.0 Samsung S25 Ultra recording and report: gameplay appeared responsive, the device felt hot, and the report contained no host, guest, save or Android audio error. Three sparse battery readings of 37.8 C do not measure skin or SoC temperature. The supplied evidence informed this update.
+
+v0.1.1 verification was performed on a host JVM and the built APK. Its physical-device temperature, power, audible playback and later stages were not measured here. Host CPU comparisons do not establish a phone heat reduction.

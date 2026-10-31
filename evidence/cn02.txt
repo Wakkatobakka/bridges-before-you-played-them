@@ -1,0 +1,28 @@
+CN02 / Inherited racing evidence is not a new phone run
+Source: Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Crash_Nitro_Kart_Bridge_v0.1.1_PRIVATE/VERIFICATION.txt
+Selected lines: 43–65
+Source SHA-256: c09f14e007024ac0199adc7e3ab22bb7968a0ed598bace758fcd959258cf7d46
+
+The actual Crash MainActivity and compiled APK resources passed a further
+native-graphics framework test: cold create/attach, early handler registration,
+measure/layout/draw at three phone widths, visible mode switching, constant
+renderer parent/dimensions and original aspect ratio, pause/destroy cleanup.
+Only the guest boot executor was deferred; no guest execution was simulated.
+Android framework checks are not physical phone or original game verification.
+
+RETAINED ORIGINAL GAME EXECUTION
+v0.1.0 Linux host EKA2L1 master-6ac519122 evidence shows the original main menu,
+mode/character/track selection, original race countdown and 3D racing/HUD.
+Native 5 menu-confirm/acceleration and original selection-key pause were
+observed. These screenshots remain in evidence/host. No new game run was
+required for this UI-only update. Linux and Android native cores are distinct
+builds; host execution does not prove equivalent Android behavior.
+Host audio used a null device and is not audible audio verification.
+No host test saves have been copied into the clean Android seed.
+
+PHONE TEST PENDING
+No physical Android device was connected for this update. Actual thumb comfort,
+font scale/safe insets, live touch plus physical controls, original inputs,
+Back to Omni, Downloads export, audio, save/reload and background/resume still
+need owner device evidence. No completed race/campaign, multiplayer, sustained
+performance, heat or full save/load claim is made.

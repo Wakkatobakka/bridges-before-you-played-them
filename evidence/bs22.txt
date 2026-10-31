@@ -1,0 +1,20 @@
+BS22 / Report export while game worker is blocked
+Source: BioShock_3D_Bridge_v0.2.2_PRIVATE_FULL_CHECKPOINT.zip / BioShock_3D_Bridge_v0.2.2_PRIVATE/VERIFICATION.txt
+Selected lines: 15–29
+Source SHA-256: 3969970cf80ae484b9b2b069e3e0426932a5500dbff453a20f8aaccdc0773157
+
+PASS5 BioShock Activity/custom-control Android API34 framework scenarios:
+- Cold startup before content attachment; both modes; same renderer parent/bounds.
+-360x640,384x832,412x915,915x412, safe insets,130% font; square pads,>=48dp
+  buttons, fitted labels and all original keypad/native softkey controls.
+- Independent contacts and hardware/touch aliases across switching/pause/Back.
+- Actual root MotionEvent splitting: forward+turn+attack in both modes,
+  releasing either direction first without releasing the other/action; cancel.
+- Per-mode essential original key coverage and larger primary action.
+- Utility focus does not suspend or release a physical hold; actual key-up
+  through the shared utility dialog releases it; real pause still cleans up.
+Recording controller and Android fixture icon; no original gameplay simulated.
+
+PASS1 production-controller/BridgeReports Android framework scenario: independent
+MediaStore writer completes with exact published metrics while the real worker
+is deliberately blocked. Export provider is a framework fixture, not a phone.

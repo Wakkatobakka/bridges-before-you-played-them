@@ -1,0 +1,26 @@
+T17 — The new 0.0.19 package has separate phone checks
+Evidence type: Verification summary
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / FINAL_VERIFICATION.txt
+Selected source lines: 51-67
+
+
+
+ORIGINAL EXECUTION
+Current original-game host regression passes the original title and camera
+prompts, Codec141.12, Utility Room, actual Snake coordinate movement, decoded
+channel1 nonzero PCM processing, configured cancellation and no guest callback
+fault. It uses unchanged production AndroidAudioHost with a monotonic silent
+platform model; it emits no sound and is not physical-phone evidence.
+See evidence/gameplay-v019/ and evidence/gameplay-v019-run.log.
+Yield contract passes10759 register/flags/input/count checks; zero-request yield
+never incurs the removed title-dependent timed wait. See evidence/yield-pacing-v019/.
+
+PHYSICAL PHONE ACCEPTANCE STILL PENDING
+Current APK installation/cold launch, thumb comfort, actual font/display/safe-area
+fit, original live graphics/audio, saves/Continue, pause/resume, real Downloads
+export and Omni/caller return require the owner's phone. Host/framework checks
+are not substituted for those. Later missions/completed levels and hardware
+camera capture remain unverified. The original unavailable-camera fallback is
+preserved. Historical v17 phone video/report remain historical evidence.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

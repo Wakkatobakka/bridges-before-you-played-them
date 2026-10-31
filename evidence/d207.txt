@@ -1,0 +1,8 @@
+D207 / Production preparation classes and pure interpretation
+Source: Doom_II_RPG_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Doom_II_RPG_Bridge_v0.1.1_PRIVATE/OMNI_HANDOFF_NOTES.txt
+Selected lines: 11–13
+Source SHA-256: 9496a6f077187d2334fe36d5b9dbffe8f35266cac790deedcd97f665117c389b
+
+Tests run against the unchanged Omni 0.5.7 production intake/export/preparation implementation with its explicit host service adapters. No com.wakka.doom2rpg backfill rule is present or added. Private APK intake, exact original ZIP recognition, readiness, original/derived stripping, fresh Public reconstruction, native save sentinel, remove/restart/reimport, second unrelated public export and carry-forward all pass. Temporary test exports were not published or delivered as Omni releases.
+
+The game is pure Java ARM/Thumb interpretation in this bridge; it needs no native phone firmware or external EKA2L1 seed. There are no native .so libraries or original guest Java/DEX classes in the APK. The source and signing data are outside the APK.

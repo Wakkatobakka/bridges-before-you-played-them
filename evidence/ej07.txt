@@ -1,0 +1,12 @@
+EJ07 / Fifty native codec outputs reproduced
+Source: 02-Earthworm_Jim_Bridge_v0.1.0_PRIVATE_CHECKPOINT.zip / Earthworm_Jim_Bridge_v0.1.0_PRIVATE/evidence/native-codec/capture_provenance.json
+Selected lines: 23–29
+Source SHA-256: 21cc46abb0298fdfa44c0df03bdfddc5a7cd1a06251d2caef1b72322a42e9066
+
+  "validation": "tools/prepare_codec_cache.py compares every retained native .original byte sequence against the generated cache; all 50 passed",
+  "scope": "Native codec calls reached by boot through the sound prompt; no all-game equivalence claim",
+  "reproduction_validation": {
+    "captured_calls": 50,
+    "all_retained_bodies_and_native_outputs_equal": true,
+    "reproduction_script": "tests/capture_native_codec.py",
+    "result": "Fresh original ARM run reproduced all 50 retained compressed bodies and decoded outputs byte for byte"

@@ -1,0 +1,41 @@
+T14 — Remove the title-artwork sleep from the scheduler
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.18.md
+Selected source lines: 3-34
+
+
+
+The v17 phone report identifies a live scheduling defect rather than a stopped
+guest. At present 2654, immediately after VIEW key 14, a first-person gameplay
+frame satisfies a broad title-color heuristic. `titleScreenCaptured` then stays
+true for the rest of the session. The old DeviceYield path sleeps 2 ms whenever
+that flag is true. This mixes a diagnostic image classifier with execution.
+
+The original software renderer yields repeatedly during work. The retained
+trace samples every 256th yield after the first eight. Ten late sampled markers
+span 2,304 yields across 50 presents: 46.08 yields/present and 92.16ms of requested
+sleep/present, excluding guest work and scheduler overshoot. Intervals imply
+73.14–128ms added sleep/present. The linked original scheduler callsites include
+explicit zero requests. Other paths contain positive requests; this release
+does not expand or claim complete timed/special DeviceYield ABI behavior.
+
+The supplied recording independently shows12–15 visible changes/s before the
+armed-view transition around 13.4s, then 3–4/s and 4–5/s after returning to third
+person. This is guest-image cadence, not exact presents. Encoded recorder frame
+rate differs. The hidden present counter and lossy recording prevent assigning
+exact present 2654 to a video timestamp. The report/code and persistent video
+behavior strongly agree on the mechanism; they are not a physical v18 benchmark.
+
+## Repair
+
+DeviceYield still pumps the original audio callbacks, performs `Thread.yield()`,
+advances the guest return PC and records the serviced call. It no longer sleeps
+according to title artwork recognition. Original timer, input, callback ABI,
+rendering, memory and game binary behavior remain.
+
+Title diagnostics use a bounded fingerprint of the original title artwork.
+The previous matcher scanned 76,800 pixels, boxed colors into a HashSet and could
+accept lit gameplay scenery. The new recognition is checked against retained
+original title and non-title scenes. It has no scheduling role.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

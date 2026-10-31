@@ -1,0 +1,16 @@
+UP07 / Original save/load retains its restrictions
+Source: Uprising_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Uprising_Bridge_v0.1.2_PRIVATE/evidence/baseline-v0.1.0/VERIFICATION.txt
+Selected lines: 24–34
+Source SHA-256: 54fffe37e4dded361f01af79b46d9f81da43a266981571e6c3df079fa325c140
+
+PASSED — SAVES
+The original pause-menu Save operation wrote the original game's records.
+A new JVM then started a fresh game session, used the original Pause > Load
+path and displayed the original "Game load complete" confirmation.
+Persisted plot flag bo=2 and room bg=14 were restored. Saved camera position
+1821/1032 resumed at 1824/1030. Exact states and screenshots are preserved
+in evidence/reload-final and evidence/reload-acceptance.json.
+The game correctly refused saving during an earlier dialogue sequence;
+that restriction was left intact.
+Independent RMS checks passed a fresh-JVM byte-exact reload and 300
+unchanged setRecord calls without additional disk writes.

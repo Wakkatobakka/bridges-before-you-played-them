@@ -1,0 +1,8 @@
+WT01 / The original EN filename does not supply English Witcher text
+Source: Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Witcher_Crimson_Trail_Bridge_v0.1.2_PRIVATE/evidence/original_v0.1.0_docs/IMPLEMENTATION.txt
+Selected lines: 44–46
+Source SHA-256: 7da6724c104ff10a4b8cc9852ba5a81785445f693279537f46c87887aca95e11
+
+The EN filename is misleading: original game story/menu/help text decoded from
+/r is Russian. English text for unrelated promotional titles in /r is not an
+English Witcher language pack. No built-in English Witcher choice was found.

@@ -1,0 +1,522 @@
+[
+  {
+    "id": 1,
+    "title": "Age of Empires II Mobile",
+    "platform": "ExEn",
+    "group": "ExEn",
+    "edition": "English · V01.00.50",
+    "history": "age-of-empires-ii",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 checkpoint"
+  },
+  {
+    "id": 2,
+    "title": "Age of Empires III",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "English · Nokia 128×128 · v1.0.2",
+    "history": "age-of-empires-iii",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 3,
+    "title": "Banjo-Kazooie: Grunty’s Revenge Missions",
+    "platform": "ExEn",
+    "group": "ExEn",
+    "edition": "",
+    "history": "banjo-kazooie-exen",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 4,
+    "title": "Biohazard: The Episodes",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "Japanese · offline edition",
+    "history": "biohazard-the-episodes",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.4"
+  },
+  {
+    "id": 5,
+    "title": "BioShock 3D",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "bioshock-3d",
+    "evidence_state": "Written history",
+    "history_window": "0.1.5 → 0.2.2"
+  },
+  {
+    "id": 6,
+    "title": "Brothers in Arms",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "brothers-in-arms",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.3"
+  },
+  {
+    "id": 7,
+    "title": "Chokkan Crash",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "",
+    "history": "chokkan-crash",
+    "evidence_state": "Written history",
+    "history_window": "0.0.3 → 0.0.8"
+  },
+  {
+    "id": 8,
+    "title": "Contra 4 Redux",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "contra-4-redux",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.3"
+  },
+  {
+    "id": 9,
+    "title": "Crash Bandicoot",
+    "platform": "ExEn",
+    "group": "ExEn",
+    "edition": "English · original v1.9",
+    "history": "crash-bandicoot-exen",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 10,
+    "title": "DeadShot",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "",
+    "history": "deadshot",
+    "evidence_state": "Written history",
+    "history_window": "0.0.1 → 0.1.4"
+  },
+  {
+    "id": 11,
+    "title": "Digital Devil Story: Megami Tensei",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "",
+    "history": "megami-tensei",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 12,
+    "title": "Dirge of Cerberus: Lost Episode",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "English 1.0 patch",
+    "history": "dirge",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.3.1"
+  },
+  {
+    "id": 13,
+    "title": "DOOM II RPG",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · LG AX830",
+    "history": "doom-ii-rpg",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 14,
+    "title": "DOOM RPG",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "doom-rpg",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 15,
+    "title": "Dragon Island",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · Macrospace v1.0.2 · 240×320",
+    "history": "dragon-island",
+    "evidence_state": "Written history",
+    "history_window": "0.1.1 checkpoint"
+  },
+  {
+    "id": 16,
+    "title": "Dragon Sword",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · v1.0.0 · 240×320",
+    "history": "dragon-sword",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 17,
+    "title": "Driv3r",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "driv3r",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.4"
+  },
+  {
+    "id": 18,
+    "title": "Duke Nukem 3D",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "duke-nukem-3d",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 19,
+    "title": "Earthworm Jim: Special Edition",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "earthworm-jim",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 20,
+    "title": "Final Fantasy VII: Snowboarding",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "English · offline edition",
+    "history": "ffvii-snowboarding",
+    "evidence_state": "Written history",
+    "history_window": "Early renderer → October 4 feedback"
+  },
+  {
+    "id": 21,
+    "title": "God of War: Betrayal",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "Nokia 352×416 · v1.4.58 · six languages",
+    "history": "god-of-war-betrayal",
+    "evidence_state": "Written history",
+    "history_window": "0.1.1 → 0.1.3"
+  },
+  {
+    "id": 22,
+    "title": "Kingdom Hearts V CAST",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "kingdom-hearts-vcast",
+    "evidence_state": "Written history",
+    "history_window": "Initial findings → 0.1.1"
+  },
+  {
+    "id": 23,
+    "title": "Mega Man: Rush Marine",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · v1.1.11",
+    "history": "rush-marine",
+    "evidence_state": "Written history",
+    "history_window": "0.0.1 → 0.0.10"
+  },
+  {
+    "id": 24,
+    "title": "Metal Gear Solid Mobile",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "metal-gear-solid-mobile",
+    "evidence_state": "Written history",
+    "history_window": "0.0.2 → 0.0.18, with a later shell"
+  },
+  {
+    "id": 25,
+    "title": "Monster Hunter i",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "English patch and Japanese · two editions",
+    "history": "monster-hunter-i",
+    "evidence_state": "Written history",
+    "history_window": "0.0.4 → 0.1.4"
+  },
+  {
+    "id": 26,
+    "title": "Mutant Alert",
+    "platform": "ExEn",
+    "group": "ExEn",
+    "edition": "English · v1.2",
+    "history": "mutant-alert",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 27,
+    "title": "Nowhere",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "English · Sony Ericsson K790",
+    "history": "nowhere",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 28,
+    "title": "Orcs & Elves II",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "orcs-and-elves-ii",
+    "evidence_state": "Written history",
+    "history_window": "Raw intake → 0.1.1"
+  },
+  {
+    "id": 29,
+    "title": "Quake II",
+    "platform": "Zeebo",
+    "group": "Zeebo",
+    "edition": "Portuguese (Brazil)",
+    "history": "quake-ii",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.4"
+  },
+  {
+    "id": 30,
+    "title": "Ratchet & Clank: Going Mobile",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "",
+    "history": "ratchet-clank-going-mobile",
+    "evidence_state": "Written history",
+    "history_window": "Original intake → 0.1.3"
+  },
+  {
+    "id": 31,
+    "title": "Resident Evil 4",
+    "platform": "Zeebo / BREW",
+    "group": "Zeebo",
+    "edition": "Spanish / Portuguese",
+    "history": "re4-zeebo",
+    "evidence_state": "Written history",
+    "history_window": "0.1.2–0.1.9 record + later phone play"
+  },
+  {
+    "id": 32,
+    "title": "Resident Evil: Genesis",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "resident-evil-genesis",
+    "evidence_state": "Written history",
+    "history_window": "0.2.0 → 0.6.2"
+  },
+  {
+    "id": 33,
+    "title": "Rockman: Great Adventure on 5 Islands",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "English patch",
+    "history": "rockman-five-islands",
+    "evidence_state": "Written history",
+    "history_window": "0.1.7 → 0.3.6"
+  },
+  {
+    "id": 34,
+    "title": "Rolling with Katamari",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "",
+    "history": "rolling-with-katamari",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.4"
+  },
+  {
+    "id": 35,
+    "title": "Silent Hill: Orphan",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "240×320 · six original languages",
+    "history": "silent-hill-orphan",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 36,
+    "title": "Sonic Jump",
+    "platform": "DoJa",
+    "group": "DoJa",
+    "edition": "English patch",
+    "history": "sonic-jump",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 checkpoint"
+  },
+  {
+    "id": 37,
+    "title": "South Park",
+    "platform": "ExEn",
+    "group": "ExEn",
+    "edition": "English · 13 original minigames",
+    "history": "south-park-exen",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 38,
+    "title": "Spider-Man 2 3D",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · NY Rooftops",
+    "history": "spider-man-2-3d",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 39,
+    "title": "Spider-Man: Doc Ock",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "Spanish · Spider-Man VS Doc Ock · Sony Pictures · v6.2.20",
+    "history": "spider-man-doc-ock",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 40,
+    "title": "The Sims 2: Pets",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "v4.4.44",
+    "history": "the-sims-2-pets",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 41,
+    "title": "The Witcher: Crimson Trail",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "Russian · Nokia N73",
+    "history": "witcher-crimson-trail",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 42,
+    "title": "Resident Evil: Uprising",
+    "platform": "J2ME",
+    "group": "J2ME",
+    "edition": "Glu Mobile · v1.0.0",
+    "history": "resident-evil-uprising",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → later preparation report"
+  },
+  {
+    "id": 43,
+    "title": "Wolfenstein RPG",
+    "platform": "BREW",
+    "group": "BREW",
+    "edition": "English · v7.1.32",
+    "history": "wolfenstein-rpg",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.4"
+  },
+  {
+    "id": 44,
+    "title": "Ashen",
+    "platform": "N-Gage",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "ashen",
+    "evidence_state": "Written history",
+    "history_window": "October 19, 2026 · 0.1.3–0.1.5"
+  },
+  {
+    "id": 45,
+    "title": "Sonic N",
+    "platform": "N-Gage",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "sonic-n",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 46,
+    "title": "Pocket Kingdom: Own the World",
+    "platform": "N-Gage",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "pocket-kingdom",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 47,
+    "title": "The Elder Scrolls Travels: Shadowkey",
+    "platform": "N-Gage",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "shadowkey",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.2"
+  },
+  {
+    "id": 48,
+    "title": "Crash Nitro Kart",
+    "platform": "N-Gage",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "crash-nitro-kart",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 49,
+    "title": "Bounce: Boing Voyage",
+    "platform": "N-Gage 2.0",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "bounce-boing-voyage",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  },
+  {
+    "id": 50,
+    "title": "Star Wars: The Force Unleashed",
+    "platform": "N-Gage 2.0",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "star-wars-force-unleashed",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 checkpoint"
+  },
+  {
+    "id": 51,
+    "title": "Resident Evil: Degeneration",
+    "platform": "N-Gage 2.0",
+    "group": "N-Gage",
+    "edition": "",
+    "history": "resident-evil-degeneration",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 checkpoint"
+  },
+  {
+    "id": 52,
+    "title": "Need for Speed: Carbon — Domine a Cidade",
+    "platform": "Zeebo",
+    "group": "Zeebo",
+    "edition": "",
+    "history": "nfs-carbon-zeebo",
+    "evidence_state": "Written history",
+    "history_window": "0.1.0 → 0.1.1"
+  }
+]

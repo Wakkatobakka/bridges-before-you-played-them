@@ -1,0 +1,63 @@
+CK07 / Five minigames, five control needs
+Source: 04-Chokkan_Crash_Bridge_v0.0.6_Preservation.zip / Chokkan_Crash_Bridge_v0.0.6_Preservation/docs/INPUT_MAPPING_V006.md
+Selected lines: 7–19, 21–41, 43–59
+Source SHA-256: 47e1959b9a2012f236d1223e8629676726cf21e4583e244bffb7dcfb07e69f15
+Context: Historical 0.0.6 control audit. The gesture description reflects its intended path; CK12 records the later discovery that draft and committed settings diverged on the phone.
+
+| Activity / original scene | Touch input | Original evidence |
+| --- | --- | --- |
+| Lobby (`lby.a`) | Left/right, SELECT | `b(c.f)` tests bits 16, 18 and 20. |
+| Skydiving (`par.d` / `par.f`) | Four-way steering, OK | `par.f.a(c.f)` consumes held direction bits 16–19 and lets both axes work together. |
+| Hammer throw (`ham.f`) | Repeated TAP presses, OK | `c.f.f()` increases power on keydown bits 10 (`*`),11 (`#`), or 0. `ham.f.b(c.f)` reads that power and uses bit 20 for power/angle timing. TAP alternates 10/11; holding does not generate repeated presses. |
+| Log sledding (`sno.d` / `sno.a`) | Left/right steering, OK | `sno.a.a(c.f)` tests held bits 16 and18. |
+| Dance (`dan.e` / `dan.c`) | Directional presses and diagonal chords, OK | KEY path `dan.c.b(c.f)` reads `c.f.i() & 983040` (bits 16–19), compares the exact chord, and advances the original prompt list. No invented dance action button. |
+| Silhouette quiz (`sil.a`) | BRIGHTEN, answers 1–9, OK | Static `q` is `{2,4,8,16,32,64,128,256,512}`: bits 1–9. BRIGHTEN sends bit 10, which drives the game's existing key power/brightness path. |
+| Original options/dialogs | Four-way pad, OK, original soft labels | `c.f.ai == 0` signals the original modal UI. `c.f.F()` uses up/down for option rows, left/right for values, and bit 20 for confirmation. The pad replaces hammer/quiz controls while this modal UI is active. |
+
+The lower soft keys retain original bits 21 and22. Their labels are taken from
+`Frame.setSoftLabel` and translated only for known original labels. A blank
+original label hides its button. This avoids presenting a guessed action.
+
+[... selected excerpt ...]
+
+## Motion
+
+The TOUCH/MOTION switch requests the original global control option:
+`c.t.c(2,1)` for KEY or `c.t.c(2,0)` for gesture. The request runs on the game
+thread before its next keypad poll. `c.f.c(...)` starts the game's own roll or
+shake reader for the current activity, rather than mapping accelerometer data
+to fake keypad movement. Menu/skydiving/sled/dance use roll; hammer/quiz use shake.
+
+The SH904i used camera motion tracking. Android supplies its accelerometer as
+an adaptation of that sensing path. Recentered roll/pitch changes feed the
+original `RollReader.getRollData()`; the game integrates those deltas, as its
+bytecode specifies. Tilt sensitivity reaches the original ±120 range at
+approximately 30 degrees from neutral. Filtered acceleration magnitude feeds
+the original 0–511 `ShakeReader.getShakeData()` range. Touch pad deltas and
+finite TAP pulses also feed these readers when motion mode is selected.
+
+Recenter requests call the original `c.f.r()` on the game thread, clearing the
+game's accumulated motion as well as the Android neutral point. Sensors stop
+on pause. On resume, their first fresh gravity sample establishes a new neutral
+before physical tilt contributes, preventing a phone moved in the background
+from becoming an unintended steering command.
+
+[... selected excerpt ...]
+
+## Scene detection and interaction
+
+The original game stores its active scene in a local variable; `c.f.p` is only
+a pending transition and is cleared at entry. Each actual scene's entry calls
+`Frame.setBackground`. That call's original stack identifies its class, and
+`ControlProfile` reads its singleton for stage-specific labels. The exact FSM
+fields are `par.d.p`, `ham.f.s`, `sno.d.o`, `dan.e.o`, and `sil.a.n`.
+
+The viewport always preserves the complete 240×320 original surface. Controls
+are below it, honor display insets, capture multiple fingers independently,
+show pressed state, and release on cancel, focus loss, pause, or profile change.
+Hardware directions/confirm are supported; X/Y map original `*`/`#` rhythm keys,
+Start maps original softkey 1, and B maps original softkey 2. Digits map directly.
+
+Desktop execution of the unchanged payload verifies these key/gesture paths.
+Physical accelerometer feel and all five complete minigames still require
+Android device testing. The report records scene, FSM stage, control mode,

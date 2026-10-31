@@ -1,0 +1,18 @@
+DI03 / Dedicated diagonal jumps and restoring a held direction
+Source: Dragon_Island_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Dragon_Island_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 20–32
+Source SHA-256: 7c1efb6022a282f6d1a9b16b5ff40aa723f948b2ee488a7bcfdc6bda3eaed6ea
+
+CONTROLS
+D-pad: run left/right, climb up/down. JUMP sends original 5; AXE sends original
+0. Holding a direction with JUMP sends the game's original diagonal 1 or 3.
+OK confirms. MENU / CLR sends the original Clear/menu input. Android Back closes
+the bridge and returns to its caller. The visible ORIGINAL KEYPAD button swaps
+the bottom controls inline; D-PAD RETURN switches back without restarting.
+Keypad digits 2/4/6/8 replace equivalent original arrows. Original softkeys,
+7/9/*/# are exposed faithfully, though this edition ignores those inputs.
+
+Controller: D-pad movement; A jump; X axe; B Clear/menu; Start OK; L1/R1 diagonal
+jumps. The shared UI retains independent touch/controller ownership. The game
+itself has a one-active-key handler. The adapter restores a still-held direction
+when another action ends rather than inventing simultaneous guest bit masks.

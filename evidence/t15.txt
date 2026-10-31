@@ -1,0 +1,16 @@
+T15 — From PRESS ANY KEY to Snake in the Utility Room
+Evidence type: Historical phone images
+Source: MGS preservation / Screenshot_20261004_015726.jpg + 1000098204.mp4
+
+Images inspected as pixels. The title screenshot is unchanged; the video still is a full original-size decoded frame with no crop, filters or reconstruction. No private text, contact information or machine paths are visible.
+
+0.0.13 original title screenshot: Screenshot_20261004_015726.jpg
+Image SHA-256: 56bf813e506e15a899948653a10fc99e37b68852885cb6e243bec0ef0f2e9f0b
+
+0.0.17 phone video: 1000098204.mp4
+Full decoded frame 1352, PTS 25.008478 seconds: Snake, Utility Room, minimap, original BaseHQ message and controls.
+This frame is after the recorded slowdown. It does not establish the cadence repair or the later 0.0.19 UI.
+Source MP4 SHA-256: 8a17cf8aed975b27cbfc975314c9d012912fde50edc42c18a2cb80d788e48c42
+Frame SHA-256: af531ad76240a2e020a63ef335dda54c6d365d5717b9c4e9121c441f71953a75
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

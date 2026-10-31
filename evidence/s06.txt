@@ -1,0 +1,22 @@
+S06 — The first original-bytecode proof is explicitly silent
+Evidence type: Initial checkpoint notes
+Source: DeadShot_Bridge_v0.0.1_Source.zip / README.txt
+Selected source lines: 3-8, 12-15
+
+
+
+First Android proof build for the preserved 2004 DoJa title DMC DEADSHOT.
+
+Current goals:
+- run the original DEADSHOTN505 / InitAll / connect bytecode unchanged
+- use the preserved .sp scratchpad as game data
+- implement only the DoJa APIs actually referenced by this title
+
+[... selected excerpt ...]
+
+Known limitations of v0.0.1:
+- MLD audio is stubbed/silent
+- online ranking/network services are stubbed
+- graphics/input behavior is an initial compatibility pass and needs device validation
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

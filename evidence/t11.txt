@@ -1,0 +1,17 @@
+T11 — Original Utility Room movement appears in physical recordings
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.17.md
+Selected source lines: 7-14
+
+
+
+## Phone baseline and performance
+
+The supplied v16 Samsung SM-S938U/API36 report remains active with no callback
+fault or audio-host failure. Both phone recordings show original Utility Room
+movement and Codec/menu operation with nonzero recorded audio. OCR of the original
+FRAMES counter measures room presentation around2.5–4.7/s and Codec19.6/s.
+These recordings/report are separate timelines. Signal measurements do not prove
+subjective speaker loudness/pitch or flawless playback.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

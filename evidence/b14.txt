@@ -1,0 +1,24 @@
+B14 — The later importer and progress saving have their own limits
+Evidence type: Later verification summary
+Source: 15-Rush_Marine_Bridge_v0.1.2_Preservation_PRIVATE.zip / verification/VERIFICATION_v0.1.2.md
+Selected source lines: 28-42
+
+
+
+These are host/JVM checks. The supplied v0.1.1 phone screenshots confirm launcher/install/file-picker access and the failed import; no v0.1.2 Android device or emulator run was available for this pass.
+
+## Historical physical evidence
+
+The retained v0.0.9 S25 Ultra / Android 16 report records 454,759,078 guest instructions, 11,121 display updates, 616 key events, 18 PNG decodes with zero failures, zero unhandled interface calls during that captured run, and four Android audio starts with zero recorded failures. The private preservation package retains that report and recording through the original development archive.
+
+This evidence establishes that earlier physical run. It does not promote the new Android importer or certify every game level/audio file.
+
+## Outstanding phone scope
+
+v0.1.2 update/install, successful phone import, imported game startup, Android audio decoder output, lifecycle/report UI acceptance, other Android models and a full playthrough remain device checks. See `TESTING/ACCEPTANCE_TESTS.md`.
+
+Save write-through remains unfinished. Live-session resume is not saving progress across process restarts. QCP playback is device dependent; all QCP resources have not been individually device-validated.
+
+No general BREW compatibility claim is made.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

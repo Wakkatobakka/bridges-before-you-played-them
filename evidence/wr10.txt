@@ -1,0 +1,8 @@
+WR10 / A bitmap is not its transform interface
+Source: Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE_CHECKPOINT.zip / Wolfenstein_RPG_Bridge_v0.1.4_PRIVATE/evidence/baseline-v0.1.2/TECHNICAL_HANDOFF.txt
+Selected lines: 7–9
+Source SHA-256: df6a9bd55888947556439da0dadcbe071ebbd95ca97fb88d21ed4279034a5160
+
+The supplied v0.1.1 device report records an unsupported interface cls=0x7E000001, offset 0x10, during a native timer callback. The earlier bridge returned the same bitmap object for QueryInterface(0x01001029), although that IID is ITransform. The later native transform call therefore reached an IBitmap vtable with the wrong method layout. v0.1.2 supplies a separately typed ITransform view retaining the original backing bitmap. Its native signed 8.8 matrix blit performs center rotation and mirroring with pixel-center sampling, source/destination clipping and transparent compositing. It keeps reference counts and backing DIB bytes coherent, including overlapping source/destination use. The original executable and game state are not patched.
+
+The supplied v0.1.1 video starts after the combat freeze. It shows the stopped frame but does not capture the initial trigger. The short original first-guard host route reproduces the same fault with matching object/registers and LR00117BC0. The native matrix is [0,-256,256,0], a transparent 16x16 quarter rotation at destination (-1,17). The release runtime passes this route and further combat: original player HP100->97->94->91, pistol ammo10->6, guard HP40->24->9->0 and corpse flag, then movement Y1376->1312 with continuing timers. Evidence includes the pinned v0.1.1 comparison and current runtime hash. VERIFICATION.txt records the tested scope. No physical v0.1.2 run has been supplied.

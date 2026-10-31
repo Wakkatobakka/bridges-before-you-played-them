@@ -1,0 +1,32 @@
+Z04 — A real EGL buffer exists before the scene appears
+Evidence type: Phone runtime report
+Source: RE4_Zeebo_Bridge_v0.1.10_PRIVATE_FULL_CHECKPOINT.zip / Evidence/v013_physical_phone_report.txt
+Selected source lines: 16-22, 26-38
+
+
+
+Guest EGL initialization failed: false
+Android hardware EGL context current: true
+Original guest EGL swap requests completed: 4
+GPU pixels with non-black RGB: 0
+Original Zeebo GLES draw calls: not yet translated; no 3D gameplay claimed
+Native Zeebo HID inputs: unimplemented
+Fault: none
+
+[... selected excerpt ...]
+
+--- Android hardware EGL driver ---
+Android EGL14 hardware path; no synthetic GLES calls
+eglGetDisplay original DIB=0x10006d0 EGL error=0x3000
+eglInitialize version=1.5 ok=true EGL error=0x3000
+Original Zeebo EGL attributes=[12324, 5, 12323, 6, 12322, 5, 12325, 16, 12339, 5, 12344]
+eglChooseConfig count=1 exact=true ok=true EGL error=0x3000
+eglCreateContext ES1 share=0 EGL error=0x3000
+eglCreatePbufferSurface 640x480 original DIB=0x10006d0 EGL error=0x3000
+eglMakeCurrent ok=true EGL error=0x3000
+eglSwapBuffers #1 ok=true nonblack=0 EGL error=0x3000
+eglSwapBuffers #2 ok=true nonblack=0 EGL error=0x3000
+eglSwapBuffers #3 ok=true nonblack=0 EGL error=0x3000
+eglSwapBuffers #4 ok=true nonblack=0 EGL error=0x3000
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

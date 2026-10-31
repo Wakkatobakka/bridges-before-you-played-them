@@ -1,0 +1,45 @@
+OE05 / The later shell keeps the native direction and action codes
+Source: Orcs_Elves_II_Bridge_v0.1.1_PRIVATE_CHECKPOINT.zip / Orcs_Elves_II_Bridge_v0.1.1_PRIVATE/README_FIRST.txt
+Selected lines: 31–43, 46–69
+Source SHA-256: 6e3fc8840b4825a5aa410860426e6e46145b1d5e2d579798725c1a561e8b922c
+
+ORIGINAL CONTROLS
+D-pad up/down: forward/back. Left/right: turn. 5 / OK: attack/talk/interact.
+1 / 3: strafe left/right. 7 / *: next/previous weapon. 9: wait a turn.
+#: map. 0: game menu/back. CLR: previous screen.
+Combined contacts deliver the original separate key events; the original
+turn-based game determines the response. No analog or diagonal game movement
+is manufactured. The original numeric direction codes and arrow codes remain
+distinct. No guessed softkeys were added.
+
+PRESERVATION
+Original BrewRuntime.java and all 118 original/converted audio assets are
+byte-identical to the supplied v0.1.0 checkpoint. Graphics, audio decoding,
+original save serialization, timer policy and compatibility responses remain.
+
+[... selected excerpt ...]
+
+VERIFICATION COMPLETED ON THE HOST
+- APK compiles, DEX includes the real shared UI, v2/v3 signatures verify, and
+  the signer matches v0.1.0. Android 8+ / API 26; target API 35; no Internet.
+- Existing original ARM smoke: 246,390,112 instructions, nonblack framebuffer,
+  eight original audio events matched, five original save/config files restored.
+- Native key probe: move+turn+action, both first-release orders, all eight
+  additional action keys accepted by the original handler without a guest fault.
+- Twelve compiled shared-UI Android API 34 framework scenarios pass.
+- Four production Activity/control integration scenarios pass: cold construction,
+  both modes/renderer stability, three contacts, controller ownership, cleanup,
+  Android Back and startup fault callback; 20 measured orientation/mode/font
+  combinations (five sizes x two font scales x two modes). These UI checks use
+  a recording execution boundary and a framework icon fixture; they do not
+  simulate or claim original gameplay.
+- Three production controller/report framework scenarios pass: actual file
+  export through a controlled MediaStore provider while the game worker is
+  blocked, durable startup evidence, and failed external export retention.
+
+PHYSICAL PHONE CHECK STILL REQUIRED FOR THIS APK
+Check live thumb comfort, original game/menu/weapon/strafe inputs, combined
+holds and release order, both control modes, safe areas/font scale, sound,
+original save/load, background/resume, Android Back to Omni, and actual Downloads
+export. Host framework checks are not a physical-phone verification or a claim
+of completing the original campaign.

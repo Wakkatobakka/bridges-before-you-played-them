@@ -1,0 +1,12 @@
+SP08 / A read-only observer follows original scene and episode
+Source: 24-South_Park_ExEn_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / South_Park_ExEn_Bridge_v0.1.2_PRIVATE/README_FIRST.txt
+Selected lines: 46–52
+Source SHA-256: 06ce1acf0abb5ab71ffb8d12e58434c843cac466165df2b2e06bacc9b1c9762e
+
+WHAT CHANGED / WHAT IS ORIGINAL
+All three original inputs, native interpreter core, shared UI kit v1.1.2 source,
+launcher artwork and private signing key are byte-identical to v0.1.1. The VM
+frontend adds a read-only observer for original scene and episode fields. Java
+adds episode controls, corrected Android audio output, and richer diagnostics.
+Game code, graphics, original logic, timing and progress are not modified.
+Original SMS services have no live backend and are not represented as successful.

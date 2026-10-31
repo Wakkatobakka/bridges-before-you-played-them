@@ -1,0 +1,40 @@
+A04 — Before and after the clock change
+Evidence type: Phone measurement summary
+Source: Ashen_Movement_Timing_Finding_2026-10-19.txt
+Selected source lines: 97-127
+
+
+
+Before, v0.1.4-diagnostic:
+- 934 retained completed-frame samples; 438 (46.9%) had zero elapsed ticks.
+- Remaining samples had two ticks at a reported rate of 64 Hz.
+- All 92 retained guest key events matched the overlapping Java event log.
+- Neutral movement commands were zero while position continued changing.
+- One uninterrupted example was still moving 1.194 seconds after release.
+- Median observed completed-frame callback gap: 16.647 ms.
+
+After, v0.1.5-clock-trial:
+- 2,816 retained completed-frame samples across 61.757 seconds.
+- One zero-time sample: the first captured frame, stationary at startup.
+- All 2,815 subsequent captured samples had positive elapsed time.
+- Tick deltas: 2,621 samples of one tick, 192 of two ticks, two of three ticks.
+- All 120 retained Java dispatches matched guest input events.
+- Median observed completed-frame callback gap: 16.678 ms.
+- Seven clean high-speed grounded releases reached zero horizontal velocity
+  in 321.710-342.649 ms (median 326.537 ms).
+- Their velocities decreased monotonically and positions stayed fixed after
+  stopping. Two of the neutral intervals lasted 7.484 and 8.616 seconds.
+- Floor-contact state remained set through those braking sequences.
+- The user's gameplay video and assessment agreed with the measured repair.
+
+The seven release examples require: at least one second before the next
+movement press, zero movement commands throughout, initial raw horizontal
+speed >=45000, continuous floor contact through stopping, and the first
+sample within 50 ms of the guest release. Overlapping inputs, short gaps,
+airborne releases and already wall-stopped inputs are excluded. Positions
+and velocities are original fixed-point integers; no metres conversion is
+assumed. The histories are sampled/retained traces, not every event forever.
+
+SUPPORTED INTERNAL BRAKING EXPLANATION
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

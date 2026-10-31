@@ -1,0 +1,32 @@
+S10 — Restore contact behavior while keeping DeadShot’s own keys
+Evidence type: Checkpoint input-restoration notes
+Source: DeadShot_Bridge_v0.0.9_InputRestore_Source.zip / README.txt
+Selected source lines: 4-26
+
+
+
+Purpose
+-------
+v0.0.9 keeps the v0.0.8 Dirge-style visual layout, but replaces the v0.0.8
+free-sliding touch router with the known-good contact behavior taken from the
+supplied Dirge Bridge v0.2.4 APK while preserving DeadShot's verified v0.0.5
+native key map.
+
+What changed
+------------
+- DeadShot key codes are unchanged from v0.0.5:
+  keypad 1/2/3/4/6/7/8/9, *=10, #=11,
+  D-pad 16/17/18/19, OK=20, Soft1=21, Soft2=22.
+- A finger captures the control it starts on.
+- Non-navigation buttons stay tied to that original control instead of turning
+  into a neighboring button when the finger drifts.
+- Navigation remains intentionally slideable so held movement can change direction.
+- A small 4dp release/re-entry slop mirrors the supplied Dirge contact behavior.
+- Multi-touch is aggregated before DeadShot receives key transitions, preventing
+  duplicate presses/releases when two contacts resolve to the same native key.
+- ACTION_DOWN requests that parent views do not intercept the control gesture.
+- Releases are dispatched before replacement presses.
+- No A/B/C aliases were introduced.
+- Original DeadShot game JAR is unchanged.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

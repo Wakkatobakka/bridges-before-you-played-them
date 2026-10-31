@@ -1,0 +1,28 @@
+SK03 / The menu cleared hardware and could lose its release
+Source: Shadowkey_Bridge_v0.1.2_PRIVATE_CHECKPOINT.zip / Shadowkey_Bridge_v0.1.2_PRIVATE/evidence/history/v0.1.1/UI_INTEGRATION_v0.1.1.txt
+Selected lines: 14–36
+Source SHA-256: 37a054634d0b67dd13de9bb646f65c0ca1cfc415dd56115ec079997f77298946
+
+PLATFORM MAPPINGS
+Digits 0-9 retain Symbian scan values 48-57. Star=42. Hash=127, not J2ME 35.
+MENU L=164, CLEAR=1, MENU R=165. Original movement and hardware mappings remain.
+All touch buttons use the shared BridgeInput reference counting.
+
+LOCAL KIT INTEGRATION FIX
+The supplied v1.0.1 setKeypadVisible() correctly releases only touch inputs,
+but its openMenu() still called releaseAll(), clearing held hardware before
+its mode selector could run. The embedded app/src copy instead releases only
+touch input on menu entry. Transient menu/help dialogs forward key-up events
+for already-held hardware to BridgeInput.physicalUp(), preventing a release
+from being lost while a dialog owns input focus. New menu-navigation key presses
+are not injected into the running game by these listeners.
+The exact integration diff is evidence/ui-kit-integration.patch.
+app/ui-kit/ retains the unchanged supplied reference kit and compiled JAR;
+app/src/com/wakka/bridgeui/ is the actual compiled source, including this fix.
+
+BOUNDARY
+Game/runtime seed, native core, signer, icon, game initialization, original
+hardware mapping and report implementation are retained. The report banner
+now identifies bridge v0.1.1. No game expansion or runtime change is included.
+Previous host game-execution evidence belongs to v0.1.0. The unchanged payload
+supports continuity; this pass does not claim a new physical Android test.

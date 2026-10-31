@@ -1,0 +1,14 @@
+T07 — EOF was closing the Lua file after its first read
+Evidence type: Checkpoint investigation notes
+Source: MGS_Mobile_Bridge_v0.0.19_PRIVATE_FULL_CHECKPOINT.zip / TECHNICAL_HANDOFF_v0.0.15.md
+Selected source lines: 15-19
+
+
+
+## What actually unblocked New Game
+
+The apparent missing room/pool initialization was downstream of a file callback error. The original user-filesystem registration puts **EOF at index2 and Close at index5**. The previous bridge treated these as reversed. Every EOF check therefore closed the Lua resource after its first 512-byte read. The remaining script, including the original `SetStart` call, never ran; current/requested room remained empty, room loading returned unchanged, and the original pools remained NULL.
+
+Correcting that callback mapping allowed the original scripts to select/load FirstFloorUtility and initialize their own pools. The fix changes host routing; it does not insert a fabricated room name, scene, model, script result, or game-binary patch. `UserFileSystemContractProbe` passes **778 checks** against the original guest callbacks. Earlier NULL-pool traces are retained as discovery history, not the final runtime frontier.
+
+Reviewed excerpt or labeled archive comparison. Full private sources are not bundled.

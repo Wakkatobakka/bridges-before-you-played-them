@@ -1,0 +1,25 @@
+BS16 / The promising optimization did not survive its cleaner comparison
+Source: BioShock_3D_Bridge_v0.1.6_PERFORMANCE_READOUT.txt
+Selected lines: 13–32
+Source SHA-256: d6ea1a9b740668b95dd0e88fe4df852561ba3b0bd72b6843f0e6d5911029c8b1
+
+MEASUREMENTS — DESKTOP, NOT PHONE COOLING
+Variant                         Matched instructions   Thread CPU
+015, no-profiler confirmation    1,236,366,417           19.5525 seconds
+016, no-profiler confirmation    1,236,366,417           19.2732 seconds
+Difference:1.43%aggregate lessCPU; median paired0.64%. Eight alternating32-callback
+blocks after192warmup callbacks per version. Individual differences range from
+4.80%slower to9.10%faster. The descriptive median95%interval[-1.87,5.72]% includes
+zero, so this does not establish a dependable whole-game CPU improvement.
+
+A longer16pair run with JVM stack sampling showed5.70%aggregate lessCPU and
+6.87%median, but that result did not replicate robustly without profiling.
+The earlier6%progress observation described that sampled run; it is not the
+final unqualified performance result. No phone cooling, temperature, power or
+FPS improvement is asserted. The heat problem cannot yet be called solved.
+
+Development guest-PC samples identify real ARM texture/pixel/depth rendering
+work, not an established wait loop. Stack attribution highlights memory change
+tracking but does not quantify removable whole-program cost. Several additional
+safe candidates passed correctness tests but showed weak/negative CPU effects;
+they were excluded. Full raw results and reproducible tests are preserved.
