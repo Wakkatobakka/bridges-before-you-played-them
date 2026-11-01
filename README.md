@@ -10,7 +10,7 @@ I wanted these games back on my phone. A bridge gives an original game the runti
 
 Snowboarding put me inside Cloud’s chest before we got him recognizable—and upside down. Resident Evil 4 let me run around as a gun with no visible Leon. Ashen kept sliding after I released the controls, until we followed the problem down to the runtime clock.
 
-Those are some of the stories here. There’s a searchable game index, original screenshots, selected development records and downloadable receipts. The LEGION essay follows the fixes and discoveries we could carry from one game into another.
+Those are some of the stories here. There’s a searchable game index, original screenshots, selected development records and expandable receipts. The LEGION essay follows the fixes and discoveries we could carry from one game into another.
 
 Each chapter covers a particular window in the work. A failure in an old checkpoint doesn’t tell you the status of the latest release. Current downloads, installation and play information live with Omni Player.
 

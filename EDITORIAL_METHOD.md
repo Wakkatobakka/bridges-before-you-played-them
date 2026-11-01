@@ -24,7 +24,7 @@ Each chapter names the version window and surviving sources it covers. Its endin
 
 ## Traceability
 
-Numbered links open source-ledger exhibits. Verbatim excerpts give original source names and selected line ranges. Ellipses mark noncontiguous selections. Derived comparisons state their method. Plain-text downloads preserve the reviewed exhibits in an independently inspectable form.
+Numbered links open source-ledger exhibits. Verbatim excerpts give original source names and selected line ranges. Ellipses mark noncontiguous selections. Derived comparisons state their method. Expandable receipts keep the reviewed exhibits available alongside the story.
 
 Published excerpts are checked against their sources. The complete private documents stay outside the site; a hash can identify a source without distributing its bytes. Historical images carry source and capture labels, including distinctions between original phone recordings, host framebuffers and emulator windows.
 

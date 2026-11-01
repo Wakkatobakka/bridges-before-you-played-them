@@ -34,7 +34,6 @@ if(dialog&&typeof dialog.showModal==='function'){
   event.preventDefault();opener=link;
   const title=source.querySelector('.source-title').textContent;
   const body=source.querySelector('.source-content').cloneNode(true);
-  body.querySelector('[data-copy-source]')?.remove();body.querySelector('.copy-result')?.remove();
   const target=dialog.querySelector('.dialog-body');target.replaceChildren();
   const heading=document.createElement('h2');heading.id='dialog-source-title';heading.textContent=title;
   target.append(heading,body);dialog.showModal();dialog.scrollTop=0;
@@ -44,15 +43,6 @@ if(dialog&&typeof dialog.showModal==='function'){
  dialog.addEventListener('close',()=>{opener?.focus()});
 }
 
-document.querySelectorAll('[data-copy-source]').forEach(button=>button.addEventListener('click',async()=>{
- const source=document.getElementById('source-'+button.dataset.copySource);
- const text=source?.querySelector('pre')?.textContent;
- const status=source?.querySelector('.copy-result');
- try{await navigator.clipboard.writeText(text);status.textContent='Excerpt copied.'}catch{status.textContent='Copy is unavailable here. Use the text download.'}
-}));
-
-const printButton=document.querySelector('#print-story');
-printButton?.addEventListener('click',()=>window.print());
 const progress=document.querySelector('.read-progress');
 if(progress){
  const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=`${max>0?Math.min(100,Math.max(0,scrollY/max*100)):0}%`};
